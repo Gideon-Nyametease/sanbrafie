@@ -1,6 +1,6 @@
 <div class="landing-page-content">
     <div class="carousel-section">
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselExampleCaptions" class="carousel slide my-container" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -9,24 +9,54 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <%#= image_pack_tag 'media/images/image1.jpg', size: '100vw' %>
-                    <img src="<%= asset_pack_path 'media/images/image1.jpg' %>" width="100%" height="700px" alt=" demo instructions"></img>
+                    <img src="<%= asset_pack_path 'media/images/image1.jpg' %>" width="100%" height="620px" alt=" demo instructions"></img>
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
+                        <p class="carousel-bold-text">
+                          Embracing our
+                          Cultures. <br>Preserving 
+                          our Heritage.
+                        </p>
+                        <p class="carousel-mini-text">
+                          Boutique tours to the heart of 
+                          the motherland. <br> Connecting
+                          through service learning.
+                        </p>
+                        <br>
+                        <button class="btn btn-lg cta-btn">Book a tour with us</button>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="<%= asset_pack_path 'media/images/image2.jpg' %>" width="100%" height="700px" alt=" demo instructions"></img>
+                    <img src="<%= asset_pack_path 'media/images/image2.jpg' %>" width="100%" height="620px" alt=" demo instructions"></img>
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
+                        <p class="carousel-bold-text">
+                          Embracing our
+                          Cultures. <br>Preserving 
+                          our Heritage.
+                        </p>
+                        <p class="carousel-mini-text">
+                          Boutique tours to the heart of 
+                          the motherland. <br> Connecting
+                          through service learning.
+                        </p>
+                        <br>
+                        <button class="btn btn-lg cta-btn">Book a tour with us</button>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="<%= asset_pack_path 'media/images/image3.jpg' %>" width="100%" height="700px" alt=" demo instructions"></img>
+                    <img src="<%= asset_pack_path 'media/images/image3.jpg' %>" width="100%" height="620px" alt=" demo instructions"></img>
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
+                        <p class="carousel-bold-text">
+                          Embracing our
+                          Cultures. <br>Preserving 
+                          our Heritage.
+                        </p>
+                        <p class="carousel-mini-text">
+                          Boutique tours to the heart of 
+                          the motherland. <br> Connecting
+                          through service learning.
+                        </p>
+                        <br>
+                        <button class="btn btn-lg cta-btn">Book a tour with us</button>
                     </div>
                 </div>
             </div>
@@ -40,16 +70,40 @@
             </button>
         </div>
     </div>
-    <div class="destinations-section">
+    <div class="destinations-section my-container">
+      <div class="d-flex bd-highlight">
+        <p class="section-headings "> Featured Destinations</p>
+        <button class="ms-auto btn btn-md btn-outline-danger p-2 bd-highlight">View All</button>
+      </div>
+      <br>
+      <div class="destination-cards d-flex align-content-start flex-wrap">
+        <%= render 'cards'%>
+      </div>
+    </div>
+    </div>
+    <div class="testimonials-section my-container">
+      <div class="d-flex bd-highlight">
+        <p class="section-headings "> Testimonials</p>
+      </div>
+      <br>
+      <div>
+        <div>
+          <div>
+          
+          </div>
+          <div>
+        
+          </div>
+        </div>
+        <div>
+        
+        </div>
+      </div>
+    </div>
+    <div class="about-section my-container">
 
     </div>
-    <div class="testimonials-section">
-
-    </div>
-    <div class="about-section">
-
-    </div>
-    <div class="contact-section">
+    <div class="contact-section my-container">
 
     </div>
 
@@ -57,10 +111,58 @@
 </div>
 
 <style>
-    /* .landing-page-content{
-        margin: 0 auto;
-        width: 90%;
-    } */
+    .my-container{
+       margin: 0 auto;
+       width: 90%;
+    }
+    .card{
+      margin: 6px !important;
+      width: 17rem;
+    }
+    .destinations-section{
+      padding: 100px 0 100px 0;
+    }
+    .section-headings{
+      text-align: left !important;
+      font-size:42px;
+      font-weight: 700;
+      line-height: 96%;
+    }
+    .btn-outline-orange{
+      border:2px solid orange;
+    }
+    .carousel{
+      z-index; 2 !important;
+    }
+    .carousel-section{
+      height:620px;
+      background:#fdfdfd;
+      /* opacity:0.6; */
+    }
+    .carousel-caption{
+      text-align: left !important;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+     .carousel-mini-text{
+       font-size:24px;
+       font-weight: 200;
+     }
+      .carousel-bold-text{
+       font-size:48px;
+       font-weight: 700;
+       line-height: 96%;
+     }
+     .cta-btn{
+       color: black;
+       background: white;
+       font-weight: 600;
+       font-size: 24px;
+       width:300px;
+     }
 </style>
 
 <script>
