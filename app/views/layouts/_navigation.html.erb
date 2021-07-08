@@ -20,7 +20,8 @@
         </li>
       </ul>
       <div class="d-flex">
-        <button class="btn btn-lg btn-outline-dark nav-buttons">Login</button>
+        <%# <button class="btn btn-lg btn-outline-dark nav-buttons">Login</button> %>
+        <%= link_to 'Login', login_form_path,class:"btn btn-lg btn-outline-dark nav-buttons", remote: true %>
         <button class="btn btn-lg btn-dark nav-buttons">Book a tour</button>
       </div>
     </div>
@@ -46,7 +47,7 @@
     }
 
     .my-routes{
-        font-size: 16px !important;
+        font-size: 20px !important;
         font-weight: 400 !important;
         margin: 0 10px 0 10px;
     }

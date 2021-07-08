@@ -1,0 +1,71 @@
+.carousel-section img {
+    object-fit: cover;
+    opacity: 1.9;
+  }
+  .my-container{
+     margin: 0 auto;
+     width: 90%;
+  }
+  .card{
+    margin: 6px !important;
+    width: 17rem;
+  }
+  .p-card{
+    margin-bottom: 40px !important;
+    width: 20rem !important;
+    height: 22rem !important;
+  }
+  .testimonial-text{
+    text-align: left !important;
+    font-size:20px;
+    font-weight: 400;
+    line-height: 110%;
+  }
+  .destinations-section{
+    padding: 100px 0 100px 0;
+  }
+  .section-headings{
+    text-align: left !important;
+    font-size:42px;
+    font-weight: 700;
+    line-height: 96%;
+  }
+  .btn-outline-orange{
+    border:2px solid orange;
+    width: 60px;
+  }
+  .carousel{
+    z-index: 2 !important;
+  }
+  .carousel-section{
+    height:620px;
+    background:#fdfdfd;
+    /* opacity:0.6; */
+  }
+  .carousel-caption{
+    text-align: left !important;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+   .carousel-mini-text{
+     font-size:24px;
+     font-weight: 200;
+   }
+    .carousel-bold-text{
+     font-size:48px;
+     font-weight: 700;
+     line-height: 96%;
+   }
+   .cta-btn{
+     color: black;
+     background: white;
+     font-weight: 600;
+     font-size: 24px;
+     width:300px;
+   }
+   .about-section{
+     padding: 100px 0 100px 0;
+   }

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root 'home#landing_page'
+  devise_for :users
+  root :to => 'home#landing_page'
+  get 'user_dashboard' => 'home#user_dashboard', as: :user_dashboard  
+  get 'admin_dashboard' => 'home#admin_dashboard', as: :admin_dashboard
+  get 'login_form' => 'home#login_form', as: :login_form
 end
