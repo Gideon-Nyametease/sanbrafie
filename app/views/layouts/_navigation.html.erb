@@ -5,24 +5,51 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active my-routes" aria-current="page" href="#">Destinations</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active my-routes" href="#">Testimonials</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active my-routes" href="#">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active my-routes" href="#">Contact Us</a>
-        </li>
+        <% if !user_signed_in? %>
+          <li class="nav-item">
+            <a class="nav-link active my-routes" aria-current="page" href="#">Destinations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active my-routes" href="#">Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active my-routes" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active my-routes" href="#">Contact Us</a>
+          </li>
+        <% end %>
       </ul>
+    
       <div class="d-flex">
         <%# <button class="btn btn-lg btn-outline-dark nav-buttons">Login</button> %>
-        <%= link_to 'Login', login_form_path,class:"btn btn-lg btn-outline-dark nav-buttons", remote: true %>
-        <button class="btn btn-lg btn-dark nav-buttons">Book a tour</button>
+        <%#= link_to 'Login', login_form_path,class:"btn btn-lg btn-outline-dark nav-buttons", remote: true %>
+        <% if user_signed_in? %>
+          <%= link_to "Log Out", destroy_user_session_path , :method=> 'delete',class: "btn btn-lg btn-outline-dark nav-buttons me-auto"  %>
+        <% else %>
+        <!-- Button trigger modal -->
+          <button type="button" class="btn btn-lg btn-outline-dark nav-buttons" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+        <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Welcome!</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <%= render 'devise/sessions/login_form'%>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-lg btn-dark" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <%# <button class="btn btn-lg btn-dark nav-buttons">Book a tour</button> %>
       </div>
     </div>
   </div>

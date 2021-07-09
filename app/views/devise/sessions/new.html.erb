@@ -2,47 +2,66 @@
 <div id="devise-form"></div>
     <header class="carousel-section" >
         <%#= render 'devise/sessions/carousel'%>
-      <div class="row">
-        <div class="col l-section-one">
-          <p class="carousel-bold-text">
-              Embracing our
-              Cultures. <br>Preserving 
-              our Heritage.
-          </p>
-          <p class="carousel-mini-text">
-              Boutique tours to the heart of 
-              the motherland. <br> Connecting
-              through service learning.
-          </p>
-          <br>
-          <button class="btn btn-lg cta-btn">Book a tour with us</button>
-        </div>
-        <div class="col l-section-two">
-          <div class="log-in-form col-5">
-            <h2>Log in</h2>
+        <div class="row">
+          <div class="col">
+            <div class="big-text d-block mx-auto" >
+                <p class="bold-text">
+                    Embracing our
+                    Cultures, <br>Preserving 
+                    our Heritage.
+                </p>
+                <p class="carousel-mini-text">
+                    Boutique tours to the heart of 
+                    the motherland. <br> Connecting
+                    through service learning.
+                </p>
+                <br>
 
-            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-              <div class="form-inputs">
-                <%= f.input :email,
-                            required: false,
-                            autofocus: true,
-                            input_html: { autocomplete: "email" } %>
-                <%= f.input :password,
-                            required: false,
-                            input_html: { autocomplete: "current-password" } %>
-                <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-              </div>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-lg cta-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Book a tour with us</button>
 
-              <div class="form-actions">
-                <%= f.button :submit, "Log in" %>
-              </div>
-            <% end %>
 
-            <%= render "devise/shared/links" %>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Welcome!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                        <div class="form-inputs">
+                            <%= f.input :email,
+                                        required: false,
+                                        autofocus: true,
+                                        input_html: { autocomplete: "email" } %>
+                            <%= f.input :password,
+                                        required: false,
+                                        input_html: { autocomplete: "current-password" } %>
+                            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                        </div>
 
+                        <div class="form-actions">
+                            <%= f.button :submit, "Log in" %>
+                        </div>
+                        <% end %>
+
+                        <%= render "devise/shared/links" %>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-lg btn-dark" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+          </div>
+          <div class="col">
+            <img src="<%= asset_pack_path 'media/images/image4.jpg' %>" height="600px" width="100%" alt=" demo instructions"></img>
           </div>
         </div>
-      </section>
     </header>
     <div class="destinations-section my-container">
       <div class="d-flex bd-highlight">
@@ -118,13 +137,26 @@
 
 
 <style>
+
+.big-text{
+  padding: 80px;
+  top: 50%;
+}
+
+.modal{
+  border-radius: 0px !important;
+}
+.modal-dialog{
+  border-radius: 0px !important;
+}
+
 .l-section-one{
-  padding 40px;
+  padding: 40px;
   text-align: left !important;
 }
 
 .l-section-two{
-  padding 40px;
+  padding: 40px;
   /* margin: 0;
   position: absolute;
   top: 50%;
@@ -140,8 +172,9 @@
 }
 header{
   height: 600px;
-  width: 100vw;
-  background-image: url('../images/image2.jpg');
+  /* width: 100vw;  */
+  background-image: url('<%= asset_pack_path 'media/images/image3.jpg' %>');
+  /* background-image: url('../images/image2.jpg'); */
 }
 
 .carousel-section img {
@@ -197,20 +230,34 @@ header{
     transform: translateY(-50%);
   }
    .carousel-mini-text{
+     color: #090909;
      font-size:24px;
      font-weight: 200;
    }
     .carousel-bold-text{
+     color: #090909;
      font-size:48px;
      font-weight: 700;
      line-height: 96%;
    }
+    .bold-text{
+      font-family: Poppins-600 ;
+     color: #090909;
+     font-size:52px;
+     font-weight: 700;
+     line-height: 110%;
+   }
    .cta-btn{
-     color: black;
-     background: white;
-     font-weight: 600;
+     color: white;
+     background: black;
+     font-weight: 400;
      font-size: 24px;
      width:300px;
+   }
+   .cta-btn:hover{
+      color: black;
+      background-color: white;
+      border: 2px black solid;
    }
    .about-section{
      padding: 100px 0 100px 0;

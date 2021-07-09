@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root :to => 'home#landing_page'
   get 'user_dashboard' => 'home#user_dashboard', as: :user_dashboard  
   get 'admin_dashboard' => 'home#admin_dashboard', as: :admin_dashboard
-  get 'login_form' => 'home#login_form', as: :login_form
+  get 'login_form' => 'devise/sessions#login_form', as: :login_form
 end
