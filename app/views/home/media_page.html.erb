@@ -1,0 +1,8 @@
+<h3>Hi, <%= current_user.username %>!</h3>
+<p class="testimonial-text">Take a look at your photos from previous trips.</p>
+
+<br><br><br>
+
+<div class="destination-cards d-flex align-content-start flex-wrap">
+    <%= render 'devise/sessions/cards'%>
+</div>

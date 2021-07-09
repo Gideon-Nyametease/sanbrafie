@@ -11,4 +11,13 @@ class HomeController < ApplicationController
 
     def admin_dashboard
     end
+
+    def profile
+    end
+
+    def trips_page
+    end
+
+    def media_page
+    end
 end
