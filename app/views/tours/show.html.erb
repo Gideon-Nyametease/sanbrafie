@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tour:</strong>
+  <%= @tour.tour_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @tour.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tour.description %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @tour.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @tour.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_tour_path(@tour) %> |
+<%= link_to 'Back', tours_path %>

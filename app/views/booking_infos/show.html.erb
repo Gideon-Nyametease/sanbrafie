@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @booking_info.surname %>
+</p>
+
+<p>
+  <strong>Othernames:</strong>
+  <%= @booking_info.othernames %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @booking_info.phone_number %>
+</p>
+
+<p>
+  <strong>Coordination preference:</strong>
+  <%= @booking_info.coordination_preference %>
+</p>
+
+<p>
+  <strong>Group count:</strong>
+  <%= @booking_info.group_count %>
+</p>
+
+<p>
+  <strong>Hotel type:</strong>
+  <%= @booking_info.hotel_type %>
+</p>
+
+<p>
+  <strong>Tour duration:</strong>
+  <%= @booking_info.tour_duration %>
+</p>
+
+<p>
+  <strong>Purpose statement:</strong>
+  <%= @booking_info.purpose_statement %>
+</p>
+
+<%= link_to 'Edit', edit_booking_info_path(@booking_info) %> |
+<%= link_to 'Back', booking_infos_path %>

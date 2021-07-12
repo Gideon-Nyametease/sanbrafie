@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tours
+  resources :booking_infos
   devise_for :users
   root :to => 'home#landing_page'
   get 'user_dashboard' => 'home#user_dashboard', as: :user_dashboard  

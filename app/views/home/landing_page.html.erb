@@ -16,93 +16,85 @@
     </div>
     <div class="col">
         <%# ===================================================== %>
-            <div class="col-8 booking-form">
-                <form>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Featured tours</label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected> </option>
-                            <option value="1">Ghana-December, 2021</option>
-                            <option value="2">Ghana-Spring, 2022</option>
-                            <option value="3">Tanzania-Spring, 2022</option>
-                            <option value="4">Ghana-Fall, 2022</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Phone number</label>
-                        <input class="form-control" type="text" aria-label="default input example">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
-                    </div>
-                    <!--<div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>-->
-                    <button type="submit" class="btn btn-dark btn-lg">Submit</button>
-                </form>
-            </div>
+          <div class="col-10 booking-form">
+            <form>
+                <div class="mb-3 row">
+                  <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">First name</label>
+                    <input class="form-control" type="text" aria-label="default input example">
+                  </div>
+                  <div class="col">
+                    <label for="exampleInputPassword1" class="form-label">Last name</label>
+                    <input class="form-control" type="text" aria-label="default input example">
+                  </div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Featured tours</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected> </option>
+                        <option value="1">Ghana-December, 2021</option>
+                        <option value="2">Ghana-Spring, 2022</option>
+                        <option value="3">Tanzania-Spring, 2022</option>
+                        <option value="4">Ghana-Fall, 2022</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Phone number</label>
+                    <input class="form-control" type="text" aria-label="default input example">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Tour coordination</label> <br>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Air and Ground Coordination
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Ground Coordination Only
+                    </label>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Hotel type</label> <br>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">3 Star</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">4 Star</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                    <label class="form-check-label" for="inlineRadio2">5 Star</label>
+                  </div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Please share yourZ</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1">
+                </div>
+                
+                
+            </form>
+          </div>
         <%# ============================================================================ %>
     </div>
 </div>
-<div class="row">
-        <div class="destinations-section my-container">
-      <div class="d-flex bd-highlight">
-        <p class="section-headings "> Featured Destinations</p>
-        <button class="ms-auto btn btn-md btn-outline-danger p-2 bd-highlight">View All</button>
-      </div>
-      <br>
-      <div class="destination-cards d-flex align-content-start flex-wrap">
-        <%= render 'devise/sessions/cards'%>
-      </div>
+<div class="row"> 
+    <div class="destinations-section my-container">
+     
     </div>
     </div>
     <div class="testimonials-section my-container">
-      <div class="d-flex bd-highlight">
-        <p class="section-headings "> Testimonials</p>
-      </div>
-      <br>
-      <div>
-        <div class="top-comment d-flex bd-highlight" style=" padding: 20px">
-          <div class="comment-sect">
-            <div class="ratings">
-
-            </div>
-            <div class="comment">
-              <p class="testimonial-text">
-                “Lorem ipsum dolor sit amet, consectetur <br>
-                adipiscing elit, sed do eiusmod tempor <br>
-                incididunt ut labore et dolore magna aliqua. <br>
-                Ut enim ad minim veniam, quis nostrud <br>
-                exercitation ullamco laboris nisi ut aliquip <br> 
-                ex ea commodo consequat.”
-              </p>
-              <br>
-              <button class="btn btn-lg btn-outline-dark">Leave a testimonial</button>
-                
-            </div>
-          </div>
-          <div class="commenter-image-div ms-auto">
-            <div class="commenter-image ">
-              <div class="card p-card">
-                <img src="<%= asset_pack_path 'media/images/image4.jpg' %>" height="auto" width="100%" alt=" demo instructions"></img>
-              </div>
-            </div>
-          </div>
-        </div>
-        <br><br><br>
-        <div>
-          <div class="destination-cards d-flex align-content-start flex-wrap">
-            <%= render 'devise/sessions/testimonial_cards'%>
-          </div>
-        </div>
-      </div>
+     
     </div>
 </div>
 <style>

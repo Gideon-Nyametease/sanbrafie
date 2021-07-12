@@ -2,7 +2,7 @@
 <div id="devise-form"></div>
     <header class="carousel-section" >
         <%#= render 'devise/sessions/carousel'%>
-        <div class="row">
+        <div class="row" style="bakcground-color: black;">
           <div class="col">
             <div class="big-text d-block mx-auto" >
                 <p class="bold-text">
@@ -13,43 +13,97 @@
                 <p class="carousel-mini-text">
                     Boutique tours to the heart of 
                     the motherland. <br> Connecting
-                    through service learning.
+                    through enim ad minim veniam, quis nostrud <br>
+                    exercitation ullamco laboris nisi ut aliquip <br> 
+                    ex ea commodo consequat.
                 </p>
                 <br>
 
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-lg cta-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Book a tour with us</button>
+                <button type="button" class="btn btn-lg btn-outline-light" data-bs-toggle="modal" data-bs-target="#exampleModal1">Book a tour with us</button>
 
 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModal1Label" aria-hidden="true" style="border-radius:0px !important;">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Welcome!</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
-                      <div class="modal-body">
-                        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                        <div class="form-inputs">
-                            <%= f.input :email,
-                                        required: false,
-                                        autofocus: true,
-                                        input_html: { autocomplete: "email" } %>
-                            <%= f.input :password,
-                                        required: false,
-                                        input_html: { autocomplete: "current-password" } %>
-                            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                      <div class="modal-body">                   
+                        <div class=" booking-form">
+                          <form>
+                              <div class="mb-3 row">
+                                <div class="col">
+                                  <label for="exampleInputPassword1" class="form-label">First name</label>
+                                  <input class="form-control" type="text" aria-label="default input example">
+                                </div>
+                                <div class="col">
+                                  <label for="exampleInputPassword1" class="form-label">Last name</label>
+                                  <input class="form-control" type="text" aria-label="default input example">
+                                </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="exampleInputEmail1" class="form-label">Featured tours</label>
+                                  <select class="form-select" aria-label="Default select example">
+                                      <option selected> </option>
+                                      <option value="1">Ghana-December, 2021</option>
+                                      <option value="2">Ghana-Spring, 2022</option>
+                                      <option value="3">Tanzania-Spring, 2022</option>
+                                      <option value="4">Ghana-Fall, 2022</option>
+                                  </select>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="exampleInputPassword1" class="form-label">Phone number</label>
+                                  <input class="form-control" type="text" aria-label="default input example">
+                              </div>
+                              <div class="mb-3">
+                                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                              </div>
+                              <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Tour coordination</label> <br>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                  <label class="form-check-label" for="flexRadioDefault1">
+                                    Air and Ground Coordination
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                  <label class="form-check-label" for="flexRadioDefault2">
+                                    Ground Coordination Only
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Hotel type</label> <br>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                  <label class="form-check-label" for="inlineRadio1">3 Star</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                  <label class="form-check-label" for="inlineRadio2">4 Star</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                  <label class="form-check-label" for="inlineRadio2">5 Star</label>
+                                </div>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="exampleInputPassword1" class="form-label">Please share yourZ</label>
+                                  <input type="text" class="form-control" id="exampleInputPassword1">
+                              </div>
+                              
+                              
+                          </form>
                         </div>
-
-                        <div class="form-actions">
-                            <%= f.button :submit, "Log in" %>
-                        </div>
-                        <% end %>
-
-                        <%= render "devise/shared/links" %>
                       </div>
                       <div class="modal-footer">
+                        <button type="submit" class="btn btn-outline-dark btn-lg">Submit</button>
                         <button type="button" class="btn btn-lg btn-dark" data-bs-dismiss="modal">Close</button>
                       </div>
                     </div>
@@ -59,18 +113,42 @@
             </div>
           </div>
           <div class="col">
-            <img src="<%= asset_pack_path 'media/images/image4.jpg' %>" height="600px" width="100%" alt=" demo instructions"></img>
+            <%= render 'carousel'%>
+            <!--<img src="<%= asset_pack_path 'media/images/image4.jpg' %>" height="700px" width="100%" alt=" demo instructions"></img>-->
           </div>
         </div>
     </header>
     <div class="destinations-section my-container">
       <div class="d-flex bd-highlight">
         <p class="section-headings "> Featured Destinations</p>
-        <button class="ms-auto btn btn-md btn-outline-danger p-2 bd-highlight">View All</button>
+       <!-- <button class="ms-auto btn btn-md btn-outline-danger p-2 bd-highlight">View All</button>-->
       </div>
       <br>
       <div class="destination-cards d-flex align-content-start flex-wrap">
-        <%= render 'cards'%>
+        <%#= render 'cards'%>
+        <div class="row">
+          <div class="col">
+            <img src="<%= asset_pack_path 'media/images/beach1.jpg' %>" height="700px" width="100%" alt=" demo instructions">
+          </div>
+          <div class="col">
+            <div class="row" style="margin-bottom:20px;">
+              <div class="col">
+                <img src="<%= asset_pack_path 'media/images/beach2.jpg' %>" height="340px" width="100%" alt=" demo instructions">
+              </div>
+              <div class="col">
+                <img src="<%= asset_pack_path 'media/images/fishermen.jpg' %>" height="340px" width="100%" alt=" demo instructions">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <img src="<%= asset_pack_path 'media/images/image5.jpg' %>" height="340px" width="100%" alt=" demo instructions">
+              </div>
+              <div class="col">
+                <img src="<%= asset_pack_path 'media/images/image6.jpg' %>" height="340px" width="100%" alt=" demo instructions">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     </div>
@@ -185,7 +263,7 @@
   margin: 0 auto;
 }
 header{
-  height: 600px;
+  height: 700px;
   /* width: 100vw;  */
   background-image: url('<%= asset_pack_path 'media/images/image3.jpg' %>');
   /* background-image: url('../images/image2.jpg'); */
@@ -219,8 +297,9 @@ header{
   }
   .section-headings{
     text-align: left !important;
+    font: Poppins;
     font-size:42px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 96%;
   }
   .btn-outline-orange{
@@ -231,35 +310,36 @@ header{
     z-index: 2 !important;
   }
   .carousel-section{
-    height:620px;
-    background:#fdfdfd;
+    height:700px;
+    background:#090909 !important;
+    margin:-12px;
     /* opacity:0.6; */
   }
   .carousel-caption{
     text-align: left !important;
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 70% !important;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
   }
    .carousel-mini-text{
-     color: #090909;
-     font-size:24px;
+     color: #fafafa !important;
+     font-size:20px;
      font-weight: 200;
    }
     .carousel-bold-text{
-     color: #090909;
+     color: #fafafa !important;
      font-size:48px;
      font-weight: 700;
      line-height: 96%;
    }
     .bold-text{
       font-family: Poppins-600 ;
-     color: #090909;
-     font-size:52px;
+     color: #fafafa !important;
+     font-size:58px;
      font-weight: 700;
-     line-height: 110%;
+     line-height: 120%;
    }
    .cta-btn{
      color: white;
