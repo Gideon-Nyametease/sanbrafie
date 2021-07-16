@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   get 'profile' => 'home#profile', as: :profile
   get 'trips_page' => 'home#trips_page', as: :trips_page
   get 'media_page' => 'home#media_page', as: :media_page
-  get 'login_form' => 'devise/sessions#login_form', as: :login_form
+  get 'bookin_form' => 'home#bookin_form', as: :bookin_form
 end

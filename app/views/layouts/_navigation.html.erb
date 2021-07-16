@@ -27,11 +27,14 @@
         <%# <button class="btn btn-lg btn-outline-dark nav-buttons">Login</button> %>
         <%#= link_to 'Login', login_form_path,class:"btn btn-lg btn-outline-dark nav-buttons", remote: true %>
         <% if user_signed_in? %>
-          <%= link_to "Log Out", destroy_user_session_path , :method=> 'delete',class: "btn btn-lg btn-outline-dark nav-buttons me-auto"  %>
+          <%= link_to "Logout", destroy_user_session_path , :method=> 'delete',class: "btn btn-lg btn-outline-dark nav-buttons me-auto"  %>
         <% else %>
-        <!-- Button trigger modal -->
+          <%= link_to "Login", new_user_session_path ,class: "btn btn-lg btn-outline-dark nav-buttons me-auto"  %>
+
+        
+        <!-- Button trigger modal 
           <button type="button" class="btn btn-lg btn-outline-dark nav-buttons" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
-        <!-- Modal -->
+         Modal 
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -40,14 +43,14 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <%= render 'devise/sessions/login_form'%>
+                  <%#= render 'devise/sessions/login_form'%>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-lg btn-dark" data-bs-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
-          </div>
+          </div>-->
         <% end %>
         <%# <button class="btn btn-lg btn-dark nav-buttons">Book a tour</button> %>
       </div>

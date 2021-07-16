@@ -13,6 +13,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("jquery")
 require("bootstrap")
+require("@fortawesome/fontawesome-free")
 import "channels"
 import "../stylesheets/application";
 import "../stylesheets/main";

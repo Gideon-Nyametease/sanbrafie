@@ -1,359 +1,90 @@
-<div class="landing-page-content">
-<div id="devise-form"></div>
-    <header class="carousel-section" >
-        <%#= render 'devise/sessions/carousel'%>
-        <div class="row" style="bakcground-color: black;">
-          <div class="col">
-            <div class="big-text d-block mx-auto" >
-                <p class="bold-text">
-                    Embracing our
-                    Cultures, <br>Preserving 
-                    our Heritage.
-                </p>
-                <p class="carousel-mini-text">
-                    Boutique tours to the heart of 
-                    the motherland. <br> Connecting
-                    through enim ad minim veniam, quis nostrud <br>
-                    exercitation ullamco laboris nisi ut aliquip <br> 
-                    ex ea commodo consequat.
-                </p>
-                <br>
-
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-lg btn-outline-light" data-bs-toggle="modal" data-bs-target="#exampleModal1">Book a tour with us</button>
-
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModal1Label" aria-hidden="true" style="border-radius:0px !important;">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Welcome!</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">                   
-                        <div class=" booking-form">
-                          <form>
-                              <div class="mb-3 row">
-                                <div class="col">
-                                  <label for="exampleInputPassword1" class="form-label">First name</label>
-                                  <input class="form-control" type="text" aria-label="default input example">
-                                </div>
-                                <div class="col">
-                                  <label for="exampleInputPassword1" class="form-label">Last name</label>
-                                  <input class="form-control" type="text" aria-label="default input example">
-                                </div>
-                              </div>
-                              <div class="mb-3">
-                                  <label for="exampleInputEmail1" class="form-label">Featured tours</label>
-                                  <select class="form-select" aria-label="Default select example">
-                                      <option selected> </option>
-                                      <option value="1">Ghana-December, 2021</option>
-                                      <option value="2">Ghana-Spring, 2022</option>
-                                      <option value="3">Tanzania-Spring, 2022</option>
-                                      <option value="4">Ghana-Fall, 2022</option>
-                                  </select>
-                              </div>
-                              <div class="mb-3">
-                                  <label for="exampleInputPassword1" class="form-label">Phone number</label>
-                                  <input class="form-control" type="text" aria-label="default input example">
-                              </div>
-                              <div class="mb-3">
-                                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                              </div>
-                              <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Tour coordination</label> <br>
-                                <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                  <label class="form-check-label" for="flexRadioDefault1">
-                                    Air and Ground Coordination
-                                  </label>
-                                </div>
-                                <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                                  <label class="form-check-label" for="flexRadioDefault2">
-                                    Ground Coordination Only
-                                  </label>
-                                </div>
-                              </div>
-                              <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Hotel type</label> <br>
-                                <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                  <label class="form-check-label" for="inlineRadio1">3 Star</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                  <label class="form-check-label" for="inlineRadio2">4 Star</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                                  <label class="form-check-label" for="inlineRadio2">5 Star</label>
-                                </div>
-                              </div>
-                              <div class="mb-3">
-                                  <label for="exampleInputPassword1" class="form-label">Please share yourZ</label>
-                                  <input type="text" class="form-control" id="exampleInputPassword1">
-                              </div>
-                              
-                              
-                          </form>
-                        </div>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="submit" class="btn btn-outline-dark btn-lg">Submit</button>
-                        <button type="button" class="btn btn-lg btn-dark" data-bs-dismiss="modal">Close</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
+<div class="row"> 
+  <div class="col-3 log-form">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs">
+          <%= f.input :login, label:"Email", input_html:{class:"form-control-lg"}  %>
+          <br>
+          <div class="row">
+            <div class="col-10">
+              <%= f.input :password,required: false,input_html: { autocomplete: "current-password" ,class:"form-control-lg"} %>
+            </div>
+            <div class="col-2" id="eye-toggl">
+              <i id="show_password" class="fa fa-eye display-icons" aria-hidden="true"></i>
+              <i id="hide_password" style="display:none;" class="fa fa-eye-slash display-icons" aria-hidden="true"></i>
             </div>
           </div>
-          <div class="col">
-            <%= render 'carousel'%>
-            <!--<img src="<%= asset_pack_path 'media/images/image4.jpg' %>" height="700px" width="100%" alt=" demo instructions"></img>-->
-          </div>
-        </div>
-    </header>
-    <div class="destinations-section my-container">
-      <div class="d-flex bd-highlight">
-        <p class="section-headings "> Featured Destinations</p>
-       <!-- <button class="ms-auto btn btn-md btn-outline-danger p-2 bd-highlight">View All</button>-->
+          <br>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
       <br>
-      <div class="destination-cards d-flex align-content-start flex-wrap">
-        <%#= render 'cards'%>
-        <div class="row">
-          <div class="col">
-            <img src="<%= asset_pack_path 'media/images/beach1.jpg' %>" height="700px" width="100%" alt=" demo instructions">
-          </div>
-          <div class="col">
-            <div class="row" style="margin-bottom:20px;">
-              <div class="col">
-                <img src="<%= asset_pack_path 'media/images/beach2.jpg' %>" height="340px" width="100%" alt=" demo instructions">
-              </div>
-              <div class="col">
-                <img src="<%= asset_pack_path 'media/images/fishermen.jpg' %>" height="340px" width="100%" alt=" demo instructions">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <img src="<%= asset_pack_path 'media/images/image5.jpg' %>" height="340px" width="100%" alt=" demo instructions">
-              </div>
-              <div class="col">
-                <img src="<%= asset_pack_path 'media/images/image6.jpg' %>" height="340px" width="100%" alt=" demo instructions">
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="form-actions d-grid gap-2">
+          <%= f.button :submit, "Log in", class:"btn btn-lg btn-dark ",input_html:{id:"my-submit-btn"},data: { "loading-text"=>"<i class='fa fa-circle-o-notch fa-spin'></i>"} %>
       </div>
+    <% end %>
+    <br>
+    <div class="d-grid gap-2">
+      <%= render "devise/shared/links" %>
     </div>
-    </div>
-    <div class="testimonials-section my-container">
-      <div class="d-flex bd-highlight">
-        <p class="section-headings "> Testimonials</p>
-      </div>
-      <br>
-      <div>
-        <div class="top-comment d-flex bd-highlight" style=" padding: 20px">
-          <div class="comment-sect">
-            <div class="ratings">
-
-            </div>
-            <div class="comment">
-              <p class="testimonial-text">
-                “Lorem ipsum dolor sit amet, consectetur <br>
-                adipiscing elit, sed do eiusmod tempor <br>
-                incididunt ut labore et dolore magna aliqua. <br>
-                Ut enim ad minim veniam, quis nostrud <br>
-                exercitation ullamco laboris nisi ut aliquip <br> 
-                ex ea commodo consequat.”
-              </p>
-              <br>
-              <button class="btn btn-lg btn-outline-dark">Leave a testimonial</button>
-                
-            </div>
-          </div>
-          <div class="commenter-image-div ms-auto">
-            <div class="commenter-image ">
-              <div class="card p-card">
-                <img src="<%= asset_pack_path 'media/images/image4.jpg' %>" height="auto" width="100%" alt=" demo instructions"></img>
-              </div>
-            </div>
-          </div>
-        </div>
-        <br><br><br>
-        <div>
-          <div class="destination-cards d-flex align-content-start flex-wrap">
-            <%= render 'testimonial_cards'%>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="about-section my-container">
-      <div class="d-flex bd-highlight">
-        <p class="section-headings "> SanBraFie Group Inc.</p>
-      </div>
-      <br><br><br>
-        <div class="row">
-          <div class="col">
-            <div class=" d-block mx-auto" >
-               <p class="testimonial-text">
-                  Come and travel with Sanbrafie Group Inc. to Ghana for our Homegoing Tour in December 2021 for an exciting cultural heritage journey focused on historical and cultural immersion experiences, service learning & community engagement, Afrochella and PinexGinja Festival celebrations, shopping excursions, networking and business investment opportunities, and beach vacation in Ghana, West Africa. Learn of the rich traditions and rituals of Ghana. Experience Ghanaian art, craftsmanship, music, literature, drumming & dancing,  fun at Aqua Safari, Water Falls, language lesson, Pan African dialogue, and more. And, not to be missed are the dungeons and forts constructed to facilitate the gold trade and later used as the main auction market and garrison for the slave trade, now a site for the Door of Return. Be a part of a cultural experience that can impact your worldview.  
-                  Ghana has named 2020 and next decade: "Beyond the Return".
-                </p>
-            </div>
-          </div>
-          <div class="col">
-            <img src="<%= asset_pack_path 'media/images/image2.jpg' %>" height="600px" width="100%" alt=" demo instructions"></img>
-          </div>
-        </div><br><br>
-    </div>
-    <div class="contact-section my-container">
-      <div class="d-flex bd-highlight">
-        <p class="section-headings ">Our Address</p>
-      </div>
-    </div>
-
     
+  </div>
+  <div class="col-9 login-page-image">
+  </div>
 </div>
 
 
-
-
-
-
-
-
 <style>
+  #eye-toggl{
+    border: 1px solid #181818;
+    margin-left: -10px;
+  }
 
-.big-text{
-  padding: 80px;
-  top: 50%;
-}
+  .log-form{
+    background-color:#f6f8f9 !important;
+    padding: 50px;
+  }
 
-.modal{
-  border-radius: 0px !important;
-}
-.modal-dialog{
-  border-radius: 0px !important;
-}
-
-.l-section-one{
-  padding: 40px;
-  text-align: left !important;
-}
-
-.l-section-two{
-  padding: 40px;
-  /* margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); */
-}
-
-.log-in-form{
-  padding: 30px;
-  background: white;
-  width: 60%;
-  margin: 0 auto;
-}
-header{
-  height: 700px;
-  /* width: 100vw;  */
-  background-image: url('<%= asset_pack_path 'media/images/image3.jpg' %>');
-  /* background-image: url('../images/image2.jpg'); */
-}
-
-.carousel-section img {
+  .login-page-image{
+    background-image:  url('../images/image6.jpg');
+    background-size: cover;
     object-fit: cover;
-    opacity: 1.9;
+    height: 100vh;
   }
-  .my-container{
-     margin: 0 auto;
-     width: 90%;
+
+  .form-inputs{
+    border-radius: 0px !important;
   }
-  .card{
-    margin: 6px !important;
-    width: 17rem;
-  }
-  .p-card{
-    margin-bottom: 40px !important;
-    width: 20rem !important;
-    height: 22rem !important;
-  }
-  .testimonial-text{
-    text-align: left !important;
-    font-size:20px;
-    font-weight: 400;
-    line-height: 110%;
-  }
-  .destinations-section{
-    padding: 100px 0 100px 0;
-  }
-  .section-headings{
-    text-align: left !important;
-    font: Poppins;
-    font-size:42px;
-    font-weight: 500;
-    line-height: 96%;
-  }
-  .btn-outline-orange{
-    border:2px solid orange;
-    width: 60px;
-  }
-  .carousel{
-    z-index: 2 !important;
-  }
-  .carousel-section{
-    height:700px;
-    background:#090909 !important;
-    margin:-12px;
-    /* opacity:0.6; */
-  }
-  .carousel-caption{
-    text-align: left !important;
-    margin: 0;
-    position: absolute;
-    top: 70% !important;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
-   .carousel-mini-text{
-     color: #fafafa !important;
-     font-size:20px;
-     font-weight: 200;
-   }
-    .carousel-bold-text{
-     color: #fafafa !important;
-     font-size:48px;
-     font-weight: 700;
-     line-height: 96%;
-   }
-    .bold-text{
-      font-family: Poppins-600 ;
-     color: #fafafa !important;
-     font-size:58px;
-     font-weight: 700;
-     line-height: 120%;
-   }
-   .cta-btn{
-     color: white;
-     background: black;
-     font-weight: 400;
-     font-size: 24px;
-     width:300px;
-   }
-   .cta-btn:hover{
-      color: black;
-      background-color: white;
-      border: 2px black solid;
-   }
-   .about-section{
-     padding: 100px 0 100px 0;
-   }
 </style>
+
+<script>
+$('#show_password').on('click', function(){
+  var x = document.getElementById("password");
+  var show_icon = document.getElementById("show_password");
+  var hide_icon = document.getElementById("hide_password");
+      
+  x.type = "text";
+
+  show_icon.style.display = "none";
+  hide_icon.style.display = "block";
+  
+});
+
+$('#hide_password').on('click', function(){
+  var x = document.getElementById("password");
+  var show_icon = document.getElementById("show_password");
+  var hide_icon = document.getElementById("hide_password");
+      
+  x.type = "password";
+  
+  show_icon.style.display = "block";
+  hide_icon.style.display = "none";
+  
+});
+
+$('#my-submit-btn').on('click', function() {
+    var $this = $(this);
+  $this.button('loading');
+    setTimeout(function() {
+       $this.button('reset');
+   }, 8000);
+});
+</script>

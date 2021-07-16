@@ -1,0 +1,27 @@
+<%= simple_form_for :booking_form, url: booking_form_path, :method =>'get' ,html: { class: 'form-horizontal' } do |f| %>
+    <form>
+        <div>
+            <div class="col-sm-12">
+                <%= f.input :tour, collection: @tours, label_method: :name, value_method: :id %>
+                <div class="row">
+                    <div class="col">
+                        <%= f.input :surname %>
+                    </div>
+                    <div class="col">
+                        <%= f.input :othernames %>
+                    </div>
+                </div>
+                <%= f.input :phone_number %>
+                <%= f.input :coordination_preference %>
+                <%= f.input :group_count %>
+                <%= f.input :hotel_type %>
+                <%= f.input :tour_duration %>
+                <%= f.input :purpose_statement %>
+                <br>
+                <div class="d-grid gap-2">
+                    <%= f.submit "Book a tour", class: "btn btn-dark" %>
+                </div>
+            </div>
+        </div>
+    </form>
+<% end %>
