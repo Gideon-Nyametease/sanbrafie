@@ -1,9 +1,10 @@
 class HomeController < ApplicationController
-    before_action :authenticate_user!, :except => [:landing_page,:login_form]
+    before_action :authenticate_user!, :except => [:landing_page,:booking_form]
     def landing_page
     end
 
     def booking_form
+        @tours = Tour.all
     end
 
     def user_dashboard
