@@ -1,5 +1,8 @@
 <div class="row"> 
   <div class="col-3 log-form">
+    <!--<div class="form-actions d-grid gap-2">
+      <%#= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, class:"btn btn-md btn-outline-dark " %><br/>
+    </div>-->
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
           <%= f.input :login, label:"Email", input_html:{class:"form-control-lg"}  %>
@@ -44,7 +47,7 @@
   }
 
   .login-page-image{
-    background-image:  url('../images/image6.jpg');
+    background-image:  url('media/images/image6.jpg');
     background-size: cover;
     object-fit: cover;
     height: 100vh;

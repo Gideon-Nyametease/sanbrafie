@@ -1,15 +1,89 @@
 <div>
-    <div class="top-section">
-        <div class="row">
+    <div class="user-dash-top-section d-flex justify-content-center">
+        <div class="row container" style="border: #090909 2px solid;">
             <div class="col-3">
                 <h4>Hello <%= current_user.username %>,</h4>
             </div>
             <div class="col-9">
-        
+                <div class="row">
+                    <div class="col-10">
+                        <div class="d-flex justify-content-end">
+                            <div class="tour-links">
+                            <a href="/booking_infos">
+                                <img src="<%= asset_pack_path 'media/images/beach1.jpg' %>" height="140px" width="140px" alt=" demo instructions" class="tl">
+                            </a>
+                            </div>
+                            <div class="tour-links">
+                                <img src="<%= asset_pack_path 'media/images/beach2.jpg' %>" height="140px" width="140px" alt=" demo instructions" class="tl">
+                            </div>
+                            <div class="tour-links">
+                                <img src="<%= asset_pack_path 'media/images/image6.jpg' %>" height="140px" width="140px" alt=" demo instructions" class="tl">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="d-flex justify-content-end">
+                            <%= link_to 'View all', booking_infos_path,class:"btn btn-sm btn-outline-light "%>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div>
-        
+    <br>
+    <div class="booking-table container">       
+        <div class="wrapper shadow-box-no-border">
+        <div class="page-header">
+            <h3> Bookings</h3>
+        </div>
+        <br>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Trip</th>
+                    <th>Coordination Preference</th>
+                    <th>Number of people</th>
+                    <th>Hotel</th>
+                    <th>Duration</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% @booking_infos.each do |booking_info| %>
+                <% @tour = Tour.where("id = ?",booking_info.tour_id)[0]%>
+                    <tr>
+                    <td><%= @tour.title %></td>
+                    <td><%= booking_info.coordination_preference %></td>
+                    <td><%= booking_info.group_count %></td>
+                    <td><%= booking_info.hotel_type %></td>
+                    <td><%= booking_info.tour_duration %></td>
+                    </tr>
+                <% end %>
+                </tbody>
+            </table>
+        </div>
+        </div>
+
+
     </div>
 </div>
+
+
+<style>
+.user-dash-top-section{
+    background: #090909;
+    color: #f8f8ff;
+}
+     .tl{
+        margin: 50px 15px;
+        -webkit-box-shadow: 0px 11px 40px -15px rgba(188,188,188,0.93);
+        -moz-box-shadow: 0px 11px 40px -15px rgba(188,188,188,0.93);
+        box-shadow: 0px 11px 40px -15px rgba(188,188,188,0.93);
+        transition: width .3s, height .3s;
+    }
+    .tl:hover{
+        height:150px;
+        width:150px
+    }
+</style>

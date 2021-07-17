@@ -2,11 +2,17 @@ class User < ApplicationRecord
   extend Devise::Models
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,authentication_keys: [:login]
+  devise :database_authenticatable, :registerable,:omniauthable,
+         :recoverable, :rememberable, :validatable,authentication_keys: [:login], omniauth_providers: [:google_oauth2]
 
   attr_writer :login
+  # Google authorization
+  def self.from_google(email:, full_name:, uid:, avatar_url:)
+    return nil unless email =~ /@mybusiness.com\z/
+    create_with(uid: uid, full_name: full_name, avatar_url: avatar_url).find_or_create_by!(email: email)
+  end
 
+  # Login vie username/email
   def login
     @login || self.username || self.email
   end
@@ -20,6 +26,7 @@ class User < ApplicationRecord
     end
   end
 
+  # validations
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
   validates :username, presence: true, uniqueness: { case_sensitive: false }
   validate :password_complexity
