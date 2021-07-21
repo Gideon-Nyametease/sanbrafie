@@ -1,36 +1,36 @@
 <div>
-    <div class="user-dash-top-section d-flex justify-content-center">
+    <div class="page-topic d-flex justify-content-center">
         <div class="row container" style="border: #090909 2px solid;">
-            <div class="col-3">
+            <div class="text-center">
                 <h4>Hello <%= current_user.username %>,</h4>
-            </div>
-            <div class="col-9">
-                <div class="row">
-                    <div class="col-10">
-                        <div class="d-flex justify-content-end">
-                            <div class="tour-links">
-                            <a href="/booking_infos">
-                                <img src="<%= asset_pack_path 'media/images/beach1.jpg' %>" height="140px" width="140px" alt=" demo instructions" class="tl">
-                            </a>
-                            </div>
-                            <div class="tour-links">
-                                <img src="<%= asset_pack_path 'media/images/beach2.jpg' %>" height="140px" width="140px" alt=" demo instructions" class="tl">
-                            </div>
-                            <div class="tour-links">
-                                <img src="<%= asset_pack_path 'media/images/image6.jpg' %>" height="140px" width="140px" alt=" demo instructions" class="tl">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="d-flex justify-content-end">
-                            <%= link_to 'View all', booking_infos_path,class:"btn btn-sm btn-outline-light "%>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
     <br>
+    <br>
+    <div class="row">
+        <div class="col-10" style="padding: 0 40px 0 40px">
+        <h4>Upcoming tours</h4>
+            <div class="d-flex justify-content-end">
+                <div class="tour-links">
+                <a href="/tours">
+                    <img src="<%= asset_pack_path 'media/images/beach1.jpg' %>" height="280px" width="280px" alt=" demo instructions" class="tl">
+                </a>
+                </div>
+                <div class="tour-links">
+                    <img src="<%= asset_pack_path 'media/images/beach2.jpg' %>" height="280px" width="280px" alt=" demo instructions" class="tl">
+                </div>
+                <div class="tour-links">
+                    <img src="<%= asset_pack_path 'media/images/image6.jpg' %>" height="280px" width="280px" alt=" demo instructions" class="tl">
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="d-flex justify-content-center">
+                <%= link_to 'View all', tours_path(page_name:"Home",path: "root_path"),class:"btn btn-md btn-outline-dark "%>
+            </div>
+        </div>
+    </div>
     <div class="booking-table container">       
         <div class="wrapper shadow-box-no-border">
         <div class="page-header">
@@ -71,19 +71,16 @@
 
 
 <style>
-.user-dash-top-section{
-    background: #090909;
-    color: #f8f8ff;
-}
+
      .tl{
         margin: 50px 15px;
-        -webkit-box-shadow: 0px 11px 40px -15px rgba(188,188,188,0.93);
-        -moz-box-shadow: 0px 11px 40px -15px rgba(188,188,188,0.93);
-        box-shadow: 0px 11px 40px -15px rgba(188,188,188,0.93);
+        -webkit-box-shadow: 0px 11px 40px -15px rgba(162, 162, 162, 0.93);
+        -moz-box-shadow: 0px 11px 40px -15px rgba(162, 162, 162, 0.93);
+        box-shadow: 0px 11px 40px -15px rgba(162, 162, 162, 0.93);
         transition: width .3s, height .3s;
     }
     .tl:hover{
-        height:150px;
-        width:150px
+        height:290px;
+        width:290px
     }
 </style>

@@ -2,13 +2,20 @@ class HomeController < ApplicationController
     before_action :authenticate_user!, :except => [:landing_page,:booking_form, :create_booking]
     def landing_page
       if user_signed_in?
-        @booking_infos = BookingInfo.where("user_id = ?", current_user.id)
-        @booking_infos = @booking_infos.present? ? @booking_infos : BookingInfo.where("(surname = ? AND othernames = ?) OR user_uid = ?",current_user.surname,current_user.othernames,current_user.uid)
+        if current_user.role_code == "client"
+          @booking_infos = BookingInfo.where("user_id = ?", current_user.id)
+          @booking_infos = @booking_infos.present? ? @booking_infos : BookingInfo.where("(surname = ? AND othernames = ?) OR user_uid = ?",current_user.surname,current_user.othernames,current_user.uid)
+        else
+          @booking_infos = BookingInfo.all
+        end
       end
     end
 
+
     def booking_form
         @tours = Tour.all
+        @coordination_preference = [["Air and Ground","AG"],["Ground only","G"]]
+        @hotel_type = [["5 Star","5 Star"],["4 Star","4 Star"],["3 Star","3 Star"]]
     end
 
     def create_booking

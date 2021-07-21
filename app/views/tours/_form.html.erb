@@ -7,8 +7,17 @@
     <%= f.input :tour_id %>
     <%= f.input :title %>
     <%= f.input :description %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
+     <div class="row">
+        <div class="col-md-6">
+          <%= f.input :start_date, :id => "datepicker",  as: :date, html5: true, class:"input-group date", boolean_style: :inline, 
+          input_html: {style: "width: 100%", data: {behaviour: 'datepicker', provide: 'datepicker'}, autocomplete: "off"}, label:"Start Date" %>
+        </div>
+        <div class="col-md-6">
+          <%= f.input :end_date, :id => "datepicker",  as: :date, html5: true, class:"input-group date", boolean_style: :inline, 
+          input_html: {style: "width: 100%", data: {behaviour: 'datepicker', provide: 'datepicker'}, autocomplete: "off"}, label:"Expiry Date" %>
+        </div>
+      </div>
+    <%= f.file_field :image %>
     
   </div>
 

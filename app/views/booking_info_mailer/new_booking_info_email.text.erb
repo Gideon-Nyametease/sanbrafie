@@ -1,0 +1,14 @@
+
+    Customer <%= @booking_info.othernames %> <%= @booking_info.surname %> just booked a trip, please send a follow up email!
+    ========================================================================================================================
+    
+    Booking details
+    --------------------------
+    Name: <%= @booking_info.othernames %> <%= @booking_info.surname %>
+    Email: <%= @booking_info.email %>
+    Phone: <%= @booking_info.phone_number %>
+    Coordination: <%= @booking_info.coordination_preference %>
+    Hotel Preference: <%= @booking_info.hotel_type %>
+    Purpose Statement: 
+    -------------------
+    <%= @booking_info.purpose_statement %>

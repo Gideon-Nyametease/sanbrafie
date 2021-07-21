@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Customer <%= @booking_info.othernames %> <%= @booking_info.surname %> just booked a trip, please send a follow up email!</p>
+    <p>
+    Booking details<br>
+    --------------------------
+    </p>
+    <p>Name: <%= @booking_info.othernames %> <%= @booking_info.surname %></p>
+    <p>Email: <%= @booking_info.email %></p>
+    <p>Phone: <%= @booking_info.phone_number %></p>
+    <p>Coordination: <%= @booking_info.coordination_preference %></p>
+    <p>Hotel Preference: <%= @booking_info.hotel_type %></p>
+    <p>
+        Purpose Statement: 
+        -------------------<br>
+    </p>
+    <p>
+        <%= @booking_info.purpose_statement %>
+    </p>
+  </body>
+</html>
