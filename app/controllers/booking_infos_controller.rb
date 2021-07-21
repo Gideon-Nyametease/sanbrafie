@@ -10,6 +10,9 @@ class BookingInfosController < ApplicationController
 
   end
 
+  def book_form
+  end
+
   # GET /booking_infos/1 or /booking_infos/1.json
   def show
   end

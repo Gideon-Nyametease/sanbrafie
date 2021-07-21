@@ -1,0 +1,74 @@
+ <div id="air-mod" class="w3-modal w3-animate-opacity" style="display: block">
+    <div class="w3-modal-content w3-card-4 " style="width: 540px; padding-bottom: 60px" >
+      <div class="d-flex justify-content-end" style="margin: 20px;">
+        <span onclick="document.getElementById('air-mod').style.display='none'"
+            class="btn btn-lg btn-dark">&times;</span>
+      </div>
+      <br>
+      <div class="w3-container">
+        <%= simple_form_for :booking_form, url: create_booking_path, :method =>'post' ,html: { class: 'form-horizontal' } do |f| %>
+            <form>
+                <div class="form-inputs my-form-margin">
+                    <div class="col-sm-12">
+                        <div  class="mb-3">
+                            <%= f.input :tour_id, input_html:{value:params[:tour_id],class:"form-control-lg sanbrafie-input"}, as: :hidden %>   
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <%= f.input :surname, input_html:{class:"form-control-lg sanbrafie-input"} %>
+                            </div>
+                            <div class="col">
+                                <%= f.input :othernames, input_html:{class:"form-control-lg sanbrafie-input"} %>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <%= f.input :phone_number, input_html:{class:"form-control-lg sanbrafie-input"} %>
+                            </div>
+                            <div class="col">
+                                <%= f.input :email, input_html:{class:"form-control-lg sanbrafie-input"} %>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <%= f.input :coordination_preference, collection: @coordination_preference, label_method: :first, value_method: :last, input_html:{class:"form-control-lg sanbrafie-input"} %>
+                            </div>
+                            <div class="col">
+                                <%= f.input :group_count, input_html:{class:"form-control-lg sanbrafie-input"} %>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <%= f.input :hotel_type, collection: @hotel_type, label_method: :first, value_method: :last, input_html:{class:"form-control-lg sanbrafie-input"} %>
+                            </div>
+                            <div class="col">
+                                <%= f.input :tour_duration, input_html:{class:"form-control-lg sanbrafie-input"} %>
+                            </div>
+                        </div>
+                        <div  class="mb-3">
+                            <%= f.input :purpose_statement, as: :text, input_html:{class:"form-control-lg sanbrafie-input"} %>
+                        </div>
+    
+                        <br>
+                        <div class="d-grid gap-2">
+                            <%= f.submit "Book a tour", class: "btn btn-lg btn-dark" %>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        <% end %>
+      </div>
+    </div>
+</div>
+
+<style>
+    .sanbrafie-input{
+        background-color:#f2f2f2  !important;
+        border:none !important;
+        border-radius: 0px !important;
+    }
+    .my-form-margin{
+        padding: 0 40px;
+    }
+</style>
+

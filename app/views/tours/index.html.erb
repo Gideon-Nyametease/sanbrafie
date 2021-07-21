@@ -1,6 +1,7 @@
 <div class="page-topic text-center">
     <h2> tours </h2>
 </div>
+<div id="book"></div>
 <div class="my-content"> 
     <div class="shadow-box-no-border">
         <div class="manual-breadcrumb">
@@ -41,7 +42,7 @@
                                         <%= tour.title %><br>
                                         <%= tour.start_date %><br>
                                         <%= tour.end_date %><br><br>
-                                        <button class="btn btn-md btn-dark">Book</button>
+                                        <%= link_to "Book", book_form_path(tour_id: tour.id), class:"btn btn-md btn-dark", remote: true%>
                                         <% if current_user.role_code == 'admin'%>
                                             <%= link_to edit_tour_path(tour), class:"btn btn-md btn-secondary" do %>
                                                 <i class="fa fa-edit"></i> Edit

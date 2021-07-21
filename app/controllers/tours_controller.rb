@@ -6,6 +6,9 @@ class ToursController < ApplicationController
     @tours = Tour.all
   end
 
+  def book_form
+  end
+
   # GET /tours/1 or /tours/1.json
   def show
   end

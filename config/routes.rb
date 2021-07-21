@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get 'booking_form' => 'home#booking_form', as: :booking_form
   post 'create_booking' => 'home#create_booking', as: :create_booking
   get 'payment_form' => 'booking_infos#payment_form', as: :payment_form
+  get 'book_form' => 'tours#book_form', as: :book_form
 end
