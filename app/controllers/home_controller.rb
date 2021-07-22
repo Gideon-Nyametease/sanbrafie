@@ -23,6 +23,7 @@ class HomeController < ApplicationController
 
         respond_to do |format|
           if @booking_form_data.save
+            BookingInfoMailer.with(booking_info: @booking_form_data).new_booking_info_email.deliver_later
             format.html { redirect_to root_path, notice: "Booking info was successfully created." }
             format.json { render :landing_page, status: :created, location: root_path }
           else

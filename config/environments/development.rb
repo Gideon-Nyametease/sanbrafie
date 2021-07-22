@@ -77,6 +77,18 @@ Rails.application.configure do
   # Devise config
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 } 
 
-  ENV['GOOGLE_OAUTH_CLIENT_ID'] = '282742398583-11b2pamk0l4197ki9hilmpbcmnop35uu.apps.googleusercontent.com'
-  ENV['GOOGLE_OAUTH_CLIENT_SECRET'] = 'SZMl1PudPg-tPR1vv3NzZVvw'  
+  # setting up gmail mailer
+  config.action_mailer.delivery_method = :smtp
+  host = 'localhost:3000'
+  config.action_mailer.default_url_options = { :host => 'localhost:3000', protocol: 'http' }
+
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :user_name            => Rails.application.credentials.google[:gmail_username],
+    :password             => Rails.application.credentials.google[:gmail_password],
+    :authentication       => "plain",
+    :enable_starttls_auto => true
+  }
 end

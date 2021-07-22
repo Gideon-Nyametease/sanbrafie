@@ -10,8 +10,7 @@ class BookingInfosController < ApplicationController
 
   end
 
-  def book_form
-  end
+
 
   # GET /booking_infos/1 or /booking_infos/1.json
   def show
@@ -32,7 +31,7 @@ class BookingInfosController < ApplicationController
 
     respond_to do |format|
       if @booking_info.save
-        BookingInfo.with(booking_info: @booking_info).new_booking_info_email.deliver_later
+        BookingInfoMailer.with(booking_info: @booking_info).new_booking_info_email.deliver_later
         format.html { redirect_to @booking_info, notice: "Booking info was successfully created." }
         format.json { render :show, status: :created, location: @booking_info }
       else
