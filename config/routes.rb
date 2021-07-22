@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :customer_msgs
   resources :tours
   resources :booking_infos
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   get 'media_page' => 'home#media_page', as: :media_page
   get 'booking_form' => 'home#booking_form', as: :booking_form
   post 'create_booking' => 'home#create_booking', as: :create_booking
+  post 'create_msg' => 'home#create_msg', as: :create_msg
   get 'payment_form' => 'booking_infos#payment_form', as: :payment_form
   get 'book_form' => 'tours#book_form', as: :book_form
 end

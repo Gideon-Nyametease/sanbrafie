@@ -6,8 +6,13 @@ class HomeController < ApplicationController
           @booking_infos = BookingInfo.where("user_id = ?", current_user.id)
           @booking_infos = @booking_infos.present? ? @booking_infos : BookingInfo.where("(surname = ? AND othernames = ?) OR user_uid = ?",current_user.surname,current_user.othernames,current_user.uid)
         else
+          @tours = Tour.limit(5)
           @booking_infos = BookingInfo.all
         end
+      else
+        @tours = Tour.limit(5)
+        logger.info "THE TOURS = #{@tours.inspect}"
+        @customer_msg = CustomerMsg.new
       end
     end
 
@@ -32,6 +37,20 @@ class HomeController < ApplicationController
             format.json { render json: @booking_form_data.errors, status: :unprocessable_entity }
           end
         end
+    end
+
+    def create_msg
+      @customer_msg = CustomerMsg.new(customer_msg_params)
+
+      respond_to do |format|
+        if @customer_msg.save
+          format.html { redirect_to @customer_msg, notice: "Customer msg was successfully created." }
+          format.json { render :show, status: :created, location: @customer_msg }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @customer_msg.errors, status: :unprocessable_entity }
+        end
+      end
     end
 
     def user_dashboard

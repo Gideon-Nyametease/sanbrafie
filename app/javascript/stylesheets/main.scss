@@ -1,3 +1,44 @@
+// ========  Navigation
+.navbar{
+  min-height: 66px;
+}
+.navbar-brand{
+  font-size: 28px !important;
+  font-weight: bold !important;
+  color: red !important;
+}
+.nav-buttons{
+  margin-left: 15px;
+}
+
+.btn{
+  border-radius: 0px !important;
+}
+
+.my-routes{
+  font-size: 16px !important;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 500 !important;
+  margin: 0 10px 0 10px;
+}
+// ===========================
+
+
+.btn-outline-orange{
+  border:2px solid orange;
+  width: 60px;
+}
+
+// ================= Homepage ========================== 
+.section-headings{
+  text-align: left !important;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size:30px;
+  line-height: 36px;
+  margin-top: 30px;
+  font-weight: 700;
+}
+
 .big-text{
   padding: 80px;
   top: 50%;
@@ -17,17 +58,6 @@
 
 .l-section-two{
   padding: 40px;
-  /* margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); */
-}
-
-.page-topic{
-  background: #090909;
-  color: #f1f1f1;
-  padding: 30px 0 30px 0;
 }
 
 .log-in-form{
@@ -36,146 +66,146 @@
   width: 60%;
   margin: 0 auto;
 }
+
 header{
-  height: 600px;
-  /* width: 100vw;  */
-  background-image: url("<%= asset_pack_path 'media/images/image3.jpg' %>");
-  /* background-image: url('../images/image2.jpg'); */
+  height: 700px;
+}
+
+.my-container{
+    margin: 0 auto;
+    width: 80%;
+}
+.card{
+  margin: 6px !important;
+  width: 17rem;
+}
+.p-card{
+  margin-bottom: 40px !important;
+  width: 16rem !important;
+  height: 18rem !important;
+}
+.testimonial-text{
+  text-align: left !important;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size:20px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #241f21;
+}
+.destinations-section{
+  padding: 100px 0 100px 0;
+}
+
+.btn-outline-orange{
+  border:2px solid orange;
+  width: 60px;
+}
+.carousel{
+  z-index: 2 !important;
+}
+.carousel-section{
+  height:713px;
+  background:#090909 !important;
+  margin:-12px;
+  /* opacity:0.6; */
 }
 
 .carousel-section img {
-    object-fit: cover;
-    opacity: 1.9;
-  }
-  .my-container{
-     margin: 0 auto;
-     width: 90%;
-  }
-  .card{
-    margin: 6px !important;
-    width: 17rem;
-  }
-  .p-card{
-    margin-bottom: 40px !important;
-    width: 20rem !important;
-    height: 22rem !important;
-  }
-  .testimonial-text{
-    text-align: left !important;
-    font-size:20px;
-    font-weight: 400;
-    line-height: 110%;
-  }
-  .destinations-section{
-    padding: 100px 0 100px 0;
-  }
-  .section-headings{
-    text-align: left !important;
-    font-size:42px;
-    font-weight: 700;
-    line-height: 96%;
-  }
-  .btn-outline-orange{
-    border:2px solid orange;
-    width: 60px;
-  }
-  .carousel{
-    z-index: 2 !important;
-  }
-  .carousel-section{
-    height:620px;
-    background:#fdfdfd;
-    /* opacity:0.6; */
-  }
-  .carousel-caption{
-    text-align: left !important;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
-   .carousel-mini-text{
-     color: #090909;
-     font-size:24px;
-     font-weight: 200;
-   }
-    .carousel-bold-text{
-     color: #090909;
-     font-size:48px;
-     font-weight: 700;
-     line-height: 96%;
-   }
-    .bold-text{
-      font-family: Poppins-600 ;
-     color: #090909;
-     font-size:52px;
-     font-weight: 700;
-     line-height: 110%;
-   }
-   .cta-btn{
-     color: white;
-     background: black;
-     font-weight: 400;
-     font-size: 24px;
-     width:300px;
-   }
-   .cta-btn:hover{
-      color: black;
-      background-color: white;
-      border: 2px black solid;
-   }
-   .about-section{
-     padding: 100px 0 100px 0;
-   }
+  object-fit: cover;
+  opacity: 1.9;
+  margin-top: 13px;
+}
 
-   .shadow-box-no-border{
-    background-color: white;
-    border-radius: 15px;
-    padding: 15px;
-    background-color: white; -webkit-box-shadow: 0px 11px 40px -15px rgba(164, 164, 164, 0.93);
-    -moz-box-shadow: 0px 11px 40px -15px rgba(162, 162, 162, 0.93);
-    box-shadow: 0px 11px 40px -15px rgba(161, 161, 161, 0.93);
-    width: 99%;
-    margin: 0 auto;
-  }
+.carousel-caption{
+  text-align: left !important;
+  margin: 0;
+  position: absolute;
+  top: 70% !important;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.carousel-mini-text{
+  color: #fafafa !important;
+  font-size:20px;
+  font-weight: 200;
+}
+.carousel-bold-text{
+  color: #fafafa !important;
+  font-size:48px;
+  font-weight: 700;
+  line-height: 96%;
+}
+.bold-text{
+  font-family: 'Libre Baskerville', serif;
+  color: #fafafa !important;
+  font-size:58px;
+  font-weight: 700;
+  line-height: 120%;
+}
+.cta-btn{
+  color: white;
+  background: black;
+  font-weight: 400;
+  font-size: 24px;
+  width:300px;
+}
+.cta-btn:hover{
+  color: black;
+  background-color: white;
+  border: 2px black solid;
+}
+.about-section{
+  padding: 100px 0 100px 0;
+}
+// ===========================
 
-  .tl{
-    margin: 50px 15px;
-    -webkit-box-shadow: 0px 11px 40px -15px rgba(164, 164, 164, 0.93);
-    -moz-box-shadow: 0px 11px 40px -15px rgba(162, 162, 162, 0.93);
-    box-shadow: 0px 11px 40px -15px rgba(162, 162, 162, 0.93);
-    transition: width .3s, height .3s;
-  }
-  .tl:hover{
-      height:290px;
-      width:290px
-  }
+  .shadow-box-no-border{
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: white; -webkit-box-shadow: 0px 11px 40px -15px rgba(164, 164, 164, 0.93);
+  -moz-box-shadow: 0px 11px 40px -15px rgba(162, 162, 162, 0.93);
+  box-shadow: 0px 11px 40px -15px rgba(161, 161, 161, 0.93);
+  width: 99%;
+  margin: 0 auto;
+}
 
-  .my-content{
-    margin:20px;
-  }
+.tl{
+  margin: 50px 15px;
+  -webkit-box-shadow: 0px 11px 40px -15px rgba(164, 164, 164, 0.93);
+  -moz-box-shadow: 0px 11px 40px -15px rgba(162, 162, 162, 0.93);
+  box-shadow: 0px 11px 40px -15px rgba(162, 162, 162, 0.93);
+  transition: width .3s, height .3s;
+}
+.tl:hover{
+    height:290px;
+    width:290px
+}
 
-  // Login/registration screen
-   #eye-toggl{
-    border: 1px solid #181818;
-    margin-left: -10px;
-  }
+.my-content{
+  margin:20px;
+}
 
-  .log-form{
-    background-color:#f6f8f9 !important;
-    padding: 50px;
-  }
+// Login/registration screen
+  #eye-toggl{
+  border: 1px solid #181818;
+  margin-left: -10px;
+}
 
-  .login-page-image{
-    background-image:  url('../images/fishermen.jpg');
-    background-size: cover;
-    object-fit: cover;
-    height: 100vh;
-  }
+.log-form{
+  background-color:#f6f8f9 !important;
+  padding: 50px;
+}
 
-  .form-inputs{
-    border-radius: 0px !important;
-  }
+.login-page-image{
+  background-image:  url('../images/fishermen.jpg');
+  background-size: cover;
+  object-fit: cover;
+  height: 100vh;
+}
+
+.form-inputs{
+  border-radius: 0px !important;
+}
 
 

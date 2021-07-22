@@ -1,0 +1,67 @@
+<div class="my-content"> 
+    <div class="index-title">
+        <h2> customer_msgs </h2>
+    </div>
+    <div class="shadow-box-no-border">
+        <hr/>
+        <div>
+            <button class="btn btn-outline-primary">Download CSV  <i class="fa fa-download"></i></button>
+            <button class="btn btn-outline-primary">Search  <i class="fa fa-search"></i></button>
+
+            <%= link_to new_customer_msg_path, class:"btn btn-outline-primary float-right" do %>
+                <span class="glyphicon glyphicon-plus"></span>
+                New customer_msg
+            <% end %>
+        </div>
+    
+
+        <div class="table-responsive">
+        <hr/>
+            <table class="table table-striped table-hover">
+                <thead class="bg-light">
+                <tr>
+                    <th>#</th>
+                                        <th>Email</th>
+                                        <th>Surname</th>
+                                        <th>Othernames</th>
+                                        <th>Message</th>
+                                        <th>User</th>
+                                        <th>Status</th>
+                                        <th colspan="3"></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <% @customer_msgs.each_with_index do |customer_msg, index| %>
+                    <tr>
+                        <td><%= index + 1 %></td>
+                                        <td><%= customer_msg.email %></td>
+                                        <td><%= customer_msg.surname %></td>
+                                        <td><%= customer_msg.othernames %></td>
+                                        <td><%= customer_msg.message %></td>
+                                        <td><%= customer_msg.user_id %></td>
+                                        <td><%= customer_msg.status %></td>
+                           
+                        <td>
+                            <%= link_to customer_msg, class:"btn btn-md btn-outline-primary",remote: true do %>
+                                Details
+                            <% end %>
+                        </td>                 
+                        <td>
+                            <%= link_to edit_customer_msg_path(customer_msg), class:"btn btn-md btn-secondary" do %>
+                                <i class="fa fa-edit"></i>
+                            <% end %>
+                        </td>
+                        <td>
+                            <%= link_to  customer_msg, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-md btn-danger" do %>
+                                <i class="fa fa-trash"></i>
+                            <% end %>
+                        </td>
+                    
+                    </tr>
+                <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
