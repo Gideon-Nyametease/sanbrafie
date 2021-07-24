@@ -1,29 +1,16 @@
-<div>
-    <div class="page-topic d-flex justify-content-center">
-        <div class="row container" style="border: #090909 2px solid;">
-            <div class="text-center">
-                <h4>Hello <%= current_user.username %>,</h4>
-            </div>
+<div class="page-topic d-flex justify-content-center">
+    <div class="row container">
+        <div class="text-center">
+            <h4>Hello <%= current_user.username %>,</h4>
         </div>
     </div>
+</div>
+<div class="my-container">
     <br>
     <br>
     <div class="row">
         <div class="col-10" style="padding: 0 40px 0 40px">
-        <h4>Upcoming tours</h4>
-            <div class="d-flex justify-content-end">
-                <div class="tour-links">
-                <a href="/tours">
-                    <img src="<%= asset_pack_path 'media/images/beach1.jpg' %>" height="280px" width="280px" alt=" demo instructions" class="tl">
-                </a>
-                </div>
-                <div class="tour-links">
-                    <img src="<%= asset_pack_path 'media/images/beach2.jpg' %>" height="280px" width="280px" alt=" demo instructions" class="tl">
-                </div>
-                <div class="tour-links">
-                    <img src="<%= asset_pack_path 'media/images/image6.jpg' %>" height="280px" width="280px" alt=" demo instructions" class="tl">
-                </div>
-            </div>
+        <p class="section-headings">Upcoming tours</p>
         </div>
         <div class="col-2">
             <div class="d-flex justify-content-center">
@@ -31,7 +18,26 @@
             </div>
         </div>
     </div>
-    <div class="booking-table container">       
+    <div class="row">
+        <div class="col">
+        <a href="/tours">
+            <img src="<%= asset_pack_path 'media/images/beach1.jpg' %>" alt=" demo instructions" class="tl">
+        </a>
+        <p class="image-text">Ghana December 2021</p>
+        <hr>
+        </div>
+        <div class="col">
+            <img src="<%= asset_pack_path 'media/images/beach2.jpg' %>" alt=" demo instructions" class="tl">
+        </div>
+        <div class="col">
+            <img src="<%= asset_pack_path 'media/images/image6.jpg' %>"  alt=" demo instructions" class="tl">
+        </div>
+        <div class="col">
+            <img src="<%= asset_pack_path 'media/images/image6.jpg' %>" alt=" demo instructions" class="tl">
+        </div>
+    </div>
+    <br><br>
+    <div class="booking-table">       
         <div class="wrapper shadow-box-no-border">
         <div class="page-header">
             <h3> Bookings</h3>
@@ -71,16 +77,25 @@
 
 
 <style>
+    .image-text{
+        font-size: 20px;
+        font-weight: 400;
+        font-family: 'Merriweather Sans', sans-serif;
+        margin:10px 0 0 5px;
+    }
 
      .tl{
-        margin: 50px 15px;
+        margin: 5px;
+        height:280px;
+        width:280px;
+        border: 10px #dfe6e9 solid;
         -webkit-box-shadow: 0px 11px 40px -15px rgba(162, 162, 162, 0.93);
         -moz-box-shadow: 0px 11px 40px -15px rgba(162, 162, 162, 0.93);
         box-shadow: 0px 11px 40px -15px rgba(162, 162, 162, 0.93);
         transition: width .3s, height .3s;
     }
     .tl:hover{
-        height:290px;
-        width:290px
+        height:285px;
+        width:285px;
     }
 </style>
