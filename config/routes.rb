@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   post 'create_msg' => 'home#create_msg', as: :create_msg
   get 'payment_form' => 'booking_infos#payment_form', as: :payment_form
   get 'book_form' => 'tours#book_form', as: :book_form
+  get 'postpone_booking' => 'booking_infos#postpone_booking', as: :postpone_booking
 end

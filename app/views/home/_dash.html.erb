@@ -1,101 +1,147 @@
 <div class="page-topic d-flex justify-content-center">
     <div class="row container">
         <div class="text-center">
-            <h4>Hello <%= current_user.username %>,</h4>
+            <h4>Hello <%= current_user.username.capitalize %>,</h4>
         </div>
     </div>
 </div>
-<div class="my-container">
-    <br>
-    <br>
-    <div class="row">
-        <div class="col-10" style="padding: 0 40px 0 40px">
-        <p class="section-headings">Upcoming tours</p>
-        </div>
-        <div class="col-2">
-            <div class="d-flex justify-content-center">
-                <%= link_to 'View all', tours_path(page_name:"Home",path: "root_path"),class:"btn btn-md btn-outline-dark "%>
+<div class="book booking-edit"></div>
+<div class="row" >
+    <div class="col-8">
+    <br><br>
+        <div class="booking-table" style="margin: 0 auto; width:94%;">       
+            <div class="wrapper ">
+                <div class="page-header">
+                    <h3>Your Booking History</h3>
+                </div>
+                <br>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class="table-dark">
+                        <tr>
+                            <th>Trip</th>
+                            <th>Coordination</th>
+                            <th>No. of people</th>
+                            <th>Hotel</th>
+                            <th>Duration</th>
+                            <th colspan="2"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <% @booking_infos.each do |booking_info| %>
+                        <% @tour = Tour.where("id = ?",booking_info.tour_id)[0]%>
+                            <tr>
+                            <td><%= @tour.title %></td>
+                            <td><%= booking_info.coordination_preference %></td>
+                            <td><%= booking_info.group_count %></td>
+                            <td><%= booking_info.hotel_type %></td>
+                            <td><%= booking_info.tour_duration %></td>
+                            <td>
+                                <% if booking_info.status == 'postponed'%>
+                                    <%= link_to edit_booking_info_path(booking_info, marker:"postponed"),remote:true, class:"btn btn-secondary" do %>
+                                        Postponed
+                                    <% end %>
+                                <% else %>
+                                    <%= link_to edit_booking_info_path(booking_info),remote:true, class:"btn btn-warning" do %>
+                                        Postpone
+                                    <% end %>
+                                <% end %>
+                            </td>
+                            <td><button class="btn btn-dark">Upload media</button></td>
+                            </tr>
+                        <% end %>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-        <a href="/tours">
-            <img src="<%= asset_pack_path 'media/images/beach1.jpg' %>" alt=" demo instructions" class="tl">
-        </a>
-        <p class="image-text">Ghana December 2021</p>
-        <hr>
-        </div>
-        <div class="col">
-            <img src="<%= asset_pack_path 'media/images/beach2.jpg' %>" alt=" demo instructions" class="tl">
-        </div>
-        <div class="col">
-            <img src="<%= asset_pack_path 'media/images/image6.jpg' %>"  alt=" demo instructions" class="tl">
-        </div>
-        <div class="col">
-            <img src="<%= asset_pack_path 'media/images/image6.jpg' %>" alt=" demo instructions" class="tl">
-        </div>
-    </div>
-    <br><br>
-    <div class="booking-table">       
-        <div class="wrapper shadow-box-no-border">
-        <div class="page-header">
-            <h3> Bookings</h3>
-        </div>
-        <br>
 
+    </div>
+    <div class="col-4" style="background-color:#dfe6e9; padding: 20px 0 20px 10px;">
+        <div class="row">
+            <h3 class="text-center" style="margin-bottom:20px;">Upcoming Trips</h4>
+            <br>
+            <hr>
+        </div>
         <div class="table-responsive">
-            <table class="table table-striped table-bordered table-hover">
-                <thead class="thead-dark">
-                <tr>
-                    <th>Trip</th>
-                    <th>Coordination Preference</th>
-                    <th>Number of people</th>
-                    <th>Hotel</th>
-                    <th>Duration</th>
-                </tr>
-                </thead>
+            <table class="table table-hover table-bordered">          
                 <tbody>
-                <% @booking_infos.each do |booking_info| %>
-                <% @tour = Tour.where("id = ?",booking_info.tour_id)[0]%>
-                    <tr>
-                    <td><%= @tour.title %></td>
-                    <td><%= booking_info.coordination_preference %></td>
-                    <td><%= booking_info.group_count %></td>
-                    <td><%= booking_info.hotel_type %></td>
-                    <td><%= booking_info.tour_duration %></td>
-                    </tr>
-                <% end %>
+                    <% @tours.each_with_index do |tour, index| %>
+                        <tr>
+                            <td>
+                                <div class="">
+                                    <%# <a href="/tours" > %>
+                                        <% if tour.image.attached? %>
+                                            <img src="<%= url_for(tour.image) %>" alt=" demo instructions" class="tl2">
+                                        <% else %>
+                                            <p class="text-center">Image not available</p>
+                                        <% end %>
+                                    <%# </a> %>
+                                </div>
+                            </td>
+                            <td class="align-top">
+                                <b><%= tour.tour_id %></b><br>
+                                <span class="text-4"><%= tour.title %></span><br>
+                                <%#= tour.start_date.strftime("%m-%d-%Y") if !tour.start_date.nil?%>
+                                <% date = tour.start_date %>
+                                <span class="text-3 font-weight-300"><%=  date.to_date.strftime("%d") if !date.nil?%></span>
+                                <span class="text-1 font-weight-300 text-uppercase"><%= date.to_date.strftime("%b") if !date.nil?%>,
+                                    <%=  date.to_date.strftime("%Y") if !date.nil? %>
+                                </span>
+                                <br>
+                                <% date = tour.end_date %>
+                                <span class="text-3 font-weight-300"><%=  date.to_date.strftime("%d") if !date.nil?%></span>
+                                <span class="text-1 font-weight-300 text-uppercase"><%= date.to_date.strftime("%b") if !date.nil?%>,
+                                    <%=  date.to_date.strftime("%Y") if !date.nil? %>
+                                </span>
+                                <br><br>
+                                <%= link_to "Book Trip", book_form_path(tour_id: tour.id), class:"btn btn-lg btn-dark", remote: true%>
+                                <% if current_user.role_code == 'admin'%>
+                                    <%= link_to edit_tour_path(tour), class:"btn btn-lg btn-secondary" do %>
+                                        <i class="fa fa-edit"></i> Edit
+                                    <% end %>
+                                <% end %>
+                            </td>
+                        </tr>
+                        
+                    <% end %>
                 </tbody>
             </table>
         </div>
-        </div>
-
-
     </div>
 </div>
 
-
 <style>
-    .image-text{
+    .text-4{
         font-size: 20px;
+        font-weight: 500;
+        font-family: 'Merriweather Sans', sans-serif;
+    }
+     .text-3{
+        font-size: 18px;
         font-weight: 400;
         font-family: 'Merriweather Sans', sans-serif;
-        margin:10px 0 0 5px;
     }
 
-     .tl{
+    .text-1{
+        font-size: 16px;
+        font-weight: 400;
+        font-family: 'Merriweather Sans', sans-serif;
+    }
+
+ .tl2{
         margin: 5px;
-        height:280px;
-        width:280px;
-        border: 10px #dfe6e9 solid;
-        -webkit-box-shadow: 0px 11px 40px -15px rgba(162, 162, 162, 0.93);
-        -moz-box-shadow: 0px 11px 40px -15px rgba(162, 162, 162, 0.93);
-        box-shadow: 0px 11px 40px -15px rgba(162, 162, 162, 0.93);
+        height:210px;
+        width:210px;
+        /* border: 10px #dfe6e9 solid; */
+        -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+        -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+        box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
         transition: width .3s, height .3s;
     }
-    .tl:hover{
-        height:285px;
-        width:285px;
+    .tl2:hover{
+        height:215px;
+        width:215px;
     }
 </style>

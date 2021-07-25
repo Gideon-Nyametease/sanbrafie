@@ -46,7 +46,9 @@
                             </div>
                         </div>
                         <div  class="mb-3">
-                            <%= f.input :purpose_statement, as: :text, input_html:{class:"form-control-lg sanbrafie-input"} %>
+                            <%= f.input :purpose_statement, collection: @purpose_statement, label_method: :first, value_method: :last, input_html:{class:"form-control-lg sanbrafie-input"} %>
+
+                            <%= f.input :comment, as: :text, input_html:{class:"form-control-lg sanbrafie-input"}, placeholder:"Add a little detail to your purpose statement",label:false %>
                         </div>
     
                         <br>

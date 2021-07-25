@@ -180,9 +180,9 @@ header{
 
 .tl{
   margin: 50px 15px;
-  -webkit-box-shadow: 0px 11px 40px -15px rgba(164, 164, 164, 0.93);
-  -moz-box-shadow: 0px 11px 40px -15px rgba(162, 162, 162, 0.93);
-  box-shadow: 0px 11px 40px -15px rgba(162, 162, 162, 0.93);
+  -webkit-box-shadow: 0px 11px 40px -15px rgba(130, 130, 130, 0.93);
+  -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+  box-shadow: 0px 11px 40px -15px rgba(104, 104, 104, 0.93);
   transition: width .3s, height .3s;
 }
 .tl:hover{
@@ -206,7 +206,13 @@ header{
 }
 
 .login-page-image{
-  background-image:  url('../images/fishermen.jpg');
+  background-image:  url('../images/5.jpg');
+  background-size: cover;
+  object-fit: cover;
+  height: 100vh;
+}
+.reg-page-image{
+  background-image:  url('../images/3.jpg');
   background-size: cover;
   object-fit: cover;
   height: 100vh;

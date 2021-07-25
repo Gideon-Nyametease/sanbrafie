@@ -10,11 +10,12 @@
   </head>
 
   <body>
-      <%#= render 'layouts/sidenav' %>
+    <div class="row">
       <%= render 'layouts/navigation'%>
       <div id="notif-msg" class="col-sm-12">
         <%= render 'layouts/messages' %>
       </div>
       <%= yield %>
+    </div>
   </body>
 </html>

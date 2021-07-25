@@ -13,34 +13,10 @@ class UserController < ApplicationController
     
     def create_user_post
       @user = User.new(user_params)
-  
-      division_ids = params[:division_ids]
-      main = params[:main]
-      logger.info "#################################################"
-      logger.info "THESE ARE THE SELECTED IDS #{division_ids.inspect}"
-      logger.info "#################################################"
-  
+      logger.info"User parameters: \n #{@user.inspect}"
       respond_to do |format|
           if @user.save
-  
-            if division_ids.present?
-                division_ids.each do |div_id|
-                  user_div = UserDivision.new(
-                     user_id:  @user.id,
-                     division_id: div_id,
-                     active_status: true,
-                     del_status: false
-                  )
-                  user_div.save
-                end
-  
-                if main.present?
-                  u_div = UserDivision.where(division_id: main)[0]
-                  u_div.update(main: true)
-                end
-            end
-  
-            format.html { redirect_to roles_path, notice: 'User was successfully created.' }
+            format.html { redirect_to root_path, notice: 'You have successfully created an account, welcome!' }
             format.json { render :show, status: :ok, location: @service_code }
           else
             format.html { render :create_user }
@@ -65,48 +41,7 @@ class UserController < ApplicationController
         end
       end
     end
-  
-  
-    def edit_user_post_cancelled
-      respond_to do |format|
-        @user = User.find(params["user"]["id"])
-        _email = @user.email
-        _username = @user.username
-        if @user.update(active_status: false, del_status: true)
-          
-          
-          n = User.new
-  
-          n.prev_id= @user.id
-          n.username = _username
-          n.role_id = user_params[:role_id]
-          n.password = @user.password
-          n.entity_id = @user.entity_id
-          n.email = _email
-          n.active_status = true
-          if n.save
-              format.html { redirect_to roles_path, notice: 'User  was successfully updated.' }
-          end
-        
-          # format.json { render :show, status: :ok, location: @user }
-        else
-          format.html { render :edit_user }
-          format.json { render json: @user.errors, status: :unprocessable_entity }
-          logger.info "error FOR EDIT USER === #{@user.errors.inspect}"
-        end
-      end
-     end
-  
-    def get_division
-      @entity_id = params[:entity_id]
-      logger.info "##################################"
-      logger.info "THIS IS THE ENTITY ID #{@entity_id.inspect}"
-      logger.info "##################################"
-  
-      @divisions = EntityDivision.where(entity_id: @entity_id)
-      logger.info "Entities #{@divisions.inspect}"
-    end
-      
+    
       
       # def destroy    
       # if @user.active_status

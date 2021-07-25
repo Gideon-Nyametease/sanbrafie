@@ -23,6 +23,7 @@ class BookingInfosController < ApplicationController
 
   # GET /booking_infos/1/edit
   def edit
+    @status = [["I understand and will like to postpone.","postponed"]]
   end
 
   # POST /booking_infos or /booking_infos.json
@@ -71,6 +72,7 @@ class BookingInfosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def booking_info_params
-      params.require(:booking_info).permit(:surname, :othernames, :phone_number, :coordination_preference, :group_count, :hotel_type, :tour_duration, :purpose_statement, :user_id, :user_uid)
+      params.require(:booking_info).permit(:surname, :othernames, :phone_number, :coordination_preference,:group_count, :hotel_type, 
+                                          :tour_duration, :purpose_statement, :user_id, :user_uid, :comment,:status)
     end
 end

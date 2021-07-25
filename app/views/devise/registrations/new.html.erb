@@ -1,69 +1,52 @@
 <div class="row"> 
-  <div class="col-3 log-form">
-    <h4>Sign Up</h4> <br>
-    <!--<div class="form-actions d-grid gap-2">
-      <%#= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, class:"btn btn-md btn-outline-dark " %><br/>
-    </div>-->
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <div class="form-inputs">
-          <%= f.input :surname, label:"Surname", input_html:{class:"form-control-lg"}  %>
-          <%= f.input :othernames, label:"First name", input_html:{class:"form-control-lg"}  %>
-          <%= f.input :email, label:"Email", input_html:{class:"form-control-lg"}  %>
-          <%= f.input :username, label:"Username", input_html:{class:"form-control-lg"}  %>
-          <%= f.input :role_code, input_html:{value:"client",class:"form-control-lg"},as: :hidden  %>
-          <%= f.input :active_status, input_html:{checked:true,class:"form-control-lg"},as: :hidden  %>  
-          <%= f.input :password,
-                required: true,
-                hint: ("8 characters minimum"),
-                input_html: { autocomplete: "new-password",class:"form-control-lg" } %>
-          <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password",class:"form-control-lg" } %>  
-          <br>
-      </div>
+  <div class="col-4 log-form">
+    <div class="log-form-margin">
+      <h4>Sign Up</h4> <br>
+      <!--<div class="form-actions d-grid gap-2">
+        <%#= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, class:"btn btn-md btn-outline-dark " %><br/>
+      </div>-->
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+            <div class="row">
+              <div class="col">
+                <%= f.input :othernames, label:"First name", input_html:{class:"form-control-lg"}  %>
+              </div>
+              <div class="col">
+                <%= f.input :surname, label:"Last name", input_html:{class:"form-control-lg"}  %>
+              </div>
+            </div>
+            <%= f.input :email, label:"Email", input_html:{class:"form-control-lg"}  %>
+            <%= f.input :username, label:"Username", input_html:{class:"form-control-lg"}  %>
+            <%= f.input :role_code, input_html:{value:"client",class:"form-control-lg"},as: :hidden  %>
+            <%= f.input :active_status, input_html:{checked:true,class:"form-control-lg"},as: :hidden  %>  
+            <%= f.input :password,
+                  required: true,
+                  hint: ("8 characters minimum"),
+                  input_html: { autocomplete: "new-password",class:"form-control-lg" } %>
+            <%= f.input :password_confirmation,
+                  required: true,
+                  input_html: { autocomplete: "new-password",class:"form-control-lg" } %>  
+            <br>
+        </div>
+        <br>
+        <div class="form-actions d-grid gap-2">
+            <%= f.button :submit, "Sign Up", class:"btn btn-lg btn-outline-dark ",input_html:{id:"my-reg-btn"},data: { "loading-text"=>"<i class='fa fa-circle-o-notch fa-spin'></i>"} %>
+        </div>
+      <% end %>
       <br>
-      <div class="form-actions d-grid gap-2">
-          <%= f.button :submit, "Sign Up", class:"btn btn-lg btn-outline-dark ",input_html:{id:"my-submit-btn"},data: { "loading-text"=>"<i class='fa fa-circle-o-notch fa-spin'></i>"} %>
+      <div class="d-grid gap-2">
+        <%= render "devise/shared/links" %>
       </div>
-    <% end %>
-    <br>
-    <div class="d-grid gap-2">
-      <%= render "devise/shared/links" %>
     </div>
-    
   </div>
-  <div class="col-9 login-page-image">
+  <div class="col-8 reg-page-image">
   </div>
 </div>
 
 
 
 <script>
-$('#show_password').on('click', function(){
-  var x = document.getElementById("password");
-  var show_icon = document.getElementById("show_password");
-  var hide_icon = document.getElementById("hide_password");
-      
-  x.type = "text";
-
-  show_icon.style.display = "none";
-  hide_icon.style.display = "block";
-  
-});
-
-$('#hide_password').on('click', function(){
-  var x = document.getElementById("password");
-  var show_icon = document.getElementById("show_password");
-  var hide_icon = document.getElementById("hide_password");
-      
-  x.type = "password";
-  
-  show_icon.style.display = "block";
-  hide_icon.style.display = "none";
-  
-});
-
-$('#my-submit-btn').on('click', function() {
+$('#my-reg-btn').on('click', function() {
     var $this = $(this);
   $this.button('loading');
     setTimeout(function() {
@@ -71,4 +54,11 @@ $('#my-submit-btn').on('click', function() {
    }, 8000);
 });
 </script>
+
+<style>
+  .log-form-margin{
+    margin: 0 auto !important;
+    width: 88% !important;
+  }
+</style>
 

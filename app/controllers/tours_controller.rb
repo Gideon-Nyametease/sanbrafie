@@ -7,6 +7,10 @@ class ToursController < ApplicationController
   end
 
   def book_form
+    @coordination_preference = [["Air and Ground","AG"],["Ground only","G"]]
+    @hotel_type = [["5 Star","5 Star"],["4 Star","4 Star"],["3 Star","3 Star"]]
+    @purpose_statement = [["Cultural visit","Cultural visit"],["Potential business","Potential business"],["Shopping","Shopping"],["Honeymoon","Honeymoon"]]
+
   end
 
   # GET /tours/1 or /tours/1.json

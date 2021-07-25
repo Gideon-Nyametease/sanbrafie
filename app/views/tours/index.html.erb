@@ -1,7 +1,7 @@
 <div class="page-topic text-center">
     <h2> tours </h2>
 </div>
-<div id="book"></div>
+<div class="book"></div>
 <div class="my-content"> 
     <div class="shadow-box-no-border">
         <div class="manual-breadcrumb">
@@ -12,12 +12,13 @@
             <% end %> / <a class="btn-sm btn btn-link" href="/tours">Tours</a>
         </div>
         <hr/>
-        <div class="d-flex justify-content-end">
-            <%= link_to new_tour_path, class:"btn btn-dark " do %>
-                New Tour
-            <% end %>
-        </div>
-         
+        <% if current_user.role_code == 'admin' %>
+            <div class="d-flex justify-content-end">     
+                <%= link_to new_tour_path, class:"btn btn-dark " do %>
+                    New Tour
+                <% end %>
+            </div>
+         <% end %>
         <div class="row">
            
             <div class="col">

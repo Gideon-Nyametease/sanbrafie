@@ -1,0 +1,107 @@
+<div class="page-topic d-flex justify-content-center">
+    <div class="row container">
+        <div class="text-center">
+            <h4>Hello <%= current_user.username %>,</h4>
+        </div>
+    </div>
+</div>
+<div class="tours-list">
+    <br>
+    <br>
+    <div class="my-container">
+        <div class="row">
+            <div class="col-10" style="padding: 0 40px 0 40px">
+            <p class="section-headings">Upcoming tours</p>
+            </div>
+            <div class="col-2">
+                <div class="d-flex justify-content-center">
+                    <%= link_to 'View all', tours_path(page_name:"Home",path: "root_path"),class:"btn btn-md btn-outline-dark "%>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+            <a href="/tours">
+                <img src="<%= asset_pack_path 'media/images/beach1.jpg' %>" alt=" demo instructions" class="tl">
+            </a>
+            <p class="image-text">Ghana December 2021</p>
+            <hr>
+            </div>
+            <div class="col">
+                <img src="<%= asset_pack_path 'media/images/beach2.jpg' %>" alt=" demo instructions" class="tl">
+            </div>
+            <div class="col">
+                <img src="<%= asset_pack_path 'media/images/image6.jpg' %>"  alt=" demo instructions" class="tl">
+            </div>
+            <div class="col">
+                <img src="<%= asset_pack_path 'media/images/image6.jpg' %>" alt=" demo instructions" class="tl">
+            </div>
+        </div>
+    </div>
+    <br><br>
+</div>
+<br><br>
+<div class=" my-container booking-table">       
+    <div class="wrapper shadow-box-no-border">
+        <div class="page-header">
+            <h3> Bookings</h3>
+        </div>
+        <br>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Trip</th>
+                    <th>Coordination Preference</th>
+                    <th>Number of people</th>
+                    <th>Hotel</th>
+                    <th>Duration</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% @booking_infos.each do |booking_info| %>
+                <% @tour = Tour.where("id = ?",booking_info.tour_id)[0]%>
+                    <tr>
+                    <td><%= @tour.title %></td>
+                    <td><%= booking_info.coordination_preference %></td>
+                    <td><%= booking_info.group_count %></td>
+                    <td><%= booking_info.hotel_type %></td>
+                    <td><%= booking_info.tour_duration %></td>
+                    </tr>
+                <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .image-text{
+        font-size: 20px;
+        font-weight: 400;
+        font-family: 'Merriweather Sans', sans-serif;
+        margin:10px 0 0 5px;
+    }
+
+    .tours-list{
+        background-color:#dfe6e9;
+    }
+
+     .tl{
+        margin: 5px;
+        height:280px;
+        width:280px;
+        /* border: 10px #dfe6e9 solid; */
+        -webkit-box-shadow: 0px 11px 40px -15px rgba(162, 162, 162, 0.93);
+        -moz-box-shadow: 0px 11px 40px -15px rgba(162, 162, 162, 0.93);
+        box-shadow: 0px 11px 40px -15px rgba(162, 162, 162, 0.93);
+        transition: width .3s, height .3s;
+    }
+    .tl:hover{
+        height:285px;
+        width:285px;
+    }
+</style>
