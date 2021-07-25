@@ -1,7 +1,7 @@
 <div class="page-topic d-flex justify-content-center">
     <div class="row container">
         <div class="text-center">
-            <h4>Hello <%= current_user.username.capitalize %>,</h4>
+            <h3 style="font-weight: 300; font-family: poppins;">Hello <%= current_user.username.capitalize %>,</h3>
         </div>
     </div>
 </div>
@@ -61,6 +61,11 @@
     <div class="col-4" style="background-color:#dfe6e9; padding: 20px 0 20px 10px;">
         <div class="row">
             <h3 class="text-center" style="margin-bottom:20px;">Upcoming Trips</h4>
+            <% if current_user.role_code == "admin"%>
+                <%= link_to new_tour_path, class:"btn btn-lg btn-dark " do %>
+                    Add a new trip
+                <% end %>
+            <% end %>
             <br>
             <hr>
         </div>
