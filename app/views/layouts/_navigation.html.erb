@@ -1,7 +1,7 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light col-12">
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-darkk col-12" id="navbar-example">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
-      <img src="<%= asset_pack_path 'media/images/logo-text.png' %>" height="60px" width="100" alt=" demo instructions">
+      <img src="<%= asset_pack_path 'media/images/logo-text.png' %>" height="40px" width="100" alt=" demo instructions">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -9,29 +9,43 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <% if !user_signed_in? %>
-          <li class="nav-item">
-            <a class="nav-link active my-routes" aria-current="page" href="#">Destinations</a>
+          <li class="nav-item" id="destination-btn">
+            <a class="nav-link active my-routes" aria-current="page" href="#destinations" >Destinations</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active my-routes" href="#">Testimonials</a>
+            <a class="nav-link active my-routes" href="#testimonials">Testimonials</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active my-routes" href="#">About Us</a>
+            <a class="nav-link active my-routes" href="#about">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active my-routes" href="#">Contact Us</a>
+            <a class="nav-link active my-routes" href="#contact">Contact Us</a>
           </li>
         <% end %>
       </ul>
       <div class="d-flex">
         <% if user_signed_in? %>
-          <%= link_to "Logout", destroy_user_session_path , :method=> 'delete',class: "btn btn-lg btn-outline-dark nav-buttons me-auto"  %>
+          <%= link_to "Logout", destroy_user_session_path , :method=> 'delete',class: "btn btn-lg btn-outline-light nav-buttons me-auto"  %>
         <% else %>
-          <%= link_to "Login", new_user_session_path ,class: "btn btn-lg btn-outline-dark nav-buttons me-auto"  %>
-          <%= link_to "Sign up", new_user_registration_path, class:"btn btn-lg btn-dark nav-buttons" %>
+          <%= link_to "Login", new_user_session_path ,class: "btn btn-lg btn-outline-light nav-buttons me-auto"  %>
+          <%= link_to "Sign up", new_user_registration_path, class:"btn btn-lg btn-light nav-buttons" %>
         <% end %>
       </div>
     </div>
   </div>
 </nav>
-
+<style>
+  .bg-darkk{
+    background-color: #010101;
+  }
+  .active-border{
+    border-bottom: 2px solid #202020;
+  }
+</style>
+<script>
+  var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+    target: '#navbar-example'
+  })
+  console.log("00000000")
+ 
+</script>

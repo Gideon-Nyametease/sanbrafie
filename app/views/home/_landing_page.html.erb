@@ -1,15 +1,16 @@
-<header class="carousel-section" >
+<div data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+  <header class="carousel-section" >
     <%#= render 'devise/sessions/carousel'%>
-    <div class="row" style="bakcground-color: black;">
-      <div class="col">
+    <div class="row" style="background-color: black;">
+      <div class="col-5 header-text">
+       <br><br>
         <div class="big-text d-block mx-auto" >
-        <br><br><br><br>
-            <p class="bold-text">
-                Embracing our
-                Cultures, <br>Preserving 
-                our Heritage.
+        
+            <p class="bold-text w3-animate-top">
+                Embracing our Cultures, 
+                <br>Preserving our Heritage.
             </p>
-            <p class="carousel-mini-text">
+            <p class="carousel-mini-text w3-animate-left">
                 Boutique tours to the heart of 
                 the motherland. <br> Connecting
                 through enim ad minim veniam, quis nostrud <br>
@@ -17,143 +18,146 @@
                 ex ea commodo consequat.
             </p>
             <br>
-            <%= link_to 'Book a tour with us', booking_form_path, class:"btn btn-lg btn-outline-light", remote:true%>
+            <%= link_to 'Book a tour with us', booking_form_path, class:"btn btn-lg btn-outline-light cta-btn", remote:true%>
 
         </div>
       </div>
-      <div class="col">
+      <div class="col-7">
         <%= render 'carousel' %>
       </div>
     </div>
-</header>
-<div class="destinations-section my-container">
-  <div class="d-flex bd-highlight">
-    <p class="section-headings "> Featured Destinations</p>
-    <%= link_to 'View all', tours_path, class:"ms-auto btn btn-lg btn-light"%>
+  </header>
+  <div class="destinations-section my-container " id="destinations" style="padding: 100px 0 100px 0">
+    <div class="d-flex bd-highlight">
+      <p class="section-headings "> Featured Destinations</p>
+      <%= link_to 'View all', tours_path, class:"ms-auto btn btn-lg btn-light"%>
+    </div>
+    <br>
+    <div class="destination-cards d-flex align-content-start flex-wrap" >
+      <%= render 'featured_trips' %> 
+    </div>
   </div>
-  <br>
-  <div class="destination-cards d-flex align-content-start flex-wrap">
-    <%= render 'featured_trips' %>
-    
   </div>
-</div>
-</div>
-<div class="testimonials-section " style="padding: 50px 0 50px 0; background-color: #fcbb47">
-  <div class="my-container">
-      <div class="d-flex bd-highlight">
-        <p class="section-headings "> Testimonials</p>
-      </div>
-      <div>
-        <div class="top-comment d-flex bd-highlight" style=" padding: 20px">
-          <div class="comment-sect">
-            <div class="ratings">
+  <div class="testimonials-section " id="testimonials" style="padding: 100px 0 100px 0; background-color: #fcbb47">
+    <div class="my-container">
+        <div class="d-flex bd-highlight">
+          <p class="section-headings "> Testimonials</p>
+        </div>
+        <div>
+          <div class="top-comment d-flex bd-highlight" style=" padding: 20px">
+            <div class="comment-sect">
+              <div class="ratings">
 
+              </div>
+              <div class="comment">
+                <p class="testimonial-text w3-animate-left">
+                  “Lorem ipsum dolor sit amet, consectetur 
+                  adipiscing elit, sed do eiusmod tempor <br>
+                  incididunt ut labore et dolore magna aliqua. 
+                  Ut enim ad minim veniam, quis nostrud <br>
+                  exercitation ullamco laboris nisi ut aliquip 
+                  ex ea commodo consequat.”
+                </p>
+                <br>
+                <button class="btn btn-lg btn-outline-dark">Leave a testimonial</button>
+                  
+              </div>
             </div>
-            <div class="comment">
-              <p class="testimonial-text">
-                “Lorem ipsum dolor sit amet, consectetur 
-                adipiscing elit, sed do eiusmod tempor <br>
-                incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud <br>
-                exercitation ullamco laboris nisi ut aliquip 
-                ex ea commodo consequat.”
-              </p>
-              <br>
-              <button class="btn btn-lg btn-outline-dark">Leave a testimonial</button>
-                
-            </div>
-          </div>
-          <div class="commenter-image-div ms-auto">
-            <div class="commenter-image ">
-              <div class="card p-card">
-                <img src="<%= asset_pack_path 'media/images/image4.jpg' %>" height="600" width="100%" alt=" demo instructions"></img>
+            <div class="commenter-image-div ms-auto">
+              <div class="commenter-image ">
+                <div class="card p-card">
+                  <img src="<%= asset_pack_path 'media/images/image4.jpg' %>" height="600" width="100%" alt=" demo instructions"></img>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <br><br><br>
-        <div>
-          <div class="destination-cards d-flex align-content-start flex-wrap">
-            <%#= render 'testimonial_cards'%>
+          <br><br><br>
+          <div>
+            <div class="destination-cards d-flex align-content-start flex-wrap">
+              <%#= render 'testimonial_cards'%>
+            </div>
           </div>
         </div>
-      </div>
+    </div>
   </div>
-</div>
-<div class="about-section" style="padding: 50px 0 50px 0; background-color: #eeebe8">
-  <div class="my-container">
+  <div class="about-section" id="about" style="padding: 100px 0 50px 0; background-color: #eeebe8">
+    <div class="my-container">
+        <div class="d-flex bd-highlight">
+          <p class="section-headings "> SanBraFie Group Inc.</p>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class=" d-block mx-auto" style="padding:0 50px 0 0;">
+                <p class="testimonial-text w3-animate-left">
+                  Come and travel with Sanbrafie Group Inc. to Ghana for our Homegoing Tour in December 2021 
+                  for an exciting cultural heritage journey focused on historical and cultural immersion experiences, 
+                  service learning & community engagement, Afrochella and PinexGinja Festival celebrations, shopping excursions, 
+                  networking and business investment opportunities, and beach vacation in Ghana, West Africa. Learn of the rich 
+                  traditions and rituals of Ghana. Experience Ghanaian art, craftsmanship, music, literature, drumming & dancing,  
+                  fun at Aqua Safari, Water Falls, language lesson, Pan African dialogue, and more. And, not to be missed are the 
+                  dungeons and forts constructed to facilitate the gold trade and later used as the main auction market and garrison 
+                  for the slave trade, now a site for the Door of Return. Be a part of a cultural experience that can impact your 
+                  worldview. Ghana has named 2020 and next decade: "Beyond the Return".
+                </p>
+            </div>
+          </div>
+          <div class="col">
+            <img src="<%= asset_pack_path 'media/images/image2.jpg' %>" height="600px" width="100%" alt=" demo instructions"></img>
+          </div>
+        </div><br><br>
+    </div>
+  </div>
+  <div class="contact-section " id="contact" style="background-color: #050505; color: #fafafa; padding: 30px 0 50px 0;">
+    <div class="my-container">
       <div class="d-flex bd-highlight">
-        <p class="section-headings "> SanBraFie Group Inc.</p>
+        <p class="section-headings ">Contact Us</p>
       </div>
-      <div class="row">
-        <div class="col">
-          <div class=" d-block mx-auto" style="padding:0 50px 0 0;">
-              <p class="testimonial-text">
-                Come and travel with Sanbrafie Group Inc. to Ghana for our Homegoing Tour in December 2021 
-                for an exciting cultural heritage journey focused on historical and cultural immersion experiences, 
-                service learning & community engagement, Afrochella and PinexGinja Festival celebrations, shopping excursions, 
-                networking and business investment opportunities, and beach vacation in Ghana, West Africa. Learn of the rich 
-                traditions and rituals of Ghana. Experience Ghanaian art, craftsmanship, music, literature, drumming & dancing,  
-                fun at Aqua Safari, Water Falls, language lesson, Pan African dialogue, and more. And, not to be missed are the 
-                dungeons and forts constructed to facilitate the gold trade and later used as the main auction market and garrison 
-                for the slave trade, now a site for the Door of Return. Be a part of a cultural experience that can impact your 
-                worldview. Ghana has named 2020 and next decade: "Beyond the Return".
-              </p>
-          </div>
-        </div>
-        <div class="col">
-          <img src="<%= asset_pack_path 'media/images/image2.jpg' %>" height="600px" width="100%" alt=" demo instructions"></img>
-        </div>
-      </div><br><br>
-  </div>
-</div>
-<div class="contact-section " style="background-color: #050505; color: #fafafa; padding: 30px 0 50px 0;">
-  <div class="my-container">
-    <div class="d-flex bd-highlight">
-      <p class="section-headings ">Contact Us</p>
-    </div>
-    <br>
-    <div class="customer-msg-form col-4">
-      
-      <%= simple_form_for(@customer_msg) do |f| %>
-        <%= f.error_notification %>
-        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <br>
+      <div class="customer-msg-form col-4">
+        
+        <%= simple_form_for(@customer_msg) do |f| %>
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-        <div class="form-inputs">
-          <%= f.input :email, input_html:{class:"form-control-lg contact-section-input"}  %>
-          <div class="row">
-            <div class="col">
-              <%= f.input :othernames, input_html:{class:"form-control-lg contact-section-input"}, label:"Firstname"  %>
+          <div class="form-inputs">
+            <%= f.input :email, input_html:{class:"form-control-lg contact-section-input"}  %>
+            <div class="row">
+              <div class="col">
+                <%= f.input :othernames, input_html:{class:"form-control-lg contact-section-input"}, label:"Firstname"  %>
+              </div>
+              <div class="col">
+                <%= f.input :surname, input_html:{class:"form-control-lg contact-section-input"}, label:"Lastname"  %>
+              </div>
             </div>
-            <div class="col">
-              <%= f.input :surname, input_html:{class:"form-control-lg contact-section-input"}, label:"Lastname"  %>
-            </div>
+            <%= f.input :message ,as: :text, input_html:{class:"form-control-lg contact-section-input my-text-box"}  %>
           </div>
-          <%= f.input :message ,as: :text, input_html:{class:"form-control-lg contact-section-input my-text-box"}  %>
-        </div>
-        <br>
+          <br>
 
-        <div class="form-actions">
-          <%= f.button :submit,'Send', class:"btn btn-lg btn-outline-light" %>
-        </div>
-      <% end %>
+          <div class="form-actions">
+            <%= f.button :submit,'Send', class:"btn btn-lg btn-outline-light" %>
+          </div>
+        <% end %>
 
+      </div>
     </div>
   </div>
+  <div id="booking"></div>
+
 </div>
-<div id="booking"></div>
+
 
 <style>
-    .contact-section-input{
-        background-color:#202020  !important;
-        border:none !important;
-        border-radius: 0px !important;
-    }
-    .my-form-margin{
-        padding: 0 40px;
-    }
-    .my-text-box{
-      height:180px !important;
-    }
+  .header-text{
+    background-image:  url('../images/logo.png');
+    background-size: cover;
+    object-fit: cover;
+    /* opacity: 0.3; */
+  }
 </style>
-
+<script>
+  $('#destination-btn').click(function() {
+    $('html, body').animate({
+      scrollTop: $("div.destinations-section").offset().top
+    }, 600)
+  }), 
+</script>
