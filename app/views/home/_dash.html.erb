@@ -1,7 +1,7 @@
 <div class="page-topic d-flex justify-content-center">
     <div class="row container">
-        <div class="text-center">
-            <h3 style="font-weight: 300; font-family: poppins;">Hello <%= current_user.username.capitalize %>,</h3>
+        <div class="text-center ">
+            <h3 class="my-h3">Hello <%= current_user.username.capitalize %>,</h3>
         </div>
     </div>
 </div>
@@ -11,8 +11,12 @@
     <br><br>
         <div class="booking-table" style="margin: 0 auto; width:94%;">       
             <div class="wrapper ">
-                <div class="page-header">
-                    <h3>Your Booking History</h3>
+                <div class="page-header my-h3">
+                    <% if current_user.role_code == "admin"%>
+                        <h3>All Customer Booking History</h3>
+                    <% else %>
+                        <h3>Your Booking History</h3>
+                    <% end %>
                 </div>
                 <br>
 
@@ -117,3 +121,9 @@
     </div>
 </div>
 
+<style>
+    .my-h3{
+        font-weight: 300; 
+        font-family: poppins;
+    }
+</style>
