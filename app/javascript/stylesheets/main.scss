@@ -32,11 +32,12 @@
 // ================= Homepage ========================== 
 .section-headings{
   text-align: left !important;
-  font-family: 'Merriweather Sans', sans-serif;
-  font-size:30px;
+  font-family: 'poppins'!important;
+  font-weight: 400 !important;
+  font-size:36px;
   line-height: 36px;
   margin-top: 30px;
-  font-weight: 700;
+  // font-weight: 700;
 }
 
 .big-text{
@@ -88,7 +89,7 @@ header{
 .testimonial-text{
   text-align: left !important;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size:20px;
+  font-size:18px;
   font-weight: 400;
   line-height: 30px;
   color: #241f21;
@@ -139,7 +140,8 @@ header{
 .carousel-bold-text{
   color: #fafafa !important;
   font-size:48px;
-  font-weight: 700;
+  font-family: 'poppins'!important;
+  font-weight: 400 !important;
   line-height: 96%;
 }
 .bold-text{

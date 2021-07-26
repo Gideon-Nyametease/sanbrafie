@@ -38,46 +38,13 @@
     </div>
   </div>
   </div>
-  <div class="testimonials-section " id="testimonials" style="padding: 100px 0 100px 0; background-color: #fcbb47">
+  <%# #fcbb47 %>
+  <div class="testimonials-section " id="testimonials" style="padding: 100px 0 100px 0; background-color: #212529">
     <div class="my-container">
         <div class="d-flex bd-highlight">
-          <p class="section-headings "> Testimonials</p>
+          <p class="section-headings " style="color:white !important;"> Testimonials</p>
         </div>
-        <div>
-          <div class="top-comment d-flex bd-highlight" style=" padding: 20px">
-            <div class="comment-sect">
-              <div class="ratings">
-
-              </div>
-              <div class="comment">
-                <p class="testimonial-text w3-animate-left">
-                  “Lorem ipsum dolor sit amet, consectetur 
-                  adipiscing elit, sed do eiusmod tempor <br>
-                  incididunt ut labore et dolore magna aliqua. 
-                  Ut enim ad minim veniam, quis nostrud <br>
-                  exercitation ullamco laboris nisi ut aliquip 
-                  ex ea commodo consequat.”
-                </p>
-                <br>
-                <button class="btn btn-lg btn-outline-dark">Leave a testimonial</button>
-                  
-              </div>
-            </div>
-            <div class="commenter-image-div ms-auto">
-              <div class="commenter-image ">
-                <div class="card p-card">
-                  <img src="<%= asset_pack_path 'media/images/image4.jpg' %>" height="600" width="100%" alt=" demo instructions"></img>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br><br><br>
-          <div>
-            <div class="destination-cards d-flex align-content-start flex-wrap">
-              <%#= render 'testimonial_cards'%>
-            </div>
-          </div>
-        </div>
+        <%= render 'testimonial_cards'%>
     </div>
   </div>
   <div class="about-section" id="about" style="padding: 100px 0 50px 0; background-color: #eeebe8">
@@ -88,7 +55,7 @@
         <div class="row">
           <div class="col">
             <div class=" d-block mx-auto" style="padding:0 50px 0 0;">
-                <p class="testimonial-text w3-animate-left">
+                <p class="testimonial-text w3-animate-left" style="font-size:18px !important;">
                   Come and travel with Sanbrafie Group Inc. to Ghana for our Homegoing Tour in December 2021 
                   for an exciting cultural heritage journey focused on historical and cultural immersion experiences, 
                   service learning & community engagement, Afrochella and PinexGinja Festival celebrations, shopping excursions, 
@@ -102,7 +69,9 @@
             </div>
           </div>
           <div class="col">
-            <img src="<%= asset_pack_path 'media/images/image2.jpg' %>" height="600px" width="100%" alt=" demo instructions"></img>
+            <div class=" w3-animate-right">
+              <img src="<%= asset_pack_path 'media/images/image2.jpg' %>" height="600px" width="100%" alt=" demo instructions"></img>
+            </div>
           </div>
         </div><br><br>
     </div>
