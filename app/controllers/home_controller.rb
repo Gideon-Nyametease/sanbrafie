@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-    before_action :authenticate_user!, :except => [:landing_page,:booking_form, :create_booking]
+    before_action :authenticate_user!, :except => [:landing_page,:booking_form, :create_booking, :checkout_page]
     def landing_page
       if user_signed_in?
         if current_user.role_code == "client"
@@ -17,6 +17,11 @@ class HomeController < ApplicationController
       end
       @coordination_preference = [["Air and Ground","AG"],["Ground only","G"]]
       @hotel_type = [["5 Star","5 Star"],["4 Star","4 Star"],["3 Star","3 Star"]]
+    end
+
+    def checkout_page
+      @tours = Tour.where('id = ?',params[:tour_id])
+      logger.info "The booking form \n #{params[:tour_id].inspect}"
     end
 
     def booking_details
@@ -48,7 +53,7 @@ class HomeController < ApplicationController
             logger.info "Booking Info from form = #{@booking_form_data.inspect}"
             @booking_form_data.save(validate: false)
             BookingInfoMailer.with(booking_info: @booking_form_data).new_booking_info_email.deliver_later
-            format.html { redirect_to root_path, notice: "Booking info was successfully created." }
+            format.html { redirect_to checkout_page_path(tour_id: @booking_form_data.tour_id, booking_id:  @booking_form_data.id), notice: "Booking info was successfully created." }
             format.json { render :landing_page, status: :created, location: root_path }
           else
             logger.info "THE BOOKING ERROR = #{@booking_form_data.errors.message}"

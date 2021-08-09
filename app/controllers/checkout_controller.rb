@@ -1,0 +1,23 @@
+class CheckoutController < ApplicationController
+    before_action :authenticate_user!, :except => [:create]
+    def create
+        tour = Tour.find(params[:id])
+        @session = Stripe::Checkout::Session.create({
+        payment_method_types: ['card'],
+        line_items: [{
+            name: tour.title,
+            amount: tour.price.to_i,
+            currency: tour.currency,
+            quantity: 1
+        }],
+        mode: 'payment',
+        success_url: root_url,
+        cancel_url: checkout_page_path(tour_id: tour.id),
+        })
+
+        respond_to do |format|
+            format.js
+        end
+
+    end
+end

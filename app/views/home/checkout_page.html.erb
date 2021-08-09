@@ -1,0 +1,38 @@
+ <div class="d-flex justify-content-center">
+    <div class="col-5 " style="background-color:#dfe6e9; padding: 20px 0 20px 10px;">
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered">          
+                <tbody>
+                    <% @tours.each_with_index do |tour, index| %>
+                        <tr>
+                            <td>
+                                <div class="">
+                                    <%# <a href="/tours" > %>
+                                        <% if tour.image.attached? %>
+                                        
+                                            <img src="<%= url_for(tour.image) %>" alt=" demo instructions" class="tl2">
+                                        <% else %>
+                                            <p class="text-center">Image not available</p>
+                                        <% end %>
+                                    <%# </a> %>
+                                </div>
+                            </td>
+                            <td class="align-top">
+                                <b><%= tour.tour_id %></b><br>
+                                <span class="text-4"><%= tour.title %></span><br>
+                                <span style="font-size: 24px; font-weight: 400;">GHS <%= tour.price %></span><br>
+                                <%= link_to "Details",booking_details_path(id: tour.id),remote: true %>
+                                <br><br><br><br>
+                                <%= link_to "Make Payment",checkout_create_path(id: tour.id), method: :post, class:"btn btn-lg btn-primary",remote: true %>
+                            </td>
+                        </tr>
+                        
+                    <% end %>
+                </tbody>
+            </table>
+            <%= link_to 'Back', root_path,class:"btn btn-lg btn-outline-dark"%>
+
+        </div>
+    </div>
+<div>
+ 

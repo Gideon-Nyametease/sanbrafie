@@ -1,27 +1,36 @@
+<div class="row d-flex justify-content-center"> 
+  <div class="col-5 " style="background-color:#dfe6e9; padding: 50px; ">
+    <div class="log-form-margin">
+      <%= simple_form_for(@tour) do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-<%= simple_form_for(@tour) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.input :tour_id %>
-    <%= f.input :title %>
-    <%= f.input :description %>
-     <div class="row">
-        <div class="col-md-6">
-          <%= f.input :start_date, :id => "datepicker",  as: :date, html5: true, class:"input-group date", boolean_style: :inline, 
-          input_html: {style: "width: 100%", data: {behaviour: 'datepicker', provide: 'datepicker'}, autocomplete: "off"}, label:"Start Date" %>
+        <div class="form-inputs">
+          <%= f.input :tour_id %>
+          <%= f.input :title %>
+          <%= f.input :description %>
+          <%= f.input :price %>
+          <div class="row">
+              <div class="col-md-6">
+                <%= f.input :start_date, :id => "datepicker",  as: :date, html5: true, class:"input-group date", boolean_style: :inline, 
+                input_html: {style: "width: 100%", data: {behaviour: 'datepicker', provide: 'datepicker'}, autocomplete: "off"}, label:"Start Date" %>
+              </div>
+              <div class="col-md-6">
+                <%= f.input :end_date, :id => "datepicker",  as: :date, html5: true, class:"input-group date", boolean_style: :inline, 
+                input_html: {style: "width: 100%", data: {behaviour: 'datepicker', provide: 'datepicker'}, autocomplete: "off"}, label:"Expiry Date" %>
+              </div>
+            </div>
+            <br>
+          <%= f.file_field :image %>
+          
         </div>
-        <div class="col-md-6">
-          <%= f.input :end_date, :id => "datepicker",  as: :date, html5: true, class:"input-group date", boolean_style: :inline, 
-          input_html: {style: "width: 100%", data: {behaviour: 'datepicker', provide: 'datepicker'}, autocomplete: "off"}, label:"Expiry Date" %>
+        <br><br>
+        <div class="form-actions">
+          <%= link_to 'Back', root_path,class:"btn btn-lg btn-outline-dark"%>
+          <%= f.button :submit ,class:"btn btn-lg btn-dark" %>
+          
         </div>
-      </div>
-    <%= f.file_field :image %>
-    
+      <% end %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+</div>
