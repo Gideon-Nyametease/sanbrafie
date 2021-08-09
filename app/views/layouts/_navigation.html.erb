@@ -1,8 +1,9 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-darkk col-12" id="navbar-example">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
-      <img src="<%= asset_pack_path 'media/images/logo-text.png' %>" height="40px" width="100" alt=" demo instructions">
+      <img src="<%= asset_pack_path 'media/images/logo.png' %>" height="60px" width="100" alt=" demo instructions">
     </a>
+    <p style="font-family: 'Poppins'; font-size: 20px; font-weight: 600 ; color: #fdfdfd;">Sanbrafie Group Inc</p>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,16 +11,16 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <% if !user_signed_in? %>
           <li class="nav-item" id="destination-btn">
-            <a class="nav-link active my-routes" aria-current="page" href="#destinations" >Destinations</a>
+            <a class="nav-link  my-routes" aria-current="page" href="#destinations" >Destinations</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active my-routes" href="#testimonials">Testimonials</a>
+            <a class="nav-link my-routes" href="#testimonials">Testimonials</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active my-routes" href="#about">About Us</a>
+            <a class="nav-link  my-routes" href="#about">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active my-routes" href="#contact">Contact Us</a>
+            <a class="nav-link  my-routes" href="#contact">Contact Us</a>
           </li>
         <% else %>
           <%# <li class="nav-item">

@@ -6,6 +6,7 @@
     </div>
 </div>
 <div class="book booking-edit"></div>
+<div id="booking-details"></div>
 <div class="row" >
     <div class="col-8">
     <br><br>
@@ -82,6 +83,7 @@
                                 <div class="">
                                     <%# <a href="/tours" > %>
                                         <% if tour.image.attached? %>
+                                        
                                             <img src="<%= url_for(tour.image) %>" alt=" demo instructions" class="tl2">
                                         <% else %>
                                             <p class="text-center">Image not available</p>
@@ -98,6 +100,9 @@
                                 <span class="text-1 font-weight-300 text-uppercase"><%= date.to_date.strftime("%b") if !date.nil?%>,
                                     <%=  date.to_date.strftime("%Y") if !date.nil? %>
                                 </span>
+                                <%= link_to "Details",booking_details_path(id: tour.id),remote: true %>
+
+
                                 <br>
                                 <% date = tour.end_date %>
                                 <span class="text-3 font-weight-300"><%=  date.to_date.strftime("%d") if !date.nil?%></span>

@@ -19,6 +19,9 @@ class HomeController < ApplicationController
       @hotel_type = [["5 Star","5 Star"],["4 Star","4 Star"],["3 Star","3 Star"]]
     end
 
+    def booking_details
+      @tours = Tour.all
+    end
 
     def booking_form
         @tours = Tour.all

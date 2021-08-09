@@ -34,6 +34,9 @@ gem "mini_magick"
 gem "friendly_id"
 gem "authorizenet"
 
+# stripe
+gem "stripe"
+
 
 
 # Use Active Storage variant
