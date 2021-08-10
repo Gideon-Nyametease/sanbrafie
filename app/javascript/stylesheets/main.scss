@@ -1,3 +1,7 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 // ========  Navigation
 .navbar{
   min-height: 66px;
@@ -41,7 +45,7 @@
 }
 
 .big-text{
-  padding: 80px;
+  padding: 40px;
   top: 50%;
   z-index: 5;
 }
@@ -108,16 +112,16 @@ header{
   z-index: 2 !important;
 }
 .carousel-section{
-  height:713px;
+  height:600px;
   background:#090909 !important;
-  margin:-12px;
+  // margin:-12px;
   /* opacity:0.6; */
 }
 
 .carousel-section img {
   object-fit: cover;
   opacity: 1.9;
-  margin-top: 12px;
+  // margin-top: 12px;
 }
 
 .carousel-caption{
@@ -126,17 +130,18 @@ header{
   position: absolute;
   top: 70% !important;
   z-index: 100000000;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  // -ms-transform: translateY(-50%);
+  // transform: translateY(-50%);
 }
 .carousel-mini-text{
   color: #fafafa !important;
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Open sans' !important;
   font-size: 17px !important;
   line-height:21px!important;
-  font-weight: 400 !important;
+  font-weight: 200 !important;
   opacity:0.8;
 }
+
 .carousel-bold-text{
   color: #fafafa !important;
   font-size:48px;
@@ -147,9 +152,9 @@ header{
 .bold-text{
   font-family: 'Libre Baskerville', serif;
   color: #fafafa !important;
-  font-size: 47px !important;
-  line-height:52px!important;
-  font-weight: 700;
+  font-size: 48px !important;
+  line-height:50px!important;
+  font-weight: 400;
 }
 .cta-btn{
   color: white;
@@ -176,6 +181,10 @@ header{
   background: rgb(2,0,36);
   background: linear-gradient(4deg, rgba(2,0,36,0.7053493542617626) 0%, rgba(9,8,11,0.7278212643741222) 0%, 
                             rgba(9,9,9,0.6098437362842346) 23%, rgba(0,212,255,0.008720140778616603) 100%);  
+}
+
+.header-text{
+  padding: 50px 0 70px 45px;
 }
 // ============================
 .contact-section-input{
