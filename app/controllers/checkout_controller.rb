@@ -11,13 +11,12 @@ class CheckoutController < ApplicationController
             quantity: 1
         }],
         mode: 'payment',
-        success_url: root_url,
-        cancel_url: checkout_page_path(tour_id: tour.id),
+        success_url: 'http://localhost:3000/',
+        cancel_url: "http://localhost:3000/checkout_page?tour_id=#{tour.id}"
         })
 
         respond_to do |format|
             format.js
         end
-
     end
 end

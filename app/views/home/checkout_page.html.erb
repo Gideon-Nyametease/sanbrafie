@@ -23,14 +23,15 @@
                                 <span style="font-size: 24px; font-weight: 400;">GHS <%= tour.price %></span><br>
                                 <%= link_to "Details",booking_details_path(id: tour.id),remote: true %>
                                 <br><br><br><br>
-                                <%= link_to "Make Payment",checkout_create_path(id: tour.id), method: :post, class:"btn btn-lg btn-primary",remote: true %>
+                                <%= link_to 'Go back', root_path,class:"btn btn-lg btn-dark"%>
+                                <%= link_to "Make Payment",checkout_create_path(id: tour.id), method: :post, class:"btn btn-lg btn-primary",id:"checkout-button" ,remote: true %>
                             </td>
                         </tr>
                         
                     <% end %>
                 </tbody>
             </table>
-            <%= link_to 'Go back', root_path,class:"btn btn-lg btn-dark"%>
+           
 
         </div>
     </div>

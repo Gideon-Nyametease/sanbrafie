@@ -4,11 +4,13 @@
     <div class="col-12 row">
      <%# style="border: red 2px solid" %>
       <div class="col-5 col-xs-12 header-text">
-       <br><br>
+       
         <div class="big-text d-block mx-auto" >
             <%# <p style="color: #efefef; font-size:54px; font-weight: 800;">Travel with us</p> %>
-        
-            <p class="bold-text w3-animate-top">
+            <p class="bold-text w3-animate-top" style="font-family: 'Montserrat' !important; color: #111111 !important;">
+               Travel with us
+            </p>
+            <p class="bold-text w3-animate-top" style="font-family: 'Montserrat' !important; color: #f6f8f9 !important;">
                Embracing our Cultures, 
                 <br>Preserving our Heritage.
             </p>
@@ -26,14 +28,16 @@
       </div>
     </div>
   </div>
-  <div class="destinations-section my-container " id="destinations" style="padding: 100px 0 100px 0">
-    <div class="d-flex justify-content-center">
-      <p class="section-headings "> Featured Destinations</p>
-      <%#=link_to 'View all', tours_path, class:"ms-auto btn btn-lg btn-light"%>
-    </div>
-    <br>
-    <div class="destination-cards d-flex align-content-start flex-wrap" >
-      <%= render 'featured_trips' %> 
+  <div class="destinations-section" id="destinations" style="padding: 100px 0; background-color: #090909  !important; color: #f6f8f9 !important;">
+    <div class=" my-container ">
+      <div class="d-flex justify-content-center">
+        <p class="section-headings "> Featured Destinations</p>
+        <%#=link_to 'View all', tours_path, class:"ms-auto btn btn-lg btn-light"%>
+      </div>
+      <br>
+      <div class="destination-cards d-flex align-content-start flex-wrap" >
+        <%= render 'featured_trips' %> 
+      </div>
     </div>
   </div>
   </div>

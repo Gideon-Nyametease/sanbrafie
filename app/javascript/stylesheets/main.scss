@@ -46,7 +46,7 @@ html, body {
 
 .big-text{
   padding: 40px;
-  top: 50%;
+  // top: 50%;
   z-index: 5;
 }
 
@@ -143,10 +143,10 @@ header{
 }
 
 .carousel-bold-text{
-  color: #fafafa !important;
+  color: #fafafa ;
   font-size:48px;
-  font-family: 'poppins'!important;
-  font-weight: 400 !important;
+  font-family: 'poppins';
+  font-weight: 400 ;
   line-height: 96%;
 }
 .bold-text{

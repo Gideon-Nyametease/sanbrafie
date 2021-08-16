@@ -1,7 +1,8 @@
 var stripe = Stripe("<%=Rails.application.credentials.stripe[:public_key]%>");
-<%# var checkoutButton = document.getElementById('checkout-button'); %>
+var checkoutButton = document.getElementById('checkout-button');
 
 checkoutButton.addEventListener('click', function() {
+ 
   stripe.redirectToCheckout({
     sessionId: '<%= @session.id %>'
   }).then(function (result) {
