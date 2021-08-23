@@ -1,0 +1,59 @@
+ <div id="tos-close" class="w3-modal w3-animate-opacity" style="display: block">
+    <div class="w3-modal-content w3-card-4 " style="width: 540px; padding-bottom: 60px" >
+      <div class="d-flex justify-content-end" style="margin: 20px;">
+        <span onclick="document.getElementById('tos-close').style.display='none'"
+            class="btn btn-lg btn-dark">&times;</span>
+      </div>
+      <br>
+      <div class="w3-container">
+        <%= simple_form_for :booking_form, url: create_booking_path, :method =>'post' ,html: { class: 'form-horizontal' } do |f| %>
+            <form>
+                <div class="form-inputs my-form-margin">
+                    <div class="col-sm-12">
+                        <div>
+                            <h3> Payment Information, Late and Cancellation Policy:</h3>
+                            <p> 
+                                
+
+                                <b> * All payments are non-refundable.</b>
+
+                                <br>
+                                <hr>
+
+                                - Trip cancellations in writing more than 120 days before departure date can be refunded minus deposit and airline deposit fees <br>
+
+                                - Trip cancellations in writing at least 120 days before departure date can be credited towards another journey within 9-12 months minus a fee equal to 25% of total trip cost.<br>
+
+                                - Trip cancellations in writing within 90 days before departure date can be credited towards another journey within 9-12 months minus a fee equal to 50% of total trip cost.<br>
+
+                                - Trip cancellations in writing within 60 days are 100% non refundable.<br>
+
+                                - We suggest purchasing trip insurance.<br>
+
+                                <span style="color: red;">PRICING IS BASED ON GROUP OF 12 PERSONS</span><br>
+                            </p>
+                        </div>
+                        <br>
+                        <div class="d-grid gap-2">
+                            <span onclick="document.getElementById('tos-close').style.display='none'"
+                                 class="btn btn-lg btn-dark">Close</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        <% end %>
+      </div>
+    </div>
+</div>
+
+<style>
+    .sanbrafie-input{
+        background-color:#f2f2f2  !important;
+        border:none !important;
+        border-radius: 0px !important;
+    }
+    .my-form-margin{
+        padding: 0 40px;
+    }
+</style>
+

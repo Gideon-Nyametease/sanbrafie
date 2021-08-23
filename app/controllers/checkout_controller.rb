@@ -2,11 +2,12 @@ class CheckoutController < ApplicationController
     before_action :authenticate_user!, :except => [:create]
     def create
         tour = Tour.find(params[:id])
+        logger.info"\n Tour price = #{tour.price}\n"
         @session = Stripe::Checkout::Session.create({
         payment_method_types: ['card'],
         line_items: [{
             name: tour.title,
-            amount: tour.price.to_i,
+            amount: tour.price,
             currency: tour.currency,
             quantity: 1
         }],

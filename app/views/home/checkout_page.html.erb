@@ -20,7 +20,7 @@
                             <td class="align-top">
                                 <b><%= tour.tour_id %></b><br>
                                 <span class="text-4"><%= tour.title %></span><br>
-                                <span style="font-size: 24px; font-weight: 400;">GHS <%= tour.price %></span><br>
+                                <span style="font-size: 24px; font-weight: 400;"><%= number_to_currency(tour.price) %></span><br>
                                 <%= link_to "Details",booking_details_path(id: tour.id),remote: true %>
                                 <br><br><br><br>
                                 <%= link_to 'Go back', root_path,class:"btn btn-lg btn-dark"%>

@@ -1,47 +1,39 @@
- <div id="air-mod" class="w3-modal w3-animate-opacity" style="display: block">
+ <div id="custom-mod" class="w3-modal w3-animate-opacity" style="display: block">
     <div class="w3-modal-content w3-card-4 " style="width: 540px; padding-bottom: 60px" >
       <div class="d-flex justify-content-end" style="margin: 20px;">
-        <span onclick="document.getElementById('air-mod').style.display='none'"
+        <span onclick="document.getElementById('custom-mod').style.display='none'"
             class="btn btn-lg btn-dark">&times;</span>
       </div>
       <br>
       <div class="w3-container">
-        <%= simple_form_for :booking_form, url: create_booking_path, :method =>'post' ,html: { class: 'form-horizontal' } do |f| %>
+        <%#= simple_form_for(@custom_trip) do |f| %>
+        <%= simple_form_for :booking_form, url: create_custom_trip_path, :method =>'post' ,html: { class: 'form-horizontal' } do |f| %>
             <form>
                 <div class="form-inputs my-form-margin">
                     <div class="col-sm-12">
-                        <div class="d-grid gap-2">
-                            <!--<span onclick="document.getElementById('air-mod').style.display='none'">-->
-                                <%= link_to "Customize your trip", custom_trip_form_path, class:"btn btn-lg btn-danger", remote: true %>
-                            <!--</span>-->
-                        </div>
-                        <br>
-                        <div class="text-center">
-                            <p>-- OR --</p>
-                        </div>
-                        <br>
+                     
                         <div  class="mb-3">
-                            <%= f.input :tour_id, collection: @tours, label_method: :title, value_method: :id, input_html:{class:"form-control-lg form-select sanbrafie-input"}, label:"Select a trip" %>   
+                            <%= f.input :destination, input_html:{class:"form-control-lg sanbrafie-input"}, label:"Where would you like to go?" %>   
                         </div>
                         <div class="row mb-3">
                             <div class="col">
-                                <%= f.input :surname, input_html:{class:"form-control-lg sanbrafie-input", required: true}, label:"Lastname" %>
+                                <%= f.input :surname, input_html:{class:"form-control-lg sanbrafie-input"}, label:"Lastname" %>
                             </div>
                             <div class="col">
-                                <%= f.input :othernames, input_html:{class:"form-control-lg sanbrafie-input required", required: true}, label:"Firstname" %>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <%= f.input :phone_number, input_html:{class:"form-control-lg sanbrafie-input", required: true} %>
-                            </div>
-                            <div class="col">
-                                <%= f.input :email, input_html:{class:"form-control-lg sanbrafie-input", required: true} %>
+                                <%= f.input :othernames, input_html:{class:"form-control-lg sanbrafie-input"}, label:"Firstname" %>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col">
-                                <%= f.input :coordination_preference, collection: @coordination_preference, label_method: :first, value_method: :last, input_html:{class:"form-control-lg form-select sanbrafie-input", required: true} %>
+                                <%= f.input :phone_number, input_html:{class:"form-control-lg sanbrafie-input"} %>
+                            </div>
+                            <div class="col">
+                                <%= f.input :email, input_html:{class:"form-control-lg sanbrafie-input"} %>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <%= f.input :coordination_preference, collection: @coordination_preference, label_method: :first, value_method: :last, input_html:{class:"form-control-lg form-select sanbrafie-input"} %>
                             </div>
                             <div class="col">
                                 <%= f.input :group_count, input_html:{class:"form-control-lg sanbrafie-input"} %>
@@ -52,7 +44,7 @@
                                 <%= f.input :hotel_type, collection: @hotel_type, label_method: :first, value_method: :last, input_html:{class:"form-control-lg form-select sanbrafie-input"} %>
                             </div>
                             <div class="col">
-                                <%= f.input :tour_duration, input_html:{class:"form-control-lg sanbrafie-input"} %>
+                                <%= f.input :trip_duration, input_html:{class:"form-control-lg sanbrafie-input"}, label:"How long do you want to stay?" %>
                             </div>
                         </div>
                         <div  class="mb-3">
@@ -60,7 +52,6 @@
                             <br>
                             <%= f.input :comment, as: :text, input_html:{class:"form-control-lg sanbrafie-input"}, placeholder:"Add a little detail to your purpose statement",label:false %>
                         </div>
-
                         <div  class="row mb-3">
                             <div class="col-1" style="margin-top: 1px !important; ">
                                 <%= f.input :tos_agreement, wrapper: :vertical_boolean, as: :boolean , label: false, required: true %>
@@ -69,10 +60,9 @@
                                 <p>I agree to the <%= link_to "Terms of service",tos_path,remote: true %></p>
                             </div>
                         </div>
-    
                         <br>
                         <div class="d-grid gap-2">
-                            <%= f.submit "Book a tour", class: "btn btn-lg btn-dark" %>
+                            <%= f.submit "Customize your trip", class: "btn btn-lg btn-dark" %>
                         </div>
                     </div>
                 </div>

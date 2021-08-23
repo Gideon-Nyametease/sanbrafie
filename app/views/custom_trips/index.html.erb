@@ -1,0 +1,77 @@
+<div class="my-content"> 
+    <div class="index-title">
+        <h2> custom_trips </h2>
+    </div>
+    <div class="shadow-box-no-border">
+        <hr/>
+        <div>
+            <button class="btn btn-outline-primary">Download CSV  <i class="fa fa-download"></i></button>
+            <button class="btn btn-outline-primary">Search  <i class="fa fa-search"></i></button>
+
+            <%= link_to new_custom_trip_path, class:"btn btn-outline-primary float-right" do %>
+                <span class="glyphicon glyphicon-plus"></span>
+                New custom_trip
+            <% end %>
+        </div>
+    
+
+        <div class="table-responsive">
+        <hr/>
+            <table class="table table-striped table-hover">
+                <thead class="bg-light">
+                <tr>
+                    <th>#</th>
+                                        <th>Destination</th>
+                                        <th>Surname</th>
+                                        <th>Othernames</th>
+                                        <th>Email</th>
+                                        <th>Phone number</th>
+                                        <th>Coordination preference</th>
+                                        <th>Group count</th>
+                                        <th>Hotel type</th>
+                                        <th>Trip duration</th>
+                                        <th>Purpose statement</th>
+                                        <th>Comment</th>
+                                        <th colspan="3"></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <% @custom_trips.each_with_index do |custom_trip, index| %>
+                    <tr>
+                        <td><%= index + 1 %></td>
+                                        <td><%= custom_trip.destination %></td>
+                                        <td><%= custom_trip.surname %></td>
+                                        <td><%= custom_trip.othernames %></td>
+                                        <td><%= custom_trip.email %></td>
+                                        <td><%= custom_trip.phone_number %></td>
+                                        <td><%= custom_trip.coordination_preference %></td>
+                                        <td><%= custom_trip.group_count %></td>
+                                        <td><%= custom_trip.hotel_type %></td>
+                                        <td><%= custom_trip.trip_duration %></td>
+                                        <td><%= custom_trip.purpose_statement %></td>
+                                        <td><%= custom_trip.comment %></td>
+                           
+                        <td>
+                            <%= link_to custom_trip, class:"btn btn-md btn-outline-primary",remote: true do %>
+                                Details
+                            <% end %>
+                        </td>                 
+                        <td>
+                            <%= link_to edit_custom_trip_path(custom_trip), class:"btn btn-md btn-secondary" do %>
+                                <i class="fa fa-edit"></i>
+                            <% end %>
+                        </td>
+                        <td>
+                            <%= link_to  custom_trip, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-md btn-danger" do %>
+                                <i class="fa fa-trash"></i>
+                            <% end %>
+                        </td>
+                    
+                    </tr>
+                <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

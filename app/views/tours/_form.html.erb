@@ -10,7 +10,7 @@
           <%= f.input :title %>
           <%= f.input :description %>
           <%= f.input :price %>
-          <%= f.input :currency %>
+          <%= f.input :currency, input_html:{value:"usd"}, as: :hidden %>
           <div class="row">
               <div class="col-md-6">
                 <%= f.input :start_date, :id => "datepicker",  as: :date, html5: true, class:"input-group date", boolean_style: :inline, 

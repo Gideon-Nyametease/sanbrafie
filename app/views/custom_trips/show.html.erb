@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @custom_trip.destination %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @custom_trip.surname %>
+</p>
+
+<p>
+  <strong>Othernames:</strong>
+  <%= @custom_trip.othernames %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @custom_trip.email %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @custom_trip.phone_number %>
+</p>
+
+<p>
+  <strong>Coordination preference:</strong>
+  <%= @custom_trip.coordination_preference %>
+</p>
+
+<p>
+  <strong>Group count:</strong>
+  <%= @custom_trip.group_count %>
+</p>
+
+<p>
+  <strong>Hotel type:</strong>
+  <%= @custom_trip.hotel_type %>
+</p>
+
+<p>
+  <strong>Trip duration:</strong>
+  <%= @custom_trip.trip_duration %>
+</p>
+
+<p>
+  <strong>Purpose statement:</strong>
+  <%= @custom_trip.purpose_statement %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @custom_trip.comment %>
+</p>
+
+<%= link_to 'Edit', edit_custom_trip_path(@custom_trip) %> |
+<%= link_to 'Back', custom_trips_path %>

@@ -1,5 +1,5 @@
 <div data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-  <div class="carousel-section" style="margin: 0 auto !important; height: 650px !important;">
+  <div class="carousel-section" style="margin: 0 auto !important; height: 700px !important;">
     <%#= render 'devise/sessions/carousel'%>
     <div class="col-12 row">
      <%# style="border: red 2px solid" %>
@@ -19,7 +19,7 @@
                 the motherland. <br> 
             </p>
             <br>
-            <%= link_to 'Travel with us', booking_form_path, class:"btn btn-lg btn-outline-light cta-btn", remote:true%>
+            <%= link_to 'Travel with us', booking_form_path, class:"btn btn-lg btn-light cta-btn", remote:true%>
 
         </div>
       </div>
@@ -28,7 +28,7 @@
       </div>
     </div>
   </div>
-  <div class="destinations-section" id="destinations" style="padding: 100px 0; background-color: #090909  !important; color: #f6f8f9 !important;">
+  <div class="destinations-section" id="destinations" style="padding: 100px 0;">
     <div class=" my-container ">
       <div class="d-flex justify-content-center">
         <p class="section-headings "> Featured Destinations</p>
@@ -79,13 +79,14 @@
         </div><br><br>
     </div>
   </div>
-  <div class="contact-section " id="contact" style="background-color: #050505; color: #fafafa; padding: 30px 0 50px 0;">
+  <div class="contact-section " id="contact" style="padding: 30px 0 50px 0;">
     <div class="my-container">
       <div class="row">
-        <div class="col-4">
+        <div class="col-6">
           <div class="d-flex bd-highlight">
-            <p class="section-headings ">Contact Us</p>
+            <p class="section-headings ">Get in touch</p>
           </div>
+          <%# <p>We would love to hear from you, kindly leave your details below.</p> %>
           <br>
           <div class="customer-msg-form">
             
@@ -94,16 +95,21 @@
               <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
               <div class="form-inputs">
-                <%= f.input :email, input_html:{class:"form-control-lg contact-section-input"}  %>
-                <div class="row">
+                <div  class="mb-3">
+                  <%= f.input :email, input_html:{class:"form-control-lg sanbrafie-input"}  %>
+                </div>
+                <div class="mb-3 row">
                   <div class="col">
-                    <%= f.input :othernames, input_html:{class:"form-control-lg contact-section-input"}, label:"Firstname"  %>
+                    <%= f.input :othernames, input_html:{class:"form-control-lg sanbrafie-input"}, label:"Firstname"  %>
                   </div>
                   <div class="col">
-                    <%= f.input :surname, input_html:{class:"form-control-lg contact-section-input"}, label:"Lastname"  %>
+                    <%= f.input :surname, input_html:{class:"form-control-lg sanbrafie-input"}, label:"Lastname"  %>
+                  <!--contact-section-input-->
                   </div>
                 </div>
-                <%= f.input :message ,as: :text, input_html:{class:"form-control-lg contact-section-input my-text-box"}  %>
+                <div  class="mb-3">
+                  <%= f.input :message ,as: :text, input_html:{class:"form-control-lg sanbrafie-input my-text-box"}  %>
+                </div>
               </div>
               <br>
 
@@ -114,14 +120,16 @@
 
           </div>
         </div>
-        <div class="col-2"></div>
-        <div class="col-6">
-          <img src="<%= asset_pack_path 'media/images/logo.png' %>" width="100%" height="400px" alt=" demo instructions">
-        </div>
+        <!--<div class="col-2"></div>-->
+        <!--<div class="col-6">
+          <img src="<%#= asset_pack_path 'media/images/logo.png' %>" width="100%" height="400px" alt=" demo instructions">
+        </div>-->
       </div>
     </div>
   </div>
   <div id="booking"></div>
+  <div id="custom-trip"></div>
+  <div id="tos-form"></div>
 
 </div>
 

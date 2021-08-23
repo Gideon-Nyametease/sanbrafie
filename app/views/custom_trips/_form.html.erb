@@ -1,0 +1,23 @@
+
+<%= simple_form_for(@custom_trip) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :destination %>
+    <%= f.input :surname %>
+    <%= f.input :othernames %>
+    <%= f.input :email %>
+    <%= f.input :phone_number %>
+    <%= f.input :coordination_preference %>
+    <%= f.input :group_count %>
+    <%= f.input :hotel_type %>
+    <%= f.input :trip_duration %>
+    <%= f.input :purpose_statement %>
+    <%= f.input :comment %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

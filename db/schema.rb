@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_09_151756) do
+ActiveRecord::Schema.define(version: 2021_08_23_105719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,26 @@ ActiveRecord::Schema.define(version: 2021_08_09_151756) do
     t.string "status"
     t.integer "user_id"
     t.string "user_uid"
+    t.boolean "tos_agreement"
+  end
+
+  create_table "custom_trips", force: :cascade do |t|
+    t.string "destination"
+    t.string "surname"
+    t.string "othernames"
+    t.string "email"
+    t.string "phone_number"
+    t.string "coordination_preference"
+    t.integer "group_count"
+    t.string "hotel_type"
+    t.integer "trip_duration"
+    t.string "purpose_statement"
+    t.text "comment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "tos_agreement"
+    t.boolean "status"
+    t.integer "user_id"
   end
 
   create_table "customer_msgs", force: :cascade do |t|
@@ -80,8 +100,9 @@ ActiveRecord::Schema.define(version: 2021_08_09_151756) do
     t.datetime "end_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.decimal "price"
+    t.integer "price"
     t.string "currency"
+    t.integer "sales_count"
   end
 
   create_table "users", force: :cascade do |t|

@@ -341,3 +341,59 @@ $button-active-blue: #1669F2;
     background: $button-active-blue;
   }
 }
+
+// ================== Error page ======================================
+.err{
+  margin: 0 auto;
+  width: 90%;
+  padding: 200px 0;
+}
+
+.error-page-text-space{
+  padding: 10px;
+  border: 0.3px #ff6961 solid;
+  border-radius: 10px;
+  background-color: #ffd7c6;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.error-page-text{
+  font-size: 16px;
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-weight: 400;
+  margin-top: 10px;
+  /*line-height: 18px;*/
+}
+
+.error-404{
+  background-image:  url('../images/404.png');
+  background-size: cover;
+  background-color: #f6f8f9;
+  object-fit: cover;
+  height: 100vh;
+}
+.error-422{
+  background-image:  url('../images/astronaut.png');
+  background-size: cover;
+  background-color: #f6f8f9;
+  object-fit: cover;
+  height: 100vh;
+}
+
+.error-500{
+  background-image:  url('../images/internal_error.png');
+  background-size: cover;
+  background-color: #f6f8f9;
+  object-fit: cover;
+  height: 100vh;
+}
+
+.error-504{
+  background-image:  url('../images/astronaut.png');
+  background-size: cover;
+  background-color: #f6f8f9;
+  object-fit: cover;
+  height: 100vh;
+}
+//======================================================================
