@@ -106,6 +106,16 @@ header{
   border:2px solid orange;
   width: 60px;
 }
+// =========== checkout page =========
+
+
+.checkout-bg{
+  background-image:  url('../images/card.svg');
+  background-size: cover;
+  object-fit: contain;
+  height: 100vh;
+}
+
 
 //  ========== carousel ============
 .carousel{

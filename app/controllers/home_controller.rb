@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-    before_action :authenticate_user!, :except => [:landing_page,:booking_form, :create_booking, :checkout_page, :custom_trip_form, :create_custom_trip, :tos]
+    before_action :authenticate_user!, :except => [:landing_page,:booking_form, :booking_details, :create_booking, :checkout_page, :custom_trip_form, :create_custom_trip, :tos]
     def landing_page
       if user_signed_in?
         if current_user.role_code == "client"

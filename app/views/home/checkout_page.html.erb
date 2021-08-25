@@ -1,5 +1,10 @@
- <div class="d-flex justify-content-center">
+ <div class="row">
+ <div class="booking-details"></div>
     <div class="col-5 " style="background-color:#dfe6e9; padding: 20px 0 20px 10px;">
+     <div class="d-flex justify-content-end" style="margin: 20px;">
+        <span href="/" class="btn btn-lg btn-dark">&times;</span>
+      </div>
+    <%#= link_to '', root_path,class:"btn btn-lg btn-dark"%>
         <div class="table-responsive">
             <table class="table table-hover table-bordered">          
                 <tbody>
@@ -21,19 +26,36 @@
                                 <b><%= tour.tour_id %></b><br>
                                 <span class="text-4"><%= tour.title %></span><br>
                                 <span style="font-size: 24px; font-weight: 400;"><%= number_to_currency(tour.price) %></span><br>
-                                <%= link_to "Details",booking_details_path(id: tour.id),remote: true %>
-                                <br><br><br><br>
-                                <%= link_to 'Go back', root_path,class:"btn btn-lg btn-dark"%>
-                                <%= link_to "Make Payment",checkout_create_path(id: tour.id), method: :post, class:"btn btn-lg btn-primary",id:"checkout-button" ,remote: true %>
+                                <%= link_to "Details",booking_details_path(id: tour.id), class:"btn btn-sm btn-light",remote: true %>
+                                <br><br><br>
+                                
+                                <%= link_to "Make Payment",checkout_create_path(id: tour.id), method: :post, class:"btn btn-lg btn-success mm",id:"checkout-button" ,remote: true %>
                             </td>
                         </tr>
                         
                     <% end %>
                 </tbody>
             </table>
-           
-
+        </div>
+    </div>
+     <div class="col-7">
+        <div class="checkout-bg1" style="height:450px; width: 450px; margin:0 auto;">
+        
         </div>
     </div>
 <div>
  
+
+
+<style>
+    .checkout-bg1{
+        background-image:  url('../images/card.svg');
+        background-size: cover !important;
+        object-fit: fill !important;
+        height: 100vh !important;
+    }
+
+    .mm{
+        width:290px !important;
+    }
+</style>
