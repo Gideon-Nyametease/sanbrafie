@@ -24,7 +24,7 @@
                                 </p>
                                 <span class="text-3"><b>Do you want to postpone this trip?</b></span>
                                 <br><br>
-                                <%= f.input :status, collection: @status, label_method: :first, value_method: :last,hint:("Please select an option from this dropdown"), input_html:{class:"form-control-lg "},label:false %>
+                                <%= f.input :status, collection: @status, label_method: :first, value_method: :last,hint:("Please select an option from this dropdown"), input_html:{class:"form-control-lg form-select"},label:false %>
                                 
                                 <%# <button class="btn btn-lg btn-danger">Yes</button>
                                 <button class="btn btn-lg btn-dark">No</button> %>
