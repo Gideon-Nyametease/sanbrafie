@@ -100,6 +100,8 @@ header{
 }
 .destinations-section{
   padding: 100px 0 100px 0;
+  background:#090909 !important;
+  color: #f6f8f9 !important;
 }
 
 .btn-outline-orange{
@@ -122,10 +124,9 @@ header{
   z-index: 2 !important;
 }
 .carousel-section{
-  height:600px;
   background:#090909 !important;
-  // margin:-12px;
-  /* opacity:0.6; */
+  margin: 0 auto !important; 
+  height: 700px !important;
 }
 
 .carousel-section img {
@@ -221,20 +222,20 @@ height:180px !important;
 }
 
 .text-4{
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .text-3{
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .text-1{
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .tl2{

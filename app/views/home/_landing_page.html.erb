@@ -1,9 +1,9 @@
 <div data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-  <div class="carousel-section" style="margin: 0 auto !important; height: 700px !important;">
+  <div class="carousel-section" style="">
     <%#= render 'devise/sessions/carousel'%>
     <div class="col-12 row">
      <%# style="border: red 2px solid" %>
-      <div class="col-5 col-xs-12 header-text">
+      <div class="col-6 col-xs-12 header-text">
        
         <div class="big-text d-block mx-auto" >
             <%# <p style="color: #efefef; font-size:54px; font-weight: 800;">Travel with us</p> %>
@@ -23,12 +23,12 @@
 
         </div>
       </div>
-      <div class="col-7" style="margin-right: -20px;">
+      <div class="col-6" >
         <%= render 'carousel' %>
       </div>
     </div>
   </div>
-  <div class="destinations-section" id="destinations" style="padding: 100px 0;">
+  <div class="destinations-section" id="destinations" style="padding: 150px 0;">
     <div class=" my-container ">
       <div class="d-flex justify-content-center">
         <p class="section-headings "> Featured Destinations</p>
@@ -42,15 +42,15 @@
   </div>
   </div>
   <%# #fcbb47 %>
-  <div class="testimonials-section " id="testimonials" style="padding: 100px 0 100px 0; background-color: #212529">
+  <div class="testimonials-section " id="testimonials" style="padding: 100px 0 150px 0; background-color: #090909">
     <div class="my-container">
-        <div class="d-flex bd-highlight">
+        <div  class="d-flex justify-content-center">
           <p class="section-headings " style="color:white !important;"> Testimonials</p>
         </div>
         <%= render 'testimonial_cards'%>
     </div>
   </div>
-  <div class="about-section" id="about" style="padding: 100px 0 50px 0; background-color: #eeebe8">
+  <div class="about-section" id="about" style="padding: 100px 0 50px 0; background-color: #090909; color: #f6f8f9">
     <div class="my-container">
         <div class="d-flex bd-highlight">
           <p class="section-headings "> SanBraFie Group Inc.</p>
@@ -58,7 +58,7 @@
         <div class="row">
           <div class="col">
             <div class=" d-block mx-auto" style="padding:0 50px 0 0;">
-                <p class="testimonial-text w3-animate-left" style="font-size:18px !important;">
+                <p class="testimonial-text w3-animate-left" style="font-size:18px !important; color: #f6f8f9 !important">
                   Come and travel with Sanbrafie Group Inc. to Ghana for our Homegoing Tour in December 2021 
                   for an exciting cultural heritage journey focused on historical and cultural immersion experiences, 
                   service learning & community engagement, Afrochella and PinexGinja Festival celebrations, shopping excursions, 
@@ -73,7 +73,7 @@
           </div>
           <div class="col">
             <div class=" w3-animate-right">
-              <img src="<%= asset_pack_path 'media/images/image2.jpg' %>" height="600px" width="100%" alt=" demo instructions"></img>
+              <img src="<%= asset_pack_path 'media/images/image2.jpg' %>" height="550px" width="100%" alt=" demo instructions"></img>
             </div>
           </div>
         </div><br><br>
