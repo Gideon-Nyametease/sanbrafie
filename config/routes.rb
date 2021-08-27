@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :tours
   resources :booking_infos
   post 'checkout/create', to: 'checkout#create'
-  post 'webhooks/create', to: 'webhooks#create'
+  resources :webhooks, only: [:create]
+  # post 'webhooks/create', to: 'webhooks#create'
   # post 'create' => 'checkout#create', as: :checkout_create
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
