@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-    before_action :authenticate_user!, :except => [:landing_page,:booking_form, :booking_details, :create_booking, :checkout_page, :custom_trip_form, :create_custom_trip, :tos]
+    before_action :authenticate_user!, :except => [:landing_page,:booking_form, :booking_details, :create_booking, :checkout_page, :custom_trip_form, :create_custom_trip, :tos, :testimonial_form]
     def landing_page
       if user_signed_in?
         if current_user.role_code == "client"
@@ -26,6 +26,29 @@ class HomeController < ApplicationController
 
     def booking_details
       @tours = Tour.all
+    end
+
+    def testimonial_form
+      @tours = Tour.all
+    end
+
+    def create_testimonial
+      @user_testimonial = UserTestimonial.new(booking_form_params)
+
+      respond_to do |format|
+        if @user_testimonial.valid?
+          @user_testimonial =  UserTestimonial.new(fullname: booking_form_params[:fullname],
+                                              testimonial: booking_form_params[:testimonial],
+                                              tour_id: booking_form_params[:tour_title])
+                                              logger.info "Testimonial form = #{@user_testimonial.inspect}"
+          @user_testimonial.save(validate: false)
+          format.html { redirect_to root_path, notice: "Your testimonial was successfully submitted" }
+          format.json { render :show, status: :created, location: @user_testimonial }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @user_testimonial.errors, status: :unprocessable_entity }
+        end
+      end
     end
 
     def custom_trip_form

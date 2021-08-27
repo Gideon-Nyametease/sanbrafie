@@ -1,0 +1,61 @@
+<div class="my-content"> 
+    <div class="index-title">
+        <h2> user_testimonials </h2>
+    </div>
+    <div class="shadow-box-no-border">
+        <hr/>
+        <div>
+            <button class="btn btn-outline-primary">Download CSV  <i class="fa fa-download"></i></button>
+            <button class="btn btn-outline-primary">Search  <i class="fa fa-search"></i></button>
+
+            <%= link_to new_user_testimonial_path, class:"btn btn-outline-primary float-right" do %>
+                <span class="glyphicon glyphicon-plus"></span>
+                New user_testimonial
+            <% end %>
+        </div>
+    
+
+        <div class="table-responsive">
+        <hr/>
+            <table class="table table-striped table-hover">
+                <thead class="bg-light">
+                <tr>
+                    <th>#</th>
+                                        <th>Fullname</th>
+                                        <th>Trip</th>
+                                        <th>Testimonial</th>
+                                        <th colspan="3"></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <% @user_testimonials.each_with_index do |user_testimonial, index| %>
+                    <tr>
+                        <td><%= index + 1 %></td>
+                                        <td><%= user_testimonial.fullname %></td>
+                                        <td><%= user_testimonial.trip %></td>
+                                        <td><%= user_testimonial.testimonial %></td>
+                           
+                        <td>
+                            <%= link_to user_testimonial, class:"btn btn-md btn-outline-primary",remote: true do %>
+                                Details
+                            <% end %>
+                        </td>                 
+                        <td>
+                            <%= link_to edit_user_testimonial_path(user_testimonial), class:"btn btn-md btn-secondary" do %>
+                                <i class="fa fa-edit"></i>
+                            <% end %>
+                        </td>
+                        <td>
+                            <%= link_to  user_testimonial, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-md btn-danger" do %>
+                                <i class="fa fa-trash"></i>
+                            <% end %>
+                        </td>
+                    
+                    </tr>
+                <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

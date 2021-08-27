@@ -7,9 +7,9 @@
        
         <div class="big-text d-block mx-auto" >
             <%# <p style="color: #efefef; font-size:54px; font-weight: 800;">Travel with us</p> %>
-            <p class="bold-text w3-animate-top" style="font-family: 'Montserrat' !important; color: #111111 !important;">
+            <p class="bold-text w3-animate-top" style="font-family: 'Montserrat' !important; color: #111111 !important; font-size: 84px !important;">
                Travel with us
-            </p>
+            </p><br>
             <p class="bold-text w3-animate-top" style="font-family: 'Montserrat' !important; color: #f6f8f9 !important;">
                Embracing our Cultures, 
                 <br>Preserving our Heritage.
@@ -79,7 +79,7 @@
         </div><br><br>
     </div>
   </div>
-  <div class="contact-section " id="contact" style="padding: 30px 0 50px 0;">
+  <div class="contact-section " id="contact" style="padding: 100px 0 150px 0; background-color: #090909; color:#f6f8f9">
     <div class="my-container">
       <div class="row">
         <div class="col-6">
@@ -96,19 +96,19 @@
 
               <div class="form-inputs">
                 <div  class="mb-3">
-                  <%= f.input :email, input_html:{class:"form-control-lg sanbrafie-input"}  %>
+                  <%= f.input :email, input_html:{class:"form-control-lg contact-section-input"}  %>
                 </div>
                 <div class="mb-3 row">
                   <div class="col">
-                    <%= f.input :othernames, input_html:{class:"form-control-lg sanbrafie-input"}, label:"Firstname"  %>
+                    <%= f.input :othernames, input_html:{class:"form-control-lg contact-section-input"}, label:"Firstname"  %>
                   </div>
                   <div class="col">
-                    <%= f.input :surname, input_html:{class:"form-control-lg sanbrafie-input"}, label:"Lastname"  %>
+                    <%= f.input :surname, input_html:{class:"form-control-lg contact-section-input"}, label:"Lastname"  %>
                   <!--contact-section-input-->
                   </div>
                 </div>
                 <div  class="mb-3">
-                  <%= f.input :message ,as: :text, input_html:{class:"form-control-lg sanbrafie-input my-text-box"}  %>
+                  <%= f.input :message ,as: :text, input_html:{class:"form-control-lg contact-section-input my-text-box"}  %>
                 </div>
               </div>
               <br>
@@ -130,6 +130,7 @@
   <div id="booking"></div>
   <div id="custom-trip"></div>
   <div id="tos-form"></div>
+  <div id="contact"></div>
 
 </div>
 

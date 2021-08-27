@@ -56,7 +56,8 @@
 <br><br>
 <div class="row">
     <div class="col d-flex justify-content-end">
-        <button class="btn btn-lg btn-outline-light" style="font-size: 24px; font-weight: 400; border: 2px white solid"> Leave a comment </button>
+        <%# <button class="btn btn-lg btn-outline-light" style="font-size: 24px; font-weight: 400; border: 2px white solid"> Leave a comment </button> %>
+        <%= link_to 'Leave a comment', testimonial_form_path, class:"btn btn-lg btn-outline-light", style:"font-size: 24px; font-weight: 400; border: 2px white solid", remote: true%>
     </div>
 </div>
 

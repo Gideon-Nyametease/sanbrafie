@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_testimonials
   resources :custom_trips
   resources :customer_msgs
   resources :tours
@@ -32,4 +33,6 @@ Rails.application.routes.draw do
   get 'custom_trip_form' => 'home#custom_trip_form', as: :custom_trip_form
   post 'create_custom_trip' => 'home#create_custom_trip', as: :create_custom_trip
   get 'tos' => 'home#tos', as: :tos
+  get 'testimonial_form' => 'home#testimonial_form', as: :testimonial_form
+  post 'create_testimonial' => 'home#create_testimonial', as: :create_testimonial
 end

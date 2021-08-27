@@ -5,11 +5,12 @@
 <div class="my-content"> 
     <div class="shadow-box-no-border">
         <div class="manual-breadcrumb">
-            <% if params[:path] == 'root_path' %>
+        <a class="btn-md btn btn-light" href="/">Home</a>  |  <a class="btn-md btn btn-light" href="/tours">Tours</a> 
+        <!--    <%# if params[:path] == 'root_path' %>
                 <a class="btn-sm btn btn-link" href="/">Home</a>
-            <% else %>
-                <%= link_to "#{params[:page_name]}", params[:path], class:"btn-sm btn btn-link" %>
-            <% end %> / <a class="btn-sm btn btn-link" href="/tours">Tours</a>
+            <%# else %>
+                <%#= link_to "#{params[:page_name]}", params[:path], class:"btn-sm btn btn-link" %>
+            <%# end %> / <a class="btn-sm btn btn-link" href="/tours">Tours</a> -->
         </div>
         <hr/>
         <% if current_user.role_code == 'admin' %>
