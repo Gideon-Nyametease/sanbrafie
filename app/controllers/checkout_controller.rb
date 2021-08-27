@@ -7,7 +7,7 @@ class CheckoutController < ApplicationController
         payment_method_types: ['card'],
         line_items: [{
             name: tour.title,
-            amount: tour.price,
+            amount: tour.price*100,
             currency: tour.currency,
             quantity: 1
         }],
