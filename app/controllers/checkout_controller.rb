@@ -12,10 +12,10 @@ class CheckoutController < ApplicationController
             quantity: 1
         }],
         mode: 'payment',
-        success_url: 'http://localhost:3000/',
-        cancel_url: "http://localhost:3000/checkout_page?tour_id=#{tour.id}"
-        # success_url: 'https://sanbrafiegroup.org/',
-        # cancel_url: "https://sanbrafiegroup.org/checkout_page?tour_id=#{tour.id}"
+        # success_url: 'http://localhost:3000/',
+        # cancel_url: "http://localhost:3000/checkout_page?tour_id=#{tour.id}"
+        success_url: 'https://sanbrafiegroup.org/',
+        cancel_url: "https://sanbrafiegroup.org/checkout_page?tour_id=#{tour.id}"
         })
 
         respond_to do |format|
