@@ -64,6 +64,6 @@ class CustomerMsgsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def customer_msg_params
-      params.require(:customer_msg).permit(:email, :surname, :othernames, :message, :user_id, :status)
+      params.require(:customer_msg).permit(:email, :surname, :othernames, :full_name, :message, :user_id, :status)
     end
 end

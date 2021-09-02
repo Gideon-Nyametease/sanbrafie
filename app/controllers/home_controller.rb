@@ -164,6 +164,6 @@ class HomeController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def booking_form_params
-        params.require(:booking_form).permit(:tos_agreement ,:destination, :trip_duration, :comment, :tour_id, :surname, :othernames, :phone_number, :email, :coordination_preference, :group_count, :hotel_type, :tour_duration, :purpose_statement)
+        params.require(:booking_form).permit(:tos_agreement ,:destination, :trip_duration, :comment, :tour_id, :surname, :othernames, :full_name, :phone_number, :email, :coordination_preference, :group_count, :hotel_type, :tour_duration, :purpose_statement)
     end
 end

@@ -1,14 +1,14 @@
 <div class="row">
     <div class="col trip-card">
        
-            <% if !@tours[0].nil? %>
-            <% if @tours[0].image.attached? %>
+            <% if !@tours[4].nil? %>
+            <% if @tours[4].image.attached? %>
                 <a href="/tours">
-                    <img src="<%= url_for(@tours[0].image) %>" alt=" demo instructions" class="f-destination-img shadow">
+                    <img src="<%= url_for(@tours[4].image) %>" alt=" demo instructions" class="f-destination-img shadow">
                     
                 </a>
-                <hr>
-                    <span class="text-4"><%= @tours[0].title %></span><br>
+                <div style="padding: 10px; background-color: #ffffff; height: 110px;" class="shadow-sm">
+                    <span class="text-4"><%= @tours[4].title %></span><br>
                     <% start_date = @tours[0].start_date %>
                     <span class="text-3 font-weight-300"><%=  start_date.to_date.strftime("%d") if !start_date.nil?%></span>
                     <span class="text-1 font-weight-300 text-uppercase"><%= start_date.to_date.strftime("%b") if !start_date.nil?%>,
@@ -19,7 +19,7 @@
                     <span class="text-1 font-weight-300 text-uppercase"><%= end_date.to_date.strftime("%b") if !end_date.nil?%>,
                         <%=  end_date.to_date.strftime("%Y") if !end_date.nil? %>
                     </span>
-                <hr>
+                </div>
             <% else %>
                 <p class="text-center">Image not available</p>
             <% end %>
@@ -33,7 +33,7 @@
                 <a href="/tours">
                     <img src="<%= url_for(@tours[1].image) %>" alt=" demo instructions" class="f-destination-img shadow">
                 </a>
-                <hr>
+                <div style="padding: 10px; background-color: #ffffff; height: 110px;" class="shadow-sm">
                     <span class="text-4"><%= @tours[1].title %></span><br>
                     <% start_date = @tours[1].start_date %>
                     <span class="text-3 font-weight-300"><%=  start_date.to_date.strftime("%d") if !start_date.nil?%></span>
@@ -45,7 +45,7 @@
                     <span class="text-1 font-weight-300 text-uppercase"><%= end_date.to_date.strftime("%b") if !end_date.nil?%>,
                         <%=  end_date.to_date.strftime("%Y") if !end_date.nil? %>
                     </span>
-                <hr>
+                </div>
             <% else %>
                 <p class="text-center">Image not available</p>
             <% end %>
@@ -58,7 +58,7 @@
                 <a href="/tours">
                     <img src="<%= url_for(@tours[2].image) %>" alt=" demo instructions" class="f-destination-img shadow">
                 </a>
-                <hr>
+                <div style="padding: 10px; background-color: #ffffff; height: 110px;" class="shadow-sm">
                     <span class="text-4"><%= @tours[2].title %></span><br>
                     <% start_date = @tours[2].start_date %>
                     <span class="text-3 font-weight-300"><%=  start_date.to_date.strftime("%d") if !start_date.nil?%></span>
@@ -70,7 +70,7 @@
                     <span class="text-1 font-weight-300 text-uppercase"><%= end_date.to_date.strftime("%b") if !end_date.nil?%>,
                         <%=  end_date.to_date.strftime("%Y") if !end_date.nil? %>
                     </span>
-                <hr>
+                </div>
             <% else %>
                 <p class="text-center">Image not available</p>
             <% end %>
@@ -83,7 +83,7 @@
         <a href="/tours">
             <img src="<%= url_for(@tours[3].image) %>" alt=" demo instructions" class="f-destination-img shadow">
         </a>
-        <hr>
+        <div style="padding: 10px; background-color: #ffffff; height: 110px;" class="shadow-sm">
             <span class="text-4"><%= @tours[3].title %></span><br>
             <% start_date = @tours[3].start_date %>
             <span class="text-3 font-weight-300"><%=  start_date.to_date.strftime("%d") if !start_date.nil?%></span>
@@ -95,7 +95,7 @@
             <span class="text-1 font-weight-300 text-uppercase"><%= end_date.to_date.strftime("%b") if !end_date.nil?%>,
                 <%=  end_date.to_date.strftime("%Y") if !end_date.nil? %>
             </span>
-        <hr>
+        </div>
         <% else %>
             <p class="text-center">Image not available</p>
         <% end %>

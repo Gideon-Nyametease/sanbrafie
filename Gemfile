@@ -33,6 +33,8 @@ gem 'country_select'
 gem "mini_magick"
 gem "friendly_id"
 gem "authorizenet"
+gem "cloudinary"
+
 
 # stripe
 gem "stripe"
