@@ -1,4 +1,4 @@
-<div class="page-topic d-flex justify-content-center">
+<div class="page-topic d-flex justify-content-center shadow-sm">
     <div class="row container">
         <div class="text-center ">
             <h3 class="my-h3">Hello <%= current_user.username.capitalize %>,</h3>
@@ -16,14 +16,14 @@
                     <% if current_user.role_code == "admin"%>
                         <h3>All Customer Booking History</h3>
                     <% else %>
-                        <h3>Your Booking History</h3>
+                        <h3>View Your Booking History</h3>
                     <% end %>
                 </div>
                 <br>
 
-                <div class="table-responsive">
+                <div class="table-responsive shadow-sm">
                     <table class="table table-hover table-lg">
-                        <thead class="table-dark">
+                        <thead style="height: 50px; border-top: 1px solid #000; background-color: #ececec;">
                         <tr>
                             <th>Trip</th>
                             <th>Coordination</th>
@@ -48,22 +48,24 @@
                                         Postponed
                                     <% end %>
                                 <% else %>
-                                    <%= link_to edit_booking_info_path(booking_info),remote:true, class:"btn btn-warning" do %>
-                                        Postpone
+                                    <%= link_to edit_booking_info_path(booking_info),remote:true, class:"btn btn-outline-dark" do %>
+                                        Postpone trip
                                     <% end %>
                                 <% end %>
                             </td>
-                            <td><button class="btn btn-dark">Upload media</button></td>
+                            <td><button class="btn btn-dark"><i class="fas fa-upload"></i></button></td>
                             </tr>
                         <% end %>
                         </tbody>
+                        <%#== pagy_bootstrap_nav(@pagy) %>
                     </table>
                 </div>
             </div>
         </div>
 
-    </div>
-    <div class="col-4" style="background-color:#dfe6e9; padding: 20px 0 20px 10px;">
+    </div> 
+    <%# #dfe6e9 %>
+    <div class="col-4 shadow-sm" style="background-color:#ececec; padding: 20px 0 20px 10px; border-left: 1px solid #000;">
         <div class="row">
             <h3 class="text-center" style="margin-bottom:20px;">Upcoming Trips</h4>
             <% if current_user.role_code == "admin"%>
@@ -100,20 +102,21 @@
                                 <span class="text-1 font-weight-300 text-uppercase"><%= date.to_date.strftime("%b") if !date.nil?%>,
                                     <%=  date.to_date.strftime("%Y") if !date.nil? %>
                                 </span>
-                                <%= link_to "Details",booking_details_path(id: tour.id),remote: true %>
-
-
-                                <br>
+                                 -to- 
                                 <% date = tour.end_date %>
                                 <span class="text-3 font-weight-300"><%=  date.to_date.strftime("%d") if !date.nil?%></span>
                                 <span class="text-1 font-weight-300 text-uppercase"><%= date.to_date.strftime("%b") if !date.nil?%>,
                                     <%=  date.to_date.strftime("%Y") if !date.nil? %>
                                 </span>
-                                <br><br>
+                                <br>
+                                <span class="text-3 font-weight-300 text-uppercase">$ <%= tour.price %></span>
+                                <br>
+                                <%= link_to "Itenerary",booking_details_path(id: tour.id),remote: true, class:"btn btn-link" %>
+                                <br>
                                 <%= link_to "Book Trip", book_form_path(tour_id: tour.id), class:"btn btn-lg btn-dark", remote: true%>
                                 <% if current_user.role_code == 'admin'%>
                                     <%= link_to edit_tour_path(tour), class:"btn btn-lg btn-secondary" do %>
-                                        <i class="fa fa-edit"></i> Edit
+                                        <i class="fas fa-edit"></i> Edit
                                     <% end %>
                                 <% end %>
                             </td>
@@ -131,4 +134,10 @@
         font-weight: 300; 
         font-family: poppins;
     }
+    .page-topic{
+  padding: 50px 0 40px 0;
+  background-color: #ececec !important;
+  color:#161616 !important;
+  border-bottom:1px solid #000;
+}
 </style>

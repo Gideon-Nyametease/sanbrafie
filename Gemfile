@@ -34,7 +34,7 @@ gem "mini_magick"
 gem "friendly_id"
 gem "authorizenet"
 gem "cloudinary"
-
+gem 'pagy'
 
 # stripe
 gem "stripe"

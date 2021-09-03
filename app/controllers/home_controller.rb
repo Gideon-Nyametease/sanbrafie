@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  include Pagy::Backend
     before_action :authenticate_user!, :except => [:landing_page,:booking_form, :booking_details, :create_booking, :checkout_page, :custom_trip_form, :create_custom_trip, :tos, :testimonial_form]
     def landing_page
       if user_signed_in?
@@ -148,6 +149,7 @@ class HomeController < ApplicationController
     def user_dashboard
       @booking_infos = BookingInfo.where("user_id = ?", current_user.id)
       @booking_infos = @booking_infos.present? ? @booking_infos : BookingInfo.where("(surname = ? AND othername = ?) OR uid = ?",current_user.surname,current_user.othernames,current_user.uid)
+      @pagy, @records = pagy(BookingInfo.where("user_id = ?", current_user.id))
     end
 
     def admin_dashboard
