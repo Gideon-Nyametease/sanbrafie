@@ -1,10 +1,10 @@
 <div data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
   <div class="carousel-section" style="">
     <%#= render 'devise/sessions/carousel'%>
-    <div class="col-12 row">
+    <div class="row">
      <%# style="border: red 2px solid" %>
       <div class="col-6 col-xs-12 header-text">
-       
+      <br><br><br>
         <div class="big-text d-block mx-auto" >
             <%# <p style="color: #efefef; font-size:54px; font-weight: 800;">Travel with us</p> %>
             <p class="bold-text w3-animate-top" style="font-family: 'Montserrat' !important; color: #111111 !important; font-size: 84px !important;">
@@ -20,10 +20,9 @@
             </p>
             <br>
             <%= link_to 'Travel with us', booking_form_path, class:"btn btn-lg btn-light cta-btn", remote:true%>
-
         </div>
       </div>
-      <div class="col-6" >
+      <div class="col-6 ">
         <%= render 'carousel' %>
       </div>
     </div>
@@ -135,6 +134,12 @@
 
 
 <style>
+
+.carousel-section{
+  background:#090909 !important;
+  margin: 0 auto !important; 
+  height: 780px !important;
+}
   .big-text{
   padding: 80px 65px !important;
   top: 50%;
