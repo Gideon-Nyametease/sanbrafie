@@ -40,7 +40,13 @@
       </div>
       <br>
       <div class="destination-cards d-flex align-content-start flex-wrap" >
-        <%= render 'featured_trips' %> 
+        <%= render 'trips' %> 
+      </div>
+      <br><br>
+      <div class="row ">
+          <div class="d-flex justify-content-center">
+              <%#= link_to 'View All', tours_path, class:"btn btn-lg btn-dark", style:"width: 250px;"%>
+          </div>
       </div>
     </div>
   </div>
@@ -52,6 +58,12 @@
           <p class="section-headings "> Testimonials</p>
         </div>
         <%= render 'testimonial_carousel'%>
+        <br><br>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <%= link_to 'Leave a comment', testimonial_form_path, class:"btn btn-lg btn-dark", style:"font-size: 24px; font-weight: 400; border: 2px white solid", remote: true%>
+            </div>
+        </div>
     </div>
   </div>
   <div class="about-section" id="about" style="padding: 100px 0 50px 0; background-color: #ffffff; color: #161616">
