@@ -1,15 +1,14 @@
 class HomeController < ApplicationController
-  include Pagy::Backend
-    before_action :authenticate_user!, :except => [:landing_page,:booking_form, :booking_details, :create_booking, :checkout_page, :custom_trip_form, :create_custom_trip, :tos, :testimonial_form]
+    before_action :authenticate_user!, :except => [:landing_page,:booking_form, :booking_details, :create_booking, :custom_trip_form, :create_custom_trip, :tos, :testimonial_form] # :checkout_page,
     def landing_page
       if user_signed_in?
         if current_user.role_code == "client"
           @tours = Tour.limit(5)
-          @booking_infos = BookingInfo.where("user_id = ?", current_user.id)
-          @booking_infos = @booking_infos.present? ? @booking_infos : BookingInfo.where("(surname = ? AND othernames = ?) OR user_uid = ?",current_user.surname,current_user.othernames,current_user.uid)
+          booking_infos = BookingInfo.where("user_id = ?", current_user.id)
+          @pagy, @booking_infos = booking_infos.present? ? pagy(BookingInfo.where("user_id = ?", current_user.id) ) : pagy(BookingInfo.where("(surname = ? AND othernames = ?) OR email = ?",current_user.surname,current_user.othernames,current_user.email) )
         else
           @tours = Tour.limit(5)
-          @booking_infos = BookingInfo.all
+          @pagy, @booking_infos = pagy(BookingInfo.all )
         end
       else
         @tours = Tour.limit(5)
@@ -26,7 +25,8 @@ class HomeController < ApplicationController
     end
 
     def booking_details
-      @tours = Tour.all
+      @tour = Tour.where("title = ?", params[:title])[0]
+      logger.info"\n tour deets #{@tour.inspect}"
     end
 
     def testimonial_form
@@ -88,7 +88,7 @@ class HomeController < ApplicationController
             logger.info "Booking Info from form = #{@booking_form_data.inspect}"
             @booking_form_data.save(validate: false)
             BookingInfoMailer.with(booking_info: @booking_form_data).new_booking_info_email.deliver_later
-            format.html { redirect_to checkout_page_path(tour_id: @booking_form_data.tour_id, booking_id:  @booking_form_data.id), notice: "Booking info was successfully created." }
+            format.html { redirect_to checkout_page_path(tour_id: @booking_form_data.tour_id, booking_id:  @booking_form_data.id, count: @booking_form_data.group_count), notice: "Booking info was successfully created." }
             format.json { render :landing_page, status: :created, location: root_path }
           else
             logger.info "THE BOOKING ERROR = #{@booking_form_data.errors.messages}"
@@ -147,9 +147,9 @@ class HomeController < ApplicationController
     end
 
     def user_dashboard
-      @booking_infos = BookingInfo.where("user_id = ?", current_user.id)
-      @booking_infos = @booking_infos.present? ? @booking_infos : BookingInfo.where("(surname = ? AND othername = ?) OR uid = ?",current_user.surname,current_user.othernames,current_user.uid)
-      @pagy, @records = pagy(BookingInfo.where("user_id = ?", current_user.id))
+      booking_infos = BookingInfo.where("user_id = ?", current_user.id)
+      # @booking_infos = @booking_infos.present? ? @booking_infos : BookingInfo.where("(surname = ? AND othername = ?) OR uid = ?",current_user.surname,current_user.othernames,current_user.uid)
+      @pagy, @booking_infos = booking_infos.present? ? pagy(BookingInfo.where("user_id = ?", current_user.id) ) : pagy(BookingInfo.where("(surname = ? AND othername = ?) OR uid = ?",current_user.surname,current_user.othernames,current_user.uid) )
     end
 
     def admin_dashboard

@@ -1,12 +1,38 @@
  <div id="booking-deets" class="w3-modal w3-animate-opacity" style="display: block">
-    <div class="w3-modal-content w3-card-4 " style="width: 540px; padding-bottom: 60px" >
-      <div class="d-flex justify-content-end" style="margin: 20px;">
+    <div class="w3-modal-content w3-card-4 " style="width: 60%; padding-bottom: 60px" >
+      <div class="d-flex justify-content-end" style="padding: 10px;">
         <span onclick="document.getElementById('booking-deets').style.display='none'"
             class="btn btn-lg btn-dark">&times;</span>
       </div>
       <br>
-      <div class="w3-container">
-       This is where booking details go
+      <div class="w3-container my-form-margin">
+        <h2><%= params[:title] %></h2>
+        <% date = @tour.start_date %>
+        <span class="text-4 font-weight-300 m-text"><%=  date.to_date.strftime("%d") if !date.nil?%></span>
+        <span class="text-3 font-weight-300 text-uppercase m-text"><%= date.to_date.strftime("%B") if !date.nil?%>,
+            <%=  date.to_date.strftime("%Y") if !date.nil? %>
+        </span>
+          -to- 
+        <% date = @tour.end_date %>
+        <span class="text-4 font-weight-300 m-text" ><%=  date.to_date.strftime("%d") if !date.nil?%></span>
+        <span class="text-3 font-weight-300 text-uppercase m-text"><%= date.to_date.strftime("%B") if !date.nil?%>,
+            <%=  date.to_date.strftime("%Y") if !date.nil? %>
+        </span>
+        <br>
+        <span class="text-uppercase m-text" style="font-size: 24px; font-weight: 700 ; color: #11bc4f">$ <%= @tour.price %>.00</span>
+      <hr>
+        <h4>Itenerary</h4>
+        <br>
+        <% if !@tour.nil? %>
+          <% a = @tour.description %>
+          <%= raw a %>
+        <% end %>
       </div>
     </div>
 </div>
+
+<style>
+  .m-text{
+    margin: 15px 0;
+  }
+</style>

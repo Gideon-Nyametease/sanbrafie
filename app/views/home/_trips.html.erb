@@ -1,11 +1,10 @@
 <div class="row">
     <div class="col trip-card">
-
-        <a href="/tours">
+        <%= link_to booking_details_path(title: "Sanbrafie Homegoing Tour Summer 2022"), remote:true do %>   
             <img src="<%= asset_pack_path 'media/images/2a.jpg' %>" alt="Trip Image Preview" class="f-destination-img shadow">
-        </a>
+        <% end %>
         <div style="padding: 10px; background-color: #ffffff; height: 110px;" class="shadow-sm">
-            <span class="text-4">Sanbrafie June 2022</span><br>
+            <span class="text-4">Sanbrafie Homegoing Tour Summer 2022</span><br>
             <span class="text-3 font-weight-300">19</span>
             <span class="text-1 font-weight-300 text-uppercase">JUN,
                 2022
@@ -19,10 +18,9 @@
     </div>
 
     <div class="col trip-card">
-
-        <a href="/tours">
+        <%= link_to booking_details_path(title: "Ghana December 2022"), remote:true do %>        
             <img src="<%= asset_pack_path 'media/images/ghxmas.jpg' %>" alt="Trip Image Preview" class="f-destination-img shadow">
-        </a>
+        <% end %>
         <div style="padding: 10px; background-color: #ffffff; height: 110px;" class="shadow-sm">
             <span class="text-4">Ghana December 2022</span><br>
             <span class="text-3 font-weight-300">23</span>
@@ -39,27 +37,27 @@
 
     <div class="col trip-card">
 
-        <a href="/tours">
+        <%= link_to booking_details_path(title: "HBCU Homecoming 2022: 100,000 Strong"), remote:true do %>   
             <img src="<%= asset_pack_path 'media/images/image4a.jpg' %>" alt="Trip Image Preview" class="f-destination-img shadow">
-        </a>
+        <% end %>
         <div style="padding: 10px; background-color: #ffffff; height: 110px;" class="shadow-sm">
             <span class="text-4">HBCU Homecoming 2022: 100,000 Strong</span><br>
-            <span class="text-3 font-weight-300">24</span>
+            <span class="text-3 font-weight-300">17</span>
             <span class="text-1 font-weight-300 text-uppercase">MAY,
                 2022
             </span> 
             - to - 
-            <span class="text-3 font-weight-300">30</span>
+            <span class="text-3 font-weight-300">24</span>
             <span class="text-1 font-weight-300 text-uppercase">MAY,
-                2023
+                2022
             </span>
         </div>     
     </div>
 
     <div class="col trip-card">     
-        <a href="/tours">
+        <%= link_to booking_details_path(title: "Sanbrafie Tanzania 2023"), remote:true do %>   
             <img src="<%= asset_pack_path 'media/images/5a.jpg' %>" alt="Trip Image Preview" class="f-destination-img shadow">
-        </a>
+        <% end %>
         <div style="padding: 10px; background-color: #ffffff; height: 110px;" class="shadow-sm">
             <span class="text-4">Sanbrafie Tanzania 2023</span><br>
             <span class="text-3 font-weight-300">22</span>
@@ -91,12 +89,13 @@
     }
 
     .f-destination-img{
-    height: 280px;
+    height: 300px;
     width:100%;
     transition: width .3s, height .3s;
+    border-radius: 5px;
     }
     .f-destination-img:hover{
-        height:285px;
+        height:305px;
         width:101%;
     }
 

@@ -15,7 +15,7 @@
 # Instance variables
 # See https://ddnexus.github.io/pagy/api/pagy#instance-variables
 # Pagy::VARS[:page]   = 1                                  # default
-# Pagy::VARS[:items]  = 20                                 # default
+Pagy::VARS[:items]  = 15                                 # default
 # Pagy::VARS[:outset] = 0                                  # default
 
 
@@ -111,16 +111,16 @@ require 'pagy/extras/bootstrap'
 
 # Items extra: Allow the client to request a custom number of items per page with an optional selector UI
 # See https://ddnexus.github.io/pagy/extras/items
-# require 'pagy/extras/items'
-# Pagy::VARS[:items_param] = :items    # default
-# Pagy::VARS[:max_items]   = 100       # default
+require 'pagy/extras/items'
+Pagy::VARS[:items_param] = :items    # default
+Pagy::VARS[:max_items]   = 100       # default
 # set to false if you want to make :enable_items_extra an opt-in variable
 # Pagy::VARS[:enable_items_extra] = false    # default true
 
 # Overflow extra: Allow for easy handling of overflowing pages
 # See https://ddnexus.github.io/pagy/extras/overflow
-# require 'pagy/extras/overflow'
-# Pagy::VARS[:overflow] = :empty_page    # default  (other options: :last_page and :exception)
+require 'pagy/extras/overflow'
+Pagy::VARS[:overflow] = :last_page    # default  (other options: :last_page and :exception)
 
 # Metadata extra: Provides the pagination metadata to Javascript frameworks like Vue.js, react.js, etc.
 # See https://ddnexus.github.io/pagy/extras/metadata

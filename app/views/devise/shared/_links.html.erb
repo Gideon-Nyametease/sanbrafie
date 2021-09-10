@@ -22,13 +22,9 @@
   <%- resource_class.omniauth_providers.each do |provider| %>
     <% logger.info "\n #{provider.inspect}\n" %>
     <%# if provider == ":google_oauth2" %>
-    <div class="google-btnee">
       <%= link_to omniauth_authorize_path(resource_name, provider), method: :post, class:"btn btn-lg btn-outline-dark " do %>
-        <span class="google-icon-wrapperr">
-          <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
-        </span> <p class="btn-text">Sign in with Google</p>
+        <img style="float: left; padding: 3px 30px 0 0;" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/> Sign in with Google
       <% end %>
-    </div>
       <br />
     <%# else %>
       <%#= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post, class:"btn btn-lg btn-outline-success " %><br />

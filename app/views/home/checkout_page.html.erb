@@ -29,7 +29,7 @@
                                 <%= link_to "Details",booking_details_path(id: tour.id), class:"btn btn-sm btn-light",remote: true %>
                                 <br><br><br>
                                 
-                                <%= link_to "Make Payment",checkout_create_path(id: tour.id), method: :post, class:"btn btn-lg btn-success mm",id:"checkout-button" ,remote: true %>
+                                <%= link_to "Make Payment",checkout_create_path(id: tour.id, count: params[:count]), method: :post, class:"btn btn-lg btn-success mm",id:"checkout-button" ,remote: true %>
                             </td>
                         </tr>
                         

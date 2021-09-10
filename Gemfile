@@ -28,6 +28,7 @@ gem 'activerecord-import'
 gem 'simple_form'
 gem 'devise'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection', '~> 1.0'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'country_select'
 gem "mini_magick"
@@ -35,6 +36,7 @@ gem "friendly_id"
 gem "authorizenet"
 gem "cloudinary"
 gem 'pagy'
+gem 'ckeditor', '~> 4.3'
 
 # stripe
 gem "stripe"

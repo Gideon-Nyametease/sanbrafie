@@ -1,6 +1,6 @@
  <div id="air-mod" class="w3-modal w3-animate-opacity" style="display: block">
     <div class="w3-modal-content w3-card-4 " style="width: 540px; padding-bottom: 60px" >
-      <div class="d-flex justify-content-end" style="margin: 20px;">
+      <div class="d-flex justify-content-end" style="padding: 10px;">
         <span onclick="document.getElementById('air-mod').style.display='none'"
             class="btn btn-lg btn-dark">&times;</span>
       </div>
@@ -10,15 +10,25 @@
             <form>
                 <div class="form-inputs my-form-margin">
                     <div class="col-sm-12">
+                        <div class="d-grid gap-2">
+                            <!--<span onclick="document.getElementById('air-mod').style.display='none'">-->
+                                <%= link_to "Customize your trip", custom_trip_form_path, class:"btn btn-lg btn-danger", remote: true %>
+                            <!--</span>-->
+                        </div>
+                        <br>
+                        <div class="text-center">
+                            <b><p>-- OR --</p></b>
+                        </div>
+                        <br>
                         <div  class="mb-3">
                             <%= f.input :tour_id, input_html:{value:params[:tour_id],class:"form-control-lg sanbrafie-input "}, as: :hidden %>   
                         </div>
                         <div class="row mb-3">
                             <div class="col">
-                                <%= f.input :surname, input_html:{value: current_user.surname, class:"form-control-lg sanbrafie-input"} %>
+                                <%= f.input :surname, input_html:{value: current_user.surname, class:"form-control-lg sanbrafie-input",required:true} %>
                             </div>
                             <div class="col">
-                                <%= f.input :othernames, input_html:{value: current_user.othernames, class:"form-control-lg sanbrafie-input"} %>
+                                <%= f.input :othernames, input_html:{value: current_user.othernames, class:"form-control-lg sanbrafie-input", required:true} %>
                             </div>
                         </div>
                         <div class=" mb-3">
@@ -30,20 +40,20 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col">
-                                <%= f.input :coordination_preference, collection: @coordination_preference, label_method: :first, value_method: :last, input_html:{class:"form-control-lg sanbrafie-input form-select"} %>
+                                <%= f.input :coordination_preference, collection: @coordination_preference, label_method: :first, value_method: :last, input_html:{class:"form-control-lg sanbrafie-input form-select", required:true} %>
                             </div>
                             <div class="col">
-                                <%= f.input :group_count, input_html:{class:"form-control-lg sanbrafie-input"} %>
+                                <%= f.input :group_count, input_html:{class:"form-control-lg sanbrafie-input",required: true}, label:"Number of people" %>
                             </div>
                         </div>
-                        <div class="row mb-3">
+                        <!--<div class="row mb-3">
                             <div class="col">
-                                <%= f.input :hotel_type, collection: @hotel_type, label_method: :first, value_method: :last, input_html:{class:"form-control-lg sanbrafie-input form-select"} %>
+                                <%#= f.input :hotel_type, collection: @hotel_type, label_method: :first, value_method: :last, input_html:{class:"form-control-lg sanbrafie-input form-select"} %>
                             </div>
                             <div class="col">
-                                <%= f.input :tour_duration, input_html:{class:"form-control-lg sanbrafie-input"} %>
+                                <%#= f.input :tour_duration, input_html:{class:"form-control-lg sanbrafie-input"} %>
                             </div>
-                        </div>
+                        </div>-->
                         <div  class="mb-3">
                             <%= f.input :purpose_statement, collection: @purpose_statement, label_method: :first, value_method: :last, input_html:{class:"form-control-lg sanbrafie-input form-select"} %>
                             <br>

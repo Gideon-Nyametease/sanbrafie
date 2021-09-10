@@ -7,10 +7,31 @@ class User < ApplicationRecord
 
   attr_writer :login
   # Google authorization
-  def self.from_google(email:, full_name:, uid:, avatar_url:)
-    return nil unless email =~ /@mybusiness.com\z/
-    create_with(uid: uid, full_name: full_name, avatar_url: avatar_url).find_or_create_by!(email: email)
-  end
+  # def self.from_google(email:, full_name:, uid:, avatar_url:)
+  #   return nil unless email =~ /@mybusiness.com\z/
+  #   create_with(uid: uid, full_name: full_name, avatar_url: avatar_url).find_or_create_by!(email: email)
+  # end
+
+  def self.from_omniauth(access_token)
+    data = access_token.info
+    user = User.where(email: data['email']).first
+
+    # Uncomment the section below if you want users to be created if they don't exist
+    unless user
+        name = data['name']
+        var = name.split(" ")
+
+        user = User.create(
+          surname: var.last,
+          othernames: var.first,
+          username: data['name'],
+          email: data['email'],
+          uid: data['uid'],
+          password: Devise.friendly_token[0,20]
+        )
+    end
+    user
+end
 
   # Login vie username/email
   def login
@@ -30,12 +51,12 @@ class User < ApplicationRecord
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
   validates :username, presence: true, uniqueness: { case_sensitive: false }
   validate :password_complexity
-  validate :validate_username
+  # validate :validate_username
 
   def validate_username
-    if User.where(email: username).exists?
-      errors.add(:username, :invalid)
-    end
+    # if User.where(email: username).exists?
+    #   errors.add(:username, :invalid)
+    # end
   end
   
 

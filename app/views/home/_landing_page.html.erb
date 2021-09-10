@@ -7,7 +7,7 @@
       <br>
         <div class="big-text d-block mx-auto" >
             <%# <p style="color: #efefef; font-size:54px; font-weight: 800;">Travel with us</p> %>
-            <p class="bold-text w3-animate-top" style="font-family: 'Seaweed script' !important; color: #111111 !important; font-size: 104px !important;">
+            <p class="bold-text w3-animate-top" style="font-family: 'Seaweed script' !important; color: #111111 !important; font-size: 134px !important;">
               Sanbrafie
             </p>
            <br>
@@ -22,9 +22,9 @@
             <br>
             <%= link_to 'Travel with us', booking_form_path, class:"btn btn-lg btn-light cta-btn", remote:true%>
             <br><br><br>
-           <p class="bold-text w3-animate-top" style="font-family: 'Montserrat' !important; color: #111111 !important; font-size: 72px !important;">
+           <%# <p class="bold-text w3-animate-top" style="font-family: 'Montserrat' !important; color: #111111 !important; font-size: 32px !important; letter-spacing:12px;">
                Travel with us
-            </p>
+            </p> %>
         </div>
       </div>
       <div class="col-6 ">
@@ -141,9 +141,46 @@
       </div>
     </div>
   </div>
+  <div  class="footer-section " style="background-color: #000; padding: 20px 0 0 0; color:#f6f8f9;">
+    <div class="my-container">
+      <div class="d-flex justify-content-center">
+        <%# <div class="row">
+          <p class="bold-text" style="font-family: 'Seaweed script' !important; color: #e6e8e9 !important; font-size: 32px !important;">
+            Sanbrafie
+          </p>
+        </div><br> %>
+        <div class="row">
+          <ul id="footer-socials" >
+            <li class="footer-socials-icon">
+              <a class="social-icon" href="https://twitter.com/_kwvme">
+                <i class="fab fa-facebook-f fa-2x"></i>
+              </a>
+            </li>
+            <li class="footer-socials-icon">
+              <a class="social-icon" href="https://instagram.com/kwame_n">
+                <i class="fab fa-instagram fa-2x"></i>
+              </a>
+            </li>
+            <li class="footer-socials-icon">
+              <a class="social-icon" href="https://twitter.com/_kwvme">
+                <i class="fab fa-twitter fa-2x"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+      <hr>
+    <div class="row text-center">
+        <p class="footer-copyright">
+            © 2021 Sanbrafie Group Inc | Travel and tour management services, and business and educational consulting services Platform from Sanbrafie Group Inc. 
+        </p>
+    </div>
+  </div>
 
   <div id="booking"></div>
-  <div id="custom-trip"></div>
+  <div class="custom-trip"></div>
+  <div class="booking-details"></div>
   <div id="tos-form"></div>
   <div id="contact"></div>
 
@@ -151,6 +188,31 @@
 
 
 <style>
+#footer-socials{
+ list-style-type: none;
+ list-style:none;
+ padding-bottom: -20px;
+}
+
+.footer-socials-icon{
+  display: inline;
+  text-decoration: none;
+  margin: 0 18px;
+}
+
+.social-icon{
+  color: #f6f8f9;
+}
+
+.social-icon:hover{
+  color: #4d4d4d;
+}
+
+.footer-copyright{
+  font-size: 12px;
+  font-family: 'poppins';
+  color: #e6e8e9;
+}
 
 .carousel-section{
   background:#090909 !important;
