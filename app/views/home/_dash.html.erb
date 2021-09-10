@@ -121,7 +121,7 @@
                                 <br>
                                 <span class="text-3 font-weight-300 text-uppercase">$ <%= tour.price %></span>
                                 <br>
-                                <%= link_to "Itenerary",booking_details_path(id: tour.id),remote: true, class:"btn btn-link" %>
+                                <%= link_to "Itinerary",booking_details_path(id: tour.id),remote: true, class:"btn btn-link" %>
                                 <br>
                                 <%= link_to "Book Trip", book_form_path(tour_id: tour.id), class:"btn btn-md btn-dark", remote: true%>
                                 <% if current_user.role_code == 'admin'%>
