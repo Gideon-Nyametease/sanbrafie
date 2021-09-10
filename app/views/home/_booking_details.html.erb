@@ -7,20 +7,22 @@
       <br>
       <div class="w3-container my-form-margin">
         <h2><%= params[:title] %></h2>
-        <% date = @tour.start_date %>
-        <span class="text-4 font-weight-300 m-text"><%=  date.to_date.strftime("%d") if !date.nil?%></span>
-        <span class="text-3 font-weight-300 text-uppercase m-text"><%= date.to_date.strftime("%B") if !date.nil?%>,
-            <%=  date.to_date.strftime("%Y") if !date.nil? %>
-        </span>
-          -to- 
-        <% date = @tour.end_date %>
-        <span class="text-4 font-weight-300 m-text" ><%=  date.to_date.strftime("%d") if !date.nil?%></span>
-        <span class="text-3 font-weight-300 text-uppercase m-text"><%= date.to_date.strftime("%B") if !date.nil?%>,
-            <%=  date.to_date.strftime("%Y") if !date.nil? %>
-        </span>
-        <br>
-        <span class="text-uppercase m-text" style="font-size: 24px; font-weight: 700 ; color: #11bc4f">$ <%= @tour.price %>.00</span>
-      <hr>
+        <% if !@tour.nil?%>
+          <% date = @tour.start_date %>
+          <span class="text-4 font-weight-300 m-text"><%=  date.to_date.strftime("%d") if !date.nil?%></span>
+          <span class="text-3 font-weight-300 text-uppercase m-text"><%= date.to_date.strftime("%B") if !date.nil?%>,
+              <%=  date.to_date.strftime("%Y") if !date.nil? %>
+          </span>
+            -to- 
+          <% date = @tour.end_date %>
+          <span class="text-4 font-weight-300 m-text" ><%=  date.to_date.strftime("%d") if !date.nil?%></span>
+          <span class="text-3 font-weight-300 text-uppercase m-text"><%= date.to_date.strftime("%B") if !date.nil?%>,
+              <%=  date.to_date.strftime("%Y") if !date.nil? %>
+          </span>
+          <br>
+          <span class="text-uppercase m-text" style="font-size: 24px; font-weight: 700 ; color: #11bc4f">$ <%= @tour.price %>.00</span>
+        <% end %>
+        <hr>
         <h4>Itenerary</h4>
         <br>
         <% if !@tour.nil? %>

@@ -40,7 +40,7 @@
                         <% @tour = Tour.where("id = ?",booking_info.tour_id)[0]%>
                             <tr>
                             <td><%= index+1 %></td>
-                            <td><%= @tour.title %></td>
+                            <td><%= @tour.title if !@tour,nil?%></td>
                             <td><%= booking_info.coordination_preference %></td>
                             <td><%= booking_info.group_count %></td>
                             <td><%= booking_info.hotel_type %></td>
