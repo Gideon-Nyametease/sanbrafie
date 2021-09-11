@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get 'trips_page' => 'home#trips_page', as: :trips_page
   get 'media_page' => 'home#media_page', as: :media_page
   get 'booking_form' => 'home#booking_form', as: :booking_form
+  get 'booking_form2' => 'home#booking_form2', as: :booking_form2
   post 'create_booking' => 'home#create_booking', as: :create_booking
   post 'create_msg' => 'home#create_msg', as: :create_msg
   get 'payment_form' => 'booking_infos#payment_form', as: :payment_form

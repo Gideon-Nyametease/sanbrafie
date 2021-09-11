@@ -33,7 +33,7 @@ class BookingInfosController < ApplicationController
     respond_to do |format|
       if @booking_info.save
         BookingInfoMailer.with(booking_info: @booking_info).new_booking_info_email.deliver_later
-        format.html { redirect_to @booking_info, notice: "Booking info was successfully created." }
+        format.html { redirect_to root_path, notice: "Booking info was successfully created." }
         format.json { render :show, status: :created, location: @booking_info }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -46,7 +46,7 @@ class BookingInfosController < ApplicationController
   def update
     respond_to do |format|
       if @booking_info.update(booking_info_params)
-        format.html { redirect_to @booking_info, notice: "Booking info was successfully updated." }
+        format.html { redirect_to root_path, notice: "Booking info was successfully updated." }
         format.json { render :show, status: :ok, location: @booking_info }
       else
         format.html { render :edit, status: :unprocessable_entity }

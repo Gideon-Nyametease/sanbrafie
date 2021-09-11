@@ -1,4 +1,4 @@
- <div id="booking-deets" class="w3-modal w3-animate-opacity" style="display: block">
+ <div id="booking-deets" class="w3-modal w3-animate-opacity" style="display: block; z-index: 2;">
     <div class="w3-modal-content w3-card-4 " style="width: 60%; padding-bottom: 60px" >
       <div class="d-flex justify-content-end" style="padding: 10px;">
         <span onclick="document.getElementById('booking-deets').style.display='none'"
@@ -28,10 +28,16 @@
         <% if !@tour.nil? %>
           <% a = @tour.description %>
           <%= raw a %>
+          <br><br>
+          <%= link_to 'Book this trip', booking_form2_path(marker:"from itinerary", tour_id: @tour.id), class:"btn btn-lg btn-dark", remote:true%>
+
         <% end %>
+       
       </div>
     </div>
 </div>
+
+<div id="itinerary-booking"></div>
 
 <style>
   .m-text{

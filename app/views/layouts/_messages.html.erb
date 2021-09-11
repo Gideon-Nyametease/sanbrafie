@@ -1,10 +1,10 @@
 <% if user_signed_in? %>
     <% flash.each do |name, msg| %>
     <% if msg.is_a?(String) %>
-        <div id="error-msg" class="w3-modal w3-animate-opacity" style="display: block">
+        <div id="sys-msg" class="w3-modal w3-animate-opacity" style="display: block">
             <div class="w3-modal-content w3-card-4 " style="width: 540px; padding-bottom: 60px" >
                 <div class="d-flex justify-content-end" style="padding: 10px;">
-                    <span onclick="document.getElementById('error-msg').style.display='none'"
+                    <span onclick="document.getElementById('sys-msg').style.display='none'"
                         class="btn btn-lg btn-dark">&times;</span>
                 </div>
                 <br>
@@ -19,6 +19,28 @@
     <% end %>
 <% end %>
 <%# &times; %>
+
+<style>
+    .flash{
+        background-color: #fff !important;
+       
+    }
+    .alert{
+        background-color: #fff !important;
+    }
+    .alert-success{
+        background-color: #fff !important;
+        border-color: #fff !important;
+        color: #4bb543 !important;
+         font-size: 24px !important;
+        font-weight: 600 !important;
+    }
+    .alert-danger{
+        background-color: #fff !important;
+        border-color: #fff !important;
+        color: #ff8080 !important;
+    }
+</style>
 
 
 

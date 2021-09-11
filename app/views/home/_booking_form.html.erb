@@ -1,7 +1,7 @@
- <div id="air-mod" class="w3-modal w3-animate-opacity" style="display: block">
+ <div id="abc" class="w3-modal w3-animate-opacity" style="display: block; z-index: 3;">
     <div class="w3-modal-content w3-card-4 " style="width: 540px; padding-bottom: 60px" >
       <div class="d-flex justify-content-end" style="padding:10px;">
-        <span onclick="document.getElementById('air-mod').style.display='none'"
+        <span onclick="document.getElementById('abc').style.display='none'"
             class="btn btn-lg btn-dark">&times;</span>
       </div>
       <br>
@@ -10,6 +10,7 @@
             <form>
                 <div class="form-inputs my-form-margin">
                     <div class="col-sm-12">
+                    <% if params[:marker] != "from itinerary"%>
                         <div class="d-grid gap-2">
                             <!--<span onclick="document.getElementById('air-mod').style.display='none'">-->
                                 <%= link_to "Customize your trip", custom_trip_form_path, class:"btn btn-lg btn-danger", remote: true %>
@@ -23,6 +24,11 @@
                         <div  class="mb-3">
                             <%= f.input :tour_id, collection: @tours, label_method: :title, value_method: :id, input_html:{class:"form-control-lg form-select sanbrafie-input"}, label:"Select a trip" %>   
                         </div>
+                    <% else %>
+                        <div  class="mb-3">
+                            <%= f.input :tour_id, input_html:{value:"#{params[:tour_id]}" , class:"form-control-lg form-select sanbrafie-input"}, as: :hidden %>   
+                        </div>
+                    <% end %>
                         <div class="row mb-3">
                             <div class="col">
                                 <%= f.input :surname, input_html:{class:"form-control-lg sanbrafie-input", required: true}, label:"Lastname" %>

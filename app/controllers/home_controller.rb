@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-    before_action :authenticate_user!, :except => [:landing_page,:booking_form, :booking_details, :create_booking, :custom_trip_form, :create_custom_trip, :tos, :testimonial_form] # :checkout_page,
+    before_action :authenticate_user!, :except => [:landing_page,:booking_form, :booking_form2, :booking_details, :create_booking, :custom_trip_form, :create_custom_trip, :tos, :testimonial_form] # :checkout_page,
     def landing_page
       if user_signed_in?
         if current_user.role_code == "client"
@@ -147,9 +147,12 @@ class HomeController < ApplicationController
     end
 
     def user_dashboard
-      booking_infos = BookingInfo.where("user_id = ?", current_user.id)
-      # @booking_infos = @booking_infos.present? ? @booking_infos : BookingInfo.where("(surname = ? AND othername = ?) OR uid = ?",current_user.surname,current_user.othernames,current_user.uid)
-      @pagy, @booking_infos = booking_infos.present? ? pagy(BookingInfo.where("user_id = ?", current_user.id) ) : pagy(BookingInfo.where("(surname = ? AND othername = ?) OR uid = ?",current_user.surname,current_user.othernames,current_user.uid) )
+      @tours = Tour.limit(5)
+      logger.info "THE TOURS = #{@tours.inspect}"
+      @coordination_preference = [["Air and Ground","AG"],["Ground only","G"]]
+      @hotel_type = [["5 Star","5 Star"],["4 Star","4 Star"],["3 Star","3 Star"]]
+      
+      @customer_msg = CustomerMsg.new
     end
 
     def admin_dashboard
