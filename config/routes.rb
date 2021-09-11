@@ -36,4 +36,5 @@ Rails.application.routes.draw do
   get 'tos' => 'home#tos', as: :tos
   get 'testimonial_form' => 'home#testimonial_form', as: :testimonial_form
   post 'create_testimonial' => 'home#create_testimonial', as: :create_testimonial
+  get 'privacy_policy' => 'home#privacy_policy', as: :privacy_policy
 end

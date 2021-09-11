@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-    before_action :authenticate_user!, :except => [:landing_page,:booking_form, :booking_form2, :booking_details, :create_booking, :custom_trip_form, :create_custom_trip, :tos, :testimonial_form] # :checkout_page,
+    before_action :authenticate_user!, :except => [:landing_page,:booking_form,:privacy_policy, :booking_form2, :booking_details, :create_booking, :custom_trip_form, :create_custom_trip, :tos, :testimonial_form] # :checkout_page,
     def landing_page
       if user_signed_in?
         if current_user.role_code == "client"
@@ -60,6 +60,9 @@ class HomeController < ApplicationController
     end
 
     def tos
+    end
+
+    def privacy_policy
     end
 
     def booking_form
@@ -151,7 +154,7 @@ class HomeController < ApplicationController
       logger.info "THE TOURS = #{@tours.inspect}"
       @coordination_preference = [["Air and Ground","AG"],["Ground only","G"]]
       @hotel_type = [["5 Star","5 Star"],["4 Star","4 Star"],["3 Star","3 Star"]]
-      
+
       @customer_msg = CustomerMsg.new
     end
 
