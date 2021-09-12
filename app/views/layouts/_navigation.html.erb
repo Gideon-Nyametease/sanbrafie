@@ -1,9 +1,9 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-darkk col-12" >
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white col-12 shadow-sm" >
   <div class="container-fluid" id="navbar-example">
     <a class="navbar-brand" href="/">
       <img src="<%= asset_pack_path 'media/images/logo.png' %>" height="60px" width="100" alt=" demo instructions">
     </a>
-    <p style="font-family:  'Montserrat'!important; font-size: 16px; font-weight: 500 ; color: #fdfdfd;">Sanbrafie Group Inc</p>
+    <p style="padding-top: 10px; font-family:  'Montserrat'!important; font-size: 17px; font-weight: 500 ; color: #111;">Sanbrafie Group Inc</p>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -37,10 +37,10 @@
       </ul>
       <div class="d-flex">
         <% if user_signed_in? %>
-          <%= link_to "Logout", destroy_user_session_path , :method=> 'delete',class: "btn btn-lg btn-outline-light nav-buttons me-auto"  %>
+          <%= link_to "Logout", destroy_user_session_path , :method=> 'delete',class: "btn btn-lg btn-outline-dark nav-buttons me-auto"  %>
         <% else %>
-          <%= link_to "Login", new_user_session_path ,class: "btn btn-lg btn-outline-light nav-buttons me-auto"  %>
-          <%= link_to "Sign up", new_user_registration_path, class:"btn btn-lg btn-light nav-buttons" %>
+          <%= link_to "Login", new_user_session_path ,class: "btn btn-lg btn-outline-dark nav-buttons me-auto"  %>
+          <%= link_to "Sign up", new_user_registration_path, class:"btn btn-lg btn-dark nav-buttons" %>
         <% end %>
       </div>
     </div>
@@ -49,6 +49,9 @@
 <style>
   .bg-darkk{
     background-color: #090909 !important;
+  }
+   .bg-white{
+    background-color: #fff !important;
   }
   .active-border{
     border-bottom: 2px solid #202020;

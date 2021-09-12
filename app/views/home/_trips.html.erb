@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col trip-card">
         <%= link_to booking_details_path(title: "Sanbrafie Homegoing Tour Summer 2022"), remote:true do %>   
-            <img src="<%= asset_pack_path 'media/images/2a.jpg' %>" alt="Trip Image Preview" class="f-destination-img shadow">
+            <img src="<%= asset_pack_path 'media/images/2.jpg' %>" alt="Trip Image Preview" class="f-destination-img shadow">
         <% end %>
         <div>
             <span class="text-4">Sanbrafie Homegoing Tour Summer 2022</span><br>
@@ -19,7 +19,7 @@
 
     <div class="col trip-card">
         <%= link_to booking_details_path(title: "Ghana December 2022"), remote:true do %>        
-            <img src="<%= asset_pack_path 'media/images/ghxmas.jpg' %>" alt="Trip Image Preview" class="f-destination-img shadow">
+            <img src="<%= asset_pack_path 'media/images/ghdec.jpg' %>" alt="Trip Image Preview" class="f-destination-img shadow">
         <% end %>
         <%# style="padding: 10px; background-color: #ffffff; height: 110px;" class="shadow-sm" %>
         <div>
@@ -39,7 +39,7 @@
     <div class="col trip-card">
 
         <%= link_to booking_details_path(title: "HBCU Africa Homecoming 2022: 100,000 Strong Africa Conference"), remote:true do %>   
-            <img src="<%= asset_pack_path 'media/images/image4a.jpg' %>" alt="Trip Image Preview" class="f-destination-img shadow">
+            <img src="<%= asset_pack_path 'media/images/image4.jpg' %>" alt="Trip Image Preview" class="f-destination-img shadow">
         <% end %>
         <div>
             <span class="text-4">HBCU Africa Homecoming 2022: 100,000 Strong Africa Conference</span><br>
@@ -57,7 +57,7 @@
 
     <div class="col trip-card">     
         <%= link_to booking_details_path(title: "Sanbrafie Tanzania 2023"), remote:true do %>   
-            <img src="<%= asset_pack_path 'media/images/5a.jpg' %>" alt="Trip Image Preview" class="f-destination-img shadow">
+            <img src="<%= asset_pack_path 'media/images/5.jpg' %>" alt="Trip Image Preview" class="f-destination-img shadow">
         <% end %>
         <div>
             <span class="text-4">Sanbrafie Tanzania 2023</span><br>
@@ -90,6 +90,7 @@
     }
 
     .f-destination-img{
+    object-fit: cover !important;
     height: 300px;
     width:100%;
     transition: width .3s, height .3s;

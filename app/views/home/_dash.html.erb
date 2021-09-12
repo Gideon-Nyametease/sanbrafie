@@ -1,21 +1,20 @@
-<div class="page-topic d-flex justify-content-center shadow-sm">
-    <div class="row container">
-        <div class="text-center ">
-            <h3 class="my-h3">Hello <%= current_user.username.capitalize %></h3>
-        </div>
-    </div>
-</div>
+<%# <div class="page-topic d-flex justify-content-center shadow-sm">
+    
+</div> %>
 <div class="book booking-edit"></div>
 <div class="booking-details"></div>
 <div class="custom-trip"></div>
 <div class="row" >
     <div class="col-8">
+    <div style="padding: 40px 30px; border-bottom: 0.3px #030303 solid;">
+        <h3 class="my-h3">Hello <%= current_user.username.capitalize %></h3>
+    </div>
     <br><br>
         <div class="booking-table" style="margin: 0 auto; width:94%;">       
             <div class="wrapper ">
-                <div class="page-header my-h3">
+                <div class="page-header">
                     <% if current_user.role_code == "admin"%>
-                        <h3>All Customer Booking History</h3>
+                        <h3>View All Customer Booking History</h3>
                     <% else %>
                         <h3>View Your Booking History</h3>
                     <% end %>
@@ -24,7 +23,7 @@
 
                 <div class="table-responsive shadow-sm">
                     <table class="table table-hover table-lg">
-                        <thead style="height: 50px; border-top: 1px solid #000; background-color: #ececec;">
+                        <thead style="height: 50px; border-top: 1px solid #000; background-color: #f5f5f7;">
                         <tr>
                             <th>#</th>
                             <th>Trip</th>
@@ -75,7 +74,7 @@
 
     </div> 
     <%# #dfe6e9 %>
-    <div class="col-4 shadow-sm" style="background-color:#ececec; padding: 20px 0 20px 10px; border-left: 1px solid #000;">
+    <div class="col-4 shadow-sm" style="background-color:#f5f5f7; padding: 20px 0 20px 10px; border-left: 0.3px solid #030303;">
         <div class="row">
             <h3 class="text-center" style="margin-bottom:20px;">Upcoming Trips</h4>
             <% if current_user.role_code == "admin"%>
@@ -155,14 +154,14 @@
     width:153px !important;
     }
     .my-h3{
-        font-weight: 300; 
-        font-family: poppins;
+        font-weight: 400; 
+        font-family: 'Poppins';
     }
     .page-topic{
     padding: 20px 0 16px 0;
-    background-color: #ececec !important;
+    background-color: #f5f5f7 !important;
     color:#161616 !important;
-    border-bottom:1px solid #000;
+    border-bottom:1px solid #ececec;
     }
 
     .page-link{

@@ -1,21 +1,19 @@
 <div data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
   <div class="carousel-section" style="">
-    <%#= render 'devise/sessions/carousel'%>
     <div class="row">
-     <%# style="border: red 2px solid" %>
       <div class="col-6 col-xs-12 header-text">
       <br>
         <div class="big-text d-block mx-auto" >
             <%# <p style="color: #efefef; font-size:54px; font-weight: 800;">Travel with us</p> %>
-            <p class="bold-text w3-animate-top" style="font-family: 'Seaweed script' !important; color: #111111 !important; font-size: 134px !important;">
+            <p class="bold-text w3-animate-top" style="font-family: 'Seaweed script' !important; color: #f5f5f7 !important; font-size: 134px !important;">
               Sanbrafie
             </p>
            <br>
-            <p class="bold-text w3-animate-top" style="font-family: 'Montserrat' !important; color: #f6f8f9 !important;">
+            <p class="bold-text w3-animate-top" style="font-family: 'Montserrat' !important; color: #000 !important;">
                Embracing our Cultures, 
                 <br>Preserving our Heritage.
             </p>
-            <p class="carousel-mini-text w3-animate-left" >
+            <p class="carousel-mini-text w3-animate-left" style="color: #000 !important; ">
                 Go on boutique tours to the heart of 
                 the motherland. <br> 
             </p>
@@ -100,14 +98,14 @@
         </div><br><br>
     </div>
   </div>
-  <div class="contact-section " id="contact" style="padding: 100px 0 150px 0; background-color: #090909; color:#f6f8f9">
+  <div class="contact-section " id="contact" style="padding: 100px 0 150px 0; background-color: #f5f5f7; color:#090909">
     <div class="my-container">
       <div class="row">
           <div class="d-flex justify-content-center">
             <p class="section-headings ">Get in touch</p><br><br>
           </div>
           <div class="d-flex justify-content-center">
-            <p class="text-3 w3-animate-left" style="color: #e2e2e2 !important; font-weight: 400 !important;">We would love to hear from you, kindly leave your details below.</p>
+            <p class="text-3 w3-animate-left" style="color: #111 !important; font-weight: 400 !important;">We would love to hear from you, kindly leave your details below.</p>
           </div>
           <br><br><br><br>
           <div class="customer-msg-form" style="margin: 0 auto; width: 60%;">
@@ -119,21 +117,21 @@
               <div class="form-inputs">
                 <div class="mb-3 row">
                   <div class="col">
-                    <%= f.input :full_name, input_html:{class:"form-control-lg contact-section-input"}, label:"Name"  %>
+                    <%= f.input :full_name, input_html:{class:"form-control-lg Sanbrafie-input"}, label:"Name"  %>
                   </div>
                   <div class="col">
-                    <%= f.input :email, input_html:{class:"form-control-lg contact-section-input"}, label:"Email"  %>
+                    <%= f.input :email, input_html:{class:"form-control-lg Sanbrafie-input"}, label:"Email"  %>
                   <!--contact-section-input-->
                   </div>
                 </div>
                 <div  class="mb-3">
-                  <%= f.input :message ,as: :text, input_html:{class:"form-control-lg contact-section-input my-text-box"}  %>
+                  <%= f.input :message ,as: :text, input_html:{class:"form-control-lg Sanbrafie-input my-text-box"}  %>
                 </div>
               </div>
               <br>
 
               <div class="form-actions">
-                <%= f.button :submit,'Send', class:"btn btn-lg btn-outline-light", style:"width: 200px;" %>
+                <%= f.button :submit,'Send', class:"btn btn-lg btn-dark", style:"width: 200px;" %>
               </div>
             <% end %>
 
@@ -216,7 +214,7 @@
 }
 
 .carousel-section{
-  background:#090909 !important;
+  background:#fff !important;
   margin: 0 auto !important; 
   height: 780px !important;
 }
