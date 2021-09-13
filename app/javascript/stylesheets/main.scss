@@ -49,9 +49,7 @@ html, body {
   border:none !important;
   border-radius: 0px !important;
 }
-.my-form-margin{
-  padding: 0 40px;
-}
+
 
 .customer-msg-form{
   margin: 0 auto; 
@@ -252,7 +250,11 @@ header{
   background: linear-gradient(4deg, rgba(2,0,36,0.7053493542617626) 0%, rgba(9,8,11,0.7278212643741222) 0%, 
                             rgba(9,9,9,0.6098437362842346) 23%, rgba(0,212,255,0.008720140778616603) 100%);  
 }
-
+.header-text-bg{
+  // background-image:  url('../images/adinkra.jpg');
+  object-fit: cover;
+  // opacity: 0.08;
+}
 .header-text{
   padding: 50px 0 70px 45px;
 }
@@ -470,7 +472,9 @@ height:180px !important;
     margin: 0 auto !important; 
     height: 720px !important;
   }
-
+  .my-form-margin{
+    padding: 0 10px;
+  }
   .log-form-margin{
     margin: 0 auto !important;
     width: 96% !important;
@@ -560,7 +564,9 @@ height:180px !important;
     margin: 0 auto !important; 
     height: 630px !important;
   }
-
+  .my-form-margin{
+    padding: 0 10px;
+  }
   .log-form-margin{
     margin: 0 auto !important;
     width: 96% !important;
