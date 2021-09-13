@@ -25,6 +25,14 @@ html, body {
   font-weight: 500 !important;
   margin: 0 10px 0 10px;
 }
+
+#navbar-head-text{
+  padding-top: 10px; 
+  font-family:  'Montserrat'; 
+  font-size: 17px; 
+  font-weight: 600; 
+  color: #111;
+}
 // ===========================
 
 
@@ -43,6 +51,11 @@ html, body {
 }
 .my-form-margin{
   padding: 0 40px;
+}
+
+.customer-msg-form{
+  margin: 0 auto; 
+  width: 60%;
 }
 
 // ================= Homepage ========================== 
@@ -108,7 +121,13 @@ header{
   font-size:18px;
   font-weight: 400;
   line-height: 30px;
-  color: #241f21;
+  color: #715f66;
+}
+#testimonials-mobile-view{
+  display: none;
+}
+#test-car{
+  display: block;
 }
 .destinations-section{
   padding: 100px 0 100px 0;
@@ -156,13 +175,21 @@ header{
   // -ms-transform: translateY(-50%);
   // transform: translateY(-50%);
 }
-.carousel-mini-text{
+.carousel-mini-text-white{
   color: #fafafa !important;
   font-family: 'Open sans' !important;
   font-size: 17px !important;
   line-height:21px!important;
   font-weight: 400 !important;
   opacity:0.8;
+}
+.carousel-mini-text-black{
+  color: #000; 
+  font-family: 'Open sans';
+  font-size: 17px;
+  line-height:21px;
+  font-weight: 400;
+  opacity:0.9;
 }
 
 .carousel-bold-text{
@@ -172,12 +199,19 @@ header{
   font-weight: 400 ;
   line-height: 96%;
 }
-.bold-text{
-  font-family: 'Libre Baskerville', serif;
-  color: #fafafa !important;
-  font-size: 48px !important;
-  line-height:50px!important;
-  font-weight: 400;
+.bold-text-black{
+  font-family: 'Montserrat';
+  font-weight:600; 
+  color: #000;
+  font-size: 48px;
+  line-height:50px;
+}
+.bold-text-white{
+  font-family: 'Montserrat';
+  font-weight:600; 
+  color: #fafafa;
+  font-size: 48px ;
+  line-height:50px;
 }
 .cta-btn{
   color: white;
@@ -208,6 +242,12 @@ header{
 
 .header-text{
   padding: 50px 0 70px 45px;
+}
+
+.transparent-text{
+  font-family: 'Seaweed script'; 
+  color: #ececec; 
+  font-size: 134px;
 }
 // ============================
 .contact-section-input{
@@ -322,50 +362,36 @@ height:180px !important;
   border-radius: 0px !important;
 }
 
-
-//  =============== Google button =======
-$white: #fff;
-$google-blue: #4285f4;
-$button-active-blue: #1669F2;
-
-.google-btn {
-  width: 184px;
-  height: 42px;
-  background-color: $google-blue;
-  border-radius: 2px;
-  box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
-  .google-icon-wrapper {
-    position: absolute;
-    margin-top: 1px;
-    margin-left: 1px;
-    width: 40px;
-    height: 40px;
-    border-radius: 2px;
-    background-color: $white;
-  }
-  .google-icon {
-    position: absolute;
-    margin-top: 11px;
-    margin-left: 11px;
-    width: 18px;
-    height: 18px;
-  }
-  .btn-text {
-    float: right;
-    margin: 11px 11px 0 0;
-    color: $white;
-    font-size: 14px;
-    letter-spacing: 0.2px;
-    font-family: "Roboto";
-  }
-  &:hover {
-    box-shadow: 0 0 6px $google-blue;
-  }
-  &:active {
-    background: $button-active-blue;
-  }
+.the-carousel{
+  display: block;
 }
 
+#footer-socials{
+  list-style-type: none;
+  list-style:none;
+  padding-bottom: -20px;
+ }
+ 
+ .footer-socials-icon{
+   display: block;
+   text-decoration: none;
+   margin: 0 18px 10px 0;
+ }
+ 
+ .social-icon{
+   color: #f6f8f9;
+ }
+ 
+ .social-icon:hover{
+   color: #4d4d4d;
+ }
+ 
+ .footer-copyright{
+   font-size: 12px;
+   font-family: 'poppins';
+   color: #e6e8e9;
+ }
+ 
 // ================== Error page ======================================
 .err{
   margin: 0 auto;
@@ -421,3 +447,224 @@ $button-active-blue: #1669F2;
   height: 100vh;
 }
 //======================================================================
+
+
+//================= media queries ======================================
+
+@media only screen and (min-width : 360px) {
+  .my-container{
+    width: 96%;
+    margin: 0 auto;
+  }
+  .header-text{
+    margin-top: -50px;
+    padding: 0;
+  }
+  .about-text{
+    padding: 20px;
+  }
+  .about-img{
+    display:none;
+  }
+  #test-car{
+    display: none;
+  }
+  #testimonials-mobile-view{
+    display: block;
+  }
+  #navbar-head-text{
+    display: none;
+  }
+
+  .transparent-text{
+    font-size: 64px;
+  }
+
+  .bold-text-black{
+    font-family: 'Montserrat';
+    font-weight:600; 
+    color: #000;
+    font-size: 32px;
+    line-height:35px;
+  }
+  .bold-text-white{
+    font-family: 'Montserrat';
+    font-weight:600; 
+    color: #fafafa;
+    font-size: 32px;
+    line-height:35px;
+  }
+
+  .the-carousel{
+    display: none;
+  }
+  .reg-page-image{
+    display: none;
+  }
+  .top-section{
+    height: 180px;
+  }
+  .code-assignment-form{
+    width: 85vw;
+  }
+  .my-search-btn{
+    font-size: small;
+    width: 135px;
+  }
+  .cta-btn{
+    color: white;
+    background: black;
+    font-weight: 400;
+    font-size: 18px;
+    width:240px;
+  }
+  .cta-btn:hover{
+    color: black;
+    background-color: white;
+    border: 2px black solid;
+  }
+
+  .customer-msg-form{
+    margin: 0 auto; 
+    width: 94%;
+  }
+}
+
+@media only screen and (min-width : 480px) {
+  .login-page-image{
+    display: none;
+  }
+  .reg-page-image{
+    display: none;
+  }
+  .top-section{
+    height: 180px;
+  }
+}
+
+@media only screen and (min-width : 768px) {
+  .code-assignment-form{
+    width: 35vw;
+  }
+}
+
+@media only screen and (min-width : 1366px) {
+  .my-container{
+    margin: 0 auto;
+    width: 80%;
+  }
+  .header-text{
+    padding: 50px 0 70px 45px;
+  }
+  .about-img{
+    display:block;
+  }
+  #testimonials-mobile-view{
+    display: none;
+  }
+  #test-car{
+    display: block;
+  }
+  #navbar-head-text{
+    display: block;
+  }
+  .transparent-text{
+    font-family: 'Seaweed script'; 
+    color: #ececec; 
+    font-size: 134px;
+  }
+  .bold-text-black{
+    font-family: 'Montserrat';
+    font-weight:600; 
+    color: #000;
+    font-size: 48px;
+    line-height:50px;
+  }
+  .bold-text-white{
+    font-family: 'Montserrat';
+    font-weight:600; 
+    color: #fafafa;
+    font-size: 48px ;
+    line-height:50px;
+  }
+  .cta-btn{
+    color: white;
+    background: black;
+    font-weight: 400;
+    font-size: 24px;
+    width:300px;
+  }
+  .the-carousel{
+    display: block;
+  }
+  .cta-btn:hover{
+    color: black;
+    background-color: white;
+    border: 2px black solid;
+  }
+  .customer-msg-form{
+    margin: 0 auto; 
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width : 1920px) {
+  .my-container{
+    margin: 0 auto;
+    width: 80%;
+  }
+  .header-text{
+    padding: 50px 0 70px 45px;
+  }
+  .about-img{
+    display:block;
+  }
+  #testimonials-mobile-view{
+    display: none;
+  }
+  #test-car{
+    display: block;
+  }
+  #navbar-head-text{
+    display: block;
+  }
+  .transparent-text{
+    font-family: 'Seaweed script'; 
+    color: #ececec; 
+    font-size: 134px;
+  }
+  .bold-text-black{
+    font-family: 'Montserrat';
+    font-weight:600; 
+    color: #000;
+    font-size: 48px;
+    line-height:50px;
+  }
+  .bold-text-white{
+    font-family: 'Montserrat';
+    font-weight:600; 
+    color: #fafafa;
+    font-size: 48px ;
+    line-height:50px;
+  }
+  .cta-btn{
+    color: white;
+    background: black;
+    font-weight: 400;
+    font-size: 24px;
+    width:300px;
+  }
+  .the-carousel{
+    display: block;
+  }
+  .cta-btn:hover{
+    color: black;
+    background-color: white;
+    border: 2px black solid;
+  }
+  .customer-msg-form{
+    margin: 0 auto; 
+    width: 60%;
+  }
+}
+// ========================================================

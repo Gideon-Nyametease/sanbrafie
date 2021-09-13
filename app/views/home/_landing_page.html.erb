@@ -1,31 +1,27 @@
 <div data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-  <div class="carousel-section" style="">
+  <div class="carousel-section">
     <div class="row">
-      <div class="col-6 col-xs-12 header-text">
-      <br>
+      <div class="col-lg-6 header-text">
+        <br><br>
         <div class="big-text d-block mx-auto" >
-            <%# <p style="color: #efefef; font-size:54px; font-weight: 800;">Travel with us</p> %>
-            <p class="bold-text w3-animate-top" style="font-family: 'Seaweed script' !important; color: #ececec !important; font-size: 134px !important;">
+            <p class=" w3-animate-top transparent-text">
               Sanbrafie
             </p>
            <br>
-            <p class="bold-text w3-animate-top" style="font-family: 'Montserrat' !important;font-weight:600; color: #000 !important;">
+            <p class="bold-text-black w3-animate-top">
                Embracing our Cultures, 
                 <br>Preserving our Heritage.
             </p>
-            <p class="carousel-mini-text w3-animate-left" style="color: #000 !important; ">
+            <p class="carousel-mini-text w3-animate-left">
                 Go on boutique tours to the heart of 
                 the motherland. <br> 
             </p>
             <br>
-            <%= link_to 'Travel with us', booking_form_path, class:"btn btn-lg btn-light cta-btn shadow-sm", remote:true%>
-            <br><br><br>
-           <%# <p class="bold-text w3-animate-top" style="font-family: 'Montserrat' !important; color: #111111 !important; font-size: 32px !important; letter-spacing:12px;">
-               Travel with us
-            </p> %>
+            <%= link_to 'Travel with us', booking_form_path, class:"btn btn-lg btn-light cta-btn shadow-lg",style:"", remote:true%>
+            <br><br>
         </div>
       </div>
-      <div class="col-6 ">
+      <div class="col-lg-6 the-carousel">
         <%= render 'carousel' %>
       </div>
     </div>
@@ -34,10 +30,9 @@
     <div class=" my-container ">
       <div class="d-flex justify-content-center">
         <p class="section-headings "> Featured Trips</p>
-        <%#=link_to 'View all', tours_path, class:"ms-auto btn btn-lg btn-light"%>
       </div>
       <br>
-      <div class="destination-cards d-flex align-content-start flex-wrap" >
+      <div class="destination-cards d-flex" >
         <%= render 'trips' %> 
       </div>
       <br><br>
@@ -58,8 +53,8 @@
         <%= render 'testimonial_carousel'%>
         <br><br>
         <div class="row">
-            <div class="col d-flex justify-content-center">
-                <%= link_to 'Leave a comment', testimonial_form_path, class:"btn btn-lg btn-dark", style:"font-size: 24px; font-weight: 400; border: 2px white solid", remote: true%>
+            <div class="col d-flex justify-content-center ">
+                <%= link_to 'Leave a comment', testimonial_form_path, class:"btn btn-lg btn-dark shadow-lg", style:"font-size: 24px; font-weight: 400;", remote: true%>
             </div>
         </div>
     </div>
@@ -70,7 +65,7 @@
           <p class="section-headings "> SanBraFie Group Inc.</p>
         </div>
         <div class="row">
-          <div class="col">
+          <div class="col-lg-6 about-text">
             <div class=" d-block mx-auto" style="padding:0 50px 0 0;">
                 <p class="testimonial-text w3-animate-left" style="font-size:18px !important; color: #161616 !important">
                   Sanbrafie Group Incorporated provides travel and tour management services and business and educational consulting services.   
@@ -90,7 +85,7 @@
                 </p>
             </div>
           </div>
-          <div class="col">
+          <div class="col-lg-6 about-img">
             <div class=" w3-animate-right">
               <img src="<%= asset_pack_path 'media/images/logotext.png' %>" width="100%" height="600px" style="margin-top:-80px;" alt=" demo instructions">
             </div>
@@ -100,15 +95,15 @@
   </div>
   <div class="contact-section " id="contact" style="padding: 100px 0 150px 0; background-color: #f5f5f7; color:#090909">
     <div class="my-container">
-      <div class="row">
+      <div>
           <div class="d-flex justify-content-center">
             <p class="section-headings ">Get in touch</p><br><br>
           </div>
           <div class="d-flex justify-content-center">
-            <p class="text-3 w3-animate-left" style="color: #111 !important; font-weight: 400 !important;">We would love to hear from you, kindly leave your details below.</p>
+            <p class="carousel-mini-text w3-animate-left" style="padding-left:15px;">We would love to hear from you, kindly leave your details below.</p>
           </div>
-          <br><br><br><br>
-          <div class="customer-msg-form" style="margin: 0 auto; width: 60%;">
+          <br><br><br>
+          <div class="customer-msg-form" >
             
             <%= simple_form_for(@customer_msg) do |f| %>
               <%= f.error_notification %>
@@ -116,10 +111,10 @@
 
               <div class="form-inputs">
                 <div class="mb-3 row">
-                  <div class="col">
+                  <div class="col-sm-6">
                     <%= f.input :full_name, input_html:{class:"form-control-lg Sanbrafie-input"}, label:"Name"  %>
                   </div>
-                  <div class="col">
+                  <div class="col-sm-6">
                     <%= f.input :email, input_html:{class:"form-control-lg Sanbrafie-input"}, label:"Email"  %>
                   <!--contact-section-input-->
                   </div>
@@ -131,7 +126,7 @@
               <br>
 
               <div class="form-actions">
-                <%= f.button :submit,'Send', class:"btn btn-lg btn-dark", style:"width: 200px;" %>
+                <%= f.button :submit,'Send', class:"btn btn-lg btn-dark shadow-lg", style:"width:250 !important; font-size: 24px; font-weight: 400;" %>
               </div>
             <% end %>
 
@@ -187,31 +182,6 @@
 
 
 <style>
-#footer-socials{
- list-style-type: none;
- list-style:none;
- padding-bottom: -20px;
-}
-
-.footer-socials-icon{
-  display: block;
-  text-decoration: none;
-  margin: 0 18px 10px 0;
-}
-
-.social-icon{
-  color: #f6f8f9;
-}
-
-.social-icon:hover{
-  color: #4d4d4d;
-}
-
-.footer-copyright{
-  font-size: 12px;
-  font-family: 'poppins';
-  color: #e6e8e9;
-}
 
 .carousel-section{
   background:#f5f5f7 !important;
@@ -233,17 +203,7 @@
   margin-bottom: 30px;
   // font-weight: 700;
 }
-.cta-btn{
-  width: 50% !important;
-  height: 60px;
-  font-family: 'Poppins'!important;
-}
-.cta-btn:hover{
-  color: black;
-  background-color: white;
-  border: 2px #5d5d5d solid !important;
-  height: 62px !important;
-}
+
 </style>
 <script>
   $('#destination-btn').click(function() {

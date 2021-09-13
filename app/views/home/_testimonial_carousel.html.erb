@@ -1,58 +1,115 @@
-<div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel" style=" color: #161616 !important;">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-        <img src="<%= asset_pack_path 'media/images/testimonial.png' %>" width="120%" height="500px" alt="Testimonial-bg">
-        <div class="carousel-caption d-none d-md-block" style="margin-top: -320px!important;">
-            <p style="font-family: 'Montserrat'; letter-spacing:-1px; font-size: 36px ; font-weight: 700; line-height: 42px; color: #161616;">
-                "The trip to Ghana is one I will forever remember. <br><br>
+
+
+<div id="test-car">
+    <div id="carouselExampleControls" class=" carousel carousel-dark slide" data-bs-ride="carousel" style=" color: #161616 !important;">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="<%= asset_pack_path 'media/images/testimonial.png' %>" width="120%" height="500px" alt="Testimonial-bg">
+                <div class="carousel-caption d-none d-md-block" style="margin-top: -320px!important;">
+                    <p style="font-family: 'Montserrat'; letter-spacing:-1px; font-size: 36px ; font-weight: 700; line-height: 42px; color: #161616;">
+                        "The trip to Ghana is one I will forever remember. <br><br>
+                        1st- It was shared with family<br>
+                        2nd- We were provided an experience that gave us  real insight into so many facets of life in Ghana, 
+                        as well as  cultural history, food, and environment. <br><br>
+                        I am looking forward to my next visit."
+                    </p><br>
+                    <p style="font-size: 24px ; font-weight: 400; color: #5d5d5d;">
+                    - <b>Lois Cherry</b>
+                    </p>
+                    <br>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="<%= asset_pack_path 'media/images/testimonial.png' %>" width="120%" height="500px" alt="Testimonial-bg">
+                <div class="carousel-caption d-none d-md-block" style="margin-top: -160px!important;">
+                    <p style="font-family: 'Montserrat';letter-spacing:-2px; font-size: 36px ; font-weight: 700; line-height: 38px; color: #161616;">
+                    " I went to Ghana and found my future in the past"
+                    </p><br>
+                    <p style="font-size: 24px ; font-weight: 400; color: #5d5d5d;">
+                        - <b>Michele Clarke-Ceres</b>, WorldCeres Summer 2021
+                    </p>
+                    <br>
+                </div>
+            </div>
+        
+            <div class="carousel-item">
+                <img src="<%= asset_pack_path 'media/images/testimonial.png' %>" width="120%" height="500px" alt="Testimonial-bg">
+                <div class="carousel-caption d-none d-md-block" style="margin-top: -320px!important;">
+                    <p style="font-family: 'Montserrat'; letter-spacing:-3px; font-size: 36px ; font-weight: 700; color: #161616;">
+                    " When your tour guides are more like family it make the experience even better! The tour guide was very knowledgeable, 
+                        the driver kept us safe and tackled the roads as a pro! Collaborating for a customized trip was an exceptional 
+                        experience with great recommendations on how to set the itinerary to meet the entires groups needs. Booking 
+                        with Sanbrafie you will not be disappointed! "
+
+                    </p>
+                    <p style="font-size: 24px ; font-weight: 400; color: #5d5d5d;">
+                        -<b> Dr. Sabrina L. Scott-Lorestil</b>
+                    </p>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<div id="testimonials-mobile-view">
+    <div class="row">
+        <div class="col-sm-4 test-card">
+            <p style="font-family: 'Montserrat'; font-size: 16px ; font-weight: 700; color: #161616;">
+                "The trip to Ghana is one I will forever remember. <br>
                 1st- It was shared with family<br>
                 2nd- We were provided an experience that gave us  real insight into so many facets of life in Ghana, 
-                as well as  cultural history, food, and environment. <br><br>
+                as well as  cultural history, food, and environment. <br>
                 I am looking forward to my next visit."
             </p><br>
-            <p style="font-size: 24px ; font-weight: 400; color: #5d5d5d;">
+            <p style="font-size: 14px ; font-weight: 400; color: #5d5d5d;">
                - <b>Lois Cherry</b>
             </p>
-            <br>
         </div>
-    </div>
-
-    <div class="carousel-item">
-        <img src="<%= asset_pack_path 'media/images/testimonial.png' %>" width="120%" height="500px" alt="Testimonial-bg">
-        <div class="carousel-caption d-none d-md-block" style="margin-top: -160px!important;">
-            <p style="font-family: 'Montserrat';letter-spacing:-2px; font-size: 36px ; font-weight: 700; line-height: 38px; color: #161616;">
+        <div class="col-sm-4 test-card">
+            <p style="font-family: 'Montserrat'; font-size: 16px ; font-weight: 700;color: #161616;">
                " I went to Ghana and found my future in the past"
             </p><br>
-            <p style="font-size: 24px ; font-weight: 400; color: #5d5d5d;">
+            <p style="font-size: 14px ; font-weight: 400; color: #5d5d5d;">
                 - <b>Michele Clarke-Ceres</b>, WorldCeres Summer 2021
             </p>
             <br>
         </div>
-    </div>
-  
-    <div class="carousel-item">
-        <img src="<%= asset_pack_path 'media/images/testimonial.png' %>" width="120%" height="500px" alt="Testimonial-bg">
-        <div class="carousel-caption d-none d-md-block" style="margin-top: -320px!important;">
-            <p style="font-family: 'Montserrat'; letter-spacing:-3px; font-size: 36px ; font-weight: 700; color: #161616;">
+        <div class="col-sm-4 test-card">
+            <p style="font-family: 'Montserrat'; font-size: 16px ; font-weight: 700; color: #161616;">
                " When your tour guides are more like family it make the experience even better! The tour guide was very knowledgeable, 
                 the driver kept us safe and tackled the roads as a pro! Collaborating for a customized trip was an exceptional 
                 experience with great recommendations on how to set the itinerary to meet the entires groups needs. Booking 
                 with Sanbrafie you will not be disappointed! "
 
             </p>
-            <p style="font-size: 24px ; font-weight: 400; color: #5d5d5d;">
+            <p style="font-size: 14px ; font-weight: 400; color: #5d5d5d;">
                 -<b> Dr. Sabrina L. Scott-Lorestil</b>
             </p>
             <br>
         </div>
     </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
+
+<style>
+    .test-card{
+        padding: 20px;
+        margin-bottom:10px;
+        border: 0.5px solid #dedede;
+        border-radius: 10px;
+        background-color:#fff;
+        /* -webkit-box-shadow: 0px 11px 40px -15px rgba(130, 130, 130, 0.93);
+        -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+        box-shadow: 0px 11px 40px -15px rgba(104, 104, 104, 0.93);
+        transition: width .3s, height .3s; */
+    }
+</style>
