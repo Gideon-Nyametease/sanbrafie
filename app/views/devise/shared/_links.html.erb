@@ -23,7 +23,7 @@
     <% logger.info "\n #{provider.inspect}\n" %>
     <%# if provider == ":google_oauth2" %>
       <%= link_to omniauth_authorize_path(resource_name, provider), method: :post, class:"btn btn-lg btn-outline-dark " do %>
-        <img style="float: left; padding: 3px 30px 0 0;" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/> Sign in with Google
+        <img style="float: left; padding: 3px 20px 0 0;" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/> Sign in with Google
       <% end %>
       <br />
     <%# else %>

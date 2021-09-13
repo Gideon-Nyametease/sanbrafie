@@ -1,5 +1,5 @@
 <div class="row"> 
-  <div class="col-4 log-form">
+  <div class="col-sm-4 log-form">
     <div class="log-form-margin">
       <div class="form-actions d-grid gap-2">
         <%#= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, class:"btn btn-md btn-outline-dark " %><br/>
@@ -31,7 +31,7 @@
       </div>
     </div>
   </div>
-  <div class="col-8 login-page-image">
+  <div class="col-sm-8 login-page-image">
   </div>
 </div>
 
@@ -70,22 +70,3 @@ $('#my-submit-btn').on('click', function() {
    }, 8000);
 });
 </script>
-<style>
-  .log-form-margin{
-    margin: 0 auto !important;
-    width: 88% !important;
-  }
-  /* .log-form{
-    background-color: #010101 !important;
-    color: #fdfdfd;
-  } */
-  /* .form-control-lg{
-    background-color: #010101 !important;
-    border: 2px #fdfdfd solid !important;
-    border-radius: 0px !important;
-  }
-  .form-control-lg:focus {
-  background-color: #1c1f23 !important;
-  color: #fdfdfd !important;
-} */
-</style>

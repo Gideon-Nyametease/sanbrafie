@@ -30,26 +30,26 @@
                         </div>
                     <% end %>
                         <div class="row mb-3">
-                            <div class="col">
+                            <div class="col-sm-6">
                                 <%= f.input :surname, input_html:{class:"form-control-lg sanbrafie-input", required: true}, label:"Lastname" %>
                             </div>
-                            <div class="col">
+                            <div class="col-sm-6">
                                 <%= f.input :othernames, input_html:{class:"form-control-lg sanbrafie-input required", required: true}, label:"Firstname" %>
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <div class="col">
+                            <div class="col-sm-6">
                                 <%= f.input :phone_number, input_html:{class:"form-control-lg sanbrafie-input", required: true} %>
                             </div>
-                            <div class="col">
+                            <div class="col-sm-6">
                                 <%= f.input :email, input_html:{class:"form-control-lg sanbrafie-input", required: true} %>
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <div class="col">
+                            <div class="col-sm-6">
                                 <%= f.input :coordination_preference, collection: @coordination_preference, label_method: :first, value_method: :last, input_html:{class:"form-control-lg form-select sanbrafie-input", required: true} %>
                             </div>
-                            <div class="col">
+                            <div class="col-sm-6">
                                 <%= f.input :group_count, input_html:{class:"form-control-lg sanbrafie-input", required: true}, label:"Number of people" %>
                             </div>
                         </div>

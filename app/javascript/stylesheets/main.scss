@@ -57,6 +57,10 @@ html, body {
   margin: 0 auto; 
   width: 60%;
 }
+.log-form-margin{
+  margin: 0 auto !important;
+  width: 88% !important;
+}
 
 // ================= Homepage ========================== 
 .section-headings{
@@ -155,7 +159,7 @@ header{
   z-index: 2 !important;
 }
 .carousel-section{
-  background:#090909 !important;
+  background:#f5f5f7 !important;
   margin: 0 auto !important; 
   height: 730px !important;
 }
@@ -224,6 +228,15 @@ header{
   color: black;
   background-color: white;
   border: 2px black solid;
+}
+.btn-dark:hover{
+  // color: black !important;
+  // background-color: white !important;
+  // border: 2px black solid !important;
+  -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+  -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+  box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+  transition: width .3s, height .3s;
 }
 
 .overlay:after { 
@@ -452,12 +465,28 @@ height:180px !important;
 //================= media queries ======================================
 
 @media only screen and (min-width : 360px) {
+  .carousel-section{
+    background:#f5f5f7 !important;
+    margin: 0 auto !important; 
+    height: 720px !important;
+  }
+
+  .log-form-margin{
+    margin: 0 auto !important;
+    width: 96% !important;
+  }
+  .login-page-image{
+    display: none;
+  }
+  .reg-page-image{
+    display: block;
+  }
   .my-container{
     width: 96%;
     margin: 0 auto;
   }
   .header-text{
-    margin-top: -50px;
+    margin-top: -20px;
     padding: 0;
   }
   .about-text{
@@ -477,22 +506,24 @@ height:180px !important;
   }
 
   .transparent-text{
-    font-size: 64px;
+    font-size: 84px;
+    line-height: 104px;
+    padding: -40px 0 5px 0;
   }
 
   .bold-text-black{
     font-family: 'Montserrat';
     font-weight:600; 
     color: #000;
-    font-size: 32px;
-    line-height:35px;
+    font-size: 42px;
+    line-height:44px;
   }
   .bold-text-white{
     font-family: 'Montserrat';
     font-weight:600; 
     color: #fafafa;
-    font-size: 32px;
-    line-height:35px;
+    font-size: 42px;
+    line-height:44px;
   }
 
   .the-carousel{
@@ -511,13 +542,6 @@ height:180px !important;
     font-size: small;
     width: 135px;
   }
-  .cta-btn{
-    color: white;
-    background: black;
-    font-weight: 400;
-    font-size: 18px;
-    width:240px;
-  }
   .cta-btn:hover{
     color: black;
     background-color: white;
@@ -531,11 +555,21 @@ height:180px !important;
 }
 
 @media only screen and (min-width : 480px) {
+  .carousel-section{
+    background:#f5f5f7 !important;
+    margin: 0 auto !important; 
+    height: 630px !important;
+  }
+
+  .log-form-margin{
+    margin: 0 auto !important;
+    width: 96% !important;
+  }
   .login-page-image{
     display: none;
   }
   .reg-page-image{
-    display: none;
+    display: block;
   }
   .top-section{
     height: 180px;
@@ -543,12 +577,33 @@ height:180px !important;
 }
 
 @media only screen and (min-width : 768px) {
-  .code-assignment-form{
-    width: 35vw;
+  .login-page-image{
+    display: block;
+  }
+  .reg-page-image{
+    display: block;
+  }
+  .the-carousel{
+    display: none;
   }
 }
+@media only screen and (min-width : 1024px) {
+  .carousel-section{
+    background:#f5f5f7 !important;
+    margin: 0 auto !important; 
+    height: 780px !important;
+  }
+  .log-form-margin{
+    margin: 0 auto !important;
+    width: 88% !important;
+  }
 
-@media only screen and (min-width : 1366px) {
+  .login-page-image{
+    display: block;
+  }
+  .reg-page-image{
+    display: block;
+  }
   .my-container{
     margin: 0 auto;
     width: 80%;
@@ -572,6 +627,7 @@ height:180px !important;
     font-family: 'Seaweed script'; 
     color: #ececec; 
     font-size: 134px;
+    line-height: 184px;
   }
   .bold-text-black{
     font-family: 'Montserrat';
@@ -594,13 +650,13 @@ height:180px !important;
     font-size: 24px;
     width:300px;
   }
-  .the-carousel{
-    display: block;
-  }
   .cta-btn:hover{
     color: black;
     background-color: white;
     border: 2px black solid;
+  }
+  .the-carousel{
+    display: block;
   }
   .customer-msg-form{
     margin: 0 auto; 
@@ -608,7 +664,23 @@ height:180px !important;
   }
 }
 
-@media only screen and (min-width : 1920px) {
+@media only screen and (min-width : 1366px) {
+  .carousel-section{
+    background:#f5f5f7 !important;
+    margin: 0 auto !important; 
+    height: 780px !important;
+  }
+  .log-form-margin{
+    margin: 0 auto !important;
+    width: 88% !important;
+  }
+
+  .login-page-image{
+    display: block;
+  }
+  .reg-page-image{
+    display: block;
+  }
   .my-container{
     margin: 0 auto;
     width: 80%;
@@ -632,6 +704,85 @@ height:180px !important;
     font-family: 'Seaweed script'; 
     color: #ececec; 
     font-size: 134px;
+    line-height: 184px;
+    padding: -30px 0;
+  }
+  .bold-text-black{
+    font-family: 'Montserrat';
+    font-weight:600; 
+    color: #000;
+    font-size: 48px;
+    line-height:50px;
+  }
+  .bold-text-white{
+    font-family: 'Montserrat';
+    font-weight:600; 
+    color: #fafafa;
+    font-size: 48px ;
+    line-height:50px;
+  }
+  .cta-btn{
+    color: white;
+    background: black;
+    font-weight: 400;
+    font-size: 24px;
+    width:300px;
+  }
+  .cta-btn:hover{
+    color: black;
+    background-color: white;
+    border: 2px black solid;
+  }
+  .the-carousel{
+    display: block;
+  }
+  .customer-msg-form{
+    margin: 0 auto; 
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width : 1920px) {
+  .carousel-section{
+    background:#f5f5f7 !important;
+    margin: 0 auto !important; 
+    height: 780px !important;
+  }
+  .log-form-margin{
+    margin: 0 auto !important;
+    width: 88% !important;
+  }
+
+  .login-page-image{
+    display: block;
+  }
+  .reg-page-image{
+    display: block;
+  }
+  .my-container{
+    margin: 0 auto;
+    width: 80%;
+  }
+  .header-text{
+    padding: 50px 0 70px 45px;
+  }
+  .about-img{
+    display:block;
+  }
+  #testimonials-mobile-view{
+    display: none;
+  }
+  #test-car{
+    display: block;
+  }
+  #navbar-head-text{
+    display: block;
+  }
+  .transparent-text{
+    font-family: 'Seaweed script'; 
+    color: #ececec; 
+    font-size: 134px;
+    margin: -30px 0;
   }
   .bold-text-black{
     font-family: 'Montserrat';
