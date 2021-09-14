@@ -1,81 +1,84 @@
-<%# <div class="page-topic d-flex justify-content-center shadow-sm">
-    
-</div> %>
 <div class="book booking-edit"></div>
 <div class="booking-details"></div>
 <div class="custom-trip"></div>
+<div id="trips"></div>
 <div class="row" >
-    <div class="col-8">
-    <div style="padding: 40px 30px; border-bottom: 0.3px #030303 solid;">
+    <div class="col-sm-8 booking-table-section">
+    <div style="padding: 40px 0 40px 30px; border-bottom: 0.3px #dedede solid; background-color: #f5f5f7; margin-right: -10px;">
         <h3 class="my-h3">Hello <%= current_user.username.capitalize %></h3>
     </div>
-    <br><br>
-        <div class="booking-table" style="margin: 0 auto; width:94%;">       
-            <div class="wrapper ">
-                <div class="page-header">
-                    <% if current_user.role_code == "admin"%>
-                        <h3>View All Customer Booking History</h3>
-                    <% else %>
-                        <h3>View Your Booking History</h3>
-                    <% end %>
-                </div>
-                <br>
+    <br>
+    <div id="upcoming-trips-btn">
+        <div class="d-grid gap-2" style="margin: 0 auto; width:94%;">
+            <%= link_to 'Upcoming trips', upcoming_trips_modal_path, class:"btn btn-dark btn-lg",remote:true%>
+        </div>
+    </div>
+    <br>
+    <div class="booking-table" style="margin: 0 auto; width:94%;">       
+        <div class="wrapper ">
+            <div class="page-header">
+                <% if current_user.role_code == "admin"%>
+                    <h3>View All Customer Booking History</h3>
+                <% else %>
+                    <h3>View Your Booking History</h3>
+                <% end %>
+            </div>
+            <br>
 
-                <div class="table-responsive shadow-sm">
-                    <table class="table table-hover table-lg">
-                        <thead style="height: 50px; border-top: 1px solid #000; background-color: #f5f5f7;">
+            <div class="table-responsive shadow-sm" style="padding: 10px;border: 0.3px solid #dedede;">
+                <table class="table table-hover table-lg">
+                    <thead style="height: 50px; border-top: 1px solid #000; background-color: #f5f5f7;">
+                    <tr>
+                        <th>#</th>
+                        <th>Trip</th>
+                        <th>Coordination</th>
+                        <th>No. of people</th>
+                        <th>Hotel</th>
+                        <th>Duration</th>
+                        <th colspan="2"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% @booking_infos.each_with_index do |booking_info,index| %>
+                    <% @tour = Tour.where("id = ?",booking_info.tour_id)[0]%>
                         <tr>
-                            <th>#</th>
-                            <th>Trip</th>
-                            <th>Coordination</th>
-                            <th>No. of people</th>
-                            <th>Hotel</th>
-                            <th>Duration</th>
-                            <th colspan="2"></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <% @booking_infos.each_with_index do |booking_info,index| %>
-                        <% @tour = Tour.where("id = ?",booking_info.tour_id)[0]%>
-                            <tr>
-                            <td><%= index+1 %></td>
-                            <td><%= @tour.title if !@tour.nil?%></td>
-                            <td><%= booking_info.coordination_preference %></td>
-                            <td><%= booking_info.group_count %></td>
-                            <td><%= booking_info.hotel_type %></td>
-                            <td><%= booking_info.tour_duration %></td>
-                            <td>
-                                <% if booking_info.status == 'postponed'%>
-                                    <%= link_to edit_booking_info_path(booking_info, marker:"postponed"),remote:true, class:"btn btn-secondary" do %>
-                                        Postponed
-                                    <% end %>
-                                <% else %>
-                                    <%= link_to edit_booking_info_path(booking_info),remote:true, class:"btn btn-outline-dark" do %>
-                                        Postpone trip
-                                    <% end %>
+                        <td><%= index+1 %></td>
+                        <td><%= @tour.title if !@tour.nil?%></td>
+                        <td><%= booking_info.coordination_preference %></td>
+                        <td><%= booking_info.group_count %></td>
+                        <td><%= booking_info.hotel_type %></td>
+                        <td><%= booking_info.tour_duration %></td>
+                        <td>
+                            <% if booking_info.status == 'postponed'%>
+                                <%= link_to edit_booking_info_path(booking_info, marker:"postponed"),remote:true, class:"btn btn-secondary" do %>
+                                    Postponed
                                 <% end %>
-                            </td>
-                            <td><button class="btn btn-dark"><i class="fas fa-upload"></i></button></td>
-                            </tr>
-                        <% end %>
-                        </tbody>
-                        <div class="items-count">
-                            No. of records: 
-                            <%#= link_to_unless_current '10',  root_path(items: 10), class:"item-cnt btn btn-sm btn-outline-dark"%>
-                            <%= link_to_unless_current '20',  root_path(items: 20), class:"item-cnt btn btn-sm btn-outline-dark"%>
-                            <%= link_to_unless_current '50',  root_path(items: 50), class:"item-cnt btn btn-sm btn-outline-dark"%>
-                            <%= link_to_unless_current '100',  root_path(items: 100), class:"item-cnt btn btn-sm btn-outline-dark"%>
-                        </div>
-                    </table>
-                    <%== pagy_bootstrap_nav(@pagy) %>
-                </div>
+                            <% else %>
+                                <%= link_to edit_booking_info_path(booking_info),remote:true, class:"btn btn-outline-dark" do %>
+                                    Postpone trip
+                                <% end %>
+                            <% end %>
+                        </td>
+                        <td><button class="btn btn-dark"><i class="fas fa-upload"></i></button></td>
+                        </tr>
+                    <% end %>
+                    </tbody>
+                    <div class="items-count">
+                        No. of records: 
+                        <%= link_to_unless_current '10',  root_path(items: 10), class:"item-cnt btn btn-sm btn-outline-dark"%>
+                        <%= link_to_unless_current '20',  root_path(items: 20), class:"item-cnt btn btn-sm btn-outline-dark"%>
+                        <%= link_to_unless_current '50',  root_path(items: 50), class:"item-cnt btn btn-sm btn-outline-dark"%>
+                        <%= link_to_unless_current '100',  root_path(items: 100), class:"item-cnt btn btn-sm btn-outline-dark"%>
+                    </div>
+                </table>
+                <%== pagy_bootstrap_nav(@pagy) %>
             </div>
         </div>
+    </div>
 
     </div> 
-    <%# #dfe6e9 %>
-    <div class="col-4 shadow-sm" style="background-color:#f5f5f7; padding: 20px 0 20px 10px; border-left: 0.3px solid #030303;">
-        <div class="row">
+    <div class="col-sm-4 shadow-sm" id="upcoming-trips-section" style="background-color:#f5f5f7; padding: 20px 10px; border-left: 0.3px solid #dedede;">
+        <div class="row" >
             <h3 class="text-center" style="margin-bottom:20px;">Upcoming Trips</h4>
             <% if current_user.role_code == "admin"%>
                 <%= link_to new_tour_path, class:"btn btn-lg btn-dark " do %>
@@ -86,7 +89,7 @@
             <hr>
         </div>
         <div class="table-responsive">
-            <table class="table table-hover table-bordered">          
+            <table class="table table-hover table-bordered" style="display: block; height: 100vh; overflow-y: scroll;">          
                 <tbody>
                     <% @tours.each_with_index do |tour, index| %>
                         <tr>
@@ -122,12 +125,18 @@
                                 <br>
                                 <%= link_to "Itinerary",booking_details_path(id: tour.id),remote: true, class:"btn btn-link" %>
                                 <br>
-                                <%= link_to "Book Trip", book_form_path(tour_id: tour.id), class:"btn btn-md btn-dark", remote: true%>
-                                <% if current_user.role_code == 'admin'%>
-                                    <%= link_to edit_tour_path(tour), class:"btn btn-md btn-secondary" do %>
-                                        <i class="fas fa-edit"></i> Edit
-                                    <% end %>
-                                <% end %>
+                                <div class="row">
+                                    <div class="col-sm-6 d-grid gap-2">
+                                        <%= link_to "Book Trip", book_form_path(tour_id: tour.id), class:"btn btn-md btn-dark", remote: true%>
+                                    </div>
+                                    <div class="col-sm-6 d-grid gap-2">
+                                        <% if current_user.role_code == 'admin'%>
+                                            <%= link_to edit_tour_path(tour), class:"btn btn-md btn-secondary" do %>
+                                                <i class="fas fa-edit"></i> Edit
+                                            <% end %>
+                                        <% end %>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                         

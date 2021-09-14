@@ -1,7 +1,9 @@
 <div data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+  <a id="goto-top"></a>
+
   <div class="carousel-section">
     <div class="row">
-      <div class="col-lg-6 header-text-bg">
+      <div class="col-lg-6 header-text-u">
         <div class="header-text">
           <br><br>
           <div class="big-text d-block mx-auto" >
@@ -36,6 +38,7 @@
       <div class="destination-cards d-flex" >
         <%= render 'trips' %> 
       </div>
+
       <br><br>
       <div class="row ">
           <div class="d-flex justify-content-center">
@@ -182,10 +185,72 @@
 </div>
 
 
+<style>
+  .header-text{
+    /* position:relative; */
+    background-image:  url('../images/adinkra.jpg');
+    object-fit: cover;
+    opacity: 1;
+  }
+ 
+  #goto-top {
+    display: inline-block;
+    background-color:#1C1F23; 
+    /* #FF9800; */
+    width: 54px;
+    height: 54px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 40px;
+    right: 50px;
+    transition: background-color .3s, 
+      opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+  }
+#goto-top::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#goto-top:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#goto-top:active {
+  background-color: #555;
+}
+#goto-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+</style>
+
 <script>
-  $('#destination-btn').click(function() {
-    $('html, body').animate({
-      scrollTop: $("div.destinations-section").offset().top
-    }, 600)
-  }), 
+  //  $('#goto-top').click(function() {
+  //    console.log("clicked ----------------");
+  // });
+  
+  var btn = $('#goto-top');
+
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > 600) {
+      btn.addClass('show');
+    } else {
+      btn.removeClass('show');
+    }
+  });
+
+  btn.on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop:0}, '300');
+  });
 </script>

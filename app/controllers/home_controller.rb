@@ -3,15 +3,15 @@ class HomeController < ApplicationController
     def landing_page
       if user_signed_in?
         if current_user.role_code == "client"
-          @tours = Tour.limit(5)
+          @tours = Tour.where(active_status: true, del_status: false).order(created_at: :desc).limit(5)
           booking_infos = BookingInfo.where("user_id = ?", current_user.id)
           @pagy, @booking_infos = booking_infos.present? ? pagy(BookingInfo.where("user_id = ?", current_user.id) ) : pagy(BookingInfo.where("(surname = ? AND othernames = ?) OR email = ?",current_user.surname,current_user.othernames,current_user.email) )
         else
-          @tours = Tour.limit(5)
+          @tours = Tour.where(active_status: true, del_status: false).order(created_at: :desc).limit(5)
           @pagy, @booking_infos = pagy(BookingInfo.all )
         end
       else
-        @tours = Tour.limit(5)
+        @tours = Tour.where(active_status: true, del_status: false).order(created_at: :desc).limit(5)
         logger.info "THE TOURS = #{@tours.inspect}"
         @customer_msg = CustomerMsg.new
       end
@@ -19,9 +19,20 @@ class HomeController < ApplicationController
       @hotel_type = [["5 Star","5 Star"],["4 Star","4 Star"],["3 Star","3 Star"]]
     end
 
+    def upcoming_trips_modal
+      @tours = Tour.where(active_status: true, del_status: false).order(start_date: :desc)
+    end
+
     def checkout_page
       @tours = Tour.where('id = ?',params[:tour_id])
       logger.info "The booking form \n #{params[:tour_id].inspect}"
+    end
+
+    def booking_form
+      @tours = Tour.where(active_status: true, del_status: false).order(title: :asc)
+      @coordination_preference = [["Air and Ground","AG"],["Ground only","G"]]
+      @hotel_type = [["5 Star","5 Star"],["4 Star","4 Star"],["3 Star","3 Star"]]
+      @purpose_statement = [["Cultural visit","Cultural visit"],["Potential business","Potential business"],["Shopping","Shopping"],["Honeymoon","Honeymoon"]]
     end
 
     def booking_details
@@ -30,7 +41,7 @@ class HomeController < ApplicationController
     end
 
     def testimonial_form
-      @tours = Tour.all
+      @tours = Tour.where(active_status: true, del_status: false).order(title: :asc)
     end
 
     def create_testimonial
@@ -63,13 +74,6 @@ class HomeController < ApplicationController
     end
 
     def privacy_policy
-    end
-
-    def booking_form
-        @tours = Tour.all
-        @coordination_preference = [["Air and Ground","AG"],["Ground only","G"]]
-        @hotel_type = [["5 Star","5 Star"],["4 Star","4 Star"],["3 Star","3 Star"]]
-        @purpose_statement = [["Cultural visit","Cultural visit"],["Potential business","Potential business"],["Shopping","Shopping"],["Honeymoon","Honeymoon"]]
     end
 
     def create_booking

@@ -250,14 +250,14 @@ header{
   background: linear-gradient(4deg, rgba(2,0,36,0.7053493542617626) 0%, rgba(9,8,11,0.7278212643741222) 0%, 
                             rgba(9,9,9,0.6098437362842346) 23%, rgba(0,212,255,0.008720140778616603) 100%);  
 }
-.header-text-bg{
-  // background-image:  url('../images/adinkra.jpg');
-  object-fit: cover;
-  // opacity: 0.08;
-}
-.header-text{
-  padding: 50px 0 70px 45px;
-}
+// .header-text-bg{
+//   background-image:  url('../images/adinkra.jpg');
+//   object-fit: cover;
+//   // opacity: 0.08;
+// }
+// .header-text{
+//   padding: 50px 0 70px 45px;
+// }
 
 .transparent-text{
   font-family: 'Seaweed script'; 
@@ -406,6 +406,20 @@ height:180px !important;
    font-family: 'poppins';
    color: #e6e8e9;
  }
+
+
+ #upcoming-trips-btn{
+  display: none;
+}
+#upcoming-trips-section{
+  display: block;
+}
+
+.table-w-scroll{
+  display: block; 
+  height: 90vh; 
+  overflow-y: scroll;
+}
  
 // ================== Error page ======================================
 .err{
@@ -465,8 +479,117 @@ height:180px !important;
 
 
 //================= media queries ======================================
+@media only screen and (min-width : 120px) {
+  #upcoming-trips-btn{
+    display: block;
+  }
+  .booking-table-section{
+    width: 100vw;
+  }
+  #upcoming-trips-section{
+    display: none;
+  }
+  .carousel-section{
+    background:#f5f5f7 !important;
+    margin: 0 auto !important; 
+    height: 720px !important;
+  }
+  .my-form-margin{
+    padding: 0 10px;
+  }
+  .log-form-margin{
+    margin: 0 auto !important;
+    width: 96% !important;
+  }
+  .login-page-image{
+    display: none;
+  }
+  .reg-page-image{
+    display: block;
+  }
+  .my-container{
+    width: 96%;
+    margin: 0 auto;
+  }
+  .header-text{
+    margin-top: -20px;
+    padding: 0;
+  }
+  .about-text{
+    padding: 20px;
+  }
+  .about-img{
+    display:none;
+  }
+  #test-car{
+    display: none;
+  }
+  #testimonials-mobile-view{
+    display: block;
+  }
+  #navbar-head-text{
+    display: none;
+  }
+
+  .transparent-text{
+    font-size: 84px;
+    line-height: 104px;
+    padding: -40px 0 5px 0;
+  }
+
+  .bold-text-black{
+    font-family: 'Montserrat';
+    font-weight:600; 
+    color: #000;
+    font-size: 42px;
+    line-height:44px;
+  }
+  .bold-text-white{
+    font-family: 'Montserrat';
+    font-weight:600; 
+    color: #fafafa;
+    font-size: 42px;
+    line-height:44px;
+  }
+
+  .the-carousel{
+    display: none;
+  }
+  .reg-page-image{
+    display: none;
+  }
+  .top-section{
+    height: 180px;
+  }
+  .code-assignment-form{
+    width: 85vw;
+  }
+  .my-search-btn{
+    font-size: small;
+    width: 135px;
+  }
+  .cta-btn:hover{
+    color: black;
+    background-color: white;
+    border: 2px black solid;
+  }
+
+  .customer-msg-form{
+    margin: 0 auto; 
+    width: 94%;
+  }
+}
 
 @media only screen and (min-width : 360px) {
+  #upcoming-trips-btn{
+    display: block;
+  }
+  .booking-table-section{
+    width: 100vw;
+  }
+  #upcoming-trips-section{
+    display: none;
+  }
   .carousel-section{
     background:#f5f5f7 !important;
     margin: 0 auto !important; 
@@ -559,6 +682,15 @@ height:180px !important;
 }
 
 @media only screen and (min-width : 480px) {
+  #upcoming-trips-btn{
+    display: block;
+  }
+  .booking-table-section{
+    width: 100vw;
+  }
+  #upcoming-trips-section{
+    display: none;
+  }
   .carousel-section{
     background:#f5f5f7 !important;
     margin: 0 auto !important; 
@@ -583,6 +715,15 @@ height:180px !important;
 }
 
 @media only screen and (min-width : 768px) {
+  #upcoming-trips-btn{
+    display: block;
+  }
+  .booking-table-section{
+    width: 100vw;
+  }
+  #upcoming-trips-section{
+    display: none;
+  }
   .login-page-image{
     display: block;
   }
@@ -593,7 +734,17 @@ height:180px !important;
     display: none;
   }
 }
+
 @media only screen and (min-width : 1024px) {
+  #upcoming-trips-btn{
+    display: block;
+  }
+  .booking-table-section{
+    width: 100vw;
+  }
+  #upcoming-trips-section{
+    display: none;
+  }
   .carousel-section{
     background:#f5f5f7 !important;
     margin: 0 auto !important; 
@@ -671,6 +822,12 @@ height:180px !important;
 }
 
 @media only screen and (min-width : 1366px) {
+  #upcoming-trips-btn{
+    display: none;
+  }
+  #upcoming-trips-section{
+    display: block;
+  }
   .carousel-section{
     background:#f5f5f7 !important;
     margin: 0 auto !important; 
@@ -749,6 +906,12 @@ height:180px !important;
 }
 
 @media only screen and (min-width : 1920px) {
+  #upcoming-trips-btn{
+    display: none;
+  }
+  #upcoming-trips-section{
+    display: block;
+  }
   .carousel-section{
     background:#f5f5f7 !important;
     margin: 0 auto !important; 
