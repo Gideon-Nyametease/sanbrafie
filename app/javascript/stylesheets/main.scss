@@ -12,11 +12,11 @@ html, body {
   color: red !important;
 }
 .nav-buttons{
-  margin-left: 15px;
+  margin-left: 5px;
 }
 
 .btn{
-  border-radius: 2px !important;
+  border-radius: 3px !important;
 }
 
 .my-routes{
@@ -740,6 +740,28 @@ height:180px !important;
 }
 
 @media only screen and (min-width : 1024px) {
+  // === nav ========
+  .navbar{
+    min-height: 60px;
+  }
+  .nav-buttons{
+    margin-left: 12px;
+  }
+  .my-routes{
+    font-size: 12px !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500 !important;
+    margin: 0 10px;
+    line-height: 18px !important;
+  }
+  #navbar-head-text{
+    padding-top: 10px; 
+    font-family:  'Montserrat'; 
+    font-size: 16px; 
+    font-weight: 600; 
+    color: #111;
+  }  
+  // ======================
   #upcoming-trips-btn{
     display: block;
   }
@@ -771,7 +793,7 @@ height:180px !important;
     width: 80%;
   }
   .header-text{
-    padding: 50px 0 70px 45px;
+    padding: 20px 0 70px 45px;
   }
   .about-img{
     display:block;
@@ -788,22 +810,22 @@ height:180px !important;
   .transparent-text{
     font-family: 'Seaweed script'; 
     color: #ececec; 
-    font-size: 134px;
-    line-height: 184px;
+    font-size: 94px;
+    line-height: 104px;
   }
   .bold-text-black{
     font-family: 'Montserrat';
     font-weight:600; 
     color: #000;
-    font-size: 48px;
-    line-height:50px;
+    font-size: 42px;
+    line-height:46px;
   }
   .bold-text-white{
     font-family: 'Montserrat';
     font-weight:600; 
     color: #fafafa;
-    font-size: 48px ;
-    line-height:50px;
+    font-size: 42px ;
+    line-height:46px;
   }
   .cta-btn{
     color: white;

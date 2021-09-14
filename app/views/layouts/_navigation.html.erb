@@ -1,8 +1,14 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white col-12 shadow-sm" >
   <div class="container-fluid" id="navbar-example">
-    <a class="navbar-brand" href="/">
-      <img src="<%= asset_pack_path 'media/images/logo.png' %>" height="60px" width="100" alt=" demo instructions">
-    </a>
+    <% if !user_signed_in? %>
+      <a class="navbar-brand" href="/">
+        <img src="<%= asset_pack_path 'media/images/logo.png' %>" height="60px" width="100" alt=" demo instructions">
+      </a>
+    <% else %>
+      <a class="navbar-brand" href="/user_dashboard"> 
+        <img src="<%= asset_pack_path 'media/images/logo.png' %>" height="60px" width="100" alt=" demo instructions">
+      </a>
+    <% end %>
     <p id="navbar-head-text">Sanbrafie Group Inc</p>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -26,10 +32,9 @@
             <a class="nav-link my-routes" href="#contact">CONTACT US</a>
           </li>
         <% else %>
-          <li class="nav-item">
-            <!--<a class="nav-link active my-routes" href="/tours">Tours</a>-->
-            <%= link_to 'HOME', user_dashboard_path, class:"nav-link my-routes"%>
-          </li> 
+          <!--<li class="nav-item">
+            <%#= link_to 'HOME', user_dashboard_path, class:"nav-link my-routes"%>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link my-routes active" href="/">DASHBOARD</a>
           </li>
