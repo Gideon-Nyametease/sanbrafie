@@ -2,102 +2,102 @@
     <div class="col trip-card">
        
             <% if !@tours[0].nil? %>
-            <% if @tours[0].image.attached? %>
-                <a href="/tours">
-                    <img src="<%= url_for(@tours[0].image) %>" alt="Trip Image Preview" class="f-destination-img shadow">
-                </a>
-                <div style="padding: 10px; background-color: #ffffff; height: 110px;" class="shadow-sm">
-                    <span class="text-4"><%= @tours[0].title %></span><br>
-                    <% start_date = @tours[0].start_date %>
-                    <span class="text-3 font-weight-300"><%=  start_date.to_date.strftime("%d") if !start_date.nil?%></span>
-                    <span class="text-1 font-weight-300 text-uppercase"><%= start_date.to_date.strftime("%b") if !start_date.nil?%>,
-                        <%=  start_date.to_date.strftime("%Y") if !start_date.nil? %>
-                    </span> - 
-                    <% end_date = @tours[0].end_date %>
-                    <span class="text-3 font-weight-300"><%=  end_date.to_date.strftime("%d") if !end_date.nil?%></span>
-                    <span class="text-1 font-weight-300 text-uppercase"><%= end_date.to_date.strftime("%b") if !end_date.nil?%>,
-                        <%=  end_date.to_date.strftime("%Y") if !end_date.nil? %>
-                    </span>
-                </div>
-            <% else %>
-                <p class="text-center">Image not available</p>
-            <% end %>
+                <% if @tours[0].image.attached? %>
+                    <a href="/tours">
+                        <img src="<%= url_for(@tours[0].image) %>" alt="Trip Image Preview" class="f-destination-img shadow">
+                    </a>
+                    <div style="padding: 10px; background-color: #ffffff; height: 110px;">
+                        <span class="text-4"><%= @tours[0].title %></span><br>
+                        <% start_date = @tours[0].start_date %>
+                        <span class="text-3 font-weight-300"><%=  start_date.to_date.strftime("%d") if !start_date.nil?%></span>
+                        <span class="text-1 font-weight-300 text-uppercase"><%= start_date.to_date.strftime("%b") if !start_date.nil?%>,
+                            <%=  start_date.to_date.strftime("%Y") if !start_date.nil? %>
+                        </span> - 
+                        <% end_date = @tours[0].end_date %>
+                        <span class="text-3 font-weight-300"><%=  end_date.to_date.strftime("%d") if !end_date.nil?%></span>
+                        <span class="text-1 font-weight-300 text-uppercase"><%= end_date.to_date.strftime("%b") if !end_date.nil?%>,
+                            <%=  end_date.to_date.strftime("%Y") if !end_date.nil? %>
+                        </span>
+                    </div>
+                <% else %>
+                    <img src="<%= asset_pack_path 'media/images/placeholder.png' %>" alt="Image not available" class="f-destination-img shadow">
+                <% end %>
             <% end %>
         </a>
     </div>
     <div class="col trip-card">
         
             <% if !@tours[1].nil? %>
-            <% if @tours[1].image.attached? %>
-                <a href="/tours">
-                    <img src="<%= url_for(@tours[1].image) %>" alt="Trip Image Preview" class="f-destination-img shadow">
-                </a>
-                <div style="padding: 10px; background-color: #ffffff; height: 110px;" class="shadow-sm">
-                    <span class="text-4"><%= @tours[1].title %></span><br>
-                    <% start_date = @tours[1].start_date %>
-                    <span class="text-3 font-weight-300"><%=  start_date.to_date.strftime("%d") if !start_date.nil?%></span>
-                    <span class="text-1 font-weight-300 text-uppercase"><%= start_date.to_date.strftime("%b") if !start_date.nil?%>,
-                        <%=  start_date.to_date.strftime("%Y") if !start_date.nil? %>
-                    </span> - 
-                    <% end_date = @tours[1].end_date %>
-                    <span class="text-3 font-weight-300"><%=  end_date.to_date.strftime("%d") if !end_date.nil?%></span>
-                    <span class="text-1 font-weight-300 text-uppercase"><%= end_date.to_date.strftime("%b") if !end_date.nil?%>,
-                        <%=  end_date.to_date.strftime("%Y") if !end_date.nil? %>
-                    </span>
-                </div>
-            <% else %>
-                <p class="text-center">Image not available</p>
-            <% end %>
+                <% if @tours[1].image.attached? %>
+                    <a href="/tours">
+                        <img src="<%= url_for(@tours[1].image) %>" alt="Trip Image Preview" class="f-destination-img shadow">
+                    </a>
+                    <div style="padding: 10px; background-color: #ffffff; height: 110px;">
+                        <span class="text-4"><%= @tours[1].title %></span><br>
+                        <% start_date = @tours[1].start_date %>
+                        <span class="text-3 font-weight-300"><%=  start_date.to_date.strftime("%d") if !start_date.nil?%></span>
+                        <span class="text-1 font-weight-300 text-uppercase"><%= start_date.to_date.strftime("%b") if !start_date.nil?%>,
+                            <%=  start_date.to_date.strftime("%Y") if !start_date.nil? %>
+                        </span> - 
+                        <% end_date = @tours[1].end_date %>
+                        <span class="text-3 font-weight-300"><%=  end_date.to_date.strftime("%d") if !end_date.nil?%></span>
+                        <span class="text-1 font-weight-300 text-uppercase"><%= end_date.to_date.strftime("%b") if !end_date.nil?%>,
+                            <%=  end_date.to_date.strftime("%Y") if !end_date.nil? %>
+                        </span>
+                    </div>
+                <% else %>
+                    <img src="<%= asset_pack_path 'media/images/placeholder.png' %>" alt="Image not available" class="f-destination-img shadow">
+                <% end %>
             <% end %>
         </a>
     </div>
     <div class="col trip-card">
             <% if !@tours[2].nil? %>
-            <% if @tours[2].image.attached? %>
+                <% if @tours[2].image.attached? %>
+                    <a href="/tours">
+                        <img src="<%= url_for(@tours[2].image) %>" alt="Trip Image Preview" class="f-destination-img shadow">
+                    </a>
+                    <div style="padding: 10px; background-color: #ffffff; height: 110px;">
+                        <span class="text-4"><%= @tours[2].title %></span><br>
+                        <% start_date = @tours[2].start_date %>
+                        <span class="text-3 font-weight-300"><%=  start_date.to_date.strftime("%d") if !start_date.nil?%></span>
+                        <span class="text-1 font-weight-300 text-uppercase"><%= start_date.to_date.strftime("%b") if !start_date.nil?%>,
+                            <%=  start_date.to_date.strftime("%Y") if !start_date.nil? %>
+                        </span> - 
+                        <% end_date = @tours[2].end_date %>
+                        <span class="text-3 font-weight-300"><%=  end_date.to_date.strftime("%d") if !end_date.nil?%></span>
+                        <span class="text-1 font-weight-300 text-uppercase"><%= end_date.to_date.strftime("%b") if !end_date.nil?%>,
+                            <%=  end_date.to_date.strftime("%Y") if !end_date.nil? %>
+                        </span>
+                    </div>
+                <% else %>
+                    <img src="<%= asset_pack_path 'media/images/placeholder.png' %>" alt="Image not available" class="f-destination-img shadow">
+                <% end %>
+            <% end %>
+    </div>
+    <div class="col trip-card">
+        
+        <% if !@tours[3].nil? %>
+            <% if @tours[3].image.attached? %>
                 <a href="/tours">
-                    <img src="<%= url_for(@tours[2].image) %>" alt="Trip Image Preview" class="f-destination-img shadow">
+                    <img src="<%= url_for(@tours[3].image) %>" alt="Trip Image Preview" class="f-destination-img shadow">
                 </a>
-                <div style="padding: 10px; background-color: #ffffff; height: 110px;" class="shadow-sm">
-                    <span class="text-4"><%= @tours[2].title %></span><br>
-                    <% start_date = @tours[2].start_date %>
+                <div style="padding: 10px; background-color: #ffffff; height: 110px;">
+                    <span class="text-4"><%= @tours[3].title %></span><br>
+                    <% start_date = @tours[3].start_date %>
                     <span class="text-3 font-weight-300"><%=  start_date.to_date.strftime("%d") if !start_date.nil?%></span>
                     <span class="text-1 font-weight-300 text-uppercase"><%= start_date.to_date.strftime("%b") if !start_date.nil?%>,
                         <%=  start_date.to_date.strftime("%Y") if !start_date.nil? %>
                     </span> - 
-                    <% end_date = @tours[2].end_date %>
+                    <% end_date = @tours[3].end_date %>
                     <span class="text-3 font-weight-300"><%=  end_date.to_date.strftime("%d") if !end_date.nil?%></span>
                     <span class="text-1 font-weight-300 text-uppercase"><%= end_date.to_date.strftime("%b") if !end_date.nil?%>,
                         <%=  end_date.to_date.strftime("%Y") if !end_date.nil? %>
                     </span>
                 </div>
             <% else %>
-                <p class="text-center">Image not available</p>
+                <img src="<%= asset_pack_path 'media/images/placeholder.png' %>" alt="Image not available" class="f-destination-img shadow">
             <% end %>
-            <% end %>
-    </div>
-    <div class="col trip-card">
-        
-        <% if !@tours[3].nil? %>
-        <% if @tours[3].image.attached? %>
-        <a href="/tours">
-            <img src="<%= url_for(@tours[3].image) %>" alt="Trip Image Preview" class="f-destination-img shadow">
-        </a>
-        <div style="padding: 10px; background-color: #ffffff; height: 110px;" class="shadow-sm">
-            <span class="text-4"><%= @tours[3].title %></span><br>
-            <% start_date = @tours[3].start_date %>
-            <span class="text-3 font-weight-300"><%=  start_date.to_date.strftime("%d") if !start_date.nil?%></span>
-            <span class="text-1 font-weight-300 text-uppercase"><%= start_date.to_date.strftime("%b") if !start_date.nil?%>,
-                <%=  start_date.to_date.strftime("%Y") if !start_date.nil? %>
-            </span> - 
-            <% end_date = @tours[3].end_date %>
-            <span class="text-3 font-weight-300"><%=  end_date.to_date.strftime("%d") if !end_date.nil?%></span>
-            <span class="text-1 font-weight-300 text-uppercase"><%= end_date.to_date.strftime("%b") if !end_date.nil?%>,
-                <%=  end_date.to_date.strftime("%Y") if !end_date.nil? %>
-            </span>
-        </div>
-        <% else %>
-            <p class="text-center">Image not available</p>
-        <% end %>
         <% end %>
     </div>
 
@@ -106,11 +106,9 @@
 
 
 <style>
-    .trip-card{
-
+     .trip-card{
+        margin-bottom: 30px;
     }
-
-
 
     .shadow{
     /* background-image:  url('../images/fishermen.jpg'); */
@@ -120,15 +118,19 @@
     
     }
 
+
     .f-destination-img{
-    height: 280px;
+    object-fit: cover !important;
+    height: 300px;
     width:100%;
     transition: width .3s, height .3s;
+    border-radius: 5px;
     }
     .f-destination-img:hover{
-        height:285px;
+        height:305px;
         width:101%;
     }
+
 
 </style>
 

@@ -3,15 +3,15 @@ class HomeController < ApplicationController
     def landing_page
       if user_signed_in?
         if current_user.role_code == "client"
-          @tours = Tour.where(active_status: true, del_status: false).order(created_at: :desc).limit(5)
+          @tours = Tour.where(active_status: true, del_status: false).order(start_date: :asc).limit(5)
           booking_infos = BookingInfo.where("user_id = ?", current_user.id)
           @pagy, @booking_infos = booking_infos.present? ? pagy(BookingInfo.where("user_id = ?", current_user.id) ) : pagy(BookingInfo.where("(surname = ? AND othernames = ?) OR email = ?",current_user.surname,current_user.othernames,current_user.email) )
         else
-          @tours = Tour.where(active_status: true, del_status: false).order(created_at: :desc).limit(5)
+          @tours = Tour.where(active_status: true, del_status: false).order(start_date: :asc).limit(5)
           @pagy, @booking_infos = pagy(BookingInfo.all )
         end
       else
-        @tours = Tour.where(active_status: true, del_status: false).order(created_at: :desc).limit(5)
+        @tours = Tour.where(active_status: true, del_status: false).order(start_date: :asc).limit(5)
         logger.info "THE TOURS = #{@tours.inspect}"
         @customer_msg = CustomerMsg.new
       end
