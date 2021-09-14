@@ -825,6 +825,9 @@ height:180px !important;
   #upcoming-trips-btn{
     display: none;
   }
+  .booking-table-section{
+    width: 66vw;
+  }
   #upcoming-trips-section{
     display: block;
   }
@@ -908,6 +911,9 @@ height:180px !important;
 @media only screen and (min-width : 1920px) {
   #upcoming-trips-btn{
     display: none;
+  }
+  .booking-table-section{
+    width: 66vw;
   }
   #upcoming-trips-section{
     display: block;

@@ -2,13 +2,13 @@
     <div class="w3-modal-content w3-card-4 " style="width: 540px; padding-bottom: 60px" >
       <div class="d-flex justify-content-end" style="padding: 10px;">
         <span onclick="document.getElementById('air-mod').style.display='none'"
-            class="btn btn-lg btn-licht">&times;</span>
+            class="btn btn-lg btn-light">&times;</span>
       </div>
       <br>
       <div class="w3-container">
         <% if params[:marker] == "postponed"%>
-            <div class="postponement-info">
-                <span class="text-4">Please contact Dr Booker on +12345434454 for further assistance</span>
+            <div class="postponement-info text-center">
+                <p class="text-4">Please contact Dr Booker on<br> +1(609)591-0060 <br>for further assistance</p>
             </div>
         <% else %>
             <%= simple_form_for(@booking_info) do |f| %>
@@ -70,10 +70,13 @@
                                 </div>
                                 
                                 <%# <br> %>
-                                <div class="">
-                                    <%= f.submit "Yes", class: "btn btn-lg btn-danger" %>
-                                    <span onclick="document.getElementById('air-mod').style.display='none'"
-                                    class="btn btn-lg btn-dark">No</span>
+                                <div class="row">
+                                    <div class="col-sm-6 d-grid">
+                                        <%= f.submit "Postpone", class: "btn btn-lg btn-danger" %>
+                                    </div>
+                                    <div class="col-sm-6 d-grid">
+                                        <span onclick="document.getElementById('air-mod').style.display='none'" class="btn btn-lg btn-dark">No</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>

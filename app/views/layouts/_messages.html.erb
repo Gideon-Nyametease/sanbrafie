@@ -1,14 +1,14 @@
 <% if user_signed_in? %>
     <% flash.each do |name, msg| %>
     <% if msg.is_a?(String) %>
-        <div id="sys-msg" class="w3-modal w3-animate-opacity" style="display: block; margin: 50px;">
-            <div class="w3-modal-content w3-card-4 " style="width: 540px; padding-bottom: 60px" >
+        <div id="sys-msg" class="w3-modal w3-animate-opacity" style="display: block; margin-top: 50px;">
+            <div class="w3-modal-content w3-card-4 " style="width: 400px; padding-bottom: 60px" >
                 <div class="d-flex justify-content-end" style="padding: 10px;">
                     <span onclick="document.getElementById('sys-msg').style.display='none'"
                         class="btn btn-lg btn-light">&#10799;</span>
                 </div>
                 <br>
-                <div class="w3-container" style="padding:25px;">
+                <div class="w3-container text-center" style="padding:10px;">
                     <div class="alert alert-<%= name.to_s == 'notice' ? 'success' : 'danger' %>" role="alert" id="flash">
                     <%# <button type="button" class=" btn-close" data-dismiss="alert" aria-hidden="true"></button> %>
                     <%= content_tag :div, msg, :id => "flash_#{name}" %>
