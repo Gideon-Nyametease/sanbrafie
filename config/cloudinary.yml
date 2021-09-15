@@ -1,0 +1,7 @@
+production:
+  cloud_name: "sanbrafiegroup"
+  api_key: "882897476927999"
+  api_secret: "xdCh9q1Rt5Hmz5UBi3xOHacU-4A"
+  secure: true
+  cdn_subdomain: true
+  # Rails.application.credentials.cloudinary[:api_secret]

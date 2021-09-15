@@ -1,0 +1,63 @@
+<style>
+    .my-grid-card{
+        width: 320px !important;
+        height: 320px !important;
+        margin: 5px;
+        object-fit: cover !important;
+        padding: 5px;
+        transition: width .3s, height .3s;
+    }
+    .my-grid-card:hover{
+        width: 322px !important;
+        height: 323px !important;
+    }
+    .my-grid-card2{
+        width: 320px !important;
+        height: 520px !important;
+        margin: 5px;
+        object-fit: cover !important; 
+        padding: 5px;
+        transition: width .3s, height .3s;
+    }
+    .my-grid-card2:hover{
+        width: 322px !important;
+        height: 523px !important;
+    }
+    .my-grid-card3{
+        width: 320px !important;
+        height: 270px !important;
+        margin: 5px;
+        object-fit: cover !important;
+        padding: 5px;
+        transition: width .3s, height .3s;
+    }
+     .my-grid-card3:hover{
+        width: 322px !important;
+        height: 273px !important;
+    }
+
+</style>
+
+<div class="row">
+    <div class="col-sm-3">
+        <img src="<%= asset_pack_path 'media/images/6.jpg' %>" alt="Image not available" class="my-grid-card shadow">
+        <img src="<%= asset_pack_path 'media/images/fat.jpeg' %>" alt="Image not available" class="my-grid-card shadow">
+        <img src="<%= asset_pack_path 'media/images/4.jpg' %>" alt="Image not available" class="my-grid-card shadow">
+    </div>
+    <div class="col-sm-3">
+        <img src="<%= asset_pack_path 'media/images/11.jpeg' %>" alt="Image not available" class="my-grid-card2 shadow">
+        <img src="<%= asset_pack_path 'media/images/14.jpeg' %>" alt="Image not available" class="my-grid-card3 shadow">
+        <img src="<%= asset_pack_path 'media/images/10.jpeg' %>" alt="Image not available" class="my-grid-card3 shadow">
+    </div> 
+    <div class="col-sm-3">
+        <img src="<%= asset_pack_path 'media/images/3.jpg' %>" alt="Image not available" class="my-grid-card shadow">
+        <img src="<%= asset_pack_path 'media/images/2.jpg' %>" alt="Image not available" class="my-grid-card shadow">
+        <img src="<%= asset_pack_path 'media/images/1.jpg' %>" alt="Image not available" class="my-grid-card shadow">
+    </div>
+     <div class="col-sm-3">
+        <img src="<%= asset_pack_path 'media/images/9.jpeg' %>" alt="Image not available" class="my-grid-card3 shadow">
+        <img src="<%= asset_pack_path 'media/images/18.jpeg' %>" alt="Image not available" class="my-grid-card shadow">
+        <img src="<%= asset_pack_path 'media/images/20.jpeg' %>" alt="Image not available" class="my-grid-card2 shadow">
+    </div>
+</div>
+

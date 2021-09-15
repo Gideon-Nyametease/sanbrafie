@@ -36,7 +36,7 @@
       </div>
       <br>
       <div class="destination-cards d-flex" >
-        <%= render 'trips' %> 
+        <%= render 'featured_trips' %> 
       </div>
 
       <br><br>
@@ -205,7 +205,7 @@
     position: fixed;
     bottom: 40px;
     right: 50px;
-    transition: background-color .3s, 
+    transition: background-color .1s, 
       opacity .5s, visibility .5s;
     opacity: 0;
     visibility: hidden;
@@ -251,6 +251,6 @@
 
   btn.on('click', function(e) {
     e.preventDefault();
-    $('html, body').animate({scrollTop:0}, '300');
+    $('html, body').animate({scrollTop:0}, '100');
   });
 </script>
