@@ -4,7 +4,7 @@ html, body {
 }
 // ========  Navigation
 .navbar{
-  min-height: 66px;
+  height: auto;
 }
 .navbar-brand{
   font-size: 28px !important;
@@ -180,7 +180,7 @@ header{
 .carousel-mini-text-white{
   color: #fafafa !important;
   font-family: 'Open sans' !important;
-  font-size: 17px !important;
+  font-size: 20px !important;
   line-height:21px!important;
   font-weight: 400 !important;
   opacity:0.8;
@@ -188,7 +188,7 @@ header{
 .carousel-mini-text-black{
   color: #000; 
   font-family: 'Open sans';
-  font-size: 17px;
+  font-size: 20px !important;
   line-height:21px;
   font-weight: 400;
   opacity:0.9;
@@ -250,18 +250,19 @@ header{
   background: linear-gradient(4deg, rgba(2,0,36,0.7053493542617626) 0%, rgba(9,8,11,0.7278212643741222) 0%, 
                             rgba(9,9,9,0.6098437362842346) 23%, rgba(0,212,255,0.008720140778616603) 100%);  
 }
-// .header-text-bg{
-//   background-image:  url('../images/adinkra.jpeg');
-//   object-fit: cover;
-//   // opacity: 0.08;
-// }
-// .header-text{
-//   padding: 50px 0 70px 45px;
-// }
+.header-text-bg{
+  background-image:  url('../images/adinkra2.png');
+  background-size: cover;
+  object-fit: cover;
+}
+.header-text{
+  padding: 50px 0 70px 45px;
+}
 
 .transparent-text{
-  font-family: 'Seaweed script'; 
-  color: #ececec; 
+  font-family: 'Tangerine'; 
+  font-weight: 700;
+  color: #1E1F21; 
   font-size: 134px;
 }
 // ============================
@@ -533,6 +534,8 @@ height:180px !important;
   }
 
   .transparent-text{
+    font-family: 'Tangerine'; 
+    font-weight: 700;
     font-size: 84px;
     line-height: 104px;
     padding: -40px 0 5px 0;
@@ -542,15 +545,15 @@ height:180px !important;
     font-family: 'Montserrat';
     font-weight:600; 
     color: #000;
-    font-size: 42px;
-    line-height:44px;
+    font-size: 36px;
+    line-height:38px;
   }
   .bold-text-white{
     font-family: 'Montserrat';
     font-weight:600; 
     color: #fafafa;
-    font-size: 42px;
-    line-height:44px;
+    font-size: 36px;
+    line-height:38px;
   }
 
   .the-carousel{
@@ -568,6 +571,15 @@ height:180px !important;
   .my-search-btn{
     font-size: small;
     width: 135px;
+  }
+  .cta-btn{
+    color: white;
+    background: black;
+    font-weight: 400;
+    font-size: 24px;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 15px 25px;
   }
   .cta-btn:hover{
     color: black;
@@ -635,6 +647,8 @@ height:180px !important;
   }
 
   .transparent-text{
+    font-family: 'Tangerine'; 
+    font-weight: 700;
     font-size: 84px;
     line-height: 104px;
     padding: -40px 0 5px 0;
@@ -671,6 +685,15 @@ height:180px !important;
     font-size: small;
     width: 135px;
   }
+  .cta-btn{
+    color: white;
+    background: black;
+    font-weight: 400;
+    font-size: 24px;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 15px 65px;
+  }
   .cta-btn:hover{
     color: black;
     background-color: white;
@@ -684,6 +707,20 @@ height:180px !important;
 }
 
 @media only screen and (min-width : 480px) {
+  .cta-btn{
+    color: white;
+    background: black;
+    font-weight: 400;
+    font-size: 24px;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 15px 75px;
+  }
+  .cta-btn:hover{
+    color: black;
+    background-color: white;
+    border: 2px black solid;
+  }
   #upcoming-trips-btn{
     display: block;
   }
@@ -718,6 +755,21 @@ height:180px !important;
 }
 
 @media only screen and (min-width : 768px) {
+  .cta-btn{
+    color: white;
+    background: black;
+    font-weight: 400;
+    font-size: 24px;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 10px 70px;
+  }
+  .cta-btn:hover{
+    color: black;
+    background-color: white;
+    border: 2px black solid;
+  }
+
   #upcoming-trips-btn{
     display: block;
   }
@@ -740,9 +792,47 @@ height:180px !important;
 }
 
 @media only screen and (min-width : 1024px) {
+  //  ===== gallery ====
+  .my-grid-card{
+    width: 270px !important;
+    height: 270px !important;
+    margin: 5px;
+    object-fit: cover !important;
+    padding: 5px;
+    transition: width .3s, height .3s;
+}
+.my-grid-card:hover{
+    width: 272px !important;
+    height: 273px !important;
+}
+.my-grid-card2{
+    width: 270px !important;
+    height: 470px !important;
+    margin: 5px;
+    object-fit: cover !important; 
+    padding: 5px;
+    transition: width .3s, height .3s;
+}
+.my-grid-card2:hover{
+    width: 272px !important;
+    height: 473px !important;
+}
+.my-grid-card3{
+    width: 270px !important;
+    height: 230px !important;
+    margin: 5px;
+    object-fit: cover !important;
+    padding: 5px;
+    transition: width .3s, height .3s;
+}
+ .my-grid-card3:hover{
+    width: 272px !important;
+    height: 223px !important;
+}
+
   // === nav ========
   .navbar{
-    min-height: 60px;
+    height: auto;
   }
   .nav-buttons{
     margin-left: 12px;
@@ -775,7 +865,7 @@ height:180px !important;
   .carousel-section{
     background:#f5f5f7 !important;
     margin: 0 auto !important; 
-    height: 780px !important;
+    height: 720px !important;
   }
   .log-form-margin{
     margin: 0 auto !important;
@@ -793,7 +883,7 @@ height:180px !important;
     width: 80%;
   }
   .header-text{
-    padding: 20px 0 70px 45px;
+    padding: 5px 0 70px 45px;
   }
   .about-img{
     display:block;
@@ -808,8 +898,9 @@ height:180px !important;
     display: block;
   }
   .transparent-text{
-    font-family: 'Seaweed script'; 
-    color: #ececec; 
+    font-family: 'Tangerine'; 
+    font-weight: 700;
+    color: #1E1F21; 
     font-size: 94px;
     line-height: 104px;
   }
@@ -832,7 +923,9 @@ height:180px !important;
     background: black;
     font-weight: 400;
     font-size: 24px;
-    width:300px;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 10px 90px;
   }
   .cta-btn:hover{
     color: black;
@@ -861,7 +954,7 @@ height:180px !important;
   .carousel-section{
     background:#f5f5f7 !important;
     margin: 0 auto !important; 
-    height: 780px !important;
+    height: 720px !important;
   }
   .log-form-margin{
     margin: 0 auto !important;
@@ -894,10 +987,11 @@ height:180px !important;
     display: block;
   }
   .transparent-text{
-    font-family: 'Seaweed script'; 
-    color: #ececec; 
+    font-family: 'Tangerine'; 
+    font-weight: 700;
+    color: #1E1F21; 
     font-size: 134px;
-    line-height: 184px;
+    line-height: 144px;
     padding: -30px 0;
   }
   .bold-text-black{
@@ -919,11 +1013,13 @@ height:180px !important;
     background: black;
     font-weight: 400;
     font-size: 24px;
-    width:300px;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 15px 100px;
   }
   .cta-btn:hover{
     color: black;
-    background-color: white;
+    background-color: #111111;
     border: 2px black solid;
   }
   .the-carousel{
@@ -948,7 +1044,7 @@ height:180px !important;
   .carousel-section{
     background:#f5f5f7 !important;
     margin: 0 auto !important; 
-    height: 780px !important;
+    height: 720px !important;
   }
   .log-form-margin{
     margin: 0 auto !important;
@@ -981,10 +1077,12 @@ height:180px !important;
     display: block;
   }
   .transparent-text{
-    font-family: 'Seaweed script'; 
-    color: #ececec; 
+    font-family: 'Tangerine'; 
+    font-weight: 700;
+    color: #1E1F21; 
     font-size: 134px;
     margin: -30px 0;
+    line-height: 144px;
   }
   .bold-text-black{
     font-family: 'Montserrat';
@@ -1005,14 +1103,16 @@ height:180px !important;
     background: black;
     font-weight: 400;
     font-size: 24px;
-    width:300px;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 15px 100px;
   }
   .the-carousel{
     display: block;
   }
   .cta-btn:hover{
     color: black;
-    background-color: white;
+    background-color: #111111;
     border: 2px black solid;
   }
   .customer-msg-form{

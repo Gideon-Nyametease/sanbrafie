@@ -1,25 +1,25 @@
 <div data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-  <a id="goto-top"></a>
+  <a id="goto-top"><i class="fas fa-angle-up fa-2x" style="color: #fff; margin-top: 10px;"></i></a>
 
   <div class="carousel-section">
     <div class="row">
-      <div class="col-lg-6 header-text-u">
+      <div class="col-lg-6 header-text-bg">
         <div class="header-text">
-          <br><br>
+          <br><br><br><br><br>
           <div class="big-text d-block mx-auto" >
-              <p class=" w3-animate-top transparent-text">
+              <p class=" w3-animate-top transparent-text" style="font-size: 200px !important; font-weight: 600; color: #1E1F21 ;">
                 Sanbrafie
               </p>
               <p class="bold-text-black w3-animate-top">
                   Embracing our Cultures, 
                   <br>Preserving our Heritage.
               </p>
-              <p class="carousel-mini-text w3-animate-left">
+              <p class="carousel-mini-text-black w3-animate-left">
                   Go on boutique tours to the heart of 
                   the motherland. <br> 
               </p>
               <br>
-              <%= link_to 'Travel with us', booking_form_path, class:"btn btn-lg btn-light cta-btn shadow-lg",style:"", remote:true%>
+              <%= link_to 'Travel with us', booking_form_path, class:"cta-btn shadow-lg",style:"", remote:true%>
               <br><br>
           </div>
         </div>
@@ -58,7 +58,7 @@
         <br><br>
         <div class="row">
             <div class="col d-flex justify-content-center ">
-                <%= link_to 'Leave a comment', testimonial_form_path, class:"btn btn-lg btn-dark shadow-lg", style:"font-size: 24px; font-weight: 400;", remote: true%>
+                <%= link_to 'Leave a comment', testimonial_form_path, class:"btn btn-lg btn-dark shadow-lg", style:"font-size: 24px; font-weight: 400;", remote: true %>
             </div>
         </div>
     </div>
@@ -194,18 +194,13 @@
   <div class="booking-details"></div>
   <div id="tos-form"></div>
   <div id="contact"></div>
+  <div id="testimonial"></div>
 
 </div>
 
 
 <style>
-  .header-text{
-    /* position:relative; */
-    background-image:  url('../images/adinkra.jpg');
-    object-fit: cover;
-    opacity: 1;
-  }
- 
+
   #goto-top {
     display: inline-block;
     background-color:#1C1F23; 
@@ -217,22 +212,14 @@
     border-radius: 10px;
     position: fixed;
     bottom: 40px;
-    right: 50px;
+    right: 30px;
     transition: background-color .3s, 
       opacity .5s, visibility .5s;
     opacity: 0;
     visibility: hidden;
     z-index: 1000;
   }
-#goto-top::after {
-  content: "\f077";
-  font-family: FontAwesome;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 2em;
-  line-height: 50px;
-  color: #fff;
-}
+
 #goto-top:hover {
   cursor: pointer;
   background-color: #333;
@@ -248,10 +235,6 @@
 </style>
 
 <script>
-  //  $('#goto-top').click(function() {
-  //    console.log("clicked ----------------");
-  // });
-  
   var btn = $('#goto-top');
 
   $(window).scroll(function() {

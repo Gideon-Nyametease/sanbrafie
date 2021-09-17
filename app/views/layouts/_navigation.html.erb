@@ -1,12 +1,12 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white col-12 shadow-sm" >
+<nav class="navbar fixed-top navbar-expand-md navbar-light bg-white col-12 shadow-sm" >
   <div class="container-fluid" id="navbar-example">
     <% if !user_signed_in? %>
       <a class="navbar-brand" href="/">
-        <img src="<%= asset_pack_path 'media/images/logo.png' %>" height="60px" width="100" alt=" demo instructions">
+        <img src="<%= asset_pack_path 'media/images/logo.png' %>" height="50px" width="80" alt="Sanbrafie logo">
       </a>
     <% else %>
       <a class="navbar-brand" href="/user_dashboard"> 
-        <img src="<%= asset_pack_path 'media/images/logo.png' %>" height="60px" width="100" alt=" demo instructions">
+        <img src="<%= asset_pack_path 'media/images/logo.png' %>" height="50px" width="80" alt="Sanbrafie logo">
       </a>
     <% end %>
     <p id="navbar-head-text">Sanbrafie Group Inc</p>
@@ -45,7 +45,7 @@
           <%= link_to "Logout", destroy_user_session_path , :method=> 'delete',class: "btn btn-lg btn-outline-dark nav-buttons me-auto"  %>
         <% else %>
           <%= link_to "Login", new_user_session_path ,class: "btn btn-lg btn-outline-dark nav-buttons me-auto"  %>
-          <%= link_to "Sign up", new_user_registration_path, class:"btn btn-lg btn-dark nav-buttons" %>
+          <%= link_to "Sign up", new_user_registration_path, class:"btn btn-lg btn-dark nav-buttons  me-auto" %>
         <% end %>
       </div>
     </div>

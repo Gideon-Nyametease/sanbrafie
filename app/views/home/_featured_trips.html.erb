@@ -1,5 +1,5 @@
-<div class="row">
-    <div class="col trip-card">
+<div class="row"  style="margin: 0 auto; width: 94%;">
+    <div class="col-sm-3 trip-card">
        
             <% if !@tours[0].nil? %>
                 <% if @tours[0].image.attached? %>
@@ -25,7 +25,7 @@
             <% end %>
         </a>
     </div>
-    <div class="col trip-card">
+    <div class="col-sm-3 trip-card">
         
             <% if !@tours[1].nil? %>
                 <% if @tours[1].image.attached? %>
@@ -51,7 +51,7 @@
             <% end %>
         </a>
     </div>
-    <div class="col trip-card">
+    <div class="col-sm-3 trip-card">
             <% if !@tours[2].nil? %>
                 <% if @tours[2].image.attached? %>
                     <%= link_to booking_details_path(title: @tours[2].title), remote:true do %>    
@@ -75,7 +75,7 @@
                 <% end %>
             <% end %>
     </div>
-    <div class="col trip-card">
+    <div class="col-sm-3 trip-card">
         
         <% if !@tours[3].nil? %>
             <% if @tours[3].image.attached? %>
