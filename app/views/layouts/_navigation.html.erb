@@ -31,10 +31,11 @@
           <li class="nav-item">
             <a class="nav-link my-routes" href="#contact">CONTACT US</a>
           </li>
+           
         <% else %>
-          <!--<li class="nav-item">
-            <%#= link_to 'HOME', user_dashboard_path, class:"nav-link my-routes"%>
-          </li> -->
+          <li class="nav-item">
+           <%= current_user.stripe_customer_id %>
+          </li>
           <li class="nav-item">
             <a class="nav-link my-routes active" href="/">DASHBOARD</a>
           </li>

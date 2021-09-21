@@ -18,8 +18,7 @@ import "channels"
 import "../stylesheets/application";
 import "../stylesheets/main";
 import "../stylesheets/sidenav";
-// import "../stylesheets/style";
-// import "../stylesheets/plugins";
+import "bootstrap/js/src/scrollspy"
 import "../stylesheets/w3";
 document.addEventListener("turbolinks:load", function() {
     $(function () {

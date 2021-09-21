@@ -1,51 +1,95 @@
  <div class="row">
- <div class="booking-details"></div>
-    <div class="col-4 " style="background-color:#dfe6e9; padding: 20px 0 20px 10px;">
-     <div class="d-flex justify-content-end" style="margin: 20px;">
-        <a href="/" class="btn btn-lg btn-dark">&times;</a>
-      </div>
-    <%#= link_to '', root_path,class:"btn btn-lg btn-dark"%>
-        <div class="table-responsive">
-            <table class="table table-hover table-bordered">          
-                <tbody>
-                    <% @tours.each_with_index do |tour, index| %>
-                        <tr>
-                            <td>
-                                <div class="">
-                                    <%# <a href="/tours" > %>
-                                        <% if tour.image.attached? %>
-                                        
-                                            <img src="<%= url_for(tour.image) %>" alt=" demo instructions" class="tl2">
-                                        <% else %>
-                                            <p class="text-center">Image not available</p>
-                                        <% end %>
-                                    <%# </a> %>
-                                </div>
-                            </td>
-                            <td class="align-top">
-                                <b><%= tour.tour_id %></b><br>
-                                <span class="text-4"><%= tour.title %></span><br>
-                                <span style="font-size: 24px; font-weight: 400;"><%= number_to_currency(tour.price) %></span><br>
-                                <%= link_to "Details",booking_details_path(id: tour.id), class:"btn btn-sm btn-light",remote: true %>
-                                <br><br><br>
-                                
-                                <%= link_to "Make Payment",checkout_create_path(id: tour.id, count: params[:count]), method: :post, class:"btn btn-lg btn-success mm",id:"checkout-button" ,remote: true %>
-                            </td>
-                        </tr>
-                        
-                    <% end %>
-                </tbody>
-            </table>
+    <div class="col-9">
+        <div style="padding:70px; height: 100vh; overflow-y: scroll;">
+            <div class=" " style="margin-top: 50px;">
+                <a href="/" class="btn btn-md btn-outline-dark">Go Back</a>
+            </div>
+            <br>
+            <div class="my-form-margin">
+                <h2><%= params[:title] %></h2>
+                <% if !@tours.nil?%>
+                <% date = @tours.start_date %>
+                <span class="text-4 font-weight-300 m-text"><%=  date.to_date.strftime("%d") if !date.nil?%></span>
+                <span class="text-3 font-weight-300 text-uppercase m-text"><%= date.to_date.strftime("%B") if !date.nil?%>,
+                    <%=  date.to_date.strftime("%Y") if !date.nil? %>
+                </span>
+                    -to- 
+                <% date = @tours.end_date %>
+                <span class="text-4 font-weight-300 m-text" ><%=  date.to_date.strftime("%d") if !date.nil?%></span>
+                <span class="text-3 font-weight-300 text-uppercase m-text"><%= date.to_date.strftime("%B") if !date.nil?%>,
+                    <%=  date.to_date.strftime("%Y") if !date.nil? %>
+                </span>
+                <br>
+                <span class="text-uppercase m-text" style="font-size: 24px; font-weight: 700 ; color: #11bc4f">$ <%= @tours.price %>.00</span>
+                <% end %>
+                <hr>
+                <h4>Itinerary</h4>
+                <br>
+                <% if !@tours.nil? %>
+                <% a = @tours.description %>
+                <%= raw a %>
+                <br><br>
+                <%#= link_to 'Book this trip', booking_form2_path(marker:"from itinerary", tour_id: @tours.id), class:"btn btn-lg btn-dark", remote:true%>
+
+                <% end %>       
+            </div>
         </div>
     </div>
-     <div class="col-8">
-        <div class="checkout-bg1" style="height:450px; width: 450px; margin:0 auto;">
-        
+    <div class="col-3" style="background-color:#f5f6f8; padding: 100px 10px; border-left: 1px #dedede solid; height: 100%;">
+        <div class="row">
+            <%# @tours.each do |tour| %>
+                <div class="row" style="margin-bottom: 15px;">
+                    <div class="col-sm-4">
+                        <% if @tours.image.attached? %>                            
+                            <img src="<%= url_for(@tours.image) %>" alt=" demo instructions" class="tl2">
+                        <% else %>
+                            <p class="text-center">Image not available</p>
+                        <% end %>
+                    </div>
+                    <div class="col-sm-8">
+                        <h5><%= @tours.title %></h5><br>
+                        <h4><%= number_to_currency(@tours.price) %></h4><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 ">
+                        <div style="padding:5px;">
+                            <div class="d-grid gap-2">
+                            <% if params[:tour_id] %>
+                                <form>
+                                    <input value="<%=params[:tour_id]%>" name="id" id="tour_id" type="hidden">
+                                    <input value="<%= @count %>" name="count" id="count" type="hidden">
+                                    <button type="button" onclick="submitForm()" id="checkout-button" class="btn mm btn-lg btn-outline-dark">Proceed to payment</button>
+                                </form>
+                                <%#= link_to "Proceed to payment",checkout_create_path(id: params[:tour_id], count:@count), method: :post, class:"btn mm btn-lg btn-outline-dark",id:"checkout-button" ,remote: true %>
+                               
+                            <% else %>
+                                <%= link_to "Proceed to payment",checkout_create_path(id: @tours.id, count:@count), method: :post, class:"btn mm btn-lg btn-outline-dark",id:"checkout-button" ,remote: true %>
+                            <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <%# end %>
         </div>
     </div>
 <div>
  
-
+<script>
+    function submitForm(){
+        var tour_id = document.getElementById('tour_id');
+        var count = document.getElementById('count');
+        $.ajax({
+            type: "POST",
+            url: '<%= checkout_create_path %>',
+            data: {
+                id: tour_id.value,
+                count: count.value
+            },
+            dataType: "script"
+        });
+    }
+</script>
 
 <style>
     .checkout-bg1{
@@ -54,8 +98,22 @@
         object-fit: fill !important;
         height: 100vh !important;
     }
-
     .mm{
-        width:220px !important;
+ /* width:300px; */
+    }
+       
+
+
+    .tl2{
+        margin: 5px;
+        height:110px !important;
+        width:110px !important;
+        border-radius: 5px;
+        border: #fff 8px solid;
+    }
+
+    .tl2:hover{
+    height:113px !important;
+    width:113px !important;
     }
 </style>

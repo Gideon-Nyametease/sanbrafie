@@ -39,26 +39,31 @@
                                 <%= f.input :status, input_html:{value: "active",class:"form-control-lg sanbrafie-input"},as: :hidden %>
                         </div>
                         <div class="row mb-3">
-                            <div class="col">
-                                <%= f.input :coordination_preference, collection: @coordination_preference, label_method: :first, value_method: :last, input_html:{class:"form-control-lg sanbrafie-input form-select", required:true} %>
+                            <div class="col-sm-6">
+                                <%= f.input :coordination_preference, collection: @coordination_preference, label_method: :first, value_method: :last, input_html:{class:"form-control-lg form-select sanbrafie-input", required: true} %>
                             </div>
-                            <div class="col">
-                                <%= f.input :group_count, input_html:{class:"form-control-lg sanbrafie-input",required: true}, label:"Number of people" %>
+                            <div class="col-sm-6">
+                                <%= f.input :group_count, input_html:{class:"form-control-lg sanbrafie-input", required: true}, label:"Number of people" %>
                             </div>
                         </div>
-                        <!--<div class="row mb-3">
-                            <div class="col">
-                                <%#= f.input :hotel_type, collection: @hotel_type, label_method: :first, value_method: :last, input_html:{class:"form-control-lg sanbrafie-input form-select"} %>
-                            </div>
-                            <div class="col">
-                                <%#= f.input :tour_duration, input_html:{class:"form-control-lg sanbrafie-input"} %>
-                            </div>
-                        </div>-->
                         <div  class="mb-3">
-                            <%= f.input :purpose_statement, collection: @purpose_statement, label_method: :first, value_method: :last, input_html:{class:"form-control-lg sanbrafie-input form-select"} %>
+                            <%= f.input :purpose_statement, collection: @purpose_statement, label_method: :first, value_method: :last, input_html:{class:"form-control-lg form-select sanbrafie-input", required: true} %>
                             <br>
-                            <%= f.input :comment, as: :text, input_html:{class:"form-control-lg sanbrafie-input"}, placeholder:"Add a little detail to your purpose statement",label:false %>
+                            <%= f.input :comment, as: :text, input_html:{class:"form-control-lg sanbrafie-input"}, placeholder:"Add a little detail to your purpose statement",label:false, required: false %>
                         </div>
+
+                        <div  class="row mb-3">
+                            <div class="col-1" style="margin-top: 1px !important; ">
+                                <%= f.input :tos_agreement, wrapper: :vertical_boolean, as: :boolean , label: false %>
+                            </div>
+                            <div class="col-11">
+                                <p>I agree to the <%= link_to "Terms of service",tos_path,remote: true %></p>
+                            </div>
+                        </div>
+
+                        <p class="text-danger" style="font-size: 16px; font-weight: 500;">Please note that the price is based on double occupancy.</p>
+    
+                        <br>
     
                         <br>
                         <div class="d-grid gap-2">

@@ -145,7 +145,7 @@ header{
 
 
 .checkout-bg{
-  background-image:  url('../images/card.svg');
+  // background-image:  url('../images/card.svg');
   background-size: cover;
   object-fit: contain;
   height: 100vh;
@@ -251,7 +251,7 @@ header{
                             rgba(9,9,9,0.6098437362842346) 23%, rgba(0,212,255,0.008720140778616603) 100%);  
 }
 .header-text-bg{
-  background-image:  url('../images/adinkra2.png');
+  background-image:  url('../images/adinkra.png');
   background-size: cover;
   object-fit: cover;
 }
@@ -261,9 +261,10 @@ header{
 
 .transparent-text{
   font-family: 'Tangerine'; 
-  font-weight: 700;
+  font-weight: 600;
   color: #1E1F21; 
-  font-size: 134px;
+  font-size: 200px;
+  line-height: 184px;
 }
 // ============================
 .contact-section-input{
@@ -309,17 +310,19 @@ height:180px !important;
 
 .tl2{
   margin: 5px;
-  height:210px;
-  width:210px;
+  height:150px;
+  width:150px;
+  border-radius: 5px;
   /* border: 10px #dfe6e9 solid; */
   -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
   -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
   box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
   transition: width .3s, height .3s;
 }
+
 .tl2:hover{
-  height:215px;
-  width:215px;
+  height:153px;
+  width:153px;
 }
 // ============================
 
@@ -535,9 +538,9 @@ height:180px !important;
 
   .transparent-text{
     font-family: 'Tangerine'; 
-    font-weight: 700;
-    font-size: 84px;
-    line-height: 104px;
+    font-weight: 600;
+    font-size: 82px;
+    line-height: 88px;
     padding: -40px 0 5px 0;
   }
 
@@ -648,9 +651,9 @@ height:180px !important;
 
   .transparent-text{
     font-family: 'Tangerine'; 
-    font-weight: 700;
-    font-size: 84px;
-    line-height: 104px;
+    font-weight: 600;
+    font-size: 82px;
+    line-height: 88px;
     padding: -40px 0 5px 0;
   }
 
@@ -899,10 +902,10 @@ height:180px !important;
   }
   .transparent-text{
     font-family: 'Tangerine'; 
-    font-weight: 700;
+    font-weight: 600;
     color: #1E1F21; 
-    font-size: 94px;
-    line-height: 104px;
+    font-size: 98px;
+    line-height: 102px;
   }
   .bold-text-black{
     font-family: 'Montserrat';
@@ -988,10 +991,10 @@ height:180px !important;
   }
   .transparent-text{
     font-family: 'Tangerine'; 
-    font-weight: 700;
+    font-weight: 600;
     color: #1E1F21; 
-    font-size: 134px;
-    line-height: 144px;
+    font-size: 200px;
+    line-height: 184px;
     padding: -30px 0;
   }
   .bold-text-black{
@@ -1019,7 +1022,187 @@ height:180px !important;
   }
   .cta-btn:hover{
     color: black;
-    background-color: #111111;
+    background-color: #f5f5f7;
+    border: 2px black solid;
+  }
+  .the-carousel{
+    display: block;
+  }
+  .customer-msg-form{
+    margin: 0 auto; 
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width : 1400px) {
+  #upcoming-trips-btn{
+    display: none;
+  }
+  .booking-table-section{
+    width: 66vw;
+  }
+  #upcoming-trips-section{
+    display: block;
+  }
+  .carousel-section{
+    background:#f5f5f7 !important;
+    margin: 0 auto !important; 
+    height: 720px !important;
+  }
+  .log-form-margin{
+    margin: 0 auto !important;
+    width: 88% !important;
+  }
+
+  .login-page-image{
+    display: block;
+  }
+  .reg-page-image{
+    display: block;
+  }
+  .my-container{
+    margin: 0 auto;
+    width: 80%;
+  }
+  .header-text{
+    padding: 50px 0 70px 45px;
+  }
+  .about-img{
+    display:block;
+  }
+  #testimonials-mobile-view{
+    display: none;
+  }
+  #test-car{
+    display: block;
+  }
+  #navbar-head-text{
+    display: block;
+  }
+  .transparent-text{
+    font-family: 'Tangerine'; 
+    font-weight: 600;
+    color: #1E1F21; 
+    font-size: 180px;
+    line-height: 184px;
+    padding: -30px 0;
+  }
+  .bold-text-black{
+    font-family: 'Montserrat';
+    font-weight:600; 
+    color: #000;
+    font-size: 48px;
+    line-height:50px;
+  }
+  .bold-text-white{
+    font-family: 'Montserrat';
+    font-weight:600; 
+    color: #fafafa;
+    font-size: 48px ;
+    line-height:50px;
+  }
+  .cta-btn{
+    color: white;
+    background: black;
+    font-weight: 400;
+    font-size: 24px;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 15px 100px;
+  }
+  .cta-btn:hover{
+    color: black;
+    background-color: #f5f5f7;
+    border: 2px black solid;
+  }
+  .the-carousel{
+    display: block;
+  }
+  .customer-msg-form{
+    margin: 0 auto; 
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width : 1440px) {
+  #upcoming-trips-btn{
+    display: none;
+  }
+  .booking-table-section{
+    width: 66vw;
+  }
+  #upcoming-trips-section{
+    display: block;
+  }
+  .carousel-section{
+    background:#f5f5f7 !important;
+    margin: 0 auto !important; 
+    height: 720px !important;
+  }
+  .log-form-margin{
+    margin: 0 auto !important;
+    width: 88% !important;
+  }
+
+  .login-page-image{
+    display: block;
+  }
+  .reg-page-image{
+    display: block;
+  }
+  .my-container{
+    margin: 0 auto;
+    width: 80%;
+  }
+  .header-text{
+    padding: 50px 0 70px 45px;
+  }
+  .about-img{
+    display:block;
+  }
+  #testimonials-mobile-view{
+    display: none;
+  }
+  #test-car{
+    display: block;
+  }
+  #navbar-head-text{
+    display: block;
+  }
+  .transparent-text{
+    font-family: 'Tangerine'; 
+    font-weight: 600;
+    color: #1E1F21; 
+    font-size: 180px;
+    line-height: 184px;
+    padding: -30px 0;
+  }
+  .bold-text-black{
+    font-family: 'Montserrat';
+    font-weight:600; 
+    color: #000;
+    font-size: 48px;
+    line-height:50px;
+  }
+  .bold-text-white{
+    font-family: 'Montserrat';
+    font-weight:600; 
+    color: #fafafa;
+    font-size: 48px ;
+    line-height:50px;
+  }
+  .cta-btn{
+    color: white;
+    background: black;
+    font-weight: 400;
+    font-size: 24px;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 15px 100px;
+  }
+  .cta-btn:hover{
+    color: black;
+    background-color: #f5f5f7;
     border: 2px black solid;
   }
   .the-carousel{
@@ -1078,11 +1261,11 @@ height:180px !important;
   }
   .transparent-text{
     font-family: 'Tangerine'; 
-    font-weight: 700;
+    font-weight: 600;
     color: #1E1F21; 
-    font-size: 134px;
+    font-size: 200px;
     margin: -30px 0;
-    line-height: 144px;
+    line-height: 184px;
   }
   .bold-text-black{
     font-family: 'Montserrat';
@@ -1112,7 +1295,7 @@ height:180px !important;
   }
   .cta-btn:hover{
     color: black;
-    background-color: #111111;
+    background-color: #f5f5f7;
     border: 2px black solid;
   }
   .customer-msg-form{

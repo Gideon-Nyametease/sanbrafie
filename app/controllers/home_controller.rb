@@ -5,7 +5,7 @@ class HomeController < ApplicationController
         if current_user.role_code == "client"
           @tours = Tour.where(active_status: true, del_status: false).order(start_date: :asc).limit(5)
           booking_infos = BookingInfo.where("user_id = ?", current_user.id)
-          @pagy, @booking_infos = booking_infos.present? ? pagy(BookingInfo.where("user_id = ?", current_user.id) ) : pagy(BookingInfo.where("(surname = ? AND othernames = ?) OR email = ?",current_user.surname,current_user.othernames,current_user.email) )
+          @pagy, @booking_infos = booking_infos.present? ? pagy(BookingInfo.where("user_id = ?", current_user.id) ) : pagy(BookingInfo.where("surname = ? AND othernames = ? AND email = ?",current_user.surname,current_user.othernames,current_user.email) )
         else
           @tours = Tour.where(active_status: true, del_status: false).order(start_date: :asc).limit(5)
           @pagy, @booking_infos = pagy(BookingInfo.all )
@@ -24,7 +24,9 @@ class HomeController < ApplicationController
     end
 
     def checkout_page
-      @tours = Tour.where('id = ?',params[:tour_id])
+      @tours = Tour.where('id = ?',params[:tour_id])[0]
+      @booking = BookingInfo.where("tour_id=?",params[:tour_id])[0]
+      @count = @booking.group_count
       logger.info "The booking form \n #{params[:tour_id].inspect}"
     end
 
