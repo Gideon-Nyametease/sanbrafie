@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_21_190955) do
+ActiveRecord::Schema.define(version: 2021_09_21_200358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2021_09_21_190955) do
     t.integer "user_id"
     t.string "user_uid"
     t.boolean "tos_agreement"
+    t.boolean "payment_status"
   end
 
   create_table "custom_trips", force: :cascade do |t|
@@ -106,6 +107,9 @@ ActiveRecord::Schema.define(version: 2021_09_21_190955) do
     t.integer "sales_count"
     t.boolean "active_status", default: true
     t.boolean "del_status", default: false
+    t.string "stripe_trip_id"
+    t.string "stripe_product_id"
+    t.string "stripe_price_id"
   end
 
   create_table "user_testimonials", force: :cascade do |t|

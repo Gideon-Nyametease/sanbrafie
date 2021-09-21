@@ -42,6 +42,8 @@
                                     <td>
                                         <%= tour.tour_id %><br>
                                         <%= tour.title %><br>
+                                        <%= tour.stripe_product_id %><br>
+                                        <%= tour.stripe_price_id %><br>
                                         <%= tour.start_date %><br>
                                         <%= tour.end_date %><br><br>
                                         <%= link_to "Book", book_form_path(tour_id: tour.id), class:"btn btn-md btn-dark", remote: true%>

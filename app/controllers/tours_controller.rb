@@ -71,6 +71,6 @@ class ToursController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tour_params
-      params.require(:tour).permit(:tour_id, :title, :price, :currency, :description, :start_date, :end_date, :image, :sales_count)
+      params.require(:tour).permit(:tour_id, :title, :price, :currency, :stripe_product_id, :stripe_price_id, :description, :start_date, :end_date, :image, :sales_count)
     end
 end
