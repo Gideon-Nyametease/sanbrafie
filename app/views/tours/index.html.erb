@@ -46,6 +46,7 @@
                                         <%= tour.stripe_price_id %><br>
                                         <%= tour.start_date %><br>
                                         <%= tour.end_date %><br><br>
+                                        <%= tour.sales_count %><br><br>
                                         <%= link_to "Book", book_form_path(tour_id: tour.id), class:"btn btn-md btn-dark", remote: true%>
                                         <% if current_user.role_code == 'admin'%>
                                             <%= link_to edit_tour_path(tour), class:"btn btn-md btn-secondary" do %>

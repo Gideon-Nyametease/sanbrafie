@@ -61,8 +61,8 @@
                                     <input value="<%= @count %>" name="count" id="count" type="hidden">
                                     <button type="button" onclick="submitForm()" id="checkout-button" class="btn mm btn-lg btn-outline-dark">Proceed to payment</button>
                                 </form>
-                                <%#= link_to "Proceed to payment",checkout_create_path(id: params[:tour_id], count:@count), method: :post, class:"btn mm btn-lg btn-outline-dark",id:"checkout-button" ,remote: true %>
-                               
+                                <%#= link_to "Proceed to payment",checkout_create_path(id: params[:tour_id], count:@count), method: :post, class:"btn mm btn-lg btn-outline-dark",id:"checkout-button" ,remote: true %>                               
+                                <%#= button_to "Proceed to payment",checkout_create_path, params: {id: params[:tour_id], count:@count}, class:"btn mm btn-lg btn-outline-dark",id:"checkout-button" ,remote: true, data:{disable_with: 'Validating..'} %>
                             <% else %>
                                 <%= link_to "Proceed to payment",checkout_create_path(id: @tours.id, count:@count), method: :post, class:"btn mm btn-lg btn-outline-dark",id:"checkout-button" ,remote: true %>
                             <% end %>

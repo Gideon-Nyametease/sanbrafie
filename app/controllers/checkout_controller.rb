@@ -11,17 +11,17 @@ class CheckoutController < ApplicationController
         customer: current_user.stripe_customer_id,
         payment_method_types: ['card'],
         line_items: [{
-            # name: @tour.title,
-            # amount: @tour.price*100*count,
-            # currency: @tour.currency,
-            price: @tour.stripe_price_id,
+            name: @tour.title,
+            amount: @tour.price*100*count,
+            currency: @tour.currency,
+            # price: @tour.stripe_price_id,
             quantity: 1
         }],
         mode: 'payment',
-        success_url: 'http://localhost:3000/',
-        cancel_url: "http://localhost:3000/checkout_page?tour_id=#{@tour.id}"
-        # success_url: "https://www.sanbrafiegroup.com/",
-        # cancel_url: "https://www.sanbrafiegroup.com/checkout_page?tour_id=#{@tour.id}"
+        # success_url: 'http://localhost:3000/',
+        # cancel_url: "http://localhost:3000/checkout_page?tour_id=#{@tour.id}"
+        success_url: "https://www.sanbrafiegroup.com/",
+        cancel_url: "https://www.sanbrafiegroup.com/checkout_page?tour_id=#{@tour.id}"
         })
 
         respond_to do |format|
