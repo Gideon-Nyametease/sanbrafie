@@ -63,7 +63,6 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "sanbrafie_production"
 
-  config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -99,20 +98,23 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # setting up gmail mailer
+  config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :smtp
   # host = 'localhost:3000'
-  host = 'sanbrafiegroup.org'
-  config.action_mailer.default_url_options = { :host => 'sanbrafiegroup.org', protocol: 'https' }
-
+  host = 'sanbrafiegroup.com'
+  config.action_mailer.default_url_options = { :host => 'sanbrafiegroup.com', protocol: 'https' }
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :user_name            => Rails.application.credentials.google[:gmail_username],
     :password             => Rails.application.credentials.google[:gmail_password],
-    :authentication       => "plain",
+    :domain               => "gmail.com",
+    :authentication       => :login,
     :enable_starttls_auto => true
   }
+
+
 
   # using credentials.yml.enc
   config.require_master_key = true
