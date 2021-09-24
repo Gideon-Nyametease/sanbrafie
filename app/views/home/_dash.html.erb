@@ -92,7 +92,7 @@
     <div class="col-sm-4 shadow-sm" id="upcoming-trips-section" style="background-color:#f5f5f7; padding: 20px 10px; border-left: 0.3px solid #dedede;">
         <div class="row" >
             <div class="d-grid gap-2">
-                <h3 class="text-center" style="margin-bottom:20px;">Upcoming Trips</h4>
+                <h2 class="text-center" style="margin-bottom:20px; font-family: 'Montserrat' !important; font-weight: 700;">Upcoming Trips</h2>
                 <% if current_user.role_code == "admin"%>
                     <%= link_to new_tour_path, class:"btn btn-lg btn-dark " do %>
                         Add a new trip

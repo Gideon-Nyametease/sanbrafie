@@ -46,13 +46,13 @@ class ToursController < ApplicationController
     @trip_params = Tour.new(tour_params)
     @trip = Tour.where("id=? AND active_status = true AND del_status=false",params[:id]).order(created_at: :desc).first
     if  @trip_params.valid?
-      @new_trip_params = Tour.new(title: tour_param[:title], 
-                                  price: tour_param[:price], 
-                                  currency: tour_param[:currency], 
-                                  description: tour_param[:description], 
-                                  start_date: tour_param[:start_date], 
-                                  end_date: tour_param[:end_date], 
-                                  image: tour_param[:image],
+      @new_trip_params = Tour.new(title: tour_params[:title], 
+                                  price: tour_params[:price], 
+                                  currency: tour_params[:currency], 
+                                  description: tour_params[:description], 
+                                  start_date: tour_params[:start_date], 
+                                  end_date: tour_params[:end_date], 
+                                  image: tour_params[:image],
                                   tour_id: @trip.tour_id)
       @new_package_info.save(validate: false)
 

@@ -12,23 +12,30 @@ class User < ApplicationRecord
   #   create_with(uid: uid, full_name: full_name, avatar_url: avatar_url).find_or_create_by!(email: email)
   # end
 
-  def self.from_omniauth(access_token)
+  def self.from_omniauth(access_token, logger)
     data = access_token.info
     user = User.where(email: data['email']).first
-
+    logger.info "The logger from Model \n#{data.inspect}"
     # Uncomment the section below if you want users to be created if they don't exist
     unless user
         name = data['name']
         var = name.split(" ")
 
-        user = User.create(
+        user = User.new(
           surname: var.last,
           othernames: var.first,
-          username: data['name'],
+          username: var.first,
           email: data['email'],
           uid: data['uid'],
           password: Devise.friendly_token[0,20]
         )
+        if user.valid?
+          user.save
+        else
+          logger.info "================= #{user.errors.messages.inspect}"
+          logger.info "================= #{user.password.inspect}"
+        end
+
     end
     user
 end
@@ -42,7 +49,7 @@ after_create do
   update(stripe_customer_id: customer.id)
 end
 
-  # Login vie username/email
+  # Login via username/email
   def login
     @login || self.username || self.email
   end
@@ -58,7 +65,8 @@ end
 
   # validations
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
-  validates :username, presence: true, uniqueness: { case_sensitive: false }
+  validates :username, presence: true
+  # , uniqueness: { case_sensitive: false }
   validate :password_complexity
   # validate :validate_username
 
@@ -70,7 +78,7 @@ end
   
 
   def password_complexity
-    return if password.blank? || password =~ /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,70}$/
+    return if password.blank? || password =~ /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-_]).{8,70}$/
 
     errors.add :password, 'Password Length should be at least 8 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1 special character'
   end
