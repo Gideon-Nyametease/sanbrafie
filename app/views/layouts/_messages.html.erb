@@ -2,7 +2,7 @@
     <% flash.each do |name, msg| %>
     <% if msg.is_a?(String) %>
         <div id="sys-msg" class="w3-modal w3-animate-opacity" style="display: block; margin-top: 50px; ">
-            <div class="w3-modal-content w3-card-4 " style="width: 400px; padding-bottom:20px; height: 180px !important;" >
+            <div class="w3-modal-content w3-card-4 " style="width: 400px; padding-bottom:20px; height: 190px !important;" >
                 <div class="d-flex justify-content-end" style="padding: 10px;">
                     <span onclick="document.getElementById('sys-msg').style.display='none'"
                         class="btn btn-md btn-light">&#10799;</span>
@@ -34,6 +34,7 @@
     }
     .alert{
         background-color: #fff !important;
+        z-index: 100;
     }
     .alert-success{
         background-color: #fff !important;
@@ -47,15 +48,10 @@
         border-color: #fff !important;
         color: #ff8080 !important;
     }
+     
+
 </style>
 
-
-
-<style>
-  .alert{
-      z-index: 100;
-  }
-</style>
 <script type="text/javascript">
     $(document).ready(function(){
         setTimeout(function(){

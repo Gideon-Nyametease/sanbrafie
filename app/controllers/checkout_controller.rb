@@ -6,23 +6,38 @@ class CheckoutController < ApplicationController
         count_str = params[:count]
         count = count_str.to_i
 
-        logger.info"\n Tour price = #{count.inspect}\n"
-        @session = Stripe::Checkout::Session.create({
-        customer: current_user.stripe_customer_id,
-        payment_method_types: ['card'],
-        line_items: [{
-            name: @tour.title,
-            amount: @tour.price*100*count,
-            currency: @tour.currency,
-            # price: @tour.stripe_price_id,
-            quantity: 1
-        }],
-        mode: 'payment',
-        # success_url: 'http://localhost:3000/',
-        # cancel_url: "http://localhost:3000/checkout_page?tour_id=#{@tour.id}"
-        success_url: "https://www.sanbrafiegroup.com/",
-        cancel_url: "https://www.sanbrafiegroup.com/checkout_page?tour_id=#{@tour.id}"
-        })
+        # logger.info"\n Tour price = #{count.inspect}\n"
+        if @tour.stripe_price_id
+            @session = Stripe::Checkout::Session.create({
+            customer: current_user.stripe_customer_id,
+            payment_method_types: ['card'],
+            line_items: [{
+                price: @tour.stripe_price_id,
+                quantity: count
+            }],
+            mode: 'payment',
+            # success_url: "http://localhost:3000/success_page?tour_id=#{@tour.id}",
+            # cancel_url: "http://localhost:3000/checkout_page?tour_id=#{@tour.id}"
+            success_url: "https://www.sanbrafiegroup.com/success_page?tour_id=#{@tour.id}",
+            cancel_url: "https://www.sanbrafiegroup.com/checkout_page?tour_id=#{@tour.id}"
+            })
+        else
+            @session = Stripe::Checkout::Session.create({
+            customer: current_user.stripe_customer_id,
+            payment_method_types: ['card'],
+            line_items: [{
+                name: @tour.title,
+                amount: @tour.price,
+                currency: @tour.currency,
+                quantity: count
+            }],
+            mode: 'payment',
+            # success_url: "http://localhost:3000/success_page?tour_id=#{@tour.id}",
+            # cancel_url: "http://localhost:3000/checkout_page?tour_id=#{@tour.id}"
+            success_url: "https://www.sanbrafiegroup.com/success_page?tour_id=#{@tour.id}",
+            cancel_url: "https://www.sanbrafiegroup.com/checkout_page?tour_id=#{@tour.id}"
+            })
+        end
 
         respond_to do |format|
             format.js

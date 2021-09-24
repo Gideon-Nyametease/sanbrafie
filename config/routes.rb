@@ -38,4 +38,6 @@ Rails.application.routes.draw do
   post 'create_testimonial' => 'home#create_testimonial', as: :create_testimonial
   get 'privacy_policy' => 'home#privacy_policy', as: :privacy_policy
   get 'upcoming_trips_modal' => 'home#upcoming_trips_modal', as: :upcoming_trips_modal
+
+  get 'success_page' => 'home#success_page', as: :success_page
 end

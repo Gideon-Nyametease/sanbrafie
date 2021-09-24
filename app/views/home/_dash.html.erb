@@ -3,7 +3,7 @@
 <div class="custom-trip"></div>
 <div class="tos-form"></div>
 <div id="trips"></div>
-<div class="row" >
+<div class="row" style="margin-top: 20px !important;">
     <div class="col-sm-8 booking-table-section">
     <div style="padding: 40px 0 40px 30px; border-bottom: 0.3px #dedede solid; background-color: #f5f5f7; margin: 0 -10px;">
         <h3 class="my-h3">Hello <%= current_user.username.capitalize %></h3>
@@ -34,7 +34,7 @@
                         <th>Trip</th>
                         <th>Coordination</th>
                         <th>No. of people</th>
-                        <th>Hotel</th>
+                        <%# <th>Hotel</th> %>
                         <th>Duration</th>
                         <th colspan="2"></th>
                     </tr>
@@ -47,8 +47,19 @@
                         <td><%= @tour.title if !@tour.nil?%></td>
                         <td><%= booking_info.coordination_preference %></td>
                         <td><%= booking_info.group_count %></td>
-                        <td><%= booking_info.hotel_type %></td>
+                        <!--<td><%#= booking_info.hotel_type %></td>-->
                         <td><%= booking_info.tour_duration %></td>
+                        
+                        <% if booking_info.payment_status %>
+                            
+                        <% else %>
+                            <td>
+                                <%= link_to checkout_page_path(tour_id: booking_info.tour_id, count: booking_info.group_count), class:"btn btn-dark", style:"width:80px;" do %>
+                                    Pay
+                                <% end %>
+                            </td>
+                        <% end %>
+                        
                         <td>
                             <% if booking_info.status == 'postponed'%>
                                 <%= link_to edit_booking_info_path(booking_info, marker:"postponed"),remote:true, class:"btn btn-secondary" do %>
@@ -60,7 +71,7 @@
                                 <% end %>
                             <% end %>
                         </td>
-                        <td><button class="btn btn-dark"><i class="fas fa-upload"></i></button></td>
+                        <%# <td><button class="btn btn-dark"><i class="fas fa-upload"></i></button></td> %>
                         </tr>
                     <% end %>
                     </tbody>

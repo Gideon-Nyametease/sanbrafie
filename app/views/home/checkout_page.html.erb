@@ -35,36 +35,39 @@
             </div>
         </div>
     </div>
-    <div class="col-3" style="background-color:#f5f6f8; padding: 100px 10px; border-left: 1px #dedede solid; height: 100%;">
+    <div class="col-3" style="background-color:#f5f6f8; padding: 100px 0px 100px 20px; border-left: 1px #dedede solid; height: 100%;">
         <div class="row">
             <%# @tours.each do |tour| %>
                 <div class="row" style="margin-bottom: 15px;">
-                    <div class="col-sm-4">
-                        <% if @tours.image.attached? %>                            
-                            <img src="<%= url_for(@tours.image) %>" alt=" demo instructions" class="tl2">
-                        <% else %>
-                            <p class="text-center">Image not available</p>
-                        <% end %>
+                    <div class="row">
+                        <div  style="width: 50%; margin: 0 auto;">
+                            <% if @tours.image.attached? %>                            
+                                <img src="<%= url_for(@tours.image) %>" alt=" demo instructions" class="tl2">
+                            <% else %>
+                                <p class="text-center">Image not available</p>
+                            <% end %>
+                        </div>
                     </div>
-                    <div class="col-sm-8">
+                    <br>
+                    <div class="row text-center">
                         <h5><%= @tours.title %></h5><br>
                         <h4><%= number_to_currency(@tours.price) %></h4><br>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12 ">
+                    <div class="col-sm-12 " style="width:98%; margin:0 auto;">
                         <div style="padding:5px;">
                             <div class="d-grid gap-2">
                             <% if params[:tour_id] %>
-                                <form>
-                                    <input value="<%=params[:tour_id]%>" name="id" id="tour_id" type="hidden">
-                                    <input value="<%= @count %>" name="count" id="count" type="hidden">
+                               <!-- <form>
+                                    <input value="<%#=params[:tour_id]%>" name="id" id="tour_id" type="hidden">
+                                    <input value="<%#= @count %>" name="count" id="count" type="hidden">
                                     <button type="button" onclick="submitForm()" id="checkout-button" class="btn mm btn-lg btn-outline-dark">Proceed to payment</button>
-                                </form>
-                                <%#= link_to "Proceed to payment",checkout_create_path(id: params[:tour_id], count:@count), method: :post, class:"btn mm btn-lg btn-outline-dark",id:"checkout-button" ,remote: true %>                               
+                                </form>-->
+                                <%= link_to "Proceed to checkout",checkout_create_path(id: params[:tour_id], count:@count), method: :post, class:"btn mm btn-lg btn-primary",id:"checkout-button", data:{disable_with: 'Validating..'} ,remote: true %>                               
                                 <%#= button_to "Proceed to payment",checkout_create_path, params: {id: params[:tour_id], count:@count}, class:"btn mm btn-lg btn-outline-dark",id:"checkout-button" ,remote: true, data:{disable_with: 'Validating..'} %>
                             <% else %>
-                                <%= link_to "Proceed to payment",checkout_create_path(id: @tours.id, count:@count), method: :post, class:"btn mm btn-lg btn-outline-dark",id:"checkout-button" ,remote: true %>
+                                <%= link_to "Proceed to checkout",checkout_create_path(id: @tours.id, count:@count), method: :post, class:"btn mm btn-lg btn-outline-dark",id:"checkout-button" ,remote: true %>
                             <% end %>
                             </div>
                         </div>
@@ -105,11 +108,11 @@
 
 
     .tl2{
-        margin: 5px;
-        height:110px !important;
-        width:110px !important;
+        margin: 15px;
+        height:130px !important;
+        width:130px !important;
         border-radius: 5px;
-        border: #fff 8px solid;
+        /* border: #fff 8px solid; */
     }
 
     .tl2:hover{

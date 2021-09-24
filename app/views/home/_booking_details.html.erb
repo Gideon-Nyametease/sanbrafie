@@ -21,7 +21,9 @@
           </span>
           <br>
           <span class="text-uppercase m-text" style="font-size: 24px; font-weight: 700 ; color: #11bc4f">$ <%= @tour.price %>.00</span>
-        <% end %>
+        <% end %><br>
+        <%= link_to 'Book this trip', booking_form2_path(marker:"from itinerary", tour_id: @tour.id), class:"btn btn-md btn-outline-dark", remote:true%>
+
         <hr>
         <h4>Itinerary</h4>
         <br>

@@ -5,10 +5,10 @@ class HomeController < ApplicationController
         if current_user.role_code == "client"
           @tours = Tour.where(active_status: true, del_status: false).order(start_date: :asc).limit(5)
           booking_infos = BookingInfo.where("user_id = ?", current_user.id)
-          @pagy, @booking_infos = booking_infos.present? ? pagy(BookingInfo.where("user_id = ?", current_user.id) ) : pagy(BookingInfo.where("surname = ? AND othernames = ? AND email = ?",current_user.surname,current_user.othernames,current_user.email) )
+          @pagy, @booking_infos = booking_infos.present? ? pagy(BookingInfo.where("user_id = ?", current_user.id).order(created_at: :desc) ) : pagy(BookingInfo.where("surname = ? AND othernames = ? AND email = ?",current_user.surname,current_user.othernames,current_user.email).order(created_at: :desc) )
         else
           @tours = Tour.where(active_status: true, del_status: false).order(start_date: :asc).limit(5)
-          @pagy, @booking_infos = pagy(BookingInfo.all )
+          @pagy, @booking_infos = pagy(BookingInfo.all.order(created_at: :desc) )
         end
       else
         @tours = Tour.where(active_status: true, del_status: false).order(start_date: :asc).limit(5)
@@ -107,6 +107,9 @@ class HomeController < ApplicationController
         end
     end
 
+    def success_page
+
+    end
 
     def create_custom_trip
       @booking_form_data = CustomTrip.new(booking_form_params)

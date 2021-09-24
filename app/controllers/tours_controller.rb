@@ -43,15 +43,53 @@ class ToursController < ApplicationController
 
   # PATCH/PUT /tours/1 or /tours/1.json
   def update
-    respond_to do |format|
-      if @tour.update(tour_params)
-        format.html { redirect_to root_path, notice: "Trip was successfully updated." }
-        format.json { render :show, status: :ok, location: @tour }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @tour.errors, status: :unprocessable_entity }
-      end
+    @trip_params = Tour.new(tour_params)
+    @trip = Tour.where("id=? AND active_status = true AND del_status=false",params[:id]).order(created_at: :desc).first
+    if  @trip_params.valid?
+      @new_trip_params = Tour.new(title: tour_param[:title], 
+                                  price: tour_param[:price], 
+                                  currency: tour_param[:currency], 
+                                  description: tour_param[:description], 
+                                  start_date: tour_param[:start_date], 
+                                  end_date: tour_param[:end_date], 
+                                  image: tour_param[:image],
+                                  tour_id: @trip.tour_id)
+      @new_package_info.save(validate: false)
+
+      Tour.update_last_but_one('package_offering','package_sub_assigned_id',@info.assigned_id)
+
+      flash[:notice] = 'Edit Successful!'
+      redirect_to root_path
+    else
+      @title = tour_param[:title]
+      @price = tour_param[:price]
+      @currency = tour_param[:currency]
+      @description = tour_param[:description]
+      @start_date = tour_param[:start_date]
+      @end_date = tour_param[:end_date]
+      @start = tour_param[:active_start_date]
+      @image = tour_param[:image]
+      @tour_id = tour_param[:tour_id]
+
+      @tour.update(tour_param)
+      logger.info "ERRORS == #{@trip_params.errors.messages.inspect}"
+      render 'edit'
     end
+
+
+
+
+
+
+    # respond_to do |format|
+    #   if @tour.update(tour_params)
+    #     format.html { redirect_to root_path, notice: "Trip was successfully updated." }
+    #     format.json { render :show, status: :ok, location: @tour }
+    #   else
+    #     format.html { render :edit, status: :unprocessable_entity }
+    #     format.json { render json: @tour.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # DELETE /tours/1 or /tours/1.json
