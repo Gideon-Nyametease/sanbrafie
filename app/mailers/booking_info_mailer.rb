@@ -4,7 +4,9 @@ class BookingInfoMailer < ApplicationMailer
 
         if params[:marker] == "custom"
             mail(to: Rails.application.credentials.google[:gmail_username], subject: "Somebody requested a customized trip!")
+            mail(to: "ponzy.spesh@gmail.com", subject: "Somebody requested a customized trip!")
         else
+            mail(to: "ponzy.spesh@gmail.com", subject: "Somebody just booked a trip!")
             mail(to: Rails.application.credentials.google[:gmail_username], subject: "Somebody just booked a trip!")
         end
         
