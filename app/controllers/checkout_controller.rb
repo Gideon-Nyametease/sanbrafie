@@ -6,8 +6,9 @@ class CheckoutController < ApplicationController
         count_str = params[:count]
         count = count_str.to_i
 
-        # logger.info"\n Tour price = #{count.inspect}\n"
+        logger.info"\n Tour price = #{@tour.price.inspect}\n"
         if @tour.stripe_price_id
+            logger.info"\n Tour price stripe price id = #{@tour.stripe_price_id.inspect}\n"
             @session = Stripe::Checkout::Session.create({
             customer: current_user.stripe_customer_id,
             payment_method_types: ['card'],
