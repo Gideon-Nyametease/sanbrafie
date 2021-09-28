@@ -25,6 +25,7 @@ class User < ApplicationRecord
           surname: var.last,
           othernames: var.first,
           username: var.first,
+          role_code: "client",
           email: data['email'],
           uid: data['uid'],
           password: Devise.friendly_token[0,20]

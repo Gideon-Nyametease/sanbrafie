@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-    before_action :authenticate_user!, :except => [:landing_page,:booking_form,:privacy_policy, :booking_form2, :booking_details, :create_booking, :custom_trip_form, :create_custom_trip, :tos, :testimonial_form] # :checkout_page,
+    before_action :authenticate_user!, :except => [:landing_page,:booking_form,:privacy_policy, :success_page, :booking_form2, :booking_details, :create_booking, :custom_trip_form, :create_custom_trip, :tos, :testimonial_form] # :checkout_page,
     def landing_page
       if user_signed_in?
         if current_user.role_code == "client"
@@ -108,7 +108,6 @@ class HomeController < ApplicationController
     end
 
     def success_page
-
     end
 
     def create_custom_trip

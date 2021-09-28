@@ -29,6 +29,7 @@ class ToursController < ApplicationController
   # POST /tours or /tours.json
   def create
     @tour = Tour.new(tour_params)
+    @tour.tour_id = Tour.check_seq_code
 
     respond_to do |format|
       if @tour.save
@@ -54,9 +55,9 @@ class ToursController < ApplicationController
                                   end_date: tour_params[:end_date], 
                                   image: tour_params[:image],
                                   tour_id: @trip.tour_id)
-      @new_package_info.save(validate: false)
+      @new_trip_params.save(validate: false)
 
-      Tour.update_last_but_one('package_offering','package_sub_assigned_id',@info.assigned_id)
+      Tour.update_last_but_one('tours','tour_id',@trip.tour_id)
 
       flash[:notice] = 'Edit Successful!'
       redirect_to root_path

@@ -137,7 +137,7 @@
                                     <%=  date.to_date.strftime("%Y") if !date.nil? %>
                                 </span>
                                 <br>
-                                <span class="text-3 font-weight-300 text-uppercase">$ <%= tour.price %></span>
+                                <span class="text-3 font-weight-300 text-uppercase">$ <%= tour.price/100 %></span>
                                 <br>
                                 <%= link_to "Itinerary",booking_details_path(id: tour.id),remote: true, class:"btn btn-link" %>
                                 <br>
