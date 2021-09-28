@@ -46,40 +46,44 @@ class ToursController < ApplicationController
   def update
     @trip_params = Tour.new(tour_params)
     @trip = Tour.where("id=? AND active_status = true AND del_status=false",params[:id]).order(created_at: :desc).first
-    if  @trip_params.valid?
-      if @trip.tour_id.nil?
-        @trip.tour_id = Tour.check_seq_code
+
+    respond_to do |format|
+      if  @trip_params.valid?
+        if @trip.tour_id.nil?
+          @trip.tour_id = Tour.check_seq_code
+        else
+          logger.info "tour id is intact"
+        end
+        @new_trip_params = Tour.new(title: tour_params[:title], 
+                                    price: tour_params[:price], 
+                                    currency: tour_params[:currency], 
+                                    description: tour_params[:description], 
+                                    start_date: tour_params[:start_date], 
+                                    end_date: tour_params[:end_date], 
+                                    image: tour_params[:image],
+                                    tour_id: @trip.tour_id)
+        @new_trip_params.save(validate: false)
+
+        Tour.update_last_but_one('tours','tour_id',@trip.tour_id)
+
+        format.html { redirect_to root_path, notice: "Trip was successfully updated." }
+        format.json { render :show, status: :ok, location: @tour }
       else
-        logger.info "tour id is intact"
+        @title = tour_param[:title]
+        @price = tour_param[:price]
+        @currency = tour_param[:currency]
+        @description = tour_param[:description]
+        @start_date = tour_param[:start_date]
+        @end_date = tour_param[:end_date]
+        @start = tour_param[:active_start_date]
+        @image = tour_param[:image]
+        @tour_id = tour_param[:tour_id]
+
+        @tour.update(tour_param)
+        logger.info "ERRORS == #{@trip_params.errors.messages.inspect}"
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @tour.errors, status: :unprocessable_entity }
       end
-      @new_trip_params = Tour.new(title: tour_params[:title], 
-                                  price: tour_params[:price], 
-                                  currency: tour_params[:currency], 
-                                  description: tour_params[:description], 
-                                  start_date: tour_params[:start_date], 
-                                  end_date: tour_params[:end_date], 
-                                  image: tour_params[:image],
-                                  tour_id: @trip.tour_id)
-      @new_trip_params.save(validate: false)
-
-      Tour.update_last_but_one('tours','tour_id',@trip.tour_id)
-
-      flash[:notice] = 'Edit Successful!'
-      redirect_to root_path
-    else
-      @title = tour_param[:title]
-      @price = tour_param[:price]
-      @currency = tour_param[:currency]
-      @description = tour_param[:description]
-      @start_date = tour_param[:start_date]
-      @end_date = tour_param[:end_date]
-      @start = tour_param[:active_start_date]
-      @image = tour_param[:image]
-      @tour_id = tour_param[:tour_id]
-
-      @tour.update(tour_param)
-      logger.info "ERRORS == #{@trip_params.errors.messages.inspect}"
-      render 'edit'
     end
 
 
