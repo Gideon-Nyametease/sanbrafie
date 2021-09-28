@@ -20,7 +20,10 @@
                     <%=  date.to_date.strftime("%Y") if !date.nil? %>
                 </span>
                 <br>
-                <span class="text-uppercase m-text" style="font-size: 24px; font-weight: 700 ; color: #11bc4f">$ <%= @tours.price %>.00</span>
+                <span class="text-uppercase m-text" style="font-size: 24px; font-weight: 700 ; color: #11bc4f">
+                    <% price = @tours.price/100 if !@tours.price.nil?%>
+                    <%= number_to_currency(price) %>
+                </span>
                 <% end %>
                 <hr>
                 <h4>Itinerary</h4>
@@ -51,7 +54,10 @@
                     <br>
                     <div class="row text-center">
                         <h5><%= @tours.title %></h5><br>
-                        <h4><%= number_to_currency(@tours.price) %></h4><br>
+                        <h4>
+                            <% price = @tours.price/100 if !@tours.price.nil?%>
+                            <%= number_to_currency(price) %>
+                        </h4><br>
                     </div>
                 </div>
                 <div class="row">
