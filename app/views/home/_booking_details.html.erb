@@ -20,7 +20,7 @@
               <%=  date.to_date.strftime("%Y") if !date.nil? %>
           </span>
           <br>
-          <span class="text-uppercase m-text" style="font-size: 24px; font-weight: 700 ; color: #11bc4f">$ <%= @tour.price/100 %>.00</span>
+          <span class="text-uppercase m-text" style="font-size: 24px; font-weight: 700 ; color: #11bc4f">$ <%= @tour.price/100 if !@tour.price.nil?%>.00</span>
         <% end %><br>
         <%= link_to 'Book this trip', booking_form2_path(marker:"from itinerary", tour_id: @tour.id), class:"btn btn-md btn-outline-dark", remote:true%>
 
