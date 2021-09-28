@@ -1,0 +1,63 @@
+<div class="row d-flex justify-content-center"> 
+  <div class="col-5 " style="background-color:#dfe6e9; padding: 50px; ">
+    <div class="log-form-margin">
+      <%= simple_form_for(@tour) do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+        <div class="form-inputs">
+          <%#= f.input :tour_id %>
+          <%= f.input :title %>
+          <%#= f.input :description %>
+          <%= f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' } } %>
+          <%= f.input :price, input_html:{},hint:"Price is in cents, please add 2 extra zeros(00) to your intended price" %><br>
+          <%= f.input :currency, input_html:{value:"usd"}, as: :hidden %>
+          <div class="row">
+              <div class="col-md-6">
+                <%= f.input :start_date, :id => "datepicker",  as: :date, html5: true, class:"input-group date", boolean_style: :inline, 
+                input_html: {style: "width: 100%", data: {behaviour: 'datepicker', provide: 'datepicker'}, autocomplete: "off"}, label:"Start Date" %>
+              </div>
+              <div class="col-md-6">
+                <%= f.input :end_date, :id => "datepicker",  as: :date, html5: true, class:"input-group date", boolean_style: :inline, 
+                input_html: {style: "width: 100%", data: {behaviour: 'datepicker', provide: 'datepicker'}, autocomplete: "off"}, label:"Expiry Date" %>
+              </div>
+            </div>
+            <br>
+          <%= f.file_field :image, id: "avatar-upload" %>
+          <br><br>
+          <img id="img_prev" width=200 height=200 src="#" alt="your image" class="img-thumbnail hidden"/>
+          
+        </div>
+        <br><br>
+        <div class="form-actions">
+          <%= link_to 'Back', root_path,class:"btn btn-lg btn-outline-dark"%>
+          <%= f.button :submit ,class:"btn btn-lg btn-dark" %>
+          
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  $(function() {
+				function readURL(input) {
+					if (input.files && input.files[0]) {
+						var reader = new FileReader();
+
+						reader.onload = function (e) {
+							$('#img_prev').attr('src', e.target.result);
+						}
+						reader.readAsDataURL(input.files[0]);
+					}
+				}
+
+				$("#avatar-upload").change(function(){
+					$('#img_prev').removeClass('hidden');
+					readURL(this);
+				});
+			});
+
+
+</script>

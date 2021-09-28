@@ -37,6 +37,13 @@ class HomeController < ApplicationController
       @purpose_statement = [["Cultural visit","Cultural visit"],["Potential business","Potential business"],["Shopping","Shopping"],["Honeymoon","Honeymoon"]]
     end
 
+    def booking_form2
+      @tours = Tour.where(active_status: true, del_status: false).order(title: :asc)
+      @coordination_preference = [["Air and Ground","AG"],["Ground only","G"]]
+      @hotel_type = [["5 Star","5 Star"],["4 Star","4 Star"],["3 Star","3 Star"]]
+      @purpose_statement = [["Cultural visit","Cultural visit"],["Potential business","Potential business"],["Shopping","Shopping"],["Honeymoon","Honeymoon"]]
+    end
+
     def booking_details
       @tour = Tour.where("title = ?", params[:title])[0]
       logger.info"\n tour deets #{@tour.inspect}"

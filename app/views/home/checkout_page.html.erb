@@ -6,8 +6,8 @@
             </div>
             <br>
             <div class="my-form-margin">
-                <h2><%= params[:title] %></h2>
                 <% if !@tours.nil?%>
+                <h2><%= @tours.title  %></h2>
                 <% date = @tours.start_date %>
                 <span class="text-4 font-weight-300 m-text"><%=  date.to_date.strftime("%d") if !date.nil?%></span>
                 <span class="text-3 font-weight-300 text-uppercase m-text"><%= date.to_date.strftime("%B") if !date.nil?%>,
@@ -22,8 +22,8 @@
                 <br>
                 <span class="text-uppercase m-text" style="font-size: 24px; font-weight: 700 ; color: #11bc4f">
                     <% price = @tours.price/100 if !@tours.price.nil?%>
-                    <%= number_to_currency(price) %>
-                </span>
+                    <%= number_to_currency(price) %> 
+                </span> per Person
                 <% end %>
                 <hr>
                 <h4>Itinerary</h4>
@@ -55,7 +55,8 @@
                     <div class="row text-center">
                         <h5><%= @tours.title %></h5><br>
                         <h4>
-                            <% price = @tours.price/100 if !@tours.price.nil?%>
+                            <% count = params[:count]%>
+                            <% price = @tours.price/100 * count.to_i if !@tours.price.nil?%>
                             <%= number_to_currency(price) %>
                         </h4><br>
                     </div>
