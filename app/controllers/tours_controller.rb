@@ -47,6 +47,11 @@ class ToursController < ApplicationController
     @trip_params = Tour.new(tour_params)
     @trip = Tour.where("id=? AND active_status = true AND del_status=false",params[:id]).order(created_at: :desc).first
     if  @trip_params.valid?
+      if @trip.tour_id.nil?
+        @trip.tour_id = Tour.check_seq_code
+      else
+        logger.info "tour id is intact"
+      end
       @new_trip_params = Tour.new(title: tour_params[:title], 
                                   price: tour_params[:price], 
                                   currency: tour_params[:currency], 
