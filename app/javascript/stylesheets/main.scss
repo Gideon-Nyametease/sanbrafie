@@ -19,12 +19,19 @@ html, body {
   border-radius: 3px !important;
 }
 
-.my-routes{
-  font-size: 16px !important;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 500 !important;
-  margin: 0 10px 0 10px;
+.btn-dark{
+  background-color: #0A0908 !important;
 }
+.btn-outline-dark{
+  border-color: #0A0908 !important;
+}
+
+  .my-routes{
+    font-family:  'Montserrat'!important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    /* color: #f5f5f7 !important; */
+  }
 
 #navbar-head-text{
   padding-top: 10px; 
@@ -157,10 +164,10 @@ header{
   z-index: 2 !important;
 }
 .carousel-section{
-  background:#f5f5f7 !important;
+  background:#EBF8B8 ;
   // background: #E8AF1F;
-  margin: 0 auto !important; 
-  height: 730px !important;
+  margin: 0 auto; 
+  height: 730px ;
 }
 
 .carousel-section img {
@@ -224,9 +231,13 @@ header{
   width:300px;
 }
 .cta-btn-light:hover{
-  color: black;
-  background-color: white;
-  border: 2px black solid;
+  color: white;
+  background-color: #0A0908;
+  border: 2px #0A0908 solid;
+  -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+  -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+  box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+  transition: width .3s, height .3s;
 }
 .cta-btn-dark{
   color:#090909;
@@ -235,7 +246,7 @@ header{
   font-size: 24px;
   width:300px;
 }
-.cta-btn-light:hover{
+.cta-btn-dark:hover{
   color: white;
   background-color: black;
   border: 2px white solid;
@@ -513,7 +524,7 @@ height:180px !important;
     display: none;
   }
   .carousel-section{
-    background:#f5f5f7 !important;
+    background:#EBF8B8 ;
     // background: #E8AF1F;
     margin: 0 auto !important; 
     height: 720px !important;
@@ -604,9 +615,13 @@ height:180px !important;
     padding: 15px 25px;
   }
   .cta-btn-light:hover{
-    color: black;
-    background-color: white;
-    border: 2px black solid;
+    color: white;
+    background-color: #0A0908;
+    border: 2px #0A0908 solid;
+    -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    transition: width .3s, height .3s;
   }
 
   .cta-btn-dark{
@@ -642,7 +657,7 @@ height:180px !important;
     display: none;
   }
   .carousel-section{
-    background:#f5f5f7 !important;
+    background:#EBF8B8 ;
     // background: #E8AF1F;
     margin: 0 auto !important; 
     height: 720px !important;
@@ -733,9 +748,13 @@ height:180px !important;
     padding: 15px 65px;
   }
   .cta-btn-light:hover{
-    color: black;
-    background-color: white;
-    border: 2px black solid;
+    color: white;
+    background-color: #0A0908;
+    border: 2px #0A0908 solid;
+    -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    transition: width .3s, height .3s;
   }
   .cta-btn-dark{
     color: black;
@@ -769,9 +788,13 @@ height:180px !important;
     padding: 15px 75px;
   }
   .cta-btn-light:hover{
-    color: black;
-    background-color: white;
-    border: 2px black solid;
+    color: white;
+    background-color: #0A0908;
+    border: 2px #0A0908 solid;
+    -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    transition: width .3s, height .3s;
   }
   .cta-btn-dark{
     color: black;
@@ -798,7 +821,7 @@ height:180px !important;
     display: none;
   }
   .carousel-section{
-    background:#f5f5f7 !important;
+    background:#EBF8B8 ;
     // background: #E8AF1F;
     margin: 0 auto !important; 
     height: 630px !important;
@@ -832,9 +855,13 @@ height:180px !important;
     padding: 10px 70px;
   }
   .cta-btn-light:hover{
-    color: black;
-    background-color: white;
-    border: 2px black solid;
+    color: white;
+    background-color: #0A0908;
+    border: 2px #0A0908 solid;
+    -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    transition: width .3s, height .3s;
   }
   .cta-btn-dark{
     color: black;
@@ -943,7 +970,7 @@ height:180px !important;
     display: none;
   }
   .carousel-section{
-    background:#f5f5f7 !important;
+    background:#EBF8B8 ;
     // background: #E8AF1F;
     margin: 0 auto !important; 
     height: 720px !important;
@@ -1009,9 +1036,13 @@ height:180px !important;
     padding: 10px 90px;
   }
   .cta-btn-light:hover{
-    color: black;
-    background-color: white;
-    border: 2px black solid;
+    color: white;
+    background-color: #0A0908;
+    border: 2px #0A0908 solid;
+    -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    transition: width .3s, height .3s;
   }
   .cta-btn-dark{
     color: black;
@@ -1047,7 +1078,7 @@ height:180px !important;
     display: block;
   }
   .carousel-section{
-    background:#f5f5f7 !important;
+    background:#EBF8B8 ;
     // background: #E8AF1F;
     margin: 0 auto !important; 
     height: 720px !important;
@@ -1114,9 +1145,13 @@ height:180px !important;
     padding: 15px 100px;
   }
   .cta-btn-light:hover{
-    color: black;
-    background-color: #f5f5f7;
-    border: 2px black solid;
+    color: white;
+    background-color: #0A0908;
+    border: 2px #0A0908 solid;
+    -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    transition: width .3s, height .3s;
   }
   .cta-btn-dark{
     color: black;
@@ -1152,7 +1187,7 @@ height:180px !important;
     display: block;
   }
   .carousel-section{
-    background:#f5f5f7 !important;
+    background:#EBF8B8 ;
     // background: #E8AF1F;
     margin: 0 auto !important; 
     height: 720px !important;
@@ -1219,9 +1254,13 @@ height:180px !important;
     padding: 15px 100px;
   }
   .cta-btn-light:hover{
-    color: black;
-    background-color: #f5f5f7;
-    border: 2px black solid;
+    color: white;
+    background-color: #0A0908;
+    border: 2px #0A0908 solid;
+    -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    transition: width .3s, height .3s;
   }
   .cta-btn-dark{
     color: black;
@@ -1257,7 +1296,7 @@ height:180px !important;
     display: block;
   }
   .carousel-section{
-    background:#f5f5f7 !important;
+    background:#EBF8B8 ;
     // background: #E8AF1F;
     margin: 0 auto !important; 
     height: 720px !important;
@@ -1324,9 +1363,13 @@ height:180px !important;
     padding: 15px 100px;
   }
   .cta-btn-light:hover{
-    color: black;
-    background-color: #f5f5f7;
-    border: 2px black solid;
+    color: white;
+    background-color: #0A0908;
+    border: 2px #0A0908 solid;
+    -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    transition: width .3s, height .3s;
   }
   .cta-btn-dark{
     color: black;
@@ -1362,7 +1405,7 @@ height:180px !important;
     display: block;
   }
   .carousel-section{
-    background:#f5f5f7 !important;
+    background:#EBF8B8 ;
     // background: #E8AF1F;
     margin: 0 auto !important; 
     height: 720px !important;
@@ -1429,9 +1472,13 @@ height:180px !important;
     padding: 15px 100px;
   }
   .cta-btn-light:hover{
-    color: black;
-    background-color: #f5f5f7;
-    border: 2px black solid;
+    color: white;
+    background-color: #0A0908;
+    border: 2px #0A0908 solid;
+    -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+    transition: width .3s, height .3s;
   }
   .cta-btn-dark{
     color: black;

@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-md navbar-dark bg-darkk col-12 shadow-sm" >
+<nav class="navbar fixed-top navbar-expand-md navbar-light bg-white col-12 shadow-sm" >
   <div class="container-fluid" id="navbar-example">
     <% if !user_signed_in? %>
       <a class="navbar-brand" href="/">
@@ -43,10 +43,11 @@
       </ul>
       <div class="d-flex">
         <% if user_signed_in? %>
-          <%= link_to "Logout", destroy_user_session_path , :method=> 'delete',class: "btn btn-lg btn-outline-light nav-buttons me-auto"  %>
+          <%= link_to "Logout", destroy_user_session_path , :method=> 'delete',class: "btn btn-lg btn-outline-dark nav-buttons me-auto"  %>
         <% else %>
-          <%= link_to "Login", new_user_session_path ,class: "btn btn-lg btn-outline-light nav-buttons me-auto"  %>
-          <%= link_to 'Travel with us', booking_form_path, remote:true, class:"btn btn-lg nav-buttons  me-auto",style:"background: #FBC71D !important; " %>
+          <%= link_to "Login", new_user_session_path ,class: "btn btn-lg btn-outline-dark nav-buttons me-auto"  %>
+          <%= link_to 'Travel with us', booking_form_path, remote:true, class:"btn btn-lg btn-dark nav-buttons  me-auto"%>
+          <%# ,style:"background: #FBC71D !important; "  %>
         <% end %>
       </div>
     </div>
@@ -57,17 +58,12 @@
     background-color: #101010 !important;
   }
    .bg-white{
-    background-color: #fff !important;
+    background-color: #f5f8f9 !important;
   }
   .active-border{
     border-bottom: 2px solid #202020;
   }
-  .my-routes{
-    font-family:  'Montserrat'!important;
-    font-weight: 600 !important;
-    font-size: 13px !important;
-    color: #f5f5f7 !important;
-  }
+
 </style>
 <script>
   var scrollSpy = new bootstrap.ScrollSpy(document.body, {

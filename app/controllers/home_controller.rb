@@ -165,7 +165,7 @@ class HomeController < ApplicationController
     end
 
     def user_dashboard
-      @tours = Tour.limit(5)
+      @tours = Tour.where("active_status = true AND del_status = false").limit(5)
       logger.info "THE TOURS = #{@tours.inspect}"
       @coordination_preference = [["Air and Ground","AG"],["Ground only","G"]]
       @hotel_type = [["5 Star","5 Star"],["4 Star","4 Star"],["3 Star","3 Star"]]
