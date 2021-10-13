@@ -1,218 +1,72 @@
-<div class="landing-page-content">
-<div id="devise-form"></div>
-    <header class="carousel-section" >
-        <%#= render 'devise/sessions/carousel'%>
-      <div class="row">
-        <div class="col l-section-one">
-          <p class="carousel-bold-text">
-              Embracing our
-              Cultures. <br>Preserving 
-              our Heritage.
-          </p>
-          <p class="carousel-mini-text">
-              Boutique tours to the heart of 
-              the motherland. <br> Connecting
-              through service learning.
-          </p>
-          <br>
-          <button class="btn btn-lg cta-btn">Book a tour with us</button>
-        </div>
-        <div class="col l-section-two">
-          <div class="log-in-form col-5">
-            <h2>Log in</h2>
-
-            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-              <div class="form-inputs">
-                <%= f.input :email,
-                            required: false,
-                            autofocus: true,
-                            input_html: { autocomplete: "email" } %>
-                <%= f.input :password,
-                            required: false,
-                            input_html: { autocomplete: "current-password" } %>
-                <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-              </div>
-
-              <div class="form-actions">
-                <%= f.button :submit, "Log in" %>
-              </div>
-            <% end %>
-
-            <%= render "devise/shared/links" %>
-
-          </div>
-        </div>
-      </section>
-    </header>
-    <div class="destinations-section my-container">
-      <div class="d-flex bd-highlight">
-        <p class="section-headings "> Featured Destinations</p>
-        <button class="ms-auto btn btn-md btn-outline-danger p-2 bd-highlight">View All</button>
+<div class="row"> 
+  <div class="col-sm-4 log-form">
+    <div class="log-form-margin">
+      <div class="form-actions d-grid gap-2">
+        <%#= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, class:"btn btn-md btn-outline-dark " %><br/>
       </div>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+            <%= f.input :login, label:"Email", input_html:{class:"form-control-lg"}  %>
+            <br>
+            <div class="row">
+              <div class="col-12">
+                <%= f.input :password,required: false,input_html: { autocomplete: "current-password" ,class:"form-control-lg"} %>
+              </div>
+              <!--<div class="col-2" id="eye-toggl">
+                <i id="show_password" class="fa fa-eye display-icons" aria-hidden="true"></i>
+                <i id="hide_password" style="display:none;" class="fa fa-eye-slash display-icons" aria-hidden="true"></i>
+              </div>-->
+            </div>
+            <br>
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        </div>
+        <br>
+        <div class="form-actions d-grid gap-2">
+            <%= f.button :submit, "Log in", class:"btn btn-lg btn-dark ",input_html:{id:"my-submit-btn"},data: { "loading-text"=>"<i class='fa fa-circle-o-notch fa-spin'></i>"} %>
+        </div>
+      <% end %>
       <br>
-      <div class="destination-cards d-flex align-content-start flex-wrap">
-        <%= render 'cards'%>
+      <div class="d-grid gap-2">
+        <%= render "devise/shared/links" %>
       </div>
     </div>
-    </div>
-    <div class="testimonials-section my-container">
-      <div class="d-flex bd-highlight">
-        <p class="section-headings "> Testimonials</p>
-      </div>
-      <br>
-      <div>
-        <div class="top-comment d-flex bd-highlight" style=" padding: 20px">
-          <div class="comment-sect">
-            <div class="ratings">
-
-            </div>
-            <div class="comment">
-              <p class="testimonial-text">
-                “Lorem ipsum dolor sit amet, consectetur <br>
-                adipiscing elit, sed do eiusmod tempor <br>
-                incididunt ut labore et dolore magna aliqua. <br>
-                Ut enim ad minim veniam, quis nostrud <br>
-                exercitation ullamco laboris nisi ut aliquip <br> 
-                ex ea commodo consequat.”
-              </p>
-              <br>
-              <button class="btn btn-lg btn-outline-dark">Leave a testimonial</button>
-                
-            </div>
-          </div>
-          <div class="commenter-image-div ms-auto">
-            <div class="commenter-image ">
-              <div class="card p-card">
-                <img src="<%= asset_pack_path 'media/images/image4.jpg' %>" height="auto" width="100%" alt=" demo instructions"></img>
-              </div>
-            </div>
-          </div>
-        </div>
-        <br><br><br>
-        <div>
-          <div class="destination-cards d-flex align-content-start flex-wrap">
-            <%= render 'testimonial_cards'%>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="about-section my-container">
-      <div class="d-flex bd-highlight">
-        <p class="section-headings "> About us</p>
-      </div>
-    </div>
-    <div class="contact-section my-container">
-      <div class="d-flex bd-highlight">
-        <p class="section-headings ">Our Address</p>
-      </div>
-    </div>
-
-    
+  </div>
+  <div class="col-sm-8 login-page-image">
+  </div>
 </div>
 
 
 
+<script>
+$('#show_password').on('click', function(){
+  var x = document.getElementById("password");
+  var show_icon = document.getElementById("show_password");
+  var hide_icon = document.getElementById("hide_password");
+      
+  x.type = "text";
 
+  show_icon.style.display = "none";
+  hide_icon.style.display = "block";
+  
+});
 
+$('#hide_password').on('click', function(){
+  var x = document.getElementById("password");
+  var show_icon = document.getElementById("show_password");
+  var hide_icon = document.getElementById("hide_password");
+      
+  x.type = "password";
+  
+  show_icon.style.display = "block";
+  hide_icon.style.display = "none";
+  
+});
 
-
-
-<style>
-.l-section-one{
-  padding 40px;
-  text-align: left !important;
-}
-
-.l-section-two{
-  padding 40px;
-  /* margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); */
-}
-
-.log-in-form{
-  padding: 30px;
-  background: white;
-  width: 60%;
-  margin: 0 auto;
-}
-header{
-  height: 600px;
-  width: 100vw;
-  background-image: url('../images/image2.jpg');
-}
-
-.carousel-section img {
-    object-fit: cover;
-    opacity: 1.9;
-  }
-  .my-container{
-     margin: 0 auto;
-     width: 90%;
-  }
-  .card{
-    margin: 6px !important;
-    width: 17rem;
-  }
-  .p-card{
-    margin-bottom: 40px !important;
-    width: 20rem !important;
-    height: 22rem !important;
-  }
-  .testimonial-text{
-    text-align: left !important;
-    font-size:20px;
-    font-weight: 400;
-    line-height: 110%;
-  }
-  .destinations-section{
-    padding: 100px 0 100px 0;
-  }
-  .section-headings{
-    text-align: left !important;
-    font-size:42px;
-    font-weight: 700;
-    line-height: 96%;
-  }
-  .btn-outline-orange{
-    border:2px solid orange;
-    width: 60px;
-  }
-  .carousel{
-    z-index: 2 !important;
-  }
-  .carousel-section{
-    height:620px;
-    background:#fdfdfd;
-    /* opacity:0.6; */
-  }
-  .carousel-caption{
-    text-align: left !important;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
-   .carousel-mini-text{
-     font-size:24px;
-     font-weight: 200;
-   }
-    .carousel-bold-text{
-     font-size:48px;
-     font-weight: 700;
-     line-height: 96%;
-   }
-   .cta-btn{
-     color: black;
-     background: white;
-     font-weight: 600;
-     font-size: 24px;
-     width:300px;
-   }
-   .about-section{
-     padding: 100px 0 100px 0;
-   }
-</style>
+$('#my-submit-btn').on('click', function() {
+    var $this = $(this);
+  $this.button('loading');
+    setTimeout(function() {
+       $this.button('reset');
+   }, 8000);
+});
+</script>

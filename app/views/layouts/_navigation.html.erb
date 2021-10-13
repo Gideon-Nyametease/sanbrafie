@@ -1,54 +1,78 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Sanbrafie</a>
+<nav class="navbar fixed-top navbar-expand-md navbar-dark bg-darkk col-12 shadow-sm" >
+  <div class="container-fluid" id="navbar-example">
+    <% if !user_signed_in? %>
+      <a class="navbar-brand" href="/">
+        <img src="<%= asset_pack_path 'media/images/logo.png' %>" height="50px" width="80" alt="Sanbrafie logo">
+      </a>
+    <% else %>
+      <a class="navbar-brand" href="/user_dashboard"> 
+        <img src="<%= asset_pack_path 'media/images/logo.png' %>" height="50px" width="80" alt="Sanbrafie logo">
+      </a>
+    <% end %>
+    <p id="navbar-head-text">Sanbrafie Group Inc</p>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active my-routes" aria-current="page" href="#">Destinations</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active my-routes" href="#">Testimonials</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active my-routes" href="#">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active my-routes" href="#">Contact Us</a>
-        </li>
+        <% if !user_signed_in? %>
+          <li class="nav-item active">
+            <a class="nav-link my-routes active" href="/">HOME</a>
+          </li>
+          <li class="nav-item " id="destination-btn">
+            <a class="nav-link my-routes" href="#destinations" >TRIPS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link my-routes" href="#testimonials">TESTIMONIALS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link my-routes" href="#about">ABOUT US</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link my-routes" href="#contact">CONTACT US</a>
+          </li>
+           
+        <% else %>
+          <li class="nav-item">
+           <%#= current_user.stripe_customer_id %>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link my-routes active" href="/">DASHBOARD</a>
+          </li>
+        <% end %>
       </ul>
       <div class="d-flex">
-        <%# <button class="btn btn-lg btn-outline-dark nav-buttons">Login</button> %>
-        <%= link_to 'Login', login_form_path,class:"btn btn-lg btn-outline-dark nav-buttons", remote: true %>
-        <button class="btn btn-lg btn-dark nav-buttons">Book a tour</button>
+        <% if user_signed_in? %>
+          <%= link_to "Logout", destroy_user_session_path , :method=> 'delete',class: "btn btn-lg btn-outline-light nav-buttons me-auto"  %>
+        <% else %>
+          <%= link_to "Login", new_user_session_path ,class: "btn btn-lg btn-outline-light nav-buttons me-auto"  %>
+          <%= link_to 'Travel with us', booking_form_path, remote:true, class:"btn btn-lg btn-light nav-buttons  me-auto" %>
+        <% end %>
       </div>
     </div>
   </div>
 </nav>
-
-
 <style>
-    .navbar{
-        min-height: 90px;
-    }
-     .navbar-brand{
-        font-size: 28px !important;
-        font-weight: bold !important;
-        color: red !important;
-    }
-    .nav-buttons{
-        margin-left: 15px;
-    }
-
-    .btn{
-        border-radius: 0px !important;
-    }
-
-    .my-routes{
-        font-size: 20px !important;
-        font-weight: 400 !important;
-        margin: 0 10px 0 10px;
-    }
+  .bg-darkk{
+    background-color: #101010 !important;
+  }
+   .bg-white{
+    background-color: #fff !important;
+  }
+  .active-border{
+    border-bottom: 2px solid #202020;
+  }
+  .my-routes{
+    font-family:  'Montserrat'!important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    color: #f5f5f7 !important;
+  }
 </style>
+<script>
+  var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+    target: '#navbar-example'
+  })
+  console.log("00000000")
+ 
+</script>
