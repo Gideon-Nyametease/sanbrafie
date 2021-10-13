@@ -6,7 +6,7 @@
                     <%= link_to booking_details_path(title: @tours[0].title), remote:true do %>    
                         <img src="<%= url_for(@tours[0].image) %>" alt="Trip Image Preview" class="f-destination-img shadow">
                     <% end %>
-                    <div style="padding: 10px; background-color: #f5f7f8; height: 110px;">
+                    <div style="padding: 10px; background-color: #fff; height: 110px;">
                         <span class="text-4"><%= @tours[0].title %></span><br>
                         <% start_date = @tours[0].start_date %>
                         <span class="text-3 font-weight-300"><%=  start_date.to_date.strftime("%d") if !start_date.nil?%></span>
@@ -32,7 +32,7 @@
                     <%= link_to booking_details_path(title: @tours[1].title), remote:true do %>    
                         <img src="<%= url_for(@tours[1].image) %>" alt="Trip Image Preview" class="f-destination-img shadow">
                     <% end %>
-                    <div style="padding: 10px; background-color: #f5f7f8; height: 110px;">
+                    <div style="padding: 10px; background-color: #fff; height: 110px;">
                         <span class="text-4"><%= @tours[1].title %></span><br>
                         <% start_date = @tours[1].start_date %>
                         <span class="text-3 font-weight-300"><%=  start_date.to_date.strftime("%d") if !start_date.nil?%></span>
@@ -57,7 +57,7 @@
                     <%= link_to booking_details_path(title: @tours[2].title), remote:true do %>    
                         <img src="<%= url_for(@tours[2].image) %>" alt="Trip Image Preview" class="f-destination-img shadow">
                     <%end%>
-                    <div style="padding: 10px; background-color: #f5f7f8; height: 110px;">
+                    <div style="padding: 10px; background-color: #fff; height: 110px;">
                         <span class="text-4"><%= @tours[2].title %></span><br>
                         <% start_date = @tours[2].start_date %>
                         <span class="text-3 font-weight-300"><%=  start_date.to_date.strftime("%d") if !start_date.nil?%></span>
@@ -82,7 +82,7 @@
                 <%= link_to booking_details_path(title: @tours[3].title), remote:true do %>     
                     <img src="<%= url_for(@tours[3].image) %>" alt="Trip Image Preview" class="f-destination-img shadow">
                 <% end %>
-                <div style="padding: 10px; background-color: #f5f7f8; height: 110px;">
+                <div style="padding: 10px; background-color: #fff; height: 110px;">
                     <span class="text-4"><%= @tours[3].title %></span><br>
                     <% start_date = @tours[3].start_date %>
                     <span class="text-3 font-weight-300"><%=  start_date.to_date.strftime("%d") if !start_date.nil?%></span>

@@ -1,3 +1,1526 @@
+// html, body {
+//   max-width: 100%;
+//   overflow-x: hidden;
+// }
+// // ========  Navigation
+// .navbar{
+//   height: auto;
+// }
+// .navbar-brand{
+//   font-size: 28px !important;
+//   font-weight: bold !important;
+//   color: red !important;
+// }
+// .nav-buttons{
+//   margin-left: 5px;
+// }
+
+// .btn{
+//   border-radius: 3px !important;
+// }
+
+// .btn-dark{
+//   background-color: #0A0908 !important;
+// }
+// .btn-outline-dark{
+//   border-color: #0A0908 !important;
+// }
+
+//   .my-routes{
+//     font-family:  'Montserrat'!important;
+//     font-weight: 600 !important;
+//     font-size: 13px !important;
+//     /* color: #f5f5f7 !important; */
+//   }
+
+// #navbar-head-text{
+//   padding-top: 10px; 
+//   font-family:  'Montserrat'; 
+//   font-size: 17px; 
+//   font-weight: 600; 
+//   color: #111;
+// }
+// // ===========================
+
+
+// .btn-outline-orange{
+//   border:2px solid orange;
+//   width: 60px;
+// }
+
+// // ========= forms ===========================
+
+
+// .sanbrafie-input{
+//   background-color:#f2f2f2  !important;
+//   border:none !important;
+//   border-radius: 0px !important;
+// }
+
+
+// .customer-msg-form{
+//   margin: 0 auto; 
+//   width: 60%;
+// }
+// .log-form-margin{
+//   margin: 0 auto !important;
+//   width: 88% !important;
+// }
+
+// // ================= Homepage ========================== 
+// .section-headings{
+//   text-align: left !important;
+//   font-family: 'Poppins'!important;
+//   font-weight: 400 !important;
+//   font-size:36px;
+//   line-height: 36px;
+//   margin-top: 30px;
+//   // font-weight: 700;
+// }
+
+// .big-text{
+//   padding: 40px;
+//   // top: 50%;
+//   z-index: 5;
+// }
+
+// .modal{
+//   border-radius: 0px !important;
+// }
+// .modal-dialog{
+//   border-radius: 0px !important;
+// }
+
+// .l-section-one{
+//   padding: 40px;
+//   text-align: left !important;
+// }
+
+// .l-section-two{
+//   padding: 40px;
+// }
+
+// .log-in-form{
+//   padding: 30px;
+//   background: white;
+//   width: 60%;
+//   margin: 0 auto;
+// }
+
+// header{
+//   height: 700px;
+// }
+
+// .my-container{
+//     margin: 0 auto;
+//     width: 80%;
+// }
+// .card{
+//   margin: 6px !important;
+//   width: 17rem;
+// }
+// .p-card{
+//   margin-bottom: 40px !important;
+//   width: 16rem !important;
+//   height: 18rem !important;
+// }
+// .testimonial-text{
+//   text-align: left !important;
+//   font-family: 'Source Sans Pro', sans-serif;
+//   font-size:18px;
+//   font-weight: 400;
+//   line-height: 30px;
+//   color: #715f66;
+// }
+// #testimonials-mobile-view{
+//   display: none;
+// }
+// #test-car{
+//   display: block;
+// }
+// .destinations-section{
+//   padding: 100px 0 100px 0;
+//   // background:#090909 !important;
+//   // color: #f6f8f9 !important;
+// }
+
+// .btn-outline-orange{
+//   border:2px solid orange;
+//   width: 60px;
+// }
+// // =========== checkout page =========
+
+
+// .checkout-bg{
+//   // background-image:  url('../images/card.svg');
+//   background-size: cover;
+//   object-fit: contain;
+//   height: 100vh;
+// }
+
+
+// //  ========== carousel ============
+// .carousel{
+//   z-index: 2 !important;
+// }
+// .carousel-section{
+//   background:#EBF8B8 ;
+//   // background: #E8AF1F;
+//   margin: 0 auto; 
+//   height: 730px ;
+// }
+
+// .carousel-section img {
+//   object-fit: cover;
+//   opacity: 1.9;
+//   // margin-top: 12px;
+// }
+
+// .carousel-caption{
+//   text-align: left !important;
+//   margin: 0;
+//   position: absolute;
+//   top: 70% !important;
+//   z-index: 100000000;
+//   // -ms-transform: translateY(-50%);
+//   // transform: translateY(-50%);
+// }
+// .carousel-mini-text-white{
+//   color: #fafafa !important;
+//   font-family: 'Open sans' !important;
+//   font-size: 20px !important;
+//   line-height:21px!important;
+//   font-weight: 400 !important;
+//   opacity:0.8;
+// }
+// .carousel-mini-text-black{
+//   color: #000; 
+//   font-family: 'Open sans';
+//   font-size: 20px !important;
+//   line-height:21px;
+//   font-weight: 400;
+//   opacity:0.9;
+// }
+
+// .carousel-bold-text{
+//   color: #fafafa ;
+//   font-size:36px;
+//   font-family: 'Poppins';
+//   font-weight: 400 ;
+//   line-height: 96%;
+// }
+// .bold-text-black{
+//   font-family: 'Montserrat';
+//   font-weight:600; 
+//   color: #000;
+//   font-size: 48px;
+//   line-height:50px;
+// }
+// .bold-text-white{
+//   font-family: 'Montserrat';
+//   font-weight:600; 
+//   color: #fafafa;
+//   font-size: 48px ;
+//   line-height:50px;
+// }
+// .cta-btn-light{
+//   color: white;
+//   background: black;
+//   font-weight: 400;
+//   font-size: 24px;
+//   width:300px;
+// }
+// .cta-btn-light:hover{
+//   color: white;
+//   background-color: #0A0908;
+//   border: 2px #0A0908 solid;
+//   -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//   -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//   box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//   transition: width .3s, height .3s;
+// }
+// .cta-btn-dark{
+//   color:#090909;
+//   background:#f5f5f7;
+//   font-weight: 400;
+//   font-size: 24px;
+//   width:300px;
+// }
+// .cta-btn-dark:hover{
+//   color: white;
+//   background-color: black;
+//   border: 2px white solid;
+// }
+// .btn-dark:hover{
+//   // color: black !important;
+//   // background-color: white !important;
+//   // border: 2px black solid !important;
+//   -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//   -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//   box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//   transition: width .3s, height .3s;
+// }
+
+// .overlay:after { 
+//   content:"";
+//   display:block;
+//   position:absolute;
+//   top:0;
+//   left:0;
+//   right:0;
+//   bottom:0;
+//   /* background-color: #090909; */
+//   background: rgb(2,0,36);
+//   background: linear-gradient(4deg, rgba(2,0,36,0.7053493542617626) 0%, rgba(9,8,11,0.7278212643741222) 0%, 
+//                             rgba(9,9,9,0.6098437362842346) 23%, rgba(0,212,255,0.008720140778616603) 100%);  
+// }
+// .header-text-bg-light{
+//   background-image:  url('../images/adinkra.png');
+//   background-size: cover;
+//   object-fit: cover;
+// }
+// .header-text-bg-dark{
+//   background-image:  url('../images/adinkra2.png');
+//   background-size: cover;
+//   object-fit: cover;
+// }
+// .header-text{
+//   padding: 50px 0 70px 45px;
+// }
+
+// .transparent-text{
+//   font-family: 'Tangerine'; 
+//   font-weight: 600;
+//   color: #1E1F21; 
+//   font-size: 200px;
+//   line-height: 184px;
+// }
+// // ============================
+// .contact-section-input{
+//   background-color:#e8f0fe  !important;
+//   border:none !important;
+//   border-radius: 3px !important;
+// }
+// .my-form-margin{
+//   padding: 0 40px;
+// }
+// .my-text-box{
+// height:180px !important;
+// }
+// .about-section{
+//   padding: 100px 0 100px 0;
+// }
+// // ===========================
+
+// // ======== User dash =========
+// .page-topic{
+//   padding: 40px 0 40px 0;
+//   background-color: #070707;
+//   color:#fafafa;
+// }
+
+// .text-4{
+//   font-size: 20px;
+//   font-weight: 600;
+//   font-family: 'Poppins', sans-serif;
+//   color: #161616;
+// }
+// .text-3{
+//   font-size: 16px;
+//   font-weight: 500;
+//   font-family: 'Poppins', sans-serif;
+// }
+
+// .text-1{
+//   font-size: 14px;
+//   font-weight: 400;
+//   font-family: 'Poppins', sans-serif;
+// }
+
+// .tl2{
+//   margin: 5px;
+//   height:150px;
+//   width:150px;
+//   border-radius: 5px;
+//   /* border: 10px #dfe6e9 solid; */
+//   -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//   -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//   box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//   transition: width .3s, height .3s;
+// }
+
+// .tl2:hover{
+//   height:153px;
+//   width:153px;
+// }
+// // ============================
+
+//   .shadow-box-no-border{
+//   background-color: white;
+//   border-radius: 15px;
+//   padding: 15px;
+//   background-color: white; -webkit-box-shadow: 0px 11px 40px -15px rgba(164, 164, 164, 0.93);
+//   -moz-box-shadow: 0px 11px 40px -15px rgba(162, 162, 162, 0.93);
+//   box-shadow: 0px 11px 40px -15px rgba(161, 161, 161, 0.93);
+//   width: 99%;
+//   margin: 0 auto;
+// }
+
+// .tl{
+//   margin: 50px 15px;
+//   -webkit-box-shadow: 0px 11px 40px -15px rgba(130, 130, 130, 0.93);
+//   -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//   box-shadow: 0px 11px 40px -15px rgba(104, 104, 104, 0.93);
+//   transition: width .3s, height .3s;
+// }
+// .tl:hover{
+//     height:290px;
+//     width:290px
+// }
+
+// .my-content{
+//   margin:20px;
+// }
+
+// // Login/registration screen
+//   #eye-toggl{
+//   border: 1px solid #181818;
+//   margin-left: -10px;
+// }
+
+// .log-form{
+//   background-color:#f6f8f9 !important;
+//   padding: 50px;
+// }
+
+// .login-page-image{
+//   background-image:  url('../images/5a.jpg');
+//   background-size: cover;
+//   object-fit: cover;
+//   height: 100vh;
+// }
+// .reg-page-image{
+//   background-image:  url('../images/3.jpg');
+//   background-size: cover;
+//   object-fit: cover;
+//   height: 110vh;
+// }
+
+// .form-inputs{
+//   border-radius: 0px !important;
+// }
+
+// .the-carousel{
+//   display: block;
+// }
+
+// #footer-socials{
+//   list-style-type: none;
+//   list-style:none;
+//   padding-bottom: -20px;
+//  }
+ 
+//  .footer-socials-icon{
+//    display: block;
+//    text-decoration: none;
+//    margin: 0 18px 10px 0;
+//  }
+ 
+//  .social-icon{
+//    color: #f6f8f9;
+//  }
+ 
+//  .social-icon:hover{
+//    color: #4d4d4d;
+//  }
+ 
+//  .footer-copyright{
+//    font-size: 12px;
+//    font-family: 'poppins';
+//    color: #e6e8e9;
+//  }
+
+
+//  #upcoming-trips-btn{
+//   display: none;
+// }
+// #upcoming-trips-section{
+//   display: block;
+// }
+
+// .table-w-scroll{
+//   display: block; 
+//   height: 90vh; 
+//   overflow-y: scroll;
+// }
+ 
+// // ================== Error page ======================================
+// .err{
+//   margin: 0 auto;
+//   width: 90%;
+//   padding: 200px 0;
+// }
+
+// .error-page-text-space{
+//   padding: 10px;
+//   border: 0.3px #ff6961 solid;
+//   border-radius: 10px;
+//   background-color: #ffd7c6;
+//   width: 40%;
+//   margin: 0 auto;
+// }
+
+// .error-page-text{
+//   font-size: 16px;
+//   /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+//   font-weight: 400;
+//   margin-top: 10px;
+//   /*line-height: 18px;*/
+// }
+
+// .error-404{
+//   background-image:  url('../images/404.png');
+//   background-size: cover;
+//   background-color: #f6f8f9;
+//   object-fit: cover;
+//   height: 100vh;
+// }
+// .error-422{
+//   background-image:  url('../images/astronaut.png');
+//   background-size: cover;
+//   background-color: #f6f8f9;
+//   object-fit: cover;
+//   height: 100vh;
+// }
+
+// .error-500{
+//   background-image:  url('../images/internal_error.png');
+//   background-size: cover;
+//   background-color: #f6f8f9;
+//   object-fit: cover;
+//   height: 100vh;
+// }
+
+// .error-504{
+//   background-image:  url('../images/astronaut.png');
+//   background-size: cover;
+//   background-color: #f6f8f9;
+//   object-fit: cover;
+//   height: 100vh;
+// }
+// //======================================================================
+
+
+// //================= media queries ======================================
+// @media only screen and (min-width : 120px) {
+//   #upcoming-trips-btn{
+//     display: block;
+//   }
+//   .booking-table-section{
+//     width: 100vw;
+//     padding-left: 1.5rem;
+//   }
+//   #upcoming-trips-section{
+//     display: none;
+//   }
+//   .carousel-section{
+//     background:#EBF8B8 ;
+//     // background: #E8AF1F;
+//     margin: 0 auto !important; 
+//     height: 720px !important;
+//   }
+//   .my-form-margin{
+//     padding: 0 10px;
+//   }
+//   .log-form-margin{
+//     margin: 0 auto !important;
+//     width: 96% !important;
+//   }
+//   .login-page-image{
+//     display: none;
+//   }
+//   .reg-page-image{
+//     display: block;
+//   }
+//   .my-container{
+//     width: 96%;
+//     margin: 0 auto;
+//   }
+//   .header-text{
+//     margin-top: -20px;
+//     padding: 0;
+//   }
+//   .about-text{
+//     padding: 20px;
+//   }
+//   .about-img{
+//     display:none;
+//   }
+//   #test-car{
+//     display: none;
+//   }
+//   #testimonials-mobile-view{
+//     display: block;
+//   }
+//   #navbar-head-text{
+//     display: none;
+//   }
+
+//   .transparent-text{
+//     font-family: 'Tangerine'; 
+//     font-weight: 600;
+//     font-size: 82px;
+//     line-height: 88px;
+//     padding: -40px 0 5px 0;
+//   }
+
+//   .bold-text-black{
+//     font-family: 'Montserrat';
+//     font-weight:600; 
+//     color: #000;
+//     font-size: 36px;
+//     line-height:38px;
+//   }
+//   .bold-text-white{
+//     font-family: 'Montserrat';
+//     font-weight:600; 
+//     color: #fafafa;
+//     font-size: 36px;
+//     line-height:38px;
+//   }
+
+//   .the-carousel{
+//     display: none;
+//   }
+//   .reg-page-image{
+//     display: none;
+//   }
+//   .top-section{
+//     height: 180px;
+//   }
+//   .code-assignment-form{
+//     width: 85vw;
+//   }
+//   .my-search-btn{
+//     font-size: small;
+//     width: 135px;
+//   }
+//   .cta-btn-light{
+//     color: white;
+//     background: black;
+//     font-weight: 400;
+//     font-size: 24px;
+//     text-decoration: none;
+//     border-radius: 4px;
+//     padding: 15px 25px;
+//   }
+//   .cta-btn-light:hover{
+//     color: white;
+//     background-color: #0A0908;
+//     border: 2px #0A0908 solid;
+//     -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     transition: width .3s, height .3s;
+//   }
+
+//   .cta-btn-dark{
+//     color: black;
+//     background: white;
+//     font-weight: 400;
+//     font-size: 24px;
+//     text-decoration: none;
+//     border-radius: 4px;
+//     padding: 15px 25px;
+//   }
+//   .cta-btn-dark:hover{
+//     color: white;
+//     background-color: black;
+//     border: 2px #fff solid;
+//   }
+
+//   .customer-msg-form{
+//     margin: 0 auto; 
+//     width: 94%;
+//   }
+// }
+
+// @media only screen and (min-width : 360px) {
+//   #upcoming-trips-btn{
+//     display: block;
+//   }
+//   .booking-table-section{
+//     width: 100vw;
+//     padding-left: 1.5rem;
+//   }
+//   #upcoming-trips-section{
+//     display: none;
+//   }
+//   .carousel-section{
+//     background:#EBF8B8 ;
+//     // background: #E8AF1F;
+//     margin: 0 auto !important; 
+//     height: 720px !important;
+//   }
+//   .my-form-margin{
+//     padding: 0 10px;
+//   }
+//   .log-form-margin{
+//     margin: 0 auto !important;
+//     width: 96% !important;
+//   }
+//   .login-page-image{
+//     display: none;
+//   }
+//   .reg-page-image{
+//     display: block;
+//   }
+//   .my-container{
+//     width: 96%;
+//     margin: 0 auto;
+//   }
+//   .header-text{
+//     margin-top: -20px;
+//     padding: 0;
+//   }
+//   .about-text{
+//     padding: 20px;
+//   }
+//   .about-img{
+//     display:none;
+//   }
+//   #test-car{
+//     display: none;
+//   }
+//   #testimonials-mobile-view{
+//     display: block;
+//   }
+//   #navbar-head-text{
+//     display: none;
+//   }
+
+//   .transparent-text{
+//     font-family: 'Tangerine'; 
+//     font-weight: 600;
+//     font-size: 82px;
+//     line-height: 88px;
+//     padding: -40px 0 5px 0;
+//   }
+
+//   .bold-text-black{
+//     font-family: 'Montserrat';
+//     font-weight:600; 
+//     color: #000;
+//     font-size: 42px;
+//     line-height:44px;
+//   }
+//   .bold-text-white{
+//     font-family: 'Montserrat';
+//     font-weight:600; 
+//     color: #fafafa;
+//     font-size: 42px;
+//     line-height:44px;
+//   }
+
+//   .the-carousel{
+//     display: none;
+//   }
+//   .reg-page-image{
+//     display: none;
+//   }
+//   .top-section{
+//     height: 180px;
+//   }
+//   .code-assignment-form{
+//     width: 85vw;
+//   }
+//   .my-search-btn{
+//     font-size: small;
+//     width: 135px;
+//   }
+//   .cta-btn-light{
+//     color: white;
+//     background: black;
+//     font-weight: 400;
+//     font-size: 24px;
+//     text-decoration: none;
+//     border-radius: 4px;
+//     padding: 15px 65px;
+//   }
+//   .cta-btn-light:hover{
+//     color: white;
+//     background-color: #0A0908;
+//     border: 2px #0A0908 solid;
+//     -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     transition: width .3s, height .3s;
+//   }
+//   .cta-btn-dark{
+//     color: black;
+//     background: white;
+//     font-weight: 400;
+//     font-size: 24px;
+//     text-decoration: none;
+//     border-radius: 4px;
+//     padding: 15px 65px;
+//   }
+//   .cta-btn:hover{
+//     color: white;
+//     background-color: black;
+//     border: 2px white solid;
+//   }
+
+//   .customer-msg-form{
+//     margin: 0 auto; 
+//     width: 94%;
+//   }
+// }
+
+// @media only screen and (min-width : 480px) {
+//   .cta-btn-light{
+//     color: white;
+//     background: black;
+//     font-weight: 400;
+//     font-size: 24px;
+//     text-decoration: none;
+//     border-radius: 4px;
+//     padding: 15px 75px;
+//   }
+//   .cta-btn-light:hover{
+//     color: white;
+//     background-color: #0A0908;
+//     border: 2px #0A0908 solid;
+//     -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     transition: width .3s, height .3s;
+//   }
+//   .cta-btn-dark{
+//     color: black;
+//     background: white;
+//     font-weight: 400;
+//     font-size: 24px;
+//     text-decoration: none;
+//     border-radius: 4px;
+//     padding: 15px 75px;
+//   }
+//   .cta-btn-dark:hover{
+//     color: white;
+//     background-color: black;
+//     border: 2px white solid;
+//   }
+//   #upcoming-trips-btn{
+//     display: block;
+//   }
+//   .booking-table-section{
+//     width: 100vw;
+//     padding-left: 1.5rem;
+//   }
+//   #upcoming-trips-section{
+//     display: none;
+//   }
+//   .carousel-section{
+//     background:#EBF8B8 ;
+//     // background: #E8AF1F;
+//     margin: 0 auto !important; 
+//     height: 630px !important;
+//   }
+//   .my-form-margin{
+//     padding: 0 10px;
+//   }
+//   .log-form-margin{
+//     margin: 0 auto !important;
+//     width: 96% !important;
+//   }
+//   .login-page-image{
+//     display: none;
+//   }
+//   .reg-page-image{
+//     display: block;
+//   }
+//   .top-section{
+//     height: 180px;
+//   }
+// }
+
+// @media only screen and (min-width : 768px) {
+//   .cta-btn-light{
+//     color: white;
+//     background: black;
+//     font-weight: 400;
+//     font-size: 24px;
+//     text-decoration: none;
+//     border-radius: 4px;
+//     padding: 10px 70px;
+//   }
+//   .cta-btn-light:hover{
+//     color: white;
+//     background-color: #0A0908;
+//     border: 2px #0A0908 solid;
+//     -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     transition: width .3s, height .3s;
+//   }
+//   .cta-btn-dark{
+//     color: black;
+//     background: white;
+//     font-weight: 400;
+//     font-size: 24px;
+//     text-decoration: none;
+//     border-radius: 4px;
+//     padding: 10px 70px;
+//   }
+//   .cta-btn:hover{
+//     color: white;
+//     background-color: black;
+//     border: 2px white solid;
+//   }
+//   #upcoming-trips-btn{
+//     display: block;
+//   }
+//   .booking-table-section{
+//     width: 100vw;
+//     padding-left: 1.5rem;
+//   }
+//   #upcoming-trips-section{
+//     display: none;
+//   }
+//   .login-page-image{
+//     display: block;
+//   }
+//   .reg-page-image{
+//     display: block;
+//   }
+//   .the-carousel{
+//     display: none;
+//   }
+// }
+
+// @media only screen and (min-width : 1024px) {
+//   //  ===== gallery ====
+//   .my-grid-card{
+//     width: 270px !important;
+//     height: 270px !important;
+//     margin: 5px;
+//     object-fit: cover !important;
+//     padding: 5px;
+//     transition: width .3s, height .3s;
+// }
+// .my-grid-card:hover{
+//     width: 272px !important;
+//     height: 273px !important;
+// }
+// .my-grid-card2{
+//     width: 270px !important;
+//     height: 470px !important;
+//     margin: 5px;
+//     object-fit: cover !important; 
+//     padding: 5px;
+//     transition: width .3s, height .3s;
+// }
+// .my-grid-card2:hover{
+//     width: 272px !important;
+//     height: 473px !important;
+// }
+// .my-grid-card3{
+//     width: 270px !important;
+//     height: 230px !important;
+//     margin: 5px;
+//     object-fit: cover !important;
+//     padding: 5px;
+//     transition: width .3s, height .3s;
+// }
+//  .my-grid-card3:hover{
+//     width: 272px !important;
+//     height: 223px !important;
+// }
+
+//   // === nav ========
+//   .navbar{
+//     height: auto;
+//   }
+//   .nav-buttons{
+//     margin-left: 12px;
+//   }
+//   .my-routes{
+//     font-size: 12px !important;
+//     font-family: 'Montserrat', sans-serif;
+//     font-weight: 500 !important;
+//     margin: 0 10px;
+//     line-height: 18px !important;
+//   }
+//   #navbar-head-text{
+//     padding-top: 10px; 
+//     font-family:  'Montserrat'; 
+//     font-size: 16px; 
+//     font-weight: 600; 
+//     color: #111;
+//   }  
+//   // ======================
+//   #upcoming-trips-btn{
+//     display: block;
+//   }
+//   .booking-table-section{
+//     width: 100vw;
+//     padding-left: 1.5rem;
+//   }
+//   #upcoming-trips-section{
+//     display: none;
+//   }
+//   .carousel-section{
+//     background:#EBF8B8 ;
+//     // background: #E8AF1F;
+//     margin: 0 auto !important; 
+//     height: 720px !important;
+//   }
+//   .log-form-margin{
+//     margin: 0 auto !important;
+//     width: 88% !important;
+//   }
+
+//   .login-page-image{
+//     display: block;
+//   }
+//   .reg-page-image{
+//     display: block;
+//   }
+//   .my-container{
+//     margin: 0 auto;
+//     width: 80%;
+//   }
+//   .header-text{
+//     padding: 5px 0 70px 45px;
+//   }
+//   .about-img{
+//     display:block;
+//   }
+//   #testimonials-mobile-view{
+//     display: none;
+//   }
+//   #test-car{
+//     display: block;
+//   }
+//   #navbar-head-text{
+//     display: block;
+//   }
+//   .transparent-text{
+//     font-family: 'Tangerine'; 
+//     font-weight: 600;
+//     color: #1E1F21; 
+//     font-size: 98px;
+//     line-height: 102px;
+//   }
+//   .bold-text-black{
+//     font-family: 'Montserrat';
+//     font-weight:600; 
+//     color: #000;
+//     font-size: 42px;
+//     line-height:46px;
+//   }
+//   .bold-text-white{
+//     font-family: 'Montserrat';
+//     font-weight:600; 
+//     color: #fafafa;
+//     font-size: 42px ;
+//     line-height:46px;
+//   }
+//   .cta-btn-light{
+//     color: white;
+//     background: black;
+//     font-weight: 400;
+//     font-size: 24px;
+//     text-decoration: none;
+//     border-radius: 4px;
+//     padding: 10px 90px;
+//   }
+//   .cta-btn-light:hover{
+//     color: white;
+//     background-color: #0A0908;
+//     border: 2px #0A0908 solid;
+//     -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     transition: width .3s, height .3s;
+//   }
+//   .cta-btn-dark{
+//     color: black;
+//     background: white;
+//     font-weight: 400;
+//     font-size: 24px;
+//     text-decoration: none;
+//     border-radius: 4px;
+//     padding: 10px 90px;
+//   }
+//   .cta-btn-dark:hover{
+//     color: white;
+//     background-color: black;
+//     border: 2px whihte solid;
+//   }
+//   .the-carousel{
+//     display: block;
+//   }
+//   .customer-msg-form{
+//     margin: 0 auto; 
+//     width: 60%;
+//   }
+// }
+
+// @media only screen and (min-width : 1366px) {
+//   #upcoming-trips-btn{
+//     display: none;
+//   }
+//   .booking-table-section{
+//     width: 66vw;
+//   }
+//   #upcoming-trips-section{
+//     display: block;
+//   }
+//   .carousel-section{
+//     background:#EBF8B8 ;
+//     // background: #E8AF1F;
+//     margin: 0 auto !important; 
+//     height: 720px !important;
+//   }
+//   .log-form-margin{
+//     margin: 0 auto !important;
+//     width: 88% !important;
+//   }
+
+//   .login-page-image{
+//     display: block;
+//   }
+//   .reg-page-image{
+//     display: block;
+//   }
+//   .my-container{
+//     margin: 0 auto;
+//     width: 80%;
+//   }
+//   .header-text{
+//     padding: 50px 0 70px 45px;
+//   }
+//   .about-img{
+//     display:block;
+//   }
+//   #testimonials-mobile-view{
+//     display: none;
+//   }
+//   #test-car{
+//     display: block;
+//   }
+//   #navbar-head-text{
+//     display: block;
+//   }
+//   .transparent-text{
+//     font-family: 'Tangerine'; 
+//     font-weight: 600;
+//     color: #1E1F21; 
+//     font-size: 200px;
+//     line-height: 184px;
+//     padding: -30px 0;
+//   }
+//   .bold-text-black{
+//     font-family: 'Montserrat';
+//     font-weight:600; 
+//     color: #000;
+//     font-size: 48px;
+//     line-height:50px;
+//   }
+//   .bold-text-white{
+//     font-family: 'Montserrat';
+//     font-weight:600; 
+//     color: #fafafa;
+//     font-size: 48px ;
+//     line-height:50px;
+//   }
+//   .cta-btn-light{
+//     color: white;
+//     background: black;
+//     font-weight: 400;
+//     font-size: 24px;
+//     text-decoration: none;
+//     border-radius: 4px;
+//     padding: 15px 100px;
+//   }
+//   .cta-btn-light:hover{
+//     color: white;
+//     background-color: #0A0908;
+//     border: 2px #0A0908 solid;
+//     -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     transition: width .3s, height .3s;
+//   }
+//   .cta-btn-dark{
+//     color: black;
+//     background: white;
+//     font-weight: 400;
+//     font-size: 24px;
+//     text-decoration: none;
+//     border-radius: 4px;
+//     padding: 15px 100px;
+//   }
+//   .cta-btn-dark:hover{
+//     color: white;
+//     background-color: #000;
+//     border: 2px #f5f5f7 solid;
+//   }
+//   .the-carousel{
+//     display: block;
+//   }
+//   .customer-msg-form{
+//     margin: 0 auto; 
+//     width: 60%;
+//   }
+// }
+
+// @media only screen and (min-width : 1400px) {
+//   #upcoming-trips-btn{
+//     display: none;
+//   }
+//   .booking-table-section{
+//     width: 66vw;
+//   }
+//   #upcoming-trips-section{
+//     display: block;
+//   }
+//   .carousel-section{
+//     background:#EBF8B8 ;
+//     // background: #E8AF1F;
+//     margin: 0 auto !important; 
+//     height: 720px !important;
+//   }
+//   .log-form-margin{
+//     margin: 0 auto !important;
+//     width: 88% !important;
+//   }
+
+//   .login-page-image{
+//     display: block;
+//   }
+//   .reg-page-image{
+//     display: block;
+//   }
+//   .my-container{
+//     margin: 0 auto;
+//     width: 80%;
+//   }
+//   .header-text{
+//     padding: 50px 0 70px 45px;
+//   }
+//   .about-img{
+//     display:block;
+//   }
+//   #testimonials-mobile-view{
+//     display: none;
+//   }
+//   #test-car{
+//     display: block;
+//   }
+//   #navbar-head-text{
+//     display: block;
+//   }
+//   .transparent-text{
+//     font-family: 'Tangerine'; 
+//     font-weight: 600;
+//     color: #1E1F21; 
+//     font-size: 180px;
+//     line-height: 184px;
+//     padding: -30px 0;
+//   }
+//   .bold-text-black{
+//     font-family: 'Montserrat';
+//     font-weight:600; 
+//     color: #000;
+//     font-size: 48px;
+//     line-height:50px;
+//   }
+//   .bold-text-white{
+//     font-family: 'Montserrat';
+//     font-weight:600; 
+//     color: #fafafa;
+//     font-size: 48px ;
+//     line-height:50px;
+//   }
+//   .cta-btn-light{
+//     color: white;
+//     background: black;
+//     font-weight: 400;
+//     font-size: 24px;
+//     text-decoration: none;
+//     border-radius: 4px;
+//     padding: 15px 100px;
+//   }
+//   .cta-btn-light:hover{
+//     color: white;
+//     background-color: #0A0908;
+//     border: 2px #0A0908 solid;
+//     -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     transition: width .3s, height .3s;
+//   }
+//   .cta-btn-dark{
+//     color: black;
+//     background: white;
+//     font-weight: 400;
+//     font-size: 24px;
+//     text-decoration: none;
+//     border-radius: 4px;
+//     padding: 15px 100px;
+//   }
+//   .cta-btn-dark:hover{
+//     color: white;
+//     background-color: #000;
+//     border: 2px white solid;
+//   }
+//   .the-carousel{
+//     display: block;
+//   }
+//   .customer-msg-form{
+//     margin: 0 auto; 
+//     width: 60%;
+//   }
+// }
+
+// @media only screen and (min-width : 1440px) {
+//   #upcoming-trips-btn{
+//     display: none;
+//   }
+//   .booking-table-section{
+//     width: 66vw;
+//   }
+//   #upcoming-trips-section{
+//     display: block;
+//   }
+//   .carousel-section{
+//     background:#EBF8B8 ;
+//     // background: #E8AF1F;
+//     margin: 0 auto !important; 
+//     height: 720px !important;
+//   }
+//   .log-form-margin{
+//     margin: 0 auto !important;
+//     width: 88% !important;
+//   }
+
+//   .login-page-image{
+//     display: block;
+//   }
+//   .reg-page-image{
+//     display: block;
+//   }
+//   .my-container{
+//     margin: 0 auto;
+//     width: 80%;
+//   }
+//   .header-text{
+//     padding: 50px 0 70px 45px;
+//   }
+//   .about-img{
+//     display:block;
+//   }
+//   #testimonials-mobile-view{
+//     display: none;
+//   }
+//   #test-car{
+//     display: block;
+//   }
+//   #navbar-head-text{
+//     display: block;
+//   }
+//   .transparent-text{
+//     font-family: 'Tangerine'; 
+//     font-weight: 600;
+//     color: #1E1F21; 
+//     font-size: 180px;
+//     line-height: 184px;
+//     padding: -30px 0;
+//   }
+//   .bold-text-black{
+//     font-family: 'Montserrat';
+//     font-weight:600; 
+//     color: #000;
+//     font-size: 48px;
+//     line-height:50px;
+//   }
+//   .bold-text-white{
+//     font-family: 'Montserrat';
+//     font-weight:600; 
+//     color: #fafafa;
+//     font-size: 48px ;
+//     line-height:50px;
+//   }
+//   .cta-btn-light{
+//     color: white;
+//     background: black;
+//     font-weight: 400;
+//     font-size: 24px;
+//     text-decoration: none;
+//     border-radius: 4px;
+//     padding: 15px 100px;
+//   }
+//   .cta-btn-light:hover{
+//     color: white;
+//     background-color: #0A0908;
+//     border: 2px #0A0908 solid;
+//     -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     transition: width .3s, height .3s;
+//   }
+//   .cta-btn-dark{
+//     color: black;
+//     background: white;
+//     font-weight: 400;
+//     font-size: 24px;
+//     text-decoration: none;
+//     border-radius: 4px;
+//     padding: 15px 100px;
+//   }
+//   .cta-btn-dark:hover{
+//     color: white;
+//     background-color: #000;
+//     border: 2px white solid;
+//   }
+//   .the-carousel{
+//     display: block;
+//   }
+//   .customer-msg-form{
+//     margin: 0 auto; 
+//     width: 60%;
+//   }
+// }
+
+// @media only screen and (min-width : 1920px) {
+//   #upcoming-trips-btn{
+//     display: none;
+//   }
+//   .booking-table-section{
+//     width: 66vw;
+//   }
+//   #upcoming-trips-section{
+//     display: block;
+//   }
+//   .carousel-section{
+//     background:#EBF8B8 ;
+//     // background: #E8AF1F;
+//     margin: 0 auto !important; 
+//     height: 720px !important;
+//   }
+//   .log-form-margin{
+//     margin: 0 auto !important;
+//     width: 88% !important;
+//   }
+
+//   .login-page-image{
+//     display: block;
+//   }
+//   .reg-page-image{
+//     display: block;
+//   }
+//   .my-container{
+//     margin: 0 auto;
+//     width: 80%;
+//   }
+//   .header-text{
+//     padding: 50px 0 70px 45px;
+//   }
+//   .about-img{
+//     display:block;
+//   }
+//   #testimonials-mobile-view{
+//     display: none;
+//   }
+//   #test-car{
+//     display: block;
+//   }
+//   #navbar-head-text{
+//     display: block;
+//   }
+//   .transparent-text{
+//     font-family: 'Tangerine'; 
+//     font-weight: 600;
+//     color: #1E1F21; 
+//     font-size: 200px;
+//     margin: -30px 0;
+//     line-height: 184px;
+//   }
+//   .bold-text-black{
+//     font-family: 'Montserrat';
+//     font-weight:600; 
+//     color: #000;
+//     font-size: 48px;
+//     line-height:50px;
+//   }
+//   .bold-text-white{
+//     font-family: 'Montserrat';
+//     font-weight:600; 
+//     color: #fafafa;
+//     font-size: 48px ;
+//     line-height:50px;
+//   }
+//   .cta-btn-light{
+//     color: white;
+//     background: black;
+//     font-weight: 400;
+//     font-size: 24px;
+//     text-decoration: none;
+//     border-radius: 4px;
+//     padding: 15px 100px;
+//   }
+//   .cta-btn-light:hover{
+//     color: white;
+//     background-color: #0A0908;
+//     border: 2px #0A0908 solid;
+//     -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
+//     transition: width .3s, height .3s;
+//   }
+//   .cta-btn-dark{
+//     color: black;
+//     background: white;
+//     font-weight: 400;
+//     font-size: 24px;
+//     text-decoration: none;
+//     border-radius: 4px;
+//     padding: 15px 100px;
+//   }
+//   .cta-btn:hover{
+//     color: white;
+//     background-color: #090909;
+//     border: 2px #f5f5f7 solid;
+//   }
+//   .the-carousel{
+//     display: block;
+//   }
+
+//   .customer-msg-form{
+//     margin: 0 auto; 
+//     width: 60%;
+//   }
+// }
+// // ========================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 html, body {
   max-width: 100%;
   overflow-x: hidden;
@@ -19,19 +1542,12 @@ html, body {
   border-radius: 3px !important;
 }
 
-.btn-dark{
-  background-color: #0A0908 !important;
+.my-routes{
+  font-size: 16px !important;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 500 !important;
+  margin: 0 10px 0 10px;
 }
-.btn-outline-dark{
-  border-color: #0A0908 !important;
-}
-
-  .my-routes{
-    font-family:  'Montserrat'!important;
-    font-weight: 600 !important;
-    font-size: 13px !important;
-    /* color: #f5f5f7 !important; */
-  }
 
 #navbar-head-text{
   padding-top: 10px; 
@@ -164,10 +1680,10 @@ header{
   z-index: 2 !important;
 }
 .carousel-section{
-  background:#EBF8B8 ;
+  background:#f5f5f7 !important;
   // background: #E8AF1F;
-  margin: 0 auto; 
-  height: 730px ;
+  margin: 0 auto !important; 
+  height: 730px !important;
 }
 
 .carousel-section img {
@@ -231,13 +1747,9 @@ header{
   width:300px;
 }
 .cta-btn-light:hover{
-  color: white;
-  background-color: #0A0908;
-  border: 2px #0A0908 solid;
-  -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-  -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-  box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-  transition: width .3s, height .3s;
+  color: black;
+  background-color: white;
+  border: 2px black solid;
 }
 .cta-btn-dark{
   color:#090909;
@@ -246,7 +1758,7 @@ header{
   font-size: 24px;
   width:300px;
 }
-.cta-btn-dark:hover{
+.cta-btn-light:hover{
   color: white;
   background-color: black;
   border: 2px white solid;
@@ -524,7 +2036,7 @@ height:180px !important;
     display: none;
   }
   .carousel-section{
-    background:#EBF8B8 ;
+    background:#f5f5f7 !important;
     // background: #E8AF1F;
     margin: 0 auto !important; 
     height: 720px !important;
@@ -615,13 +2127,9 @@ height:180px !important;
     padding: 15px 25px;
   }
   .cta-btn-light:hover{
-    color: white;
-    background-color: #0A0908;
-    border: 2px #0A0908 solid;
-    -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    transition: width .3s, height .3s;
+    color: black;
+    background-color: white;
+    border: 2px black solid;
   }
 
   .cta-btn-dark{
@@ -657,7 +2165,7 @@ height:180px !important;
     display: none;
   }
   .carousel-section{
-    background:#EBF8B8 ;
+    background:#f5f5f7 !important;
     // background: #E8AF1F;
     margin: 0 auto !important; 
     height: 720px !important;
@@ -748,13 +2256,9 @@ height:180px !important;
     padding: 15px 65px;
   }
   .cta-btn-light:hover{
-    color: white;
-    background-color: #0A0908;
-    border: 2px #0A0908 solid;
-    -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    transition: width .3s, height .3s;
+    color: black;
+    background-color: white;
+    border: 2px black solid;
   }
   .cta-btn-dark{
     color: black;
@@ -788,13 +2292,9 @@ height:180px !important;
     padding: 15px 75px;
   }
   .cta-btn-light:hover{
-    color: white;
-    background-color: #0A0908;
-    border: 2px #0A0908 solid;
-    -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    transition: width .3s, height .3s;
+    color: black;
+    background-color: white;
+    border: 2px black solid;
   }
   .cta-btn-dark{
     color: black;
@@ -821,7 +2321,7 @@ height:180px !important;
     display: none;
   }
   .carousel-section{
-    background:#EBF8B8 ;
+    background:#f5f5f7 !important;
     // background: #E8AF1F;
     margin: 0 auto !important; 
     height: 630px !important;
@@ -855,13 +2355,9 @@ height:180px !important;
     padding: 10px 70px;
   }
   .cta-btn-light:hover{
-    color: white;
-    background-color: #0A0908;
-    border: 2px #0A0908 solid;
-    -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    transition: width .3s, height .3s;
+    color: black;
+    background-color: white;
+    border: 2px black solid;
   }
   .cta-btn-dark{
     color: black;
@@ -970,7 +2466,7 @@ height:180px !important;
     display: none;
   }
   .carousel-section{
-    background:#EBF8B8 ;
+    background:#f5f5f7 !important;
     // background: #E8AF1F;
     margin: 0 auto !important; 
     height: 720px !important;
@@ -1036,13 +2532,9 @@ height:180px !important;
     padding: 10px 90px;
   }
   .cta-btn-light:hover{
-    color: white;
-    background-color: #0A0908;
-    border: 2px #0A0908 solid;
-    -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    transition: width .3s, height .3s;
+    color: black;
+    background-color: white;
+    border: 2px black solid;
   }
   .cta-btn-dark{
     color: black;
@@ -1078,7 +2570,7 @@ height:180px !important;
     display: block;
   }
   .carousel-section{
-    background:#EBF8B8 ;
+    background:#f5f5f7 !important;
     // background: #E8AF1F;
     margin: 0 auto !important; 
     height: 720px !important;
@@ -1145,13 +2637,9 @@ height:180px !important;
     padding: 15px 100px;
   }
   .cta-btn-light:hover{
-    color: white;
-    background-color: #0A0908;
-    border: 2px #0A0908 solid;
-    -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    transition: width .3s, height .3s;
+    color: black;
+    background-color: #f5f5f7;
+    border: 2px black solid;
   }
   .cta-btn-dark{
     color: black;
@@ -1187,7 +2675,7 @@ height:180px !important;
     display: block;
   }
   .carousel-section{
-    background:#EBF8B8 ;
+    background:#f5f5f7 !important;
     // background: #E8AF1F;
     margin: 0 auto !important; 
     height: 720px !important;
@@ -1254,13 +2742,9 @@ height:180px !important;
     padding: 15px 100px;
   }
   .cta-btn-light:hover{
-    color: white;
-    background-color: #0A0908;
-    border: 2px #0A0908 solid;
-    -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    transition: width .3s, height .3s;
+    color: black;
+    background-color: #f5f5f7;
+    border: 2px black solid;
   }
   .cta-btn-dark{
     color: black;
@@ -1296,7 +2780,7 @@ height:180px !important;
     display: block;
   }
   .carousel-section{
-    background:#EBF8B8 ;
+    background:#f5f5f7 !important;
     // background: #E8AF1F;
     margin: 0 auto !important; 
     height: 720px !important;
@@ -1363,13 +2847,9 @@ height:180px !important;
     padding: 15px 100px;
   }
   .cta-btn-light:hover{
-    color: white;
-    background-color: #0A0908;
-    border: 2px #0A0908 solid;
-    -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    transition: width .3s, height .3s;
+    color: black;
+    background-color: #f5f5f7;
+    border: 2px black solid;
   }
   .cta-btn-dark{
     color: black;
@@ -1405,7 +2885,7 @@ height:180px !important;
     display: block;
   }
   .carousel-section{
-    background:#EBF8B8 ;
+    background:#f5f5f7 !important;
     // background: #E8AF1F;
     margin: 0 auto !important; 
     height: 720px !important;
@@ -1472,13 +2952,9 @@ height:180px !important;
     padding: 15px 100px;
   }
   .cta-btn-light:hover{
-    color: white;
-    background-color: #0A0908;
-    border: 2px #0A0908 solid;
-    -webkit-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    -moz-box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    box-shadow: 0px 11px 40px -15px rgba(108, 108, 108, 0.93);
-    transition: width .3s, height .3s;
+    color: black;
+    background-color: #f5f5f7;
+    border: 2px black solid;
   }
   .cta-btn-dark{
     color: black;

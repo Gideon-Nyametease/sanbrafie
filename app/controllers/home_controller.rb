@@ -45,7 +45,7 @@ class HomeController < ApplicationController
     end
 
     def booking_details
-      @tour = Tour.where("title = ?", params[:title])[0]
+      @tour = Tour.where("title = ? AND active_status = true AND del_status = false", params[:title])[0]
       logger.info"\n tour deets #{@tour.inspect}"
     end
 
