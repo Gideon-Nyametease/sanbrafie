@@ -1,0 +1,288 @@
+<div class="bg">
+    <div class="hero-section">
+        <div class="hero-img row">
+            <div class="col-sm-8">
+                <div style="padding:0 10px 0 0; position: relative;">
+                    <%#= render 'carousel2' %>
+                    <div class="overlay1">
+                        <!--<img src="<%#= asset_pack_path 'media/images/5.jpg' %>" width="100%" height="460px" alt="Tz beach" >-->
+                        <%= render 'carousel2'%>
+                    </div>
+                    <div class="hero-text text-white" style="position: absolute; top:40%; left:50px; z-index:3;">
+                         <div class="row">
+                            <p style="font-weight: 700; font-size: 42px; line-height: 100%;font-family: 'Zen Antique', serif;">
+                                Embracing our Cultures,<br> Preserving our Heritage.
+                            </p>
+                        </div>
+                        <div class="row">
+                            <p style="font-weight: 400; font-size: 22px">
+                                Go on boutique tours to the heart of 
+                                the motherland. <br> 
+                            </p>
+                        </div>
+                        <br>
+                        <%= link_to 'Travel with us', booking_form_path, class:"btn btn-lg btn-light shadow-lg",style:"font-weight: 600;", remote:true%>
+              
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 " style="background-color: #E8EAEB !important; position: relative;">
+                <div style="padding:50px;position: absolute; top:15%;">
+                    <div class="row">
+                        <p style="font-weight: 500; font-size: 20px; line-height: 150%;">
+                            Don't miss out
+                        </p>
+                        <p style="font-weight: 700; font-size: 42px; line-height: 100%;font-family: 'Zen Antique', serif;">
+                            Travel with Us<span style="color:#FBC71D;">.</span>
+                        </p>
+                        <p style="font-weight: 400; font-size: 18px">
+                            Let us customize a trip to any destination of your choice,
+                            contact us now. 
+                        </p>
+                        <br>
+                        <div>
+                        <%= link_to "Customize your trip", custom_trip_form_path, class:"btn btn-lg btn-dark shadow", style:"width: 60%;", remote: true %>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+        </div>
+    </div>
+    <div class="trips-section">
+        <div class= "row" style=" width: 94%; margin: 0 auto; padding: 20px 20px 20px 0;">
+            <p style="font-weight: 700; font-size: 36px; line-height: 100%;font-family: 'Zen Antique', serif;">
+                Upcoming Trips<span style="color:#FBC71D;">.</span>
+            </p>
+        </div>
+        <div class="row" style=" width: 94%; margin: 0 auto; background-color:#E8EAEB;padding: 50px;">   
+            <div class="col-sm-3">
+                <% if !@tours[0].nil? %>
+                    <div class="tripp-card shadow">
+                        <% if @tours[0].image.attached? %>
+                            <%= link_to booking_details_path(title: @tours[0].title), remote:true do %>    
+                                <img src="<%= url_for(@tours[0].image) %>" alt="Trip Image Preview" class="f-destination-img shadow">
+                            <% end %>
+                            <div class="tripp-card-text">
+                                <div  style="padding: 10px; 0">
+                                    <span class="text-4"><%= @tours[0].title %></span><br>
+                                    <% start_date = @tours[0].start_date %>
+                                    <span class="text-3 font-weight-300"><%=  start_date.to_date.strftime("%d") if !start_date.nil?%></span>
+                                    <span class="text-1 font-weight-300 text-uppercase"><%= start_date.to_date.strftime("%b") if !start_date.nil?%>,
+                                        <%=  start_date.to_date.strftime("%Y") if !start_date.nil? %>
+                                    </span> - 
+                                    <% end_date = @tours[0].end_date %>
+                                    <span class="text-3 font-weight-300"><%=  end_date.to_date.strftime("%d") if !end_date.nil?%></span>
+                                    <span class="text-1 font-weight-300 text-uppercase"><%= end_date.to_date.strftime("%b") if !end_date.nil?%>,
+                                        <%=  end_date.to_date.strftime("%Y") if !end_date.nil? %>
+                                    </span>
+                                </div>
+                                <div class="row" style="padding: 0 20px">
+                                    <%= link_to 'Book', booking_details_path(title: @tours[0].title),class:"btn btn-sm btn-dark shadow", remote:true %>
+                                </div>
+                            </div>
+                        <% else %>
+                            <img src="<%= asset_pack_path 'media/images/placeholder.png' %>" alt="Image not available" class="f-destination-img shadow">
+                        <% end %>
+                    </div>
+                <% end %>
+            </div>
+             <div class="col-sm-3">
+                <% if !@tours[1].nil? %>
+                    <div class="tripp-card shadow">
+                        <% if @tours[1].image.attached? %>
+                            <%= link_to booking_details_path(title: @tours[1].title), remote:true do %>    
+                                <img src="<%= url_for(@tours[1].image) %>" alt="Trip Image Preview" class="f-destination-img shadow">
+                            <% end %>
+                            <div class="tripp-card-text">
+                                <div  style="padding: 10px; 0">
+                                    <span class="text-4"><%= @tours[1].title %></span><br>
+                                    <% start_date = @tours[1].start_date %>
+                                    <span class="text-3 font-weight-300"><%=  start_date.to_date.strftime("%d") if !start_date.nil?%></span>
+                                    <span class="text-1 font-weight-300 text-uppercase"><%= start_date.to_date.strftime("%b") if !start_date.nil?%>,
+                                        <%=  start_date.to_date.strftime("%Y") if !start_date.nil? %>
+                                    </span> - 
+                                    <% end_date = @tours[1].end_date %>
+                                    <span class="text-3 font-weight-300"><%=  end_date.to_date.strftime("%d") if !end_date.nil?%></span>
+                                    <span class="text-1 font-weight-300 text-uppercase"><%= end_date.to_date.strftime("%b") if !end_date.nil?%>,
+                                        <%=  end_date.to_date.strftime("%Y") if !end_date.nil? %>
+                                    </span>
+                                </div>
+                                <div class="row" style="padding: 0 20px">
+                                    <%= link_to 'Book', booking_details_path(title: @tours[1].title),class:"btn btn-sm btn-dark shadow", remote:true %>
+                                </div>
+                            </div>
+                        <% else %>
+                            <img src="<%= asset_pack_path 'media/images/placeholder.png' %>" alt="Image not available" class="f-destination-img shadow">
+                        <% end %>
+                    </div>
+                <% end %> 
+            </div>
+             <div class="col-sm-3">
+                <% if !@tours[2].nil? %>
+                    <div class="tripp-card shadow">
+                        <% if @tours[2].image.attached? %>
+                            <%= link_to booking_details_path(title: @tours[2].title), remote:true do %>    
+                                <img src="<%= url_for(@tours[2].image) %>" alt="Trip Image Preview" class="f-destination-img shadow">
+                            <% end %>
+                            <div class="tripp-card-text">
+                                <div  style="padding: 10px; 0">
+                                    <span class="text-4"><%= @tours[2].title %></span><br>
+                                    <% start_date = @tours[2].start_date %>
+                                    <span class="text-3 font-weight-300"><%=  start_date.to_date.strftime("%d") if !start_date.nil?%></span>
+                                    <span class="text-1 font-weight-300 text-uppercase"><%= start_date.to_date.strftime("%b") if !start_date.nil?%>,
+                                        <%=  start_date.to_date.strftime("%Y") if !start_date.nil? %>
+                                    </span> - 
+                                    <% end_date = @tours[2].end_date %>
+                                    <span class="text-3 font-weight-300"><%=  end_date.to_date.strftime("%d") if !end_date.nil?%></span>
+                                    <span class="text-1 font-weight-300 text-uppercase"><%= end_date.to_date.strftime("%b") if !end_date.nil?%>,
+                                        <%=  end_date.to_date.strftime("%Y") if !end_date.nil? %>
+                                    </span>
+                                </div>
+                                 <div class="row" style="padding:0 20px;">
+                                        <%= link_to 'Book', booking_details_path(title: @tours[2].title),class:"btn btn-sm btn-dark shadow", remote:true %>
+                                </div>
+                            </div>
+                        <% else %>
+                            <img src="<%= asset_pack_path 'media/images/placeholder.png' %>" alt="Image not available" class="f-destination-img shadow">
+                        <% end %>
+                    </div>
+                <% end %>
+            </div>
+             <div class="col-sm-3">
+                <% if !@tours[3].nil? %>
+                    <div class="tripp-card shadow">
+                        <% if @tours[3].image.attached? %>
+                            <%= link_to booking_details_path(title: @tours[3].title), remote:true do %>    
+                                <img src="<%= url_for(@tours[3].image) %>" alt="Trip Image Preview" class="f-destination-img shadow">
+                            <% end %>
+                            <div class="tripp-card-text">
+                                <div style= "padding: 10px 0">
+                                    <span class="text-4"><%= @tours[3].title %></span><br>
+                                    <% start_date = @tours[3].start_date %>
+                                    <span class="text-3 font-weight-300"><%=  start_date.to_date.strftime("%d") if !start_date.nil?%></span>
+                                    <span class="text-1 font-weight-300 text-uppercase"><%= start_date.to_date.strftime("%b") if !start_date.nil?%>,
+                                        <%=  start_date.to_date.strftime("%Y") if !start_date.nil? %>
+                                    </span> - 
+                                    <% end_date = @tours[3].end_date %>
+                                    <span class="text-3 font-weight-300"><%=  end_date.to_date.strftime("%d") if !end_date.nil?%></span>
+                                    <span class="text-1 font-weight-300 text-uppercase"><%= end_date.to_date.strftime("%b") if !end_date.nil?%>,
+                                        <%=  end_date.to_date.strftime("%Y") if !end_date.nil? %>
+                                    </span>
+                                </div>
+                                <div class="row"  style= "padding: 0 20px">
+                                    <%= link_to 'Book', booking_details_path(title: @tours[3].title),class:"btn btn-sm btn-dark shadow", remote:true %>
+                                </div>
+                            </div>
+                        <% else %>
+                            <img src="<%= asset_pack_path 'media/images/placeholder.png' %>" alt="Image not available" class="f-destination-img shadow">
+                        <% end %> 
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <div class="testimonials-section " id="testimonials" style="background-color: #fff; color: #161616 !important;">
+        <div class= "row" style=" width: 94%; margin: 0 auto; padding: 20px 20px 20px 0;">
+            <p style="font-weight: 700; font-size: 36px; line-height: 100%;font-family: 'Zen Antique', serif;">
+                Testimonials<span style="color:#FBC71D;">.</span>
+            </p>
+        </div>
+        <div style="margin: 0 auto; width: 90%;">
+            <%= render 'testimonial_carousel'%>
+            <br><br>
+            <div class="row">
+                <div class="col d-flex justify-content-center ">
+                    <%= link_to 'Leave a comment', testimonial_form_path, class:"btn btn-lg btn-dark shadow-lg", style:"font-size: 24px; font-weight: 400;", remote: true %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about-section">
+        <p style="font-weight: 700; font-size: 36px; line-height: 100%;font-family: 'Zen Antique', serif;">
+            About Us<span style="color:#FBC71D;">.</span>
+        </p>
+
+    </div>
+    <div class="gallery-section">
+        <p style="font-weight: 700; font-size: 36px; line-height: 100%;font-family: 'Zen Antique', serif;">
+            Gallery<span style="color:#FBC71D;">.</span>
+        </p>
+    </div>
+    <div class="contact-section">
+        <p style="font-weight: 700; font-size: 36px; line-height: 100%;font-family: 'Zen Antique', serif;">
+            Contact Us<span style="color:#FBC71D;">.</span>
+        </p>
+    </div>
+    <div class="footer-section">
+
+    </div>
+</div>
+
+<style>
+.tripp-card{
+    position: relative;
+    border-radius: 25px;
+    overflow:hidden;
+    object-fit: contain;
+    height:400px;
+}
+   .f-destination-img{
+    object-fit: cover !important;
+    height: 400px;
+    width:100%;
+    transition: width .3s, height .3s;
+    border-radius: 5px;
+    }
+.tripp-card-text{
+    position: absolute;
+    border-radius: 10px;
+    background-color: #f5f5f7;
+    opacity:0.85;
+    padding:20px;
+    top:200px;
+    right:5%;
+    bottom:5%;
+    left:5%;
+}
+    .bg{
+        background-color:;
+    }
+    .hero-section{
+        height: 70vh;
+        padding: 50px 0;
+    }
+     .hero-img{
+        width: 94%;
+        margin: 0 auto;
+    }
+     .trips-section{
+        
+        /* #FBC71D; */
+    }
+     .about-section{
+        
+    }
+     .gallery-section{
+        
+    }
+     .contact-section{
+        
+    }
+     .footer-section{
+        
+    }
+    .overlay1:after { 
+        content:"";
+        display:block;
+        position:absolute;
+        top:0;
+        left:10px;
+        right:10px;
+        bottom:0;
+        /* background-color: #090909; */
+        background: rgb(2,0,16);
+        background: linear-gradient(4deg, rgba(2,0,36,0.7053493542617626) 0%, rgba(9,8,11,0.7278212643741222) 0%, 
+                                    rgba(9,9,9,0.6098437362842346) 23%, rgba(0,212,255,0.008720140778616603) 100%);  
+    }
+</style>

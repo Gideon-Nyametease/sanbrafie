@@ -1,18 +1,18 @@
 <div data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
   <a id="goto-top"><i class="fas fa-angle-up fa-2x" style="color: #fff; margin-top: 10px;"></i></a>
 
-  <div class="carousel-section" style="background-color: #101010 !important;">
+  <div class="carousel-section" style="background-color: #101010 !important; height: 540px !important;">
     <div class="row">
-      <div class="col-lg-6 header-text-bg-darkk">
+     <!-- <div class="col-lg-6 header-text-bg-darkk">
         <div class="header-text">
           <br><br><br>
           <div class="big-text d-block mx-auto" >
               <p class=" w3-animate-top transparent-text" style="color: #FBC71D !important; font-weight: 400 !important;">
                 Sanbrafie
               </p>
-              <!--<div >
+              <--<div >
                 <img src="<%#= asset_pack_path 'media/images/logo-text.png' %>" height="250px" width="80%"/>
-              </div>-->
+              </div>--
               <p class="bold-text-white w3-animate-top">
                   Embracing our Cultures, 
                   <br>Preserving our Heritage.
@@ -22,17 +22,17 @@
                   the motherland. <br> 
               </p>
               <br>
-              <%= link_to 'Travel with us', booking_form_path, class:"cta-btn-light shadow-lg",style:"color: #101010 !important;background-color: #FBC71D !important;", remote:true%>
+              <%#= link_to 'Travel with us', booking_form_path, class:"cta-btn-light shadow-lg",style:"color: #101010 !important;background-color: #FBC71D !important;", remote:true%>
               <br><br>
           </div>
         </div>
-      </div>
-      <div class="col-lg-6 the-carousel">
+      </div>-->
+      <div class="col-lg-12 the-carousel">
         <%= render 'carousel' %>
       </div>
     </div>
   </div>
-  <div class="destinations-section" id="destinations" style="padding: 130px 0; background-color: #fff !important; color:#090909 !impotant;">
+  <div class="destinations-section" id="destinations" style="padding: 50px 0; background-color: #fff !important; color:#090909 !impotant;">
     <div class=" my-container ">
       <div class="d-flex justify-content-center">
         <p class="section-headings "> Featured Trips</p>

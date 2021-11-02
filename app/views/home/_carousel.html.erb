@@ -1,43 +1,48 @@
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active overlay">
-            <img src="<%= asset_pack_path 'media/images/image4.jpg' %>" width="100%" height="720px" alt="HBCU Africa">
+            <img src="<%= asset_pack_path 'media/images/image4.jpg' %>" width="100%" height="540px" alt="HBCU Africa">
             <div class="carousel-caption d-none d-md-block">
-                <p class="carousel-bold-text">
+                <p class="carousel-bold-textt">
                     HBCU Homecoming 2022: 100,000 Strong Africa Conference
                 </p>
-                <p class="carousel-mini-text">
+                <p class="carousel-mini-textt">
                    24 MAY, 2022 - 30 MAY, 2022
                 </p>
                 <br>
+                <%= link_to 'Travel with us', booking_form_path, class:"cta-btn-light shadow-lg",style:"color: #101010 !important;background-color: #FBC71D !important;", remote:true%>
+
             </div>
         </div>
         <div class="carousel-item overlay">
-            <img src="<%= asset_pack_path 'media/images/5.jpg' %>" width="100%" height="720px" alt="Tz beach">
+            <img src="<%= asset_pack_path 'media/images/5.jpg' %>" width="100%" height="540px" alt="Tz beach">
             <div class="carousel-caption d-none d-md-block">
-                <p class="carousel-bold-text">
+                <p class="carousel-bold-textt">
                     Sanbrafie Tanzania Summer, 2023
                 </p>
-                <p class="carousel-mini-text">
+                <p class="carousel-mini-textt">
                     22 JUN, 2023 - 29 JUN, 2023
                 </p>
                 <br>
+                <%= link_to 'Travel with us', booking_form_path, class:"cta-btn-light shadow-lg",style:"color: #101010 !important;background-color: #FBC71D !important;", remote:true%>
+
             </div>
         </div>
         <div class="carousel-item overlay">
-            <img src="<%= asset_pack_path 'media/images/ghdec.jpg' %>" width="100%" height="720px" alt="December in Ghana">
+            <img src="<%= asset_pack_path 'media/images/ghdec.jpg' %>" width="100%" height="540px" alt="December in Ghana">
             <div class="carousel-caption d-none d-md-block">
-                <p class="carousel-bold-text">
+                <p class="carousel-bold-textt">
                    Ghana December, 2022
                 </p>
-                <p class="carousel-mini-text">
+                <p class="carousel-mini-textt">
                     23 DEC, 2022 - 01 JAN, 2023
                 </p>
                 <br>
+                <%= link_to 'Travel with us', booking_form_path, class:"cta-btn-light shadow-lg",style:"color: #101010 !important;background-color: #FBC71D !important;", remote:true%>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<%= asset_pack_path 'media/images/logotext.png' %>" width="100%" height="720px" alt=" demo instructions">
+            <img src="<%= asset_pack_path 'media/images/logotext.png' %>" width="100%" height="540px" alt=" demo instructions">
             <div class="carousel-caption d-none d-md-block">
                 
             </div>
@@ -48,10 +53,30 @@
 
 <style>
 
-.carousel-bold-text{
+.carousel-bold-textt{
   color: #fafafa ;
-  font-size:36px !important;
+  font-size:46px !important;
   line-height: 105% !important;
+  font-family: 'Montserrat';
+  font-weight: 600;
+}
+.carousel-mini-textt{
+  color: #fafafa !important;
+  font-family: 'Open sans' !important;
+  font-size: 32px !important;
+  line-height:38px!important;
+  font-weight: 400 !important;
+  opacity:0.8;
+}
+
+.carousel-caption{
+  text-align: left !important;
+  margin-left: -100px;
+  position: absolute;
+  top: 45% !important;
+  z-index: 100000000;
+  // -ms-transform: translateY(-20%);
+  // transform: translateY(-20%);
 }
 </style>
 
