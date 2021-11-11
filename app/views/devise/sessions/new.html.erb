@@ -6,11 +6,11 @@
       </div>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
-            <%= f.input :login, label:"Email", input_html:{class:"form-control-lg"}  %>
+            <%= f.input :login, label:"Email", input_html:{class:"form-control-lg b-input"}  %>
             <br>
             <div class="row">
               <div class="col-12">
-                <%= f.input :password,required: false,input_html: { autocomplete: "current-password" ,class:"form-control-lg"} %>
+                <%= f.input :password,required: false,input_html: { autocomplete: "current-password" ,class:"form-control-lg b-input"} %>
               </div>
               <!--<div class="col-2" id="eye-toggl">
                 <i id="show_password" class="fa fa-eye display-icons" aria-hidden="true"></i>
@@ -35,7 +35,11 @@
   </div>
 </div>
 
-
+<style>
+.log-form{
+  background-color: #FCEED8 !important;
+}
+</style>
 
 <script>
 $('#show_password').on('click', function(){
